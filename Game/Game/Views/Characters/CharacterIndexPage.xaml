@@ -15,7 +15,11 @@
     <ContentPage.Content>
         <StackLayout Style="{StaticResource OuterBoxStack}">
 
-            <Label Text="Items List Page" Style="{StaticResource HeaderStyle}"/>
+            <Label Text="Teammates"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center">
+            </Label>
 
             <ListView x:Name="ItemsListView" 
                     ItemsSource="{Binding Dataset}"
@@ -27,7 +31,7 @@
                     Margin="5,0,5,0"
                     RowHeight="80"
                     >
-                
+
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -53,21 +57,21 @@
 
                                 <StackLayout Grid.Column="1" Grid.Row="1"
                                     Orientation="Horizontal">
-                                    
+
                                     <Label 
                                        Text="{Binding Attribute}" 
                                        Style="{StaticResource ListStyle}"/>
 
                                     <Label Text="{Binding Value}" 
                                         Style="{StaticResource ListStyle}"/>
-                                
+
                                 </StackLayout>
 
                                 <Label Grid.Column="1" Grid.Row="2"
                                        Text="{Binding Description}" 
                                        Style="{StaticResource ListStyle}"
                                        FontSize="Micro"/>
-
+                                
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
