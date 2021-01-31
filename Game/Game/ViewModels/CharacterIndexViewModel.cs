@@ -8,6 +8,7 @@ using Game.Models;
 using Game.Views;
 using Game.GameRules;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace Game.ViewModels
 {
@@ -17,6 +18,7 @@ namespace Game.ViewModels
     /// </summary>
     public class CharacterIndexViewModel : BaseViewModel<ItemModel>
     {
+        public ObservableCollection<ItemModel> DataSet { get; set; }
         #region Singleton
 
         // Make this a singleton so it only exist one time because holds all the data records in memory
@@ -55,6 +57,7 @@ namespace Game.ViewModels
         public CharacterIndexViewModel()
         {
             Title = "Characters";
+            DataSet = new ObservableCollection<ItemModel>();
 
             #region Messages
 
@@ -106,6 +109,28 @@ namespace Game.ViewModels
         public new async Task<ItemModel> ReadAsync(string id)
         {
             var result = await DataStore.ReadAsync(id);
+
+            return result;
+        }
+
+        /// Delete the record from the system
+        /// </summary>
+        /// <param name="data">The Record to Delete</param>
+        /// <returns>True if Deleted</returns>
+        public new async Task<bool> DeleteAsync(ItemModel data)
+        {
+            // Check if the record exists, if it does not, then null is returned
+            var record = await ReadAsync(data.Id);
+            if (record == null)
+            {
+                return false;
+            }
+
+            // Remove from the local data set cache
+            DataSet.Remove(data);
+
+            // Call to remove it from the Data Store
+            var result = await DataStore.DeleteAsync(data.Id);
 
             return result;
         }
