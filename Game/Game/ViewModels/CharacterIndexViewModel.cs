@@ -16,9 +16,9 @@ namespace Game.ViewModels
     /// Index View Model
     /// Manages the list of data records
     /// </summary>
-    public class CharacterIndexViewModel : BaseViewModel<ItemModel>
+    public class CharacterIndexViewModel : BaseViewModel<CharacterModel>
     {
-        public ObservableCollection<ItemModel> DataSet { get; set; }
+        public ObservableCollection<CharacterModel> DataSet { get; set; }
         #region Singleton
 
         // Make this a singleton so it only exist one time because holds all the data records in memory
@@ -57,29 +57,29 @@ namespace Game.ViewModels
         public CharacterIndexViewModel()
         {
             Title = "Characters";
-            DataSet = new ObservableCollection<ItemModel>();
+            DataSet = new ObservableCollection<CharacterModel>();
 
             #region Messages
 
             // Register the Create Message
-            MessagingCenter.Subscribe<ItemCreatePage, ItemModel>(this, "Create", async (obj, data) =>
+            MessagingCenter.Subscribe<ItemCreatePage, CharacterModel>(this, "Create", async (obj, data) =>
             {
-                await CreateAsync(data as ItemModel);
+                await CreateAsync(data as CharacterModel);
             });
 
             // Register the Update Message
-            MessagingCenter.Subscribe<ItemUpdatePage, ItemModel>(this, "Update", async (obj, data) =>
+            MessagingCenter.Subscribe<ItemUpdatePage, CharacterModel>(this, "Update", async (obj, data) =>
             {
                 // Have the item update itself
                 data.Update(data);
 
-                await UpdateAsync(data as ItemModel);
+                await UpdateAsync(data as CharacterModel);
             });
 
             // Register the Delete Message
-            MessagingCenter.Subscribe<ItemDeletePage, ItemModel>(this, "Delete", async (obj, data) =>
+            MessagingCenter.Subscribe<CharacterDeletePage, CharacterModel>(this, "Delete", async (obj, data) =>
             {
-                await DeleteAsync(data as ItemModel);
+                await DeleteAsync(data as CharacterModel);
             });
 
             // Register the Set Data Source Message
@@ -106,7 +106,7 @@ namespace Game.ViewModels
         /// </summary>
         /// <param name="id">ID of the Record</param>
         /// <returns>The Record from ReadAsync</returns>
-        public new async Task<ItemModel> ReadAsync(string id)
+        public new async Task<CharacterModel> ReadAsync(string id)
         {
             var result = await DataStore.ReadAsync(id);
 
@@ -117,7 +117,7 @@ namespace Game.ViewModels
         /// </summary>
         /// <param name="data">The Record to Delete</param>
         /// <returns>True if Deleted</returns>
-        public new async Task<bool> DeleteAsync(ItemModel data)
+        public new async Task<bool> DeleteAsync(CharacterModel data)
         {
             // Check if the record exists, if it does not, then null is returned
             var record = await ReadAsync(data.Id);
@@ -140,7 +140,7 @@ namespace Game.ViewModels
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        public override ItemModel CheckIfExists(ItemModel data)
+        public override CharacterModel CheckIfExists(CharacterModel data)
         {
             if (data == null)
             {
@@ -153,11 +153,8 @@ namespace Game.ViewModels
             var myList = Dataset.Where(a =>
                                         a.Name == data.Name &&
                                         a.Description == data.Description &&
-                                        a.Damage == data.Damage &&
-                                        a.Attribute == data.Attribute &&
-                                        a.Location == data.Location &&
-                                        a.Range == data.Range &&
-                                        a.Value == data.Value
+                                        a.Level == data.Level &&
+                                        a.Range == data.Range 
                                         )
                                         .FirstOrDefault();
 
@@ -174,9 +171,9 @@ namespace Game.ViewModels
         /// Load the Default Data
         /// </summary>
         /// <returns></returns>
-        public override List<ItemModel> GetDefaultData() 
+        public override List<CharacterModel> GetDefaultData() 
         {
-            return DefaultData.LoadData(new ItemModel());
+            return DefaultData.LoadData(new CharacterModel());
         }
 
         #endregion DataOperations_CRUDi
@@ -184,11 +181,11 @@ namespace Game.ViewModels
         #region SortDataSet
 
         /// <summary>
-        /// The Sort Order for the ItemModel
+        /// The Sort Order for the CharacterModel
         /// </summary>
         /// <param name="dataset"></param>
         /// <returns></returns>
-        public override List<ItemModel> SortDataset(List<ItemModel> dataset)
+        public override List<CharacterModel> SortDataset(List<CharacterModel> dataset)
         {
             return dataset
                     .OrderBy(a => a.Name)
@@ -204,7 +201,7 @@ namespace Game.ViewModels
         /// </summary>
         /// <param name="ItemID"></param>
         /// <returns></returns>
-        public ItemModel GetItem(string id)
+        public CharacterModel GetItem(string id)
         {
             if (string.IsNullOrEmpty(id))
             {
@@ -212,74 +209,13 @@ namespace Game.ViewModels
             }
 
             // Item myData = DataStore.GetAsync_Item(ItemID).GetAwaiter().GetResult();
-            ItemModel myData = Dataset.Where(a => a.Id.Equals(id)).FirstOrDefault();
+            CharacterModel myData = Dataset.Where(a => a.Id.Equals(id)).FirstOrDefault();
             if (myData == null)
             {
                 return null;
             }
 
             return myData;
-        }
-
-        /// <summary>
-        /// Get the ID of the Default Item for the Location
-        /// The Default item is the first Item in the List
-        /// </summary>
-        /// <param name="location"></param>
-        /// <returns></returns>
-        public string GetDefaultItemId(ItemLocationEnum location)
-        {
-            var data = GetDefaultItem(location);
-            if (data == null)
-            {
-                return null;
-            }
-
-            return data.Id;
-        }
-
-        /// <summary>
-        /// Get the First item of the location from the list
-        /// </summary>
-        /// <param name="location"></param>
-        /// <returns></returns>
-        public ItemModel GetDefaultItem(ItemLocationEnum location)
-        {
-            var dataList = GetLocationItems(location);
-            if (dataList.Count() == 0)
-            {
-                return null;
-            }
-
-            var data = dataList.FirstOrDefault();
-
-            return data;
-        }
-        
-        /// <summary>
-        /// Get all the items for a set location
-        /// </summary>
-        /// <param name="location"></param>
-        /// <returns></returns>
-        public List<ItemModel> GetLocationItems(ItemLocationEnum location)
-        {
-            List<ItemModel> data = null;
-
-            // Convert Right and Left Finger to Finger
-            if (location == ItemLocationEnum.RightFinger)
-            {
-                location = ItemLocationEnum.Finger;
-            }
-
-            if (location == ItemLocationEnum.LeftFinger)
-            {
-                location = ItemLocationEnum.Finger;
-            }
-
-            // Find the Items that meet the criteria
-            data = Dataset.Where(m => m.Location == location).ToList();
-
-            return data;
         }
     }
 }
