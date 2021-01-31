@@ -7,6 +7,7 @@ using Xamarin.Forms;
 using Game.Models;
 using Game.Views;
 using Game.GameRules;
+using System.Threading.Tasks;
 
 namespace Game.ViewModels
 {
@@ -94,8 +95,20 @@ namespace Game.ViewModels
         }
 
         #endregion Constructor
-        
+
         #region DataOperations_CRUDi
+
+        /// <summary>
+        /// Read an item from the datastore
+        /// </summary>
+        /// <param name="id">ID of the Record</param>
+        /// <returns>The Record from ReadAsync</returns>
+        public new async Task<ItemModel> ReadAsync(string id)
+        {
+            var result = await DataStore.ReadAsync(id);
+
+            return result;
+        }
 
         /// <summary>
         /// Returns the item passed in
