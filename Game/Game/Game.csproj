@@ -64,6 +64,10 @@
     <Compile Update="Views\Score\ScoreUpdatePage.xaml.cs">
       <DependentUpon>ScoreUpdatePage.xaml</DependentUpon>
     </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\Characters\ItemReadPage.xaml.cs">
+      <DependentUpon>ItemReadPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
