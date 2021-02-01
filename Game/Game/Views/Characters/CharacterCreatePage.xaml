@@ -27,7 +27,7 @@
             <StackLayout Style="{StaticResource OuterBoxStack}"
                 Spacing="10">
 
-                <Label Text="Create Page" Style="{StaticResource HeaderStyle}"/>
+                <!--<Label Text="Create Page" Style="{StaticResource HeaderStyle}"/>-->
 
                 <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
 
@@ -43,101 +43,117 @@
                         <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <Label Grid.Row="0" Grid.Column="0"
+                    <!--<Label Grid.Row="0" Grid.Column="0"
                         Text="Name" 
-                        Style="{StaticResource LabelStyle}"/>
+                        Style="{StaticResource LabelStyle}"/>-->
                     
-                    <Entry Grid.Row="0" Grid.Column="1"
+                    <Entry Grid.Row="0" Grid.Column="0"
                         Text="{Binding Data.Name}" 
                         Style="{StaticResource EntryStyle}"/>
 
-                    <Label Grid.Row="1" Grid.Column="0"
+                    <!--<Label Grid.Row="1" Grid.Column="0"
                         Text="Description" 
+                        Style="{StaticResource LabelStyle}"/>-->
+                
+                    <Picker Grid.Row="0" Grid.Column="1"
+                        ItemsSource="{x:Static local_enum:ItemLocationEnumHelper.GetListCharacter}" 
+                        SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
+                        x:Name="LocationPicker"/>
+
+                </Grid>
+
+                <Label Text="Stats" Style="{StaticResource LabelStyle}"/>
+
+                <Grid
+                    RowSpacing="1"
+                    ColumnSpacing="2"
+                    VerticalOptions="Center">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0"
+                        Text="Health" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <Entry Grid.Row="0" Grid.Column="1"
+                        Text="{Binding Data.MaxHealth}" 
+                        Style="{StaticResource EntryStyle}"/>
+
+                    <Label Grid.Row="1" Grid.Column="0"
+                        Text="Attack" 
                         Style="{StaticResource LabelStyle}"/>
 
                     <Entry Grid.Row="1" Grid.Column="1"
-                        Text="{Binding Data.Description}" 
+                        Text="{Binding Data.Attack}" 
                         Style="{StaticResource EntryStyle}"/>
 
-                    <Label Grid.Row="4" Grid.Column="0"
-                        Text="Image" 
+                    <Label Grid.Row="2" Grid.Column="0"
+                        Text="Defense" 
                         Style="{StaticResource LabelStyle}"/>
 
-                    <StackLayout Grid.Row="4" Grid.Column="1" Style="{StaticResource HorizontalStack}" HorizontalOptions="FillAndExpand">
+                    <Entry Grid.Row="2" Grid.Column="1"
+                        Text="{Binding Data.Defense}" 
+                        Style="{StaticResource EntryStyle}"/>
 
-                        <Image 
-                            Source="{Binding Data.ImageURI}"
-                            Style="{StaticResource ImageSmallStyle}"/>
+                    <Label Grid.Row="3" Grid.Column="0"
+                        Text="Speed" 
+                        Style="{StaticResource LabelStyle}"/>
 
-                        <Entry 
-                            Text="{Binding Data.ImageURI}" 
-                            Style="{StaticResource EntryStyle}"/>
-
-                    </StackLayout>
+                    <Entry Grid.Row="3" Grid.Column="1"
+                        Text="{Binding Data.Speed}" 
+                        Style="{StaticResource EntryStyle}"/>
                 </Grid>
 
-                    <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="FillAndExpand">
+                <Grid
+                    RowSpacing="1"
+                    ColumnSpacing="2"
+                    VerticalOptions="Center">
 
-                        <Label 
-                            Text="Range" 
-                            Style="{StaticResource LabelStyle}"/>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
 
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
-
-                        <Label 
-                            Text="{Binding Data.Range}" 
-                            x:Name="RangeValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
-                    
-                        <Stepper 
-                            Value="{Binding Data.Range, Mode=TwoWay}"
-                            ValueChanged="Range_OnStepperValueChanged"/>
-                        
-                    </StackLayout>
-
-                    <Label 
-                        Text="Value"
+                    <Label Grid.Row="0" Grid.Column="0"
+                        Text="Weapon" 
                         Style="{StaticResource LabelStyle}"/>
 
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
-                        
-                        <Label 
-                            Text="{Binding Data.Value}" 
-                            x:Name="ValueValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
+                    <Entry Grid.Row="0" Grid.Column="1"
+                        Text="{Binding Data.PrimaryHand}" 
+                        Style="{StaticResource EntryStyle}"/>
 
-                        <Stepper 
-                            Value="{Binding Data.Value, Mode=TwoWay}"
-                            ValueChanged="Value_OnStepperValueChanged"/>
-
-                    </StackLayout>
-
-                    <Label 
-                        Text="Damage" 
+                    <Label Grid.Row="1" Grid.Column="0"
+                        Text="Shield" 
                         Style="{StaticResource LabelStyle}"/>
-                    
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
 
-                        <Label 
-                            Text="{Binding Data.Damage}" 
-                            x:Name="DamageValue"
-                            Style="{StaticResource ValueStyle}"
-                            Padding="0,0,10,0"
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
+                    <Entry Grid.Row="1" Grid.Column="1"
+                        Text="{Binding Data.OffHand}" 
+                        Style="{StaticResource EntryStyle}"/>
 
-                        <Stepper 
-                            Value="{Binding Data.Damage, Mode=TwoWay}"
-                            ValueChanged="Damage_OnStepperValueChanged"/>
-                    
-                    </StackLayout>
-                </StackLayout>
+                    <Label Grid.Row="2" Grid.Column="0"
+                        Text="Armor" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <Entry Grid.Row="2" Grid.Column="1"
+                        Text="{Binding Data.Head}" 
+                        Style="{StaticResource EntryStyle}"/>
+
+                    <Label Grid.Row="3" Grid.Column="0"
+                        Text="Accessory" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <Entry Grid.Row="3" Grid.Column="1"
+                        Text="{Binding Data.Necklass}" 
+                        Style="{StaticResource EntryStyle}"/>
+                </Grid>
+                <Button Text="Create Hero" Clicked="Save_Clicked"></Button>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
