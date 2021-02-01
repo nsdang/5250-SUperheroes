@@ -101,39 +101,6 @@ namespace Game.ViewModels
 
         #region DataOperations_CRUDi
 
-        /// <summary>
-        /// Read an item from the datastore
-        /// </summary>
-        /// <param name="id">ID of the Record</param>
-        /// <returns>The Record from ReadAsync</returns>
-        public new async Task<CharacterModel> ReadAsync(string id)
-        {
-            var result = await DataStore.ReadAsync(id);
-
-            return result;
-        }
-
-        /// Delete the record from the system
-        /// </summary>
-        /// <param name="data">The Record to Delete</param>
-        /// <returns>True if Deleted</returns>
-        public new async Task<bool> DeleteAsync(CharacterModel data)
-        {
-            // Check if the record exists, if it does not, then null is returned
-            var record = await ReadAsync(data.Id);
-            if (record == null)
-            {
-                return false;
-            }
-
-            // Remove from the local data set cache
-            DataSet.Remove(data);
-
-            // Call to remove it from the Data Store
-            var result = await DataStore.DeleteAsync(data.Id);
-
-            return result;
-        }
 
         /// <summary>
         /// Returns the item passed in
