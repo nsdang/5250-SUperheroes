@@ -19,7 +19,7 @@
             <Label Text="Delete Page" FontAttributes="Bold" HorizontalOptions="Center" TextColor="Black" Style="{StaticResource HeaderStyle}"/>
 
             <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
-           
+
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -78,22 +78,12 @@
                      VerticalOptions="End"
                     Style="{StaticResource LabelStyle}"/>
             </Grid>
-            
-            <StackLayout Style="{StaticResource HorizontalStack}">
-                <Label 
-                    Text="Description : " 
-                    Style="{StaticResource LabelStyle}"/>
-                <Label 
-                    Text="{Binding Data.Description}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-
 
             <StackLayout 
             HorizontalOptions="Center" 
             Padding="20">
 
-                <Label Text="Really delete this?" Style="{StaticResource MessageStyle}"/>
+                <Label Text="Delete?" HorizontalOptions ="Center" VerticalOptions="Center"  Style="{StaticResource MessageStyle}"/>
 
                 <Button 
                 Text="Yes" 
