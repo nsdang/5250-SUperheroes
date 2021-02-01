@@ -12,23 +12,73 @@
         <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
     </ContentPage.ToolbarItems>
 
-    <ScrollView>
+    <ScrollView BackgroundColor="Crimson">
         <StackLayout Style="{StaticResource OuterBoxStack}"
-                Spacing="10">
+                Spacing="40" Padding="40,40,0,0">
 
-            <Label Text="Delete Page" Style="{StaticResource HeaderStyle}"/>
+            <Label Text="Delete Page" FontAttributes="Bold" HorizontalOptions="Center" TextColor="Black" Style="{StaticResource HeaderStyle}"/>
 
             <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
-
-            <StackLayout Style="{StaticResource HorizontalStack}">
+           
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <BoxView/>
                 <Label 
-                   Text="Name : " 
+                   Text="Name: " 
+                    FontAttributes="Bold"
+                    TextColor="Blue"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
                     Style="{StaticResource LabelStyle}"/>
+                <BoxView Grid.Column="1" />
                 <Label 
                     Text="{Binding Data.Name}" 
+                    Grid.Column="1"
+                    FontFamily="Comic Sans MS"
+                    TextColor="WhiteSmoke"
+                     HorizontalOptions="Start"
+                    VerticalOptions="Center"
                     Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
-
+                <BoxView Grid.Column="2" Grid.Row ="0"/>
+                <Label 
+                    Text="{Binding Data.Job}"
+                    FontFamily="Droid Sans Mono"
+                    TextColor="WhiteSmoke"
+                    Grid.Column="2"
+                    Grid.Row ="0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Style="{StaticResource ValueStyle}"/>
+                <Label 
+                    Text="________________"
+                    TextColor="Black"
+                    Grid.Column ="0"
+                    HorizontalOptions="End"
+                    VerticalOptions="End"
+                    Style="{StaticResource LabelStyle}"/>
+                <Label 
+                    Text="_________________________"
+                    TextColor="Black"
+                    Grid.Column ="1"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="End"
+                    Style="{StaticResource LabelStyle}"/>
+                <Label 
+                    Text="____________________________"
+                    TextColor="Black"
+                    Grid.Column="2"
+                    HorizontalOptions="Start"
+                     VerticalOptions="End"
+                    Style="{StaticResource LabelStyle}"/>
+            </Grid>
+            
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
                     Text="Description : " 
