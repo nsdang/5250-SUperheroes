@@ -1,4 +1,8 @@
-﻿namespace Game.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Game.Models
 {
     /// <summary>
     /// The Types of Jobs a character can have
@@ -7,35 +11,35 @@
     public enum CharacterJobEnum
     {
         // Not specified
-        Unknown = -1,
+        Unknown = 0,
 
         // Fighters hit hard and have fight abilities
-        Fighter = 10,
+        Fighter = 14,
 
         // Clerics defend well and have buff abilities
         Cleric = 12,
 
         // New Heroes' Jobs
-        Flying = 0,
+        Flying = 1,
 
-        Psychic = 1,
+        Psychic = 2,
 
-        Physical = 2,
+        Physical = 3,
 
-        Light = 3,
+        Light = 4,
 
-        Dark = 4,
+        Dark = 5,
 
         // New Monsters' Jobs
-        Carpenter = 5,
+        Carpenter = 6,
 
-        Accountant = 6,
+        Accountant = 7,
 
-        McDonaldsEmployee = 7,
+        McDonaldsEmployee = 8,
 
-        Vet = 8,
+        Vet = 9,
 
-        Boss = 9,
+        Boss = 10,
     }
 
     /// <summary>
@@ -107,6 +111,66 @@
             }
 
             return Message;
+        }
+    }
+
+    /// <summary>
+    /// Helper for Character Jobs
+    /// </summary>
+    public static class CharacterJobEnumHelper
+    {
+        /// <summary>
+        /// Gets the list of jobs that an hero can be in.
+        /// </summary>
+        public static List<string> GetListHeroJob
+        {
+            get
+            {
+                var myList = Enum.GetNames(typeof(CharacterJobEnum)).ToList();
+                var myReturn = myList.Where(a =>
+                                            a.ToString() != CharacterJobEnum.Unknown.ToString() &&
+                                            a.ToString() != CharacterJobEnum.Carpenter.ToString() &&
+                                            a.ToString() != CharacterJobEnum.Accountant.ToString() &&
+                                            a.ToString() != CharacterJobEnum.Vet.ToString() &&
+                                            a.ToString() != CharacterJobEnum.McDonaldsEmployee.ToString() &&
+                                            a.ToString() != CharacterJobEnum.Boss.ToString()
+                                            )
+                                            .OrderBy(a => a)
+                                            .ToList();
+                return myReturn;
+            }
+        }
+
+        /// <summary>
+        /// Gets the list of jobs that an monster can be in.
+        /// </summary>
+        public static List<string> GetListMonsterJob
+        {
+            get
+            {
+                var myList = Enum.GetNames(typeof(CharacterJobEnum)).ToList();
+                var myReturn = myList.Where(a =>
+                                            a.ToString() != CharacterJobEnum.Unknown.ToString() &&
+                                            a.ToString() != CharacterJobEnum.Flying.ToString() &&
+                                            a.ToString() != CharacterJobEnum.Psychic.ToString() &&
+                                            a.ToString() != CharacterJobEnum.Physical.ToString() &&
+                                            a.ToString() != CharacterJobEnum.Light.ToString() &&
+                                            a.ToString() != CharacterJobEnum.Dark.ToString()
+                                            )
+                                            .OrderBy(a => a)
+                                            .ToList();
+                return myReturn;
+            }
+        }
+
+        /// <summary>
+        /// Given the String for an enum, return its value.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static CharacterJobEnum ConvertStringToEnum(string value)
+        {
+            return (CharacterJobEnum)Enum.Parse(typeof(CharacterJobEnum), value);
         }
     }
 }
