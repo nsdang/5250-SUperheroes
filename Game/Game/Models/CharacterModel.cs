@@ -9,6 +9,9 @@ namespace Game.Models
     /// </summary>
     public class CharacterModel : BasePlayerModel<CharacterModel>
     {
+        // Description ...
+        public int ShameLevel;
+
         /// <summary>
         /// Default character
         /// 
@@ -26,7 +29,10 @@ namespace Game.Models
             ExperienceRemaining = LevelTableHelper.LevelDetailsList[Level + 1].Experience - 1;
 
             // Default to unknown, which is no special job
-            Job = CharacterJobEnum.Unknown; 
+            Job = CharacterJobEnum.Unknown;
+
+            // Default to 1
+            ShameLevel = 1;
         }
 
         /// <summary>
@@ -102,6 +108,17 @@ namespace Game.Models
             myReturn += " , Damage : " + GetDamageTotalString;
 
             return myReturn;
+        }
+
+        /// Logic of Shame Level
+        public bool IsShameLevelHigh()
+        {
+            if (CurrentHealth < (CurrentHealth * 1 / 5) && ShameLevel > 15)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
