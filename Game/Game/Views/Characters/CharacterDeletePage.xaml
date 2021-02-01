@@ -16,7 +16,12 @@
         <StackLayout Style="{StaticResource OuterBoxStack}"
                      Padding="40,40,0,0">
 
-            <Label Text="Delete Page" FontAttributes="Bold" HorizontalOptions="Center" TextColor="Black" Style="{StaticResource HeaderStyle}"/>
+            <Label Text="Delete Page"
+                   FontSize="Header"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="Black"
+                   Style="{StaticResource HeaderStyle}"/>
 
             <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
 
@@ -30,7 +35,7 @@
                 <Label 
                    Text="Name: " 
                     FontAttributes="Bold"
-                    TextColor="Blue"
+                    TextColor="Black"
                      HorizontalOptions="Center"
                      VerticalOptions="Center"
                     Style="{StaticResource LabelStyle}"/>
@@ -47,6 +52,7 @@
                 <Label 
                     Text="{Binding Data.Job}"
                     FontFamily="Droid Sans Mono"
+                    FontAttributes="Italic"
                     TextColor="WhiteSmoke"
                     Grid.Column="2"
                     Grid.Row ="0"
