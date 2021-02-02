@@ -43,8 +43,8 @@
                         <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="170"/>
-                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width= "*"/>
+                        <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
 
                     <!--<Label Grid.Row="0" Grid.Column="0"
@@ -60,15 +60,14 @@
                         Style="{StaticResource LabelStyle}"/>-->
                 
                     <Picker Grid.Row="0" Grid.Column="1"
-                            Title="(Class)"
                         ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetListHeroJob}" 
                         SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                         x:Name="LocationPicker"/>
 
                     </Grid>
 
-                    <Entry Text="{Binding Data.Description}" 
-                           Style="{StaticResource EntryStyle}"/>
+                  <!--- <Entry Text="{Binding Data.Description}" 
+                           Style="{StaticResource EntryStyle}"/> -->
                 </StackLayout>
 
                 <StackLayout Style="{StaticResource OuterBoxStack}"
@@ -87,8 +86,8 @@
                         <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"/>
-                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto" />
                     </Grid.ColumnDefinitions>
 
                     <Label Grid.Row="0" Grid.Column="0"
