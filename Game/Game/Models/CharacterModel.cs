@@ -21,8 +21,8 @@ namespace Game.Models
         {
             PlayerType = PlayerTypeEnum.Character;
             Guid = Id;
-            Name = "Elf";
-            Description = "Happy Elf";
+            Name = "Hero's Name";
+            Description = "Hero's Description";
             Level = 1;
             ImageURI = "item.png";
             ExperienceTotal = 0;
