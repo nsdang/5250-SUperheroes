@@ -71,6 +71,7 @@
                 </StackLayout>
 
                 <StackLayout Style="{StaticResource OuterBoxStack}"
+                             HorizontalOptions="Center"
                              Spacing="8">
 
                     <Label Text="Stats" Style="{StaticResource LabelStyle}"/>
