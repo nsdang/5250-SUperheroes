@@ -139,6 +139,7 @@ namespace Game.GameRules
             {
                 new CharacterModel {
                     Name = "CaptainSU",
+                    Job = (CharacterJobEnum)1,
                     Description = "C1",
                     Level = 1,
                     MaxHealth = 5,
@@ -154,6 +155,7 @@ namespace Game.GameRules
 
                 new CharacterModel {
                     Name = "ConnectSU",
+                    Job = (CharacterJobEnum)2,
                     Description = "C2",
                     Level = 1,
                     MaxHealth = 5,
@@ -169,6 +171,7 @@ namespace Game.GameRules
 
                 new CharacterModel {
                     Name = "EngageSU",
+                    Job = (CharacterJobEnum)3,
                     Description = "C3",
                     Level = 1,
                     MaxHealth = 5,
@@ -184,6 +187,7 @@ namespace Game.GameRules
 
                 new CharacterModel {
                     Name = "InformSU",
+                    Job = (CharacterJobEnum)4,
                     Description = "C4",
                     Level = 1,
                     MaxHealth = 5,
@@ -199,6 +203,7 @@ namespace Game.GameRules
 
                 new CharacterModel {
                     Name = "ProcureSU",
+                    Job = (CharacterJobEnum)5,
                     Description = "C5",
                     Level = 1,
                     MaxHealth = 5,
