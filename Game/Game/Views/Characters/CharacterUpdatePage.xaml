@@ -42,8 +42,8 @@
                         <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="170"/>
-                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
 
                     <!--<Label Grid.Row="0" Grid.Column="0"
@@ -59,7 +59,6 @@
                         Style="{StaticResource LabelStyle}"/>-->
                 
                     <Picker Grid.Row="0" Grid.Column="1"
-                            Title="{Binding Data.Job}"
                             TitleColor="Black"
                             ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetListHeroJob}" 
                             SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}"
@@ -67,10 +66,10 @@
 
                     </Grid>
 
-                    <Entry Text="{Binding Data.Description}" 
-                           Style="{StaticResource EntryStyle}"/>
+                    <!--<Entry Text="{Binding Data.Description}" 
+                           Style="{StaticResource EntryStyle}"/> 
 
-                    <!--<StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
+                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
                         <Label 
                             Text="{Binding Data.Damage}" 
                             x:Name="LevelValue"
@@ -95,8 +94,8 @@
                         <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="200"/>
-                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
                     
                     <Label Grid.Row="0" Grid.Column="0"
@@ -112,9 +111,12 @@
                 
 
                 <StackLayout Style="{StaticResource OuterBoxStack}"
+                             HorizontalOptions="Center"
                              Spacing="8">
 
-                    <Label Text="Stats" Style="{StaticResource LabelStyle}"/>
+                    <Label Text="Stats" 
+                           HorizontalOptions="Center"
+                           Style="{StaticResource LabelStyle}"/>
                     <Line X1="0" Y1="0" X2="220" Y2="0" Stroke="Black"/>
 
                     <Grid
@@ -127,12 +129,12 @@
                         <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"/>
-                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto" />
                     </Grid.ColumnDefinitions>
 
                     <Label Grid.Row="0" Grid.Column="0"
-                        Text="Health" 
+                        Text="Health"
                         Style="{StaticResource LabelStyle}"/>
 
                     <Entry Grid.Row="0" Grid.Column="1"
