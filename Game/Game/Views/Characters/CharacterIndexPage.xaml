@@ -21,23 +21,36 @@
                    HorizontalTextAlignment="Center">
             </Label>
 
-            <ScrollView>
+            <ScrollView
+                VerticalOptions="Start">
                 <Frame
                 	BackgroundColor="AliceBlue">
                     <FlexLayout
                     	BindableLayout.ItemsSource="{Binding Dataset}"
                     	Wrap="Wrap"
                     	Direction="Row"
-                    	JustifyContent="SpaceAround"
-                    	AlignItems="Center"
-                    	AlignContent="Start">
+                        AlignItems="Start"
+                    	AlignContent="Start"
+                        JustifyContent="Start"
+                        VerticalOptions="Start">
 
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
-                                <ImageButton
-                                    Source="{Binding ImageURI}"
-                                    Clicked="OnImageClicked">
-                                </ImageButton>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition></RowDefinition>
+                                        <RowDefinition Height="20"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <ImageButton
+                                        Source="{Binding ImageURI}"
+                                        Clicked="OnImageClicked">
+                                    </ImageButton>
+
+                                    <Label Grid.Row="1"
+                                           Text="{Binding Name}"
+                                           HorizontalOptions="Center"></Label>
+                                </Grid>
+                                
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                     </FlexLayout>
