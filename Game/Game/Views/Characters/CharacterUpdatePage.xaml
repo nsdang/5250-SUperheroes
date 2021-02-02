@@ -59,14 +59,55 @@
                         Style="{StaticResource LabelStyle}"/>-->
                 
                     <Picker Grid.Row="0" Grid.Column="1"
-                        ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetListHeroJob}" 
-                        SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                        x:Name="LocationPicker"/>
+                            Title="{Binding Data.Job}"
+                            TitleColor="Black"
+                            ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetListHeroJob}" 
+                            SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}"
+                            x:Name="LocationPicker"/>
 
                     </Grid>
 
                     <Entry Text="{Binding Data.Description}" 
                            Style="{StaticResource EntryStyle}"/>
+
+                    <!--<StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
+                        <Label 
+                            Text="{Binding Data.Damage}" 
+                            x:Name="LevelValue"
+                            Style="{StaticResource ValueStyle}"
+                            
+                            HorizontalOptions="End"
+                            HorizontalTextAlignment="End"/>
+
+                        <Stepper
+                            Value="{Binding Data.Level, Mode=TwoWay}"
+                            ValueChanged="Level_OnStepperValueChanged"/>
+                    
+                    </StackLayout>-->
+
+                    <Grid
+                        RowSpacing="1"
+                        ColumnSpacing="2"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="30"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Label Grid.Row="0" Grid.Column="0"
+                        Text="Level" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <Entry Grid.Row="0" Grid.Column="1"
+                           Text="{Binding Data.Level}"
+                           Style="{StaticResource EntryStyle}"/>
+
+                    </Grid>
                 </StackLayout>
                 
 

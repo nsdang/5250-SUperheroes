@@ -60,6 +60,7 @@
                         Style="{StaticResource LabelStyle}"/>-->
                 
                     <Picker Grid.Row="0" Grid.Column="1"
+                            Title="(Class)"
                         ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetListHeroJob}" 
                         SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                         x:Name="LocationPicker"/>
