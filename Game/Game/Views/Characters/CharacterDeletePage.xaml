@@ -5,16 +5,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Game.Views.CharacterDeletePage"
-             Title="{Binding Title}">
+             Title="{Binding Title}"
+             BackgroundColor="Crimson">
     
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="icon_cancel.png"/>
         <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
     </ContentPage.ToolbarItems>
 
-    <ScrollView BackgroundColor="Crimson">
+    <ScrollView BackgroundColor="Crimson" HorizontalOptions="CenterAndExpand">
         <StackLayout Style="{StaticResource OuterBoxStack}"
-                     Padding="40,40,0,0">
+                     Padding="40,40,0,0" HorizontalOptions="CenterAndExpand">
 
             <Label Text="Delete Page"
                    FontSize="Header"
