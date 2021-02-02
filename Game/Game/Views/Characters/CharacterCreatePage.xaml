@@ -25,7 +25,8 @@
 
         <ScrollView>
             <StackLayout Style="{StaticResource OuterBoxStack}"
-                Spacing="10">
+                         Spacing="20"
+                         HorizontalOptions="Center">
 
                 <!--<Label Text="Create Page" Style="{StaticResource HeaderStyle}"/>-->
 
@@ -34,13 +35,15 @@
                 <Grid
                     RowSpacing="1"
                     ColumnSpacing="2"
-                    VerticalOptions="Center">
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center">
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="170"/>
+                        <ColumnDefinition Width="60"/>
                     </Grid.ColumnDefinitions>
 
                     <!--<Label Grid.Row="0" Grid.Column="0"
@@ -56,24 +59,33 @@
                         Style="{StaticResource LabelStyle}"/>-->
                 
                     <Picker Grid.Row="0" Grid.Column="1"
-                        ItemsSource="{x:Static local_enum:ItemLocationEnumHelper.GetListCharacter}" 
+                        ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetListHeroJob}" 
                         SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                         x:Name="LocationPicker"/>
 
                 </Grid>
 
-                <Label Text="Stats" Style="{StaticResource LabelStyle}"/>
+                <Entry Text="{Binding Data.Description}" 
+                       Style="{StaticResource EntryStyle}"/>
 
-                <Grid
+                <StackLayout Style="{StaticResource OuterBoxStack}"
+                             Spacing="8">
+
+                    <Label Text="Stats" Style="{StaticResource LabelStyle}"/>
+                    <Line X1="0" Y1="0" X2="250" Y2="0" Stroke="Black"/>
+
+                    <Grid
                     RowSpacing="1"
                     ColumnSpacing="2"
-                    VerticalOptions="Center">
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center">
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="30" />
                     </Grid.ColumnDefinitions>
 
                     <Label Grid.Row="0" Grid.Column="0"
@@ -108,17 +120,22 @@
                         Text="{Binding Data.Speed}" 
                         Style="{StaticResource EntryStyle}"/>
                 </Grid>
+                </StackLayout>
 
-                <Grid
+                
+
+                <!--<Grid
                     RowSpacing="1"
                     ColumnSpacing="2"
-                    VerticalOptions="Center">
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center">
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="60"/>
+                        <ColumnDefinition Width="150"/>
                     </Grid.ColumnDefinitions>
 
                     <Label Grid.Row="0" Grid.Column="0"
@@ -152,8 +169,13 @@
                     <Entry Grid.Row="3" Grid.Column="1"
                         Text="{Binding Data.Necklass}" 
                         Style="{StaticResource EntryStyle}"/>
-                </Grid>
-                <Button Text="Create Hero" Clicked="Save_Clicked"></Button>
+                </Grid>-->
+
+                <Button Text="Create Hero"
+                        FontSize="Medium"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="Center"
+                        Clicked="Save_Clicked"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
