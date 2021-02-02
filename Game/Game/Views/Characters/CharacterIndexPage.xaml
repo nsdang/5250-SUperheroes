@@ -21,6 +21,29 @@
                    HorizontalTextAlignment="Center">
             </Label>
 
+            <ScrollView>
+                <Frame
+                	BackgroundColor="AliceBlue">
+                    <FlexLayout
+                    	BindableLayout.ItemsSource="{Binding Dataset}"
+                    	Wrap="Wrap"
+                    	Direction="Row"
+                    	JustifyContent="SpaceAround"
+                    	AlignItems="Center"
+                    	AlignContent="Start">
+
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <ImageButton
+                                    Source="{Binding ImageURI}">
+                                </ImageButton>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </FlexLayout>
+                </Frame>
+            </ScrollView>
+
+
             <ListView x:Name="ItemsListView" 
                     ItemsSource="{Binding Dataset}"
                     IsRefreshing="{Binding IsBusy, Mode=OneWay}"
@@ -31,7 +54,7 @@
                     Margin="5,0,5,0"
                     RowHeight="80"
                     >
-
+                <!--
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -76,6 +99,7 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
+           -->
             </ListView>
         </StackLayout>
     </ContentPage.Content>
