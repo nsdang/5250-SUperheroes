@@ -138,7 +138,7 @@ namespace Game.GameRules
         var datalist = new List<CharacterModel>()
             {
                 new CharacterModel {
-                    Name = "C1",
+                    Name = "CaptainSU",
                     Description = "C1",
                     Level = 1,
                     MaxHealth = 5,
@@ -153,7 +153,7 @@ namespace Game.GameRules
                 },
 
                 new CharacterModel {
-                    Name = "C2",
+                    Name = "ConnectSU",
                     Description = "C2",
                     Level = 1,
                     MaxHealth = 5,
@@ -168,7 +168,7 @@ namespace Game.GameRules
                 },
 
                 new CharacterModel {
-                    Name = "C3",
+                    Name = "EngageSU",
                     Description = "C3",
                     Level = 1,
                     MaxHealth = 5,
@@ -183,7 +183,7 @@ namespace Game.GameRules
                 },
 
                 new CharacterModel {
-                    Name = "C4",
+                    Name = "InformSU",
                     Description = "C4",
                     Level = 1,
                     MaxHealth = 5,
@@ -198,38 +198,8 @@ namespace Game.GameRules
                 },
 
                 new CharacterModel {
-                    Name = "C5",
+                    Name = "ProcureSU",
                     Description = "C5",
-                    Level = 1,
-                    MaxHealth = 5,
-                    ImageURI = "item.png",
-                    Head = HeadString,
-                    Necklass = NecklassString,
-                    PrimaryHand = PrimaryHandString,
-                    OffHand = OffHandString,
-                    Feet = FeetString,
-                    RightFinger = RightFingerString,
-                    LeftFinger = LeftFingerString,
-                },
-
-                new CharacterModel {
-                    Name = "C6",
-                    Description = "C6",
-                    Level = 1,
-                    MaxHealth = 5,
-                    ImageURI = "item.png",
-                    Head = HeadString,
-                    Necklass = NecklassString,
-                    PrimaryHand = PrimaryHandString,
-                    OffHand = OffHandString,
-                    Feet = FeetString,
-                    RightFinger = RightFingerString,
-                    LeftFinger = LeftFingerString,
-                },
-
-                new CharacterModel {
-                    Name = "C7",
-                    Description = "C6",
                     Level = 1,
                     MaxHealth = 5,
                     ImageURI = "item.png",
