@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Game.Views.CharacterReadPage"
-             Title="{Binding Title}">
+             Title="{Binding Title}"
+             BackgroundColor="Crimson">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Update" Clicked="Update_Clicked" IconImageSource="icon_edit.png"/>
@@ -17,18 +18,71 @@
         <StackLayout Style="{StaticResource OuterBoxStack}"
             Spacing="10">
 
-            <Label Text="Detail Page" Style="{StaticResource HeaderStyle}"/>
-
+            <Label Text="Detail Page"
+                   FontSize="Header"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="Black"
+                   Style="{StaticResource HeaderStyle}"/>
+            
             <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <BoxView/>
                 <Label 
-                   Text="Name : " 
+                   Text="Name: " 
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
                     Style="{StaticResource LabelStyle}"/>
+                <BoxView Grid.Column="1" />
                 <Label 
                     Text="{Binding Data.Name}" 
+                    Grid.Column="1"
+                    FontFamily="Comic Sans MS"
+                    TextColor="WhiteSmoke"
+                     HorizontalOptions="Start"
+                    VerticalOptions="Center"
                     Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                <BoxView Grid.Column="2" Grid.Row ="0"/>
+                <Label 
+                    Text="{Binding Data.Job}"
+                    FontFamily="Droid Sans Mono"
+                    FontAttributes="Italic"
+                    TextColor="WhiteSmoke"
+                    Grid.Column="2"
+                    Grid.Row ="0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Style="{StaticResource ValueStyle}"/>
+                <Label 
+                    Text="________________"
+                    TextColor="Black"
+                    Grid.Column ="0"
+                    HorizontalOptions="End"
+                    VerticalOptions="End"
+                    Style="{StaticResource LabelStyle}"/>
+                <Label 
+                    Text="_________________________"
+                    TextColor="Black"
+                    Grid.Column ="1"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="End"
+                    Style="{StaticResource LabelStyle}"/>
+                <Label 
+                    Text="____________________________"
+                    TextColor="Black"
+                    Grid.Column="2"
+                    HorizontalOptions="Start"
+                     VerticalOptions="End"
+                    Style="{StaticResource LabelStyle}"/>
+            </Grid>
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
