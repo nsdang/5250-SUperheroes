@@ -35,7 +35,8 @@
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
                                 <ImageButton
-                                    Source="{Binding ImageURI}">
+                                    Source="{Binding ImageURI}"
+                                    Clicked="OnImageClicked">
                                 </ImageButton>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
@@ -43,7 +44,7 @@
                 </Frame>
             </ScrollView>
 
-
+            <!--
             <ListView x:Name="ItemsListView" 
                     ItemsSource="{Binding Dataset}"
                     IsRefreshing="{Binding IsBusy, Mode=OneWay}"
@@ -54,7 +55,7 @@
                     Margin="5,0,5,0"
                     RowHeight="80"
                     >
-                <!--
+                
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -99,8 +100,9 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-           -->
+           
             </ListView>
+            -->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

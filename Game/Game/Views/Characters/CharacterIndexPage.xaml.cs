@@ -36,6 +36,25 @@ namespace Game.Views
         }
 
         /// <summary>
+        /// The image clicked by should show the corresponding character read page. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public async void OnImageClicked(object sender, EventArgs e)
+        {
+            ImageButton img = sender as ImageButton;
+            CharacterModel selected = img.BindingContext as CharacterModel;
+            if (selected == null)
+            {
+                return;
+            }
+
+            // Open the Read Page
+            await Navigation.PushAsync(new CharacterReadPage(new GenericViewModel<CharacterModel>(selected)));
+
+        }
+
+        /// <summary>
         /// The row selected from the list
         /// </summary>
         /// <param name="sender"></param>
@@ -52,7 +71,7 @@ namespace Game.Views
             await Navigation.PushAsync(new CharacterReadPage(new GenericViewModel<CharacterModel>(data)));
 
             // Manually deselect item.
-            ItemsListView.SelectedItem = null;
+           // ItemsListView.SelectedItem = null;
         }
 
         /// <summary>
