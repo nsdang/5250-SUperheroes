@@ -32,11 +32,12 @@
 
                 <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
 
-                <Grid
-                    RowSpacing="1"
-                    ColumnSpacing="2"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Center">
+                <StackLayout Spacing="5" HorizontalOptions="Center">
+                    <Grid
+                        RowSpacing="1"
+                        ColumnSpacing="2"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center">
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
@@ -63,16 +64,17 @@
                         SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                         x:Name="LocationPicker"/>
 
-                </Grid>
+                    </Grid>
 
-                <Entry Text="{Binding Data.Description}" 
-                       Style="{StaticResource EntryStyle}"/>
+                    <Entry Text="{Binding Data.Description}" 
+                           Style="{StaticResource EntryStyle}"/>
+                </StackLayout>
 
                 <StackLayout Style="{StaticResource OuterBoxStack}"
                              Spacing="8">
 
                     <Label Text="Stats" Style="{StaticResource LabelStyle}"/>
-                    <Line X1="0" Y1="0" X2="250" Y2="0" Stroke="Black"/>
+                    <Line X1="0" Y1="0" X2="220" Y2="0" Stroke="Black"/>
 
                     <Grid
                     RowSpacing="1"
