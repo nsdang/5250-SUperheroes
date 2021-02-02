@@ -143,7 +143,7 @@ namespace Game.GameRules
                     Description = "C1",
                     Level = 1,
                     MaxHealth = 5,
-                    ImageURI = "item.png",
+                    ImageURI = "CaptainSU.png",
                     Head = HeadString,
                     Necklass = NecklassString,
                     PrimaryHand = PrimaryHandString,

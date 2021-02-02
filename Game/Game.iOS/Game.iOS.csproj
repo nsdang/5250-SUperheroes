@@ -171,4 +171,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\mapcell.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\CaptainSU.png" />
+  </ItemGroup>
 </Project>
