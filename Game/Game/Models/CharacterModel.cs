@@ -9,8 +9,8 @@ namespace Game.Models
     /// </summary>
     public class CharacterModel : BasePlayerModel<CharacterModel>
     {
-        // Description ...
-        public int ShameLevel;
+        // shameLevel by default is 1
+        public int ShameLevel = 1;
 
         /// <summary>
         /// Default character
@@ -30,9 +30,6 @@ namespace Game.Models
 
             // Default to unknown, which is no special job
             Job = CharacterJobEnum.Unknown;
-
-            // Default to 1
-            ShameLevel = 1;
         }
 
         /// <summary>
@@ -85,6 +82,9 @@ namespace Game.Models
 
             // Update the Job
             Job = newData.Job;
+
+            // Update the shame level
+            ShameLevel = newData.ShameLevel;
 
             return true;
         }
