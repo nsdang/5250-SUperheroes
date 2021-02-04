@@ -56,7 +56,7 @@ namespace Game.ViewModels
         /// </summary>
         public MonsterIndexViewModel()
         {
-            Title = "Characters";
+            Title = "Monsters";
             DataSet = new ObservableCollection<CharacterModel>();
 
             #region Messages
