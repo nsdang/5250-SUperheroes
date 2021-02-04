@@ -19,12 +19,14 @@
             <Label Text="Teammates"
                    FontSize="Large"
                    FontAttributes="Bold"
-                   HorizontalTextAlignment="Center">
+                   HorizontalTextAlignment="Center"
+                   Padding="0,70,0,20">
             </Label>
-
+            
             <ScrollView
                 VerticalOptions="Start">
                 <Frame
+                    Padding="10, 10"
                 	BackgroundColor="AliceBlue">
                     <FlexLayout
                     	BindableLayout.ItemsSource="{Binding Dataset}"
@@ -37,21 +39,32 @@
 
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition></RowDefinition>
-                                        <RowDefinition Height="20"></RowDefinition>
-                                    </Grid.RowDefinitions>
-                                    <ImageButton
-                                        Source="{Binding ImageURI}"
-                                        Clicked="OnImageClicked">
-                                    </ImageButton>
+                                <Frame
+                                    BorderColor="Black"
+                                    Margin="0, 0, 0, 10">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="140"></ColumnDefinition>
+                                            <ColumnDefinition Width="50"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <ImageButton Grid.Row="0" Grid.Column="1"
+                                            Source="icon_delete.png">
+                                        </ImageButton>
+                                        <ImageButton Grid.Row="1" Grid.ColumnSpan="2"
+                                            Source="{Binding ImageURI}"
+                                            Clicked="OnImageClicked">
+                                        </ImageButton>
 
-                                    <Label Grid.Row="1"
-                                           Text="{Binding Name}"
-                                           HorizontalOptions="Center"></Label>
-                                </Grid>
-
+                                        <Label Grid.Row="2"
+                                               Text="{Binding Name}"
+                                               HorizontalOptions="Center"></Label>
+                                    </Grid>
+                                </Frame>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                     </FlexLayout>
