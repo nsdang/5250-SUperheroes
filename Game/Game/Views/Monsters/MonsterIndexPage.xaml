@@ -16,41 +16,63 @@
 
         <StackLayout Style="{StaticResource OuterBoxStack}">
 
-            <Label Text="Teammates"
+            <Label Text="Community"
                    FontSize="Large"
                    FontAttributes="Bold"
-                   HorizontalTextAlignment="Center">
+                   HorizontalTextAlignment="Center"
+                   Padding="0,60,0,20">
             </Label>
 
             <ScrollView
                 VerticalOptions="Start">
                 <Frame
-                	BackgroundColor="AliceBlue">
+                    Padding="10, 10"
+                	BackgroundColor="Orange"
+                    BorderColor="Black">
                     <FlexLayout
                     	BindableLayout.ItemsSource="{Binding Dataset}"
                     	Wrap="Wrap"
                     	Direction="Row"
                         AlignItems="Start"
-                        JustifyContent="SpaceEvenly"
-                        AlignContent="Start"
+                        JustifyContent="Center"
+                        AlignContent="Center"
                         >
 
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition></RowDefinition>
-                                        <RowDefinition Height="20"></RowDefinition>
-                                    </Grid.RowDefinitions>
-                                    <ImageButton
-                                        Source="{Binding ImageURI}"
-                                        Clicked="OnImageClicked">
-                                    </ImageButton>
+                                <Frame
+                                    BorderColor="Black"
+                                    BackgroundColor="White"
+                                    Margin="0, 0, 0, 10"
+                                    HasShadow="True">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="110"></ColumnDefinition>
+                                            <ColumnDefinition Width="40"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
 
-                                    <Label Grid.Row="1"
-                                           Text="{Binding Name}"
-                                           HorizontalOptions="Center"></Label>
-                                </Grid>
+                                        <ImageButton Grid.Row="0" Grid.Column="1"
+                                            Source="icon_delete.png"
+                                            Clicked="OnImageDeleted">
+                                        </ImageButton>
+
+                                        <ImageButton Grid.Row="1" Grid.ColumnSpan="2"
+                                            Source="{Binding ImageURI}"
+                                            Clicked="OnImageClicked">
+                                        </ImageButton>
+
+                                        <Label Grid.Row="2" Grid.ColumnSpan="2"
+                                            Text="{Binding Name}"
+                                            HorizontalOptions="Center">
+                                        </Label>
+                                        
+                                     </Grid>
+                                </Frame>
 
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>

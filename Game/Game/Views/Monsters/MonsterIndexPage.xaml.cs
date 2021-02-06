@@ -54,6 +54,25 @@ namespace Game.Views
 
         }
 
+
+        /// <summary>
+        /// if the trash icon is clicked, it should take the user to the delete page
+        /// of that specific monster
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public async void OnImageDeleted(object sender, EventArgs e)
+        {
+            ImageButton img = sender as ImageButton;
+            CharacterModel selected = img.BindingContext as CharacterModel;
+            if (selected == null)
+            {
+                return;
+            }
+
+            await Navigation.PushModalAsync(new NavigationPage(new CharacterDeletePage(new GenericViewModel<CharacterModel>(selected))));
+        }
+
         /// <summary>
         /// Call to Add a new record
         /// </summary>
