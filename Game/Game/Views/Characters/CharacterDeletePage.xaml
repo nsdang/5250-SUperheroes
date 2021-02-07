@@ -8,17 +8,18 @@
              Title="{Binding Title}"
              BackgroundColor="Crimson">
     
+    
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="icon_cancel.png"/>
         <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
     </ContentPage.ToolbarItems>
 
-    <ScrollView BackgroundColor="Crimson" HorizontalOptions="CenterAndExpand">
+    <ScrollView BackgroundColor="Crimson" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
         <StackLayout Style="{StaticResource OuterBoxStack}"
-                     Padding="40,40,0,0" HorizontalOptions="CenterAndExpand">
+                     Padding="0,100,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
             <Label Text="Delete Page"
-                   FontSize="Header"
+                   FontSize="40"
                    FontAttributes="Bold"
                    HorizontalOptions="Center"
                    TextColor="Black"
@@ -26,15 +27,16 @@
 
             <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
 
-            <Grid>
+            <Grid RowSpacing="0" ColumnSpacing="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="70"/>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="85"/>
+                    <ColumnDefinition Width="80"/>
                 </Grid.ColumnDefinitions>
                 <BoxView/>
                 <Label 
                    Text="Name: " 
+                    FontSize="15"
                     FontAttributes="Bold"
                     TextColor="Black"
                      HorizontalOptions="Center"
@@ -45,6 +47,7 @@
                     Text="{Binding Data.Name}" 
                     Grid.Column="1"
                     FontFamily="Comic Sans MS"
+                    FontSize="12"
                     TextColor="WhiteSmoke"
                      HorizontalOptions="Start"
                     VerticalOptions="Center"
@@ -53,11 +56,12 @@
                 <Label 
                     Text="{Binding Data.Job}"
                     FontFamily="Droid Sans Mono"
+                    FontSize="12"
                     FontAttributes="Italic"
                     TextColor="WhiteSmoke"
                     Grid.Column="2"
                     Grid.Row ="0"
-                    HorizontalOptions="Center"
+                    HorizontalOptions="Start"
                     VerticalOptions="Center"
                     Style="{StaticResource ValueStyle}"/>
                 <Label 
@@ -75,10 +79,10 @@
                     VerticalOptions="End"
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
-                    Text="____________________________"
+                    Text="____________________"
                     TextColor="Black"
                     Grid.Column="2"
-                    HorizontalOptions="Start"
+                    HorizontalOptions="Fill"
                      VerticalOptions="End"
                     Style="{StaticResource LabelStyle}"/>
             </Grid>
@@ -91,8 +95,8 @@
                        HorizontalOptions ="Center"
                        VerticalOptions="Start"
                        Style="{StaticResource MessageStyle}"
-                       FontSize="Header"/>
-                <Grid >
+                       FontSize="30"/>
+                <Grid ColumnSpacing="5" HorizontalOptions="Center">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="100"/>
                         <ColumnDefinition Width="100"/>
