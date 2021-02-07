@@ -231,46 +231,41 @@ namespace Game.GameRules
         var datalist = new List<MonsterModel>()
             {
                 new MonsterModel {
-                    Name = "M1",
-                    Description = "M1",
+                    Name = "Bob",
+                    Job = (CharacterJobEnum)6,
+                    Description = "Carpenter that fights with a wrench",
                     ImageURI = "item.png",
                 },
 
                 new MonsterModel {
-                    Name = "M2",
-                    Description = "M2",
+                    Name = "Yinying",
+                    Job = (CharacterJobEnum)7,
+                    Description = "Accountant that can throw cash with sharp accuracy",
                     ImageURI = "item.png",
                 },
 
                 new MonsterModel {
-                    Name = "M3",
-                    Description = "M3",
+                    Name = "Carolina",
+                    Job = (CharacterJobEnum)8,
+                    Description = "Mc Donald's worker that throws fries",
                     ImageURI = "item.png",
                 },
 
                 new MonsterModel {
-                    Name = "M4",
-                    Description = "M4",
+                    Name = "Anais",
+                    Job = (CharacterJobEnum)9,
+                    Description = "A vet who was obsessed with the cats in the clinic and loved eating fish." +
+                    " One day, she got bitten by a cat while eating some salmon. This turned her into a fish-cat. ",
                     ImageURI = "item.png",
                 },
 
                 new MonsterModel {
-                    Name = "M5",
-                    Description = "M5",
+                    Name = "Steve",
+                    Job = (CharacterJobEnum)9,
+                    Description = "Plays video games soo much that his head transformed into a game controller",
                     ImageURI = "item.png",
                 },
 
-                new MonsterModel {
-                    Name = "M6",
-                    Description = "M6",
-                    ImageURI = "item.png",
-                },
-
-                new MonsterModel {
-                    Name = "M7",
-                    Description = "M7",
-                    ImageURI = "item.png",
-                },
             };
 
         return datalist;
