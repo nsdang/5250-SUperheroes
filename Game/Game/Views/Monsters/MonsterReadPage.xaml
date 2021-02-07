@@ -9,7 +9,7 @@
              BackgroundColor="Crimson">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Update" Clicked="Update_Clicked" IconImageSource="icon_edit.png"/>
+      <!--  <ToolbarItem Text="Update" Clicked="Update_Clicked" IconImageSource="icon_edit.png"/>-->
         <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
     </ContentPage.ToolbarItems>
 
@@ -27,7 +27,7 @@
             
             <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
 
-            <Button Text="Update" Clicked="Update_Clicked" WidthRequest="90"/>
+            <Button Text="Update"  WidthRequest="90"/>
 
             <Grid
                     RowSpacing="0"
