@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Game.Views.MonsterDeletePage"
+             Title="{Binding Title}"
+             BackgroundColor="Crimson">
+    
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="icon_cancel.png"/>
+        <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
+    </ContentPage.ToolbarItems>
+
+    <ScrollView BackgroundColor="Crimson" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+        <StackLayout Style="{StaticResource OuterBoxStack}"
+                     Padding="0,100,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+            <Label Text="Delete Page"
+                   FontSize="40"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="Black"
+                   Style="{StaticResource HeaderStyle}"/>
+
+            <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
+
+            <Grid RowSpacing="0" ColumnSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="85"/>
+                    <ColumnDefinition Width="80"/>
+                </Grid.ColumnDefinitions>
+                <BoxView/>
+                <Label 
+                   Text="Name: " 
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                    Style="{StaticResource LabelStyle}"/>
+                <BoxView Grid.Column="1" />
+                <Label 
+                    Text="{Binding Data.Name}" 
+                    Grid.Column="1"
+                    FontFamily="Comic Sans MS"
+                    FontSize="12"
+                    TextColor="WhiteSmoke"
+                     HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Style="{StaticResource ValueStyle}"/>
+                <BoxView Grid.Column="2" Grid.Row ="0"/>
+                <Label 
+                    Text="{Binding Data.Job}"
+                    FontFamily="Droid Sans Mono"
+                    FontSize="12"
+                    FontAttributes="Italic"
+                    TextColor="WhiteSmoke"
+                    Grid.Column="2"
+                    Grid.Row ="0"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Style="{StaticResource ValueStyle}"/>
+                <Label 
+                    Text="________________"
+                    TextColor="Black"
+                    Grid.Column ="0"
+                    HorizontalOptions="End"
+                    VerticalOptions="End"
+                    Style="{StaticResource LabelStyle}"/>
+                <Label 
+                    Text="_________________________"
+                    TextColor="Black"
+                    Grid.Column ="1"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="End"
+                    Style="{StaticResource LabelStyle}"/>
+                <Label 
+                    Text="____________________"
+                    TextColor="Black"
+                    Grid.Column="2"
+                    HorizontalOptions="Fill"
+                     VerticalOptions="End"
+                    Style="{StaticResource LabelStyle}"/>
+            </Grid>
+
+            <StackLayout 
+            HorizontalOptions="Center" VerticalOptions="Start">
+
+                <Label Text="Delete?"
+                       TextColor="Cornsilk"
+                       HorizontalOptions ="Center"
+                       VerticalOptions="Start"
+                       Style="{StaticResource MessageStyle}"
+                       FontSize="30"/>
+                <Grid ColumnSpacing="5" HorizontalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+                    <Button 
+                        Text="Yes" 
+                        Clicked="Delete_Clicked" 
+                        Grid.Column="0"
+                        HorizontalOptions="Center"
+                        FontSize="Large"
+                        BorderWidth="3" 
+                        HeightRequest = "50"
+                        BackgroundColor="CadetBlue"
+                        TextColor="Gold"
+                        BorderColor="black">
+                    </Button>       
+                    <BoxView Grid.Column="1"/>
+                    <Button 
+                        Text="No" 
+                        Grid.Column="1"
+                        Clicked="Cancel_Clicked" 
+                        HorizontalOptions="Center"
+                        FontSize="Large"
+                        BorderWidth="3" 
+                        HeightRequest = "50"
+                        BackgroundColor="CadetBlue"
+                        TextColor="Gold"
+                        BorderColor="black">
+                    </Button>   
+                </Grid>
+            </StackLayout>
+            
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
