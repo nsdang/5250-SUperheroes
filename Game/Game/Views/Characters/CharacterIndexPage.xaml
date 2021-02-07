@@ -35,7 +35,7 @@
                     	Wrap="Wrap"
                     	Direction="Row"
                         AlignItems="Start"
-                        JustifyContent="Center"
+                        JustifyContent="SpaceAround"
                         AlignContent="Center"
                         >
 
@@ -54,7 +54,7 @@
                                             <RowDefinition Height="20"></RowDefinition>
                                         </Grid.RowDefinitions>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="110"></ColumnDefinition>
+                                            <ColumnDefinition Width="140"></ColumnDefinition>
                                             <ColumnDefinition Width="40"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
                                         
