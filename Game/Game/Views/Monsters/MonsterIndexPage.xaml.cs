@@ -43,14 +43,14 @@ namespace Game.Views
         public async void OnImageClicked(object sender, EventArgs e)
         {
             ImageButton img = sender as ImageButton;
-            CharacterModel selected = img.BindingContext as CharacterModel;
+            MonsterModel selected = img.BindingContext as MonsterModel;
             if (selected == null)
             {
                 return;
             }
 
             // Open the Read Page
-            await Navigation.PushAsync(new CharacterReadPage(new GenericViewModel<CharacterModel>(selected)));
+            await Navigation.PushAsync(new MonsterReadPage(new GenericViewModel<MonsterModel>(selected)));
 
         }
 
@@ -64,13 +64,13 @@ namespace Game.Views
         public async void OnImageDeleted(object sender, EventArgs e)
         {
             ImageButton img = sender as ImageButton;
-            CharacterModel selected = img.BindingContext as CharacterModel;
+            MonsterModel selected = img.BindingContext as MonsterModel;
             if (selected == null)
             {
                 return;
             }
 
-            await Navigation.PushModalAsync(new NavigationPage(new CharacterDeletePage(new GenericViewModel<CharacterModel>(selected))));
+            await Navigation.PushModalAsync(new NavigationPage(new MonsterDeletePage(new GenericViewModel<MonsterModel>(selected))));
         }
 
         /// <summary>
