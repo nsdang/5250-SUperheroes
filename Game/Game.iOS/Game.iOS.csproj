@@ -174,4 +174,19 @@
   <ItemGroup>
     <BundleResource Include="Resources\CaptainSU.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_anais.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_carolina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_steve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_yinying.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_bob.png" />
+  </ItemGroup>
 </Project>

@@ -134,10 +134,15 @@
     <Content Include="Assets\Wide310x150Logo.scale-150.png" />
     <Content Include="CaptainSU.png" />
     <Content Include="icon_add.png" />
+    <Content Include="icon_anais.png" />
+    <Content Include="icon_bob.png" />
     <Content Include="icon_cancel.png" />
+    <Content Include="icon_carolina.png" />
     <Content Include="icon_delete.png" />
     <Content Include="icon_edit.png" />
     <Content Include="icon_new.png" />
+    <Content Include="icon_steve.png" />
+    <Content Include="icon_yinying.png" />
     <Content Include="item.png" />
     <Content Include="mapcell.png" />
     <Content Include="Properties\Default.rd.xml" />

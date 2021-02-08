@@ -234,21 +234,21 @@ namespace Game.GameRules
                     Name = "Bob",
                     Job = (CharacterJobEnum)6,
                     Description = "Carpenter that fights with a wrench",
-                    ImageURI = "item.png",
+                    ImageURI = "icon_bob.png",
                 },
 
                 new MonsterModel {
                     Name = "Yinying",
                     Job = (CharacterJobEnum)7,
                     Description = "Accountant that can throw cash with sharp accuracy",
-                    ImageURI = "item.png",
+                    ImageURI = "icon_yinying.png",
                 },
 
                 new MonsterModel {
                     Name = "Carolina",
                     Job = (CharacterJobEnum)8,
                     Description = "Mc Donald's worker that throws fries",
-                    ImageURI = "item.png",
+                    ImageURI = "icon_carolina.png",
                 },
 
                 new MonsterModel {
@@ -256,14 +256,14 @@ namespace Game.GameRules
                     Job = (CharacterJobEnum)9,
                     Description = "A vet who was obsessed with the cats in the clinic and loved eating fish." +
                     " One day, she got bitten by a cat while eating some salmon. This turned her into a fish-cat. ",
-                    ImageURI = "item.png",
+                    ImageURI = "icon_anais.png",
                 },
 
                 new MonsterModel {
                     Name = "Steve",
                     Job = (CharacterJobEnum)9,
                     Description = "Plays video games soo much that his head transformed into a game controller",
-                    ImageURI = "item.png",
+                    ImageURI = "icon_steve.png",
                 },
 
             };
