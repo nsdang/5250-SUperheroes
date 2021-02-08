@@ -59,12 +59,15 @@
                         Style="{StaticResource EntryStyle}"
                         HorizontalTextAlignment="Center"/>
 
-                    <BoxView Grid.Row="1" Grid.Column="1"/>
-                    <Picker Grid.Row="1" Grid.Column="1"
-                        ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetListHeroJob}"
-                        SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                        x:Name="LocationPicker"
-                        HorizontalTextAlignment="Center"/>
+                    <BoxView Grid.Row="1" Grid.Column="1"
+                             BackgroundColor="#FFA500"/>
+                        <Label Grid.Row="1" Grid.Column="1"
+                               Text="{Binding Data.Job}"
+                               Style="{StaticResource LabelStyle}"
+                               TextColor="Black"
+                               FontSize="14"
+                               HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center"/>
                     </Grid>
 
                 </StackLayout>
@@ -104,7 +107,7 @@
                                     <ColumnDefinition Width="70" />
                                 </Grid.ColumnDefinitions>
 
-                                <Label Grid.Row="0" Grid.Column="0"
+                                <!--<Label Grid.Row="0" Grid.Column="0"
                                 Text="Level" 
                                 TextColor="Black"
                                 Style="{StaticResource LabelStyle}"/>
@@ -115,7 +118,7 @@
                                 FontSize="Micro"
                                 TextColor="WhiteSmoke"
                                 HorizontalOptions="Center"
-                                HorizontalTextAlignment="Center"/>
+                                HorizontalTextAlignment="Center"/>-->
 
                                 <Label Grid.Row="1" Grid.Column="0"
                                 Text="Health" 
