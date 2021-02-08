@@ -22,7 +22,7 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <ScrollView>
+        <ScrollView HorizontalOptions="Center" VerticalOptions="Center">
             <StackLayout Style="{StaticResource OuterBoxStack}"
                          Spacing="20"
                          HorizontalOptions="Center">
