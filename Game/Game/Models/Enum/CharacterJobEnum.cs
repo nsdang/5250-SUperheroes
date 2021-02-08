@@ -128,6 +128,8 @@ namespace Game.Models
             {
                 var myList = Enum.GetNames(typeof(CharacterJobEnum)).ToList();
                 var myReturn = myList.Where(a =>
+                                            a.ToString() != CharacterJobEnum.Fighter.ToString() &&
+                                            a.ToString() != CharacterJobEnum.Cleric.ToString() &&
                                             a.ToString() != CharacterJobEnum.Unknown.ToString() &&
                                             a.ToString() != CharacterJobEnum.Carpenter.ToString() &&
                                             a.ToString() != CharacterJobEnum.Accountant.ToString() &&
@@ -150,6 +152,8 @@ namespace Game.Models
             {
                 var myList = Enum.GetNames(typeof(CharacterJobEnum)).ToList();
                 var myReturn = myList.Where(a =>
+                                            a.ToString() != CharacterJobEnum.Fighter.ToString() &&
+                                            a.ToString() != CharacterJobEnum.Cleric.ToString() &&
                                             a.ToString() != CharacterJobEnum.Unknown.ToString() &&
                                             a.ToString() != CharacterJobEnum.Flying.ToString() &&
                                             a.ToString() != CharacterJobEnum.Psychic.ToString() &&
