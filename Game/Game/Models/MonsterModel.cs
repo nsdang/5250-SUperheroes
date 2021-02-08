@@ -101,5 +101,20 @@ namespace Game.Models
 
             return myReturn;
         }
+
+        /// <summary>
+        /// Return true if hero damages monsters with pyschic attack
+        /// </summary>
+        /// <param name="cm"></param>
+        /// <returns></returns>
+        public bool IsAttackPsychic(CharacterModel cm)
+        {
+            if(cm.Job.Equals(2))
+            {
+                return true;
+            }
+            return false; 
+        }
+
     }
 }
