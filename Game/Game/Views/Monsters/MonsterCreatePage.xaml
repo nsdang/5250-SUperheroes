@@ -22,7 +22,6 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-
         <ScrollView>
             <StackLayout Style="{StaticResource OuterBoxStack}"
                          Spacing="20"
@@ -39,20 +38,33 @@
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width= "*"/>
-                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width= "200"/>
+                        <ColumnDefinition Width="70"/>
                     </Grid.ColumnDefinitions>
-                    
-                    <Entry Grid.Row="0" Grid.Column="0"
-                        Text="{Binding Data.Name}" 
-                        Style="{StaticResource EntryStyle}"/>
 
-                    <Picker Grid.Row="0" Grid.Column="1"
-                        ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetListMonsterJob}" 
+                    <Label
+                        Grid.Row="0" Grid.Column="0"
+                        Text="Name" Style="{StaticResource LabelStyle}"/>
+
+                    <Label
+                        Grid.Row="0" Grid.Column="1"
+                        Text="Class" Style="{StaticResource LabelStyle}"/>
+
+                    <BoxView Grid.Row="1" Grid.Column="0"/>
+                    <Entry Grid.Row="1" Grid.Column="0"
+                        Text="{Binding Data.Name}" 
+                        Style="{StaticResource EntryStyle}"
+                        HorizontalTextAlignment="Center"/>
+
+                    <BoxView Grid.Row="1" Grid.Column="1"/>
+                    <Picker Grid.Row="1" Grid.Column="1"
+                        ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetListMonsterJob}"
                         SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                        x:Name="LocationPicker"/>
+                        x:Name="LocationPicker"
+                        HorizontalTextAlignment="Center"/>
 
                     </Grid>
 
@@ -65,56 +77,92 @@
                     <Label Text="Stats" Style="{StaticResource LabelStyle}"/>
                     <Line X1="0" Y1="0" X2="220" Y2="0" Stroke="Black"/>
 
-                    <Grid
-                    RowSpacing="1"
-                    ColumnSpacing="2"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Center">
+                    <Frame
+                    Padding="4, 4"
+                    WidthRequest="200"
+                    BackgroundColor="Orange"
+                    BorderColor="Black"
+                    VerticalOptions="End"
+                    HorizontalOptions="Center"
+                	>
+                        <StackLayout>
+                            <Grid
+                                RowSpacing="1"
+                                ColumnSpacing="2"
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center">
 
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="auto" />
-                    </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
 
-                    <Label Grid.Row="0" Grid.Column="0"
-                        Text="Health" 
-                        Style="{StaticResource LabelStyle}"/>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="70" />
+                                </Grid.ColumnDefinitions>
+                       
+                                <Label Grid.Row="0" Grid.Column="0"
+                                Text="Health" 
+                                TextColor="Black"
+                                Style="{StaticResource LabelStyle}"/>
 
-                    <Entry Grid.Row="0" Grid.Column="1"
-                        Text="{Binding Data.MaxHealth}" 
-                        Style="{StaticResource EntryStyle}"/>
+                                <Entry  Grid.Row="0" Grid.Column="1"
+                                Text="{Binding Data.MaxHealth}" 
+                                Style="{StaticResource EntryStyle}"
+                                FontSize="Micro"
+                                TextColor="WhiteSmoke"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"/>
 
-                    <Label Grid.Row="1" Grid.Column="0"
-                        Text="Attack" 
-                        Style="{StaticResource LabelStyle}"/>
+                                <Label Grid.Row="1" Grid.Column="0"
+                                Text="Attack" 
+                                TextColor="Black"
+                                Style="{StaticResource LabelStyle}"/>
 
-                    <Entry Grid.Row="1" Grid.Column="1"
-                        Text="{Binding Data.Attack}" 
-                        Style="{StaticResource EntryStyle}"/>
+                                <Entry  Grid.Row="1" Grid.Column="1"
+                                Text="{Binding Data.Attack}" 
+                                Style="{StaticResource EntryStyle}"
+                                FontSize="Micro"
+                                TextColor="WhiteSmoke"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"/>
 
-                    <Label Grid.Row="2" Grid.Column="0"
-                        Text="Defense" 
-                        Style="{StaticResource LabelStyle}"/>
+                                <Label Grid.Row="2" Grid.Column="0"
+                                Text="Defense" 
+                                TextColor="Black"
+                                Style="{StaticResource LabelStyle}"/>
 
-                    <Entry Grid.Row="2" Grid.Column="1"
-                        Text="{Binding Data.Defense}" 
-                        Style="{StaticResource EntryStyle}"/>
+                                <Entry  Grid.Row="2" Grid.Column="1"
+                                Text="{Binding Data.Defense}" 
+                                Style="{StaticResource EntryStyle}"
+                                FontSize="Micro"
+                                TextColor="WhiteSmoke"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"/>
 
-                    <Label Grid.Row="3" Grid.Column="0"
-                        Text="Speed" 
-                        Style="{StaticResource LabelStyle}"/>
+                                <Label Grid.Row="3" Grid.Column="0"
+                                Text="Speed"
+                                TextColor="Black"
+                                Style="{StaticResource LabelStyle}"/>
 
-                    <Entry Grid.Row="3" Grid.Column="1"
-                        Text="{Binding Data.Speed}" 
-                        Style="{StaticResource EntryStyle}"/>
-                </Grid>
+                                <Entry  Grid.Row="3" Grid.Column="1"
+                                Text="{Binding Data.Speed}" 
+                                Style="{StaticResource EntryStyle}"
+                                FontSize="Micro"
+                                TextColor="WhiteSmoke"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"/>
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
                 </StackLayout>
 
                 <Button Text="Create Person"
                         FontSize="Medium"
+                        WidthRequest="170"
                         VerticalOptions="CenterAndExpand"
                         HorizontalOptions="Center"
                         Clicked="Save_Clicked"/>
