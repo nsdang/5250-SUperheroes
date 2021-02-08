@@ -107,7 +107,7 @@
                                     <ColumnDefinition Width="70" />
                                 </Grid.ColumnDefinitions>
 
-                                <!--<Label Grid.Row="0" Grid.Column="0"
+                                <Label Grid.Row="0" Grid.Column="0"
                                 Text="Level" 
                                 TextColor="Black"
                                 Style="{StaticResource LabelStyle}"/>
@@ -118,7 +118,7 @@
                                 FontSize="Micro"
                                 TextColor="WhiteSmoke"
                                 HorizontalOptions="Center"
-                                HorizontalTextAlignment="Center"/>-->
+                                HorizontalTextAlignment="Center"/>
 
                                 <Label Grid.Row="1" Grid.Column="0"
                                 Text="Health" 
