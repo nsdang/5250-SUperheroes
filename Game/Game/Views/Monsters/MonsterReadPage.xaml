@@ -105,47 +105,7 @@
                     VerticalOptions="End"
                 	>
                 <StackLayout>
-                    <Grid
-                        RowSpacing="3"
-                        ColumnSpacing="0"
-                        VerticalOptions="End"
-                        HorizontalOptions="StartAndExpand">
-
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="30"/>
-                            <ColumnDefinition Width="80" />
-                        </Grid.ColumnDefinitions>
-
-                        <Label Grid.Row="0" Grid.Column="0"
-                            Text="   Lv."
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"
-                           TextColor="Black"
-                            Style="{StaticResource LabelStyle}"/>
-
-                        <Label Grid.Row="0" Grid.Column="1"
-                            Text="{Binding Data.Level}" 
-                           HorizontalOptions="Start"
-                           VerticalOptions="Center"
-                           TextColor="WhiteSmoke"
-                            Style="{StaticResource ValueStyle}"/>
-                        <Label Grid.Row="0" Grid.Column="0"
-                            Text="  ___________" 
-                             TextColor="Black"
-                             HorizontalOptions="End"
-                               VerticalOptions="End"
-                            Style="{StaticResource LabelStyle}"/>
-                        <Label Grid.Row="0" Grid.Column="1"
-                            Text="__________________" 
-                             TextColor="Black"
-                             HorizontalOptions="Start"
-                               VerticalOptions="End"
-                            Style="{StaticResource LabelStyle}"/>
-                    </Grid>
-
+   
                     <Grid
                         RowSpacing="1"
                         ColumnSpacing="2"
@@ -160,7 +120,7 @@
                         </Grid.RowDefinitions>
 
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="75"/>
                             <ColumnDefinition Width="70" />
                         </Grid.ColumnDefinitions>
                        
