@@ -17,7 +17,7 @@ namespace Game.Views
     public partial class MonsterCreatePage : ContentPage
     {
         // The item to create
-        public GenericViewModel<CharacterModel> ViewModel = new GenericViewModel<CharacterModel>();
+        public GenericViewModel<MonsterModel> ViewModel = new GenericViewModel<MonsterModel>();
 
         // Empty Constructor for UTs
         public MonsterCreatePage(bool UnitTest){}
@@ -29,11 +29,11 @@ namespace Game.Views
         {
             InitializeComponent();
 
-            this.ViewModel.Data = new CharacterModel();
+            this.ViewModel.Data = new MonsterModel();
 
             BindingContext = this.ViewModel;
 
-            this.ViewModel.Title = "Character Create";
+            this.ViewModel.Title = "Monster Create";
 
         }
 
