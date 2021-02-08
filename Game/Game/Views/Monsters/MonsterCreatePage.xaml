@@ -28,8 +28,6 @@
                          Spacing="20"
                          HorizontalOptions="Center">
 
-                <!--<Label Text="Create Page" Style="{StaticResource HeaderStyle}"/>-->
-
                 <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
 
                 <StackLayout Spacing="5" HorizontalOptions="Center">
@@ -46,19 +44,11 @@
                         <ColumnDefinition Width= "*"/>
                         <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
-
-                    <!--<Label Grid.Row="0" Grid.Column="0"
-                        Text="Name" 
-                        Style="{StaticResource LabelStyle}"/>-->
                     
                     <Entry Grid.Row="0" Grid.Column="0"
                         Text="{Binding Data.Name}" 
                         Style="{StaticResource EntryStyle}"/>
 
-                    <!--<Label Grid.Row="1" Grid.Column="0"
-                        Text="Description" 
-                        Style="{StaticResource LabelStyle}"/>-->
-                
                     <Picker Grid.Row="0" Grid.Column="1"
                         ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetListHeroJob}" 
                         SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
@@ -66,8 +56,6 @@
 
                     </Grid>
 
-                  <!--- <Entry Text="{Binding Data.Description}" 
-                           Style="{StaticResource EntryStyle}"/> -->
                 </StackLayout>
 
                 <StackLayout Style="{StaticResource OuterBoxStack}"
@@ -124,55 +112,6 @@
                         Style="{StaticResource EntryStyle}"/>
                 </Grid>
                 </StackLayout>
-
-                
-
-                <!--<Grid
-                    RowSpacing="1"
-                    ColumnSpacing="2"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Center">
-
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="60"/>
-                        <ColumnDefinition Width="150"/>
-                    </Grid.ColumnDefinitions>
-
-                    <Label Grid.Row="0" Grid.Column="0"
-                        Text="Weapon" 
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <Entry Grid.Row="0" Grid.Column="1"
-                        Text="{Binding Data.PrimaryHand}" 
-                        Style="{StaticResource EntryStyle}"/>
-
-                    <Label Grid.Row="1" Grid.Column="0"
-                        Text="Shield" 
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <Entry Grid.Row="1" Grid.Column="1"
-                        Text="{Binding Data.OffHand}" 
-                        Style="{StaticResource EntryStyle}"/>
-
-                    <Label Grid.Row="2" Grid.Column="0"
-                        Text="Armor" 
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <Entry Grid.Row="2" Grid.Column="1"
-                        Text="{Binding Data.Head}" 
-                        Style="{StaticResource EntryStyle}"/>
-
-                    <Label Grid.Row="3" Grid.Column="0"
-                        Text="Accessory" 
-                        Style="{StaticResource LabelStyle}"/>
-
-                    <Entry Grid.Row="3" Grid.Column="1"
-                        Text="{Binding Data.Necklass}" 
-                        Style="{StaticResource EntryStyle}"/>
-                </Grid>-->
 
                 <Button Text="Create Hero"
                         FontSize="Medium"

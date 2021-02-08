@@ -27,8 +27,6 @@
                          Spacing="20"
                          HorizontalOptions="Center">
 
-                <!--<Label Text="Create Page" Style="{StaticResource HeaderStyle}"/>-->
-
                 <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
 
                 <StackLayout Spacing="5" HorizontalOptions="Center">
@@ -45,18 +43,10 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
-
-                    <!--<Label Grid.Row="0" Grid.Column="0"
-                        Text="Name" 
-                        Style="{StaticResource LabelStyle}"/>-->
                     
                     <Entry Grid.Row="0" Grid.Column="0"
                         Text="{Binding Data.Name}" 
                         Style="{StaticResource EntryStyle}"/>
-
-                    <!--<Label Grid.Row="1" Grid.Column="0"
-                        Text="Description" 
-                        Style="{StaticResource LabelStyle}"/>-->
                 
                     <Picker Grid.Row="0" Grid.Column="1"
                             TitleColor="Black"
@@ -65,24 +55,6 @@
                             x:Name="LocationPicker"/>
 
                     </Grid>
-
-                    <!--<Entry Text="{Binding Data.Description}" 
-                           Style="{StaticResource EntryStyle}"/> 
-
-                    <StackLayout Style="{StaticResource HorizontalStack}" Padding="10,0,10,0">
-                        <Label 
-                            Text="{Binding Data.Damage}" 
-                            x:Name="LevelValue"
-                            Style="{StaticResource ValueStyle}"
-                            
-                            HorizontalOptions="End"
-                            HorizontalTextAlignment="End"/>
-
-                        <Stepper
-                            Value="{Binding Data.Level, Mode=TwoWay}"
-                            ValueChanged="Level_OnStepperValueChanged"/>
-                    
-                    </StackLayout>-->
 
                     <Grid
                         RowSpacing="1"
