@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local_helpers="clr-namespace:Game.Helpers"
+             xmlns:local="using:Game.Models"
+             xmlns:local_enum="clr-namespace:Game.Models"
+             x:Class="Game.Views.MonsterUpdatePage"
+             Title="{Binding Title}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" IconImageSource="icon_cancel.png"/>
+        <ToolbarItem Text="Save" Clicked="Save_Clicked" IconImageSource="icon_save.png"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local_helpers:StringEnumConverter x:Key="StringEnum"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Style="{StaticResource OuterBoxStack}"
+                         Spacing="20"
+                         HorizontalOptions="Center">
+
+                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
+
+                <StackLayout Spacing="5" HorizontalOptions="Center">
+                    <Grid
+                        RowSpacing="1"
+                        ColumnSpacing="2"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Entry Grid.Row="0" Grid.Column="0"
+                        Text="{Binding Data.Name}" 
+                        Style="{StaticResource EntryStyle}"/>
+                
+                    <Picker Grid.Row="0" Grid.Column="1"
+                            TitleColor="Black"
+                            ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetListHeroJob}" 
+                            SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}"
+                            x:Name="LocationPicker"/>
+
+                    </Grid>
+
+                    <Grid
+                        RowSpacing="1"
+                        ColumnSpacing="2"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Label Grid.Row="0" Grid.Column="0"
+                        Text="Level" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <Entry Grid.Row="0" Grid.Column="1"
+                           Text="{Binding Data.Level}"
+                           Style="{StaticResource EntryStyle}"/>
+
+                    </Grid>
+                </StackLayout>
+                
+
+                <StackLayout Style="{StaticResource OuterBoxStack}"
+                             HorizontalOptions="Center"
+                             Spacing="8">
+
+                    <Label Text="Stats" 
+                           HorizontalOptions="Center"
+                           Style="{StaticResource LabelStyle}"/>
+                    <Line X1="0" Y1="0" X2="220" Y2="0" Stroke="Black"/>
+
+                    <Grid
+                    RowSpacing="1"
+                    ColumnSpacing="2"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0"
+                        Text="Health"
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <Entry Grid.Row="0" Grid.Column="1"
+                        Text="{Binding Data.MaxHealth}" 
+                        Style="{StaticResource EntryStyle}"/>
+
+                    <Label Grid.Row="1" Grid.Column="0"
+                        Text="Attack" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <Entry Grid.Row="1" Grid.Column="1"
+                        Text="{Binding Data.Attack}" 
+                        Style="{StaticResource EntryStyle}"/>
+
+                    <Label Grid.Row="2" Grid.Column="0"
+                        Text="Defense" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <Entry Grid.Row="2" Grid.Column="1"
+                        Text="{Binding Data.Defense}" 
+                        Style="{StaticResource EntryStyle}"/>
+
+                    <Label Grid.Row="3" Grid.Column="0"
+                        Text="Speed" 
+                        Style="{StaticResource LabelStyle}"/>
+
+                    <Entry Grid.Row="3" Grid.Column="1"
+                        Text="{Binding Data.Speed}" 
+                        Style="{StaticResource EntryStyle}"/>
+                </Grid>
+                </StackLayout>
+
+                <Button Text="Update Person"
+                        FontSize="Medium"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="Center"
+                        Clicked="Save_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>
