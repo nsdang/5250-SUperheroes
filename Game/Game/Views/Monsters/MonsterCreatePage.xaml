@@ -113,7 +113,7 @@
                 </Grid>
                 </StackLayout>
 
-                <Button Text="Create Hero"
+                <Button Text="Create Person"
                         FontSize="Medium"
                         VerticalOptions="CenterAndExpand"
                         HorizontalOptions="Center"
