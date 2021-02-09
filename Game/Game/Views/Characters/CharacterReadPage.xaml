@@ -98,11 +98,8 @@
             </Grid>
 
             <Frame
-                    Padding="4, 4"
+                    Style="{StaticResource CruFrames}"
                     WidthRequest="120"
-                    BackgroundColor="Orange"
-                    BorderColor="Black"
-                    VerticalOptions="End"
                 	>
                 <StackLayout>
                     <Grid

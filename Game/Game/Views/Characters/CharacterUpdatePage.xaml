@@ -87,13 +87,10 @@
                     <Line X1="0" Y1="0" X2="220" Y2="0" Stroke="Black"/>
 
                     <Frame
-                    Padding="4, 4"
-                    WidthRequest="200"
-                    BackgroundColor="Orange"
-                    BorderColor="Black"
-                    VerticalOptions="End"
-                    HorizontalOptions="Center"
-                	>
+                        Style="{StaticResource CruFrames}"
+                        WidthRequest="200"
+                        HorizontalOptions="Center">
+
                         <StackLayout>
                             <Grid
                                 RowSpacing="1"

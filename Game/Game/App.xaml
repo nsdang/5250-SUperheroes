@@ -446,6 +446,14 @@
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
                 <Setter Property="BorderColor" Value="{StaticResource SecondaryBackgroundColor}" />
             </Style>
+
+            <Style TargetType="Frame"
+                x:Key="CruFrames">
+                <Setter Property="Padding" Value="4, 4" />
+                <Setter Property="BackgroundColor" Value="Orange"/>
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="VerticalOptions" Value="End"></Setter>
+            </Style>
             
             <!-- Grid -->
             <Style TargetType="Grid">
