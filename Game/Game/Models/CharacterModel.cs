@@ -113,6 +113,11 @@ namespace Game.Models
         /// Logic of Shame Level
         public bool IsShameLevelHigh()
         {
+            if(ShameLevel < 15)
+            {
+                return false;
+            }
+
             if (CurrentHealth < (CurrentHealth * 1 / 5) && ShameLevel > 15)
             {
                 return true;
