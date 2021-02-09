@@ -26,7 +26,7 @@ namespace Game.Views
         /// <summary>
         /// Constructor for Index Page
         /// 
-        /// Get the ItemIndexView Model
+        /// Get the MonsterIndexView Model
         /// </summary>
         public MonsterIndexPage()
         {
@@ -36,7 +36,7 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// The image clicked by should show the corresponding character read page. 
+        /// The image clicked by should show the corresponding monster read page. 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
