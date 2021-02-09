@@ -113,24 +113,12 @@
                             <RowDefinition Height="auto" />
                             <RowDefinition Height="auto" />
                             <RowDefinition Height="auto" />
-                            <RowDefinition Height="auto" />
                         </Grid.RowDefinitions>
 
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="75"/>
                             <ColumnDefinition Width="70" />
                         </Grid.ColumnDefinitions>
-                       
-                        <Label Grid.Row="0" Grid.Column="0"
-                            Text="   Health" 
-                            TextColor="Black"
-                            Style="{StaticResource LabelStyle}"/>
-
-                        <Label Grid.Row="0" Grid.Column="1"
-                            Text="{Binding Data.MaxHealth}" 
-                            TextColor="WhiteSmoke"
-                           HorizontalOptions="Center"
-                            Style="{StaticResource ValueStyle}"/>
 
                         <Label Grid.Row="1" Grid.Column="0"
                             Text="   Attack" 
