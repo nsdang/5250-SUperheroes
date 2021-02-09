@@ -16,7 +16,7 @@ namespace Game.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MonsterCreatePage : ContentPage
     {
-        // The item to create
+        // The monster to create
         public GenericViewModel<MonsterModel> ViewModel = new GenericViewModel<MonsterModel>();
 
         // Empty Constructor for UTs
