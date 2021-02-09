@@ -16,7 +16,7 @@ namespace Game.Views
     public partial class MonsterDeletePage : ContentPage
     {
 
-        // View Model for Item
+        // View Model for Monster
         readonly GenericViewModel<MonsterModel> viewModel;
 
         // Empty Constructor for UTs
