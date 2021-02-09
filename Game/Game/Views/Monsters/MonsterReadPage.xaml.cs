@@ -15,7 +15,7 @@ namespace Game.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MonsterReadPage : ContentPage
     {
-        // View Model for Item
+        // View Model for Monster
         public readonly GenericViewModel<MonsterModel> ViewModel;
 
         // Empty Constructor for UTs
@@ -38,9 +38,7 @@ namespace Game.Views
         /// Save calls to Update
         /// </summary>
         /// <param name="sender"></param>
-        /// <param name="e"></param>
-      
-    
+        /// <param name="e"></param>   
         public async void Update_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new NavigationPage(new MonsterUpdatePage(ViewModel)));
