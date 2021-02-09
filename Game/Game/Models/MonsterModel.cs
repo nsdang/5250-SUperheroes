@@ -109,7 +109,7 @@ namespace Game.Models
         /// <returns></returns>
         public bool IsAttackPsychic(CharacterModel cm)
         {
-            if(cm.Job.Equals(2))
+            if(cm.Job == CharacterJobEnum.Carpenter)
             {
                 return true;
             }
