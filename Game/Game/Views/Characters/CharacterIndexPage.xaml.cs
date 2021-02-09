@@ -26,7 +26,7 @@ namespace Game.Views
         /// <summary>
         /// Constructor for Index Page
         /// 
-        /// Get the ItemIndexView Model
+        /// Get the CharacterIndexView Model
         /// </summary>
         public CharacterIndexPage()
         {
@@ -55,7 +55,7 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// The image clicked by should show the corresponding character read page. 
+        /// The image clicked by should show the corresponding character delete page. 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -69,8 +69,6 @@ namespace Game.Views
             }
 
             await Navigation.PushModalAsync(new NavigationPage(new CharacterDeletePage(new GenericViewModel<CharacterModel>(selected))));
-           // await Navigation.PopAsync();
-
         }
 
         /// <summary>
