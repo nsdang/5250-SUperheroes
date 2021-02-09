@@ -22,14 +22,12 @@
                    HorizontalTextAlignment="Center"
                    Padding="0,60,0,20">
             </Label>
-            
+
             <ScrollView
                 VerticalOptions="Start">
-                <Frame
-                    Padding="10, 10"
-                    BackgroundColor="Orange"
-                    BorderColor="Black"
-                	>
+
+                <Frame Style="{StaticResource BasicFrameColor}">
+
                     <FlexLayout
                     	BindableLayout.ItemsSource="{Binding Dataset}"
                     	Wrap="Wrap"

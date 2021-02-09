@@ -419,6 +419,13 @@
             </Style>
 
             <Style TargetType="Frame"
+                x:Key="BasicFrameColor">
+                <Setter Property="Padding" Value="10, 10"/>
+                <Setter Property="BackgroundColor" Value="Orange"/>
+                <Setter Property="BorderColor" Value="Black"/>
+            </Style>
+
+            <Style TargetType="Frame"
                 x:Key="PlayerBattleOuterFrame">
                 <Setter Property="HeightRequest" Value="112" />
                 <Setter Property="WidthRequest" Value="250" />
