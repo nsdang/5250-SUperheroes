@@ -115,11 +115,7 @@
 
                                 <Entry  Grid.Row="0" Grid.Column="1"
                                 Text="{Binding Data.MaxHealth}" 
-                                Style="{StaticResource EntryStyle}"
-                                FontSize="Micro"
-                                TextColor="WhiteSmoke"
-                                HorizontalOptions="Center"
-                                HorizontalTextAlignment="Center"/>
+                                Style="{StaticResource BasicEntryStyle}"/>
 
                                 <Label Grid.Row="1" Grid.Column="0"
                                 Text="Attack" 
@@ -128,11 +124,7 @@
 
                                 <Entry  Grid.Row="1" Grid.Column="1"
                                 Text="{Binding Data.Attack}" 
-                                Style="{StaticResource EntryStyle}"
-                                FontSize="Micro"
-                                TextColor="WhiteSmoke"
-                                HorizontalOptions="Center"
-                                HorizontalTextAlignment="Center"/>
+                                Style="{StaticResource BasicEntryStyle}"/>
 
                                 <Label Grid.Row="2" Grid.Column="0"
                                 Text="Defense" 
@@ -141,11 +133,7 @@
 
                                 <Entry  Grid.Row="2" Grid.Column="1"
                                 Text="{Binding Data.Defense}" 
-                                Style="{StaticResource EntryStyle}"
-                                FontSize="Micro"
-                                TextColor="WhiteSmoke"
-                                HorizontalOptions="Center"
-                                HorizontalTextAlignment="Center"/>
+                                Style="{StaticResource BasicEntryStyle}"/>
 
                                 <Label Grid.Row="3" Grid.Column="0"
                                 Text="Speed"
@@ -154,11 +142,8 @@
 
                                 <Entry  Grid.Row="3" Grid.Column="1"
                                 Text="{Binding Data.Speed}" 
-                                Style="{StaticResource EntryStyle}"
-                                FontSize="Micro"
-                                TextColor="WhiteSmoke"
-                                HorizontalOptions="Center"
-                                HorizontalTextAlignment="Center"/>
+                                Style="{StaticResource BasicEntryStyle}"/>
+                                
                             </Grid>
                         </StackLayout>
                     </Frame>
