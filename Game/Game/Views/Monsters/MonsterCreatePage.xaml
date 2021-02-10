@@ -34,7 +34,11 @@
                    TextColor="Black"
                    Style="{StaticResource HeaderStyle}"/>
 
-                <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
+                <Image
+                    x:Name="MonsterImage"
+                    Source="{Binding Data.ImageURI}"
+                    Style="{StaticResource ImageLargeStyle}"
+                    HorizontalOptions="CenterAndExpand"/>
 
                 <StackLayout Spacing="5" HorizontalOptions="Center">
                     <Grid
@@ -71,7 +75,8 @@
                         ItemsSource="{x:Static local_enum:CharacterJobEnumHelper.GetListMonsterJob}"
                         SelectedItem="{Binding Data.Job, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                         x:Name="LocationPicker"
-                        HorizontalTextAlignment="Center"/>
+                        HorizontalTextAlignment="Center"
+                        SelectedIndexChanged="Image_OnPickerSourceChange"/>
 
                     </Grid>
 

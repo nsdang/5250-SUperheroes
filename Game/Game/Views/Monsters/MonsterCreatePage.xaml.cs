@@ -95,5 +95,17 @@ namespace Game.Views
 
             return false;
         }
+
+        /// <summary>
+        /// Change the displayed image on Class Picker change
+        /// </summary>
+        public void Image_OnPickerSourceChange(object sender, System.EventArgs e)
+        {
+            string imageURI = ViewModel.Data.Job.ToString() + ".png";
+
+            ViewModel.Data.ImageURI = imageURI;
+
+            MonsterImage.Source = ViewModel.Data.ImageURI;
+        }
     }
 }
