@@ -96,5 +96,18 @@ namespace Game.Views
             
             return false;
         }
+
+        /// <summary>
+        /// Change the displayed image on Class Picker change
+        /// </summary>
+        public void Image_OnPickerSourceChange(object sender, System.EventArgs e)
+        {
+            string imageURI = ViewModel.Data.Job.ToString() + ".png";
+
+            // NOTE: wait for all character's image to change the ImageURI value
+            ViewModel.Data.ImageURI = "CaptainSU.png";
+
+            HeroImage.Source = ViewModel.Data.ImageURI;
+        }
     }
 }
