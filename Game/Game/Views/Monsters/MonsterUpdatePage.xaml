@@ -116,6 +116,7 @@
                                 Style="{StaticResource LabelStyle}"/>
 
                                 <Entry  Grid.Row="2" Grid.Column="1"
+                                x:Name="Attack_Value"
                                 Text="{Binding Data.Attack}" 
                                 Style="{StaticResource BasicEntryStyle}"/>
 
@@ -125,6 +126,7 @@
                                 Style="{StaticResource LabelStyle}"/>
 
                                 <Entry  Grid.Row="3" Grid.Column="1"
+                                x:Name="Defense_Value"
                                 Text="{Binding Data.Defense}" 
                                 Style="{StaticResource BasicEntryStyle}"/>
 
@@ -134,6 +136,7 @@
                                 Style="{StaticResource LabelStyle}"/>
 
                                 <Entry  Grid.Row="4" Grid.Column="1"
+                                x:Name="Speed_Value"
                                 Text="{Binding Data.Speed}" 
                                 Style="{StaticResource BasicEntryStyle}"/>
                                 
