@@ -24,24 +24,55 @@
                    Style="{StaticResource HeaderStyle}"/>
 
             <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
-
-            <StackLayout Style="{StaticResource HorizontalStack}">
+            <Grid RowSpacing="0" ColumnSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="85"/>
+                    <ColumnDefinition Width="80"/>
+                </Grid.ColumnDefinitions>
+                <BoxView/>
                 <Label 
-                   Text="Name : " 
+                   Text="Name: " 
+                    FontSize="15"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
                     Style="{StaticResource LabelStyle}"/>
+                <BoxView Grid.Column="1" />
                 <Label 
                     Text="{Binding Data.Name}" 
+                    Grid.Column="1"
+                    FontFamily="Comic Sans MS"
+                    FontSize="12"
+                    TextColor="WhiteSmoke"
+                     HorizontalOptions="Start"
+                    VerticalOptions="Center"
                     Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                <BoxView Grid.Column="2" Grid.Row ="0"/>
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
-                    Text="Description : " 
+                    Text="________________"
+                    TextColor="Black"
+                    Grid.Column ="0"
+                    HorizontalOptions="End"
+                    VerticalOptions="End"
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
-                    Text="{Binding Data.Description}" 
-                    Style="{StaticResource ValueStyle}"/>
-            </StackLayout>
+                    Text="_________________________"
+                    TextColor="Black"
+                    Grid.Column ="1"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="End"
+                    Style="{StaticResource LabelStyle}"/>
+                <Label 
+                    Text="____________________"
+                    TextColor="Black"
+                    Grid.Column="2"
+                    HorizontalOptions="Fill"
+                     VerticalOptions="End"
+                    Style="{StaticResource LabelStyle}"/>
+            </Grid>
 
 
             <StackLayout 
