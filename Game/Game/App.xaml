@@ -434,6 +434,15 @@
             </Style>
 
             <Style TargetType="Frame"
+                x:Key="IndexPageMiniFrames">
+                <Setter Property="Margin" Value="0, 0, 0, 10"/>
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="HasShadow" Value="True"/>
+                <Setter Property="BorderColor" Value="Black"/>
+            </Style>
+
+
+            <Style TargetType="Frame"
                 x:Key="PlayerBattleOuterFrame">
                 <Setter Property="HeightRequest" Value="112" />
                 <Setter Property="WidthRequest" Value="250" />
