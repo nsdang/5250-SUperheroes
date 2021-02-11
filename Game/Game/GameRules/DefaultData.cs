@@ -43,14 +43,12 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Attack
                 },
                 new ItemModel {
-                    Name = "I4",
-                    Description = "I4",
+                    Name = "Cookie",
+                    Description = "Can increase moderate\namount of health.",
                     ImageURI = "item.png",
-                    Range = 10,
-                    Damage = 10,
-                    Value = 9,
-                    Location = ItemLocationEnum.OffHand,
-                    Attribute = AttributeEnum.Attack
+                    Value = 25,
+                    Location = ItemLocationEnum.PrimaryHand,
+                    Attribute = AttributeEnum.CurrentHealth
                 },
                 new ItemModel {
                     Name = "I5",
