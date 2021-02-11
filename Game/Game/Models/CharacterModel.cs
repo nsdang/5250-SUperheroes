@@ -110,7 +110,9 @@ namespace Game.Models
             return myReturn;
         }
 
-        /// Logic of Shame Level
+        /// <summary>
+        /// Returns true if health is less than 20% for all heroes and Shame level is above 15 
+        /// </summary>
         public bool IsShameLevelHigh()
         {
             if(ShameLevel < 15)
