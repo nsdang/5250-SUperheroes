@@ -43,11 +43,11 @@
                          VerticalOptions="Center">
                 <Label 
                     Text="Value : " 
-                    TextColor="WhiteSmoke"
+                    TextColor="Black"
                     Style="{StaticResource LabelStyle}"/>
                 <Label 
                     Text="{Binding Data.Value}"
-                    TextColor="Black"
+                    TextColor="WhiteSmoke"
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
 
