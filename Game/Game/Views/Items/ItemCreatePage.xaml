@@ -46,15 +46,8 @@
                         SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                         x:Name="LocationPicker"
                         Title="Location"
-                        HorizontalTextAlignment="Center"/>
-
-                        <!--<Picker
-                        ItemsSource="{x:Static local_enum:ItemLocationEnumHelper.GetListItem}"
-                        SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
-                        x:Name="LocationPicker"
-                        Title="Location"
                         HorizontalTextAlignment="Center"
-                        SelectedIndexChanged="Image_OnPickerSourceChange"/>-->
+                        SelectedIndexChanged="Image_OnPickerSourceChange"/>
                     </Grid>
                    
                     <Image

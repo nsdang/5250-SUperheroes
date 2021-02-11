@@ -68,16 +68,6 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Catch the change to the Stepper for Range
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        //public void Range_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
-        //{
-        //    RangeValue.Text = String.Format("{0}", e.NewValue);
-        //}
-
-        /// <summary>
         /// Catch the change to the stepper for Value
         /// </summary>
         /// <param name="sender"></param>
@@ -88,13 +78,17 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Catch the change to the stepper for Damage
+        /// Change the displayed image on Location Picker change
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        //public void Damage_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
-        //{
-        //    DamageValue.Text = String.Format("{0}", e.NewValue);
-        //}
+        public void Image_OnPickerSourceChange(object sender, System.EventArgs e)
+        {
+            string imageURI = ViewModel.Data.Location.ToString() + ".png";
+
+            // NOTE: wait for all item's image to change the ImageURI value
+            ViewModel.Data.ImageURI = "item.png";
+            // ViewModel.Data.ImageURI = imageURI;
+
+            ItemImage.Source = ViewModel.Data.ImageURI;
+        }
     }
 }
