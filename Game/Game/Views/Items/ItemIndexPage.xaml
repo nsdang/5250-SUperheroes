@@ -16,10 +16,7 @@
         <StackLayout Style="{StaticResource OuterBoxStack}">
 
             <Label Text="Items"
-                   FontSize="Large"
-                   FontAttributes="Bold"
-                   HorizontalTextAlignment="Center"
-                   Padding="0,60,0,20">
+                   Style="{StaticResource IndexPageLabel}">
             </Label>
 
             <ScrollView
