@@ -36,10 +36,7 @@
                         <BindableLayout.ItemTemplate>
                             <DataTemplate>
                                 <Frame
-                                    BorderColor="Black"
-                                    BackgroundColor="White"
-                                    Margin="0, 0, 0, 10"
-                                    HasShadow="True">
+                                    Style="{StaticResource IndexPageMiniFrames}">
 
                                     <Grid>
                                         <Grid.RowDefinitions>
