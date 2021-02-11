@@ -25,14 +25,12 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Defense
                 },
                 new ItemModel {
-                    Name = "I2",
-                    Description = "I2",
+                    Name = "Bronze Helmet",
+                    Description = "A helmet provided to every\nSUperhero and SUbsidized\nby the government.",
                     ImageURI = "item.png",
-                    Range = 10,
-                    Damage = 10,
-                    Value = 9,
+                    Value = 5,
                     Location = ItemLocationEnum.Head,
-                    Attribute = AttributeEnum.Attack
+                    Attribute = AttributeEnum.Defense
                 },
                 new ItemModel {
                     Name = "I3",
