@@ -16,14 +16,13 @@ namespace Game.GameRules
             var datalist = new List<ItemModel>()
             {
                 new ItemModel {
-                    Name = "I1",
-                    Description = "I1",
+                    Name = "Bronze Ring",
+                    Description = "A ring provided to every SUperhero and SUbsidized by the government.",
                     ImageURI = "item.png",
                     Range = 10,
-                    Damage = 10,
-                    Value = 9,
-                    Location = ItemLocationEnum.PrimaryHand,
-                    Attribute = AttributeEnum.Attack
+                    Value = 5,
+                    Location = ItemLocationEnum.Finger,
+                    Attribute = AttributeEnum.Defense
                 },
                 new ItemModel {
                     Name = "I2",
