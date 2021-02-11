@@ -37,7 +37,79 @@
             <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
 
             <Button Text="Update" Clicked="Update_Clicked" WidthRequest="90"/>
-            
+
+            <StackLayout Style="{StaticResource HorizontalStack}"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center">
+                <Label 
+                    Text="Value : " 
+                    TextColor="WhiteSmoke"
+                    Style="{StaticResource LabelStyle}"/>
+                <Label 
+                    Text="{Binding Data.Value}"
+                    TextColor="Black"
+                    Style="{StaticResource ValueStyle}"/>
+            </StackLayout>
+
+            <Grid
+                    RowSpacing="0"
+                    ColumnSpacing="0"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <BoxView/>
+                <Label 
+                   Text="Name: " 
+                    FontAttributes="Bold"
+                    FontSize="15"
+                    TextColor="Black"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                    Style="{StaticResource LabelStyle}"/>
+                <BoxView Grid.Column="1" />
+                <Label 
+                    Text="{Binding Data.Name}" 
+                    Grid.Column="1"
+                    FontFamily="Comic Sans MS"
+                    FontSize="12"
+                    TextColor="WhiteSmoke"
+                     HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Style="{StaticResource ValueStyle}"/>
+                <BoxView Grid.Column="2" Grid.Row ="0"/>
+
+                <Label 
+                    Text="________________"
+                    TextColor="Black"
+                    Grid.Column ="0"
+                    HorizontalOptions="End"
+                    VerticalOptions="End"
+                    Style="{StaticResource LabelStyle}"/>
+                <Label 
+                    Text="_________________________"
+                    TextColor="Black"
+                    Grid.Column ="1"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="End"
+                    Style="{StaticResource LabelStyle}"/>
+                <Label 
+                    Text="____________________________"
+                    TextColor="Black"
+                    Grid.Column="2"
+                    HorizontalOptions="Start"
+                     VerticalOptions="End"
+                    Style="{StaticResource LabelStyle}"/>
+            </Grid>
+
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
                    Text="Name : " 
