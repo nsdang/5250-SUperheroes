@@ -17,7 +17,7 @@ namespace Game.GameRules
             {
                 new ItemModel {
                     Name = "Bronze Ring",
-                    Description = "A ring provided to every SUperhero and SUbsidized by the government.",
+                    Description = "A ring provided to every\nSUperhero and SUbsidized\nby the government.",
                     ImageURI = "item.png",
                     Range = 10,
                     Value = 5,
