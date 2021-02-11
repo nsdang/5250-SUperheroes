@@ -84,21 +84,46 @@
                     Style="{StaticResource LabelStyle}"/>
             </Grid>
 
-
             <StackLayout 
-            HorizontalOptions="Center" 
-            Padding="20">
+            HorizontalOptions="Center" VerticalOptions="Start">
 
-                <Label Text="Really delete this?" Style="{StaticResource MessageStyle}"/>
-
-                <Button 
-                Text="Yes" 
-                Clicked="Delete_Clicked" 
-                HorizontalOptions="Center"
-                FontSize="Medium"
-                BorderWidth="1" 
-                BorderColor="black">
-                </Button>
+                <Label Text="Delete?"
+                       TextColor="Cornsilk"
+                       HorizontalOptions ="Center"
+                       VerticalOptions="Start"
+                       Style="{StaticResource MessageStyle}"
+                       FontSize="30"/>
+                <Grid ColumnSpacing="5" HorizontalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+                    <Button 
+                        Text="Yes" 
+                        Clicked="Delete_Clicked" 
+                        Grid.Column="0"
+                        HorizontalOptions="Center"
+                        FontSize="Large"
+                        BorderWidth="3" 
+                        HeightRequest = "50"
+                        BackgroundColor="CadetBlue"
+                        TextColor="Gold"
+                        BorderColor="black">
+                    </Button>
+                    <BoxView Grid.Column="1"/>
+                    <Button 
+                        Text="No" 
+                        Grid.Column="1"
+                        Clicked="Cancel_Clicked" 
+                        HorizontalOptions="Center"
+                        FontSize="Large"
+                        BorderWidth="3" 
+                        HeightRequest = "50"
+                        BackgroundColor="CadetBlue"
+                        TextColor="Gold"
+                        BorderColor="black">
+                    </Button>
+                </Grid>
             </StackLayout>
             
         </StackLayout>
