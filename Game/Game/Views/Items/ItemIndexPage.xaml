@@ -17,62 +17,61 @@
 
             <Label Text="Items List Page" Style="{StaticResource HeaderStyle}"/>
 
-            <ListView x:Name="ItemsListView" 
-                    ItemsSource="{Binding Dataset}"
-                    IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                    RefreshCommand="{Binding LoadItemsCommand}"
-                    CachingStrategy="RecycleElement"
-                    ItemSelected="OnItemSelected"
-                    HasUnevenRows="true"
-                    Margin="5,0,5,0"
-                    RowHeight="80"
-                    >
-                
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid ColumnSpacing="5" RowSpacing="1">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="auto"/>
-                                </Grid.RowDefinitions>
+            <ScrollView
+                VerticalOptions="Start">
 
-                                <Image  Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
-                                        Source="{Binding ImageURI}"
-                                        Style="{StaticResource ImageMediumStyle}"
-                                        VerticalOptions="CenterAndExpand"/>
+                <Frame Style="{StaticResource BasicFrameColor}">
 
-                                <Label Grid.Column="1" Grid.Row="0"
-                                       Text="{Binding Name}" 
-                                       Style="{StaticResource ListStyle}"/>
+                    <FlexLayout
+                    	BindableLayout.ItemsSource="{Binding Dataset}"
+                    	Wrap="Wrap"
+                    	Direction="Row"
+                        AlignItems="Start"
+                        JustifyContent="SpaceAround"
+                        AlignContent="Center"
+                        >
 
-                                <StackLayout Grid.Column="1" Grid.Row="1"
-                                    Orientation="Horizontal">
-                                    
-                                    <Label 
-                                       Text="{Binding Attribute}" 
-                                       Style="{StaticResource ListStyle}"/>
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Frame
+                                    BorderColor="Black"
+                                    BackgroundColor="White"
+                                    Margin="0, 0, 0, 10"
+                                    HasShadow="True">
 
-                                    <Label Text="{Binding Value}" 
-                                        Style="{StaticResource ListStyle}"/>
-                                
-                                </StackLayout>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="140"></ColumnDefinition>
+                                            <ColumnDefinition Width="40"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
 
-                                <Label Grid.Column="1" Grid.Row="2"
-                                       Text="{Binding Description}" 
-                                       Style="{StaticResource ListStyle}"
-                                       FontSize="Micro"/>
+                                        <ImageButton Grid.Row="0" Grid.Column="1"
+                                            Source="icon_delete.png">
+                                            <!--Clicked="OnImageDeleted">-->
 
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                                        </ImageButton>
+                                        <ImageButton Grid.Row="1" Grid.ColumnSpan="2"
+                                            Source="{Binding ImageURI}">
+                                            <!--Clicked="OnImageClicked">-->
+                                        </ImageButton>
+
+                                        <Label Grid.Row="2" Grid.ColumnSpan="2"
+                                               Text="{Binding Name}"
+                                               HorizontalOptions="Center">
+                                        </Label>
+
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </FlexLayout>
+                </Frame>
+            </ScrollView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
