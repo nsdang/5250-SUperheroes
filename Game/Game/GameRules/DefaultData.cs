@@ -33,13 +33,13 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Defense
                 },
                 new ItemModel {
-                    Name = "I3",
-                    Description = "I3",
+                    Name = "Brass Knuckles",
+                    Description = "A set of fist loaded weapons\nprovided to every SUperhero\nand SUbsidized by the\ngovernment.",
                     ImageURI = "item.png",
                     Range = 10,
-                    Damage = 10,
-                    Value = 9,
-                    Location = ItemLocationEnum.Necklass,
+                    Damage = 5,
+                    Value = 5,
+                    Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.Attack
                 },
                 new ItemModel {
