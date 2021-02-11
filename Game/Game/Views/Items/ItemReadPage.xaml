@@ -86,7 +86,17 @@
                     VerticalOptions="Center"
                     Style="{StaticResource ValueStyle}"/>
                 <BoxView Grid.Column="2" Grid.Row ="0"/>
-
+                <Label 
+                    Text="{Binding Data.Attribute}"
+                    FontFamily="Droid Sans Mono"
+                    FontAttributes="Italic"
+                    FontSize="12"
+                    TextColor="WhiteSmoke"
+                    Grid.Column="2"
+                    Grid.Row ="0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Style="{StaticResource ValueStyle}"/>
                 <Label 
                     Text="________________"
                     TextColor="Black"
