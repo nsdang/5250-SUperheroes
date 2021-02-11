@@ -15,7 +15,12 @@
     <ContentPage.Content>
         <StackLayout Style="{StaticResource OuterBoxStack}">
 
-            <Label Text="Items List Page" Style="{StaticResource HeaderStyle}"/>
+            <Label Text="Items"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   Padding="0,60,0,20">
+            </Label>
 
             <ScrollView
                 VerticalOptions="Start">
@@ -51,8 +56,8 @@
                                         </Grid.ColumnDefinitions>
 
                                         <ImageButton Grid.Row="0" Grid.Column="1"
-                                            Source="icon_delete.png">
-                                            <!--Clicked="OnImageDeleted">-->
+                                            Source="icon_delete.png"
+                                            Clicked="OnImageDeleted">
 
                                         </ImageButton>
                                         <ImageButton Grid.Row="1" Grid.ColumnSpan="2"

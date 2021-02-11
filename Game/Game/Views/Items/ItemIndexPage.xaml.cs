@@ -56,6 +56,24 @@ namespace Game.Views
         }
 
         /// <summary>
+        /// The image clicked by should show the corresponding item delete page. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public async void OnImageDeleted(object sender, EventArgs e)
+        {
+            ImageButton img = sender as ImageButton;
+            ItemModel selected = img.BindingContext as ItemModel;
+            if (selected == null)
+            {
+                return;
+            }
+
+            await Navigation.PushModalAsync(new NavigationPage(new ItemDeletePage(new GenericViewModel<ItemModel>(selected))));
+
+        }
+
+        /// <summary>
         /// Call to Add a new record
         /// </summary>
         /// <param name="sender"></param>
