@@ -164,6 +164,14 @@
                 BasedOn="{StaticResource CenterMessageStyle}">
                 <Setter Property="FontSize" Value="Large" />
             </Style>
+
+            <Style TargetType="Label"
+                x:Key="IndexPageLabel"
+                BasedOn="{StaticResource CenterMessageLargeStyle}">
+                <Setter Property ="Padding" Value="0, 60, 0, 20"/>
+                <Setter Property ="FontAttributes" Value="Bold"/>
+                <Setter Property ="TextColor" Value="GhostWhite"/>
+            </Style>
             
             <!--<Style TargetType="Label"
                 x:Key="GridLabelStyle"
