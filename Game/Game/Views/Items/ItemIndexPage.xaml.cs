@@ -35,24 +35,24 @@ namespace Game.Views
             BindingContext = ViewModel;
         }
 
+
         /// <summary>
-        /// The row selected from the list
+        /// The image clicked by should show the corresponding item read page. 
         /// </summary>
         /// <param name="sender"></param>
-        /// <param name="args"></param>
-        public async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        /// <param name="e"></param>
+        public async void OnImageClicked(object sender, EventArgs e)
         {
-            ItemModel data = args.SelectedItem as ItemModel;
-            if (data == null)
+            ImageButton img = sender as ImageButton;
+            ItemModel selected = img.BindingContext as ItemModel;
+            if (selected == null)
             {
                 return;
             }
 
             // Open the Read Page
-            await Navigation.PushAsync(new ItemReadPage(new GenericViewModel<ItemModel>(data)));
+            await Navigation.PushAsync(new ItemReadPage(new GenericViewModel<ItemModel>(selected)));
 
-            // Manually deselect item.
-            //ItemsListView.SelectedItem = null;
         }
 
         /// <summary>
