@@ -36,6 +36,8 @@
             
             <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
 
+            <Button Text="Update" Clicked="Update_Clicked" WidthRequest="90"/>
+            
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
                    Text="Name : " 
