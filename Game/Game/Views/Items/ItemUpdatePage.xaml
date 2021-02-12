@@ -119,16 +119,6 @@
                         SelectedItem="{Binding Data.Attribute, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                         x:Name="AttributePicker"
                         HorizontalTextAlignment="Center"/>
-                    
-                    <!--<BoxView Grid.Row="1" Grid.Column="1"
-                             BackgroundColor="#FFA500"/>
-                        <Label Grid.Row="1" Grid.Column="1"
-                               Text="{Binding Data.Attribute}"
-                               Style="{StaticResource LabelStyle}"
-                               TextColor="Black"
-                               FontSize="14"
-                               HorizontalOptions="Center"
-                               HorizontalTextAlignment="Center"/>-->
                     </Grid>
 
                     <Label
