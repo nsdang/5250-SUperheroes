@@ -248,7 +248,7 @@ namespace Game.GameRules
                     Job = (CharacterJobEnum)9,
                     Description = "A vet who was obsessed with the cats in the clinic and loved eating fish." +
                     " One day, she got bitten by a cat while eating some salmon. This turned her into a fish-cat. ",
-                    ImageURI = "icon_anais.png",
+                    ImageURI = "Vet.png",
                 },
 
                 new MonsterModel {
