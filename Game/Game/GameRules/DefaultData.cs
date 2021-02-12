@@ -16,64 +16,56 @@ namespace Game.GameRules
             var datalist = new List<ItemModel>()
             {
                 new ItemModel {
-                    Name = "I1",
-                    Description = "I1",
+                    Name = "Bronze Ring",
+                    Description = "A ring provided to every\nSUperhero and SUbsidized\nby the government.",
                     ImageURI = "item.png",
                     Range = 10,
-                    Damage = 10,
-                    Value = 9,
+                    Value = 5,
+                    Location = ItemLocationEnum.Finger,
+                    Attribute = AttributeEnum.Defense
+                },
+                new ItemModel {
+                    Name = "Bronze Helmet",
+                    Description = "A helmet provided to every\nSUperhero and SUbsidized\nby the government.",
+                    ImageURI = "item.png",
+                    Value = 5,
+                    Location = ItemLocationEnum.Head,
+                    Attribute = AttributeEnum.Defense
+                },
+                new ItemModel {
+                    Name = "Brass Knuckles",
+                    Description = "A set of fist loaded weapons\nprovided to every SUperhero\nand SUbsidized by the\ngovernment.",
+                    ImageURI = "item.png",
+                    Range = 10,
+                    Damage = 5,
+                    Value = 5,
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.Attack
                 },
                 new ItemModel {
-                    Name = "I2",
-                    Description = "I2",
+                    Name = "Cookie",
+                    Description = "Can increase moderate\namount of health.",
                     ImageURI = "item.png",
-                    Range = 10,
-                    Damage = 10,
-                    Value = 9,
-                    Location = ItemLocationEnum.Head,
-                    Attribute = AttributeEnum.Attack
+                    Value = 25,
+                    Location = ItemLocationEnum.PrimaryHand,
+                    Attribute = AttributeEnum.CurrentHealth
                 },
                 new ItemModel {
-                    Name = "I3",
-                    Description = "I3",
+                    Name = "Bag of cookies",
+                    Description = "Can recover minor amount\nof health for entire\nteam.",
                     ImageURI = "item.png",
-                    Range = 10,
-                    Damage = 10,
-                    Value = 9,
-                    Location = ItemLocationEnum.Necklass,
-                    Attribute = AttributeEnum.Attack
+                    Value = 10,
+                    Location = ItemLocationEnum.PrimaryHand,
+                    Attribute = AttributeEnum.CurrentHealth
                 },
                 new ItemModel {
-                    Name = "I4",
-                    Description = "I4",
+                    Name = "Midi-chlorians",
+                    Description = "An injection of midi-chlorians\nor m-cells grants a hero\n" +
+                    "temporary access to a mystical\nability known as the force\nfor the rest of the battle.",
                     ImageURI = "item.png",
-                    Range = 10,
-                    Damage = 10,
-                    Value = 9,
-                    Location = ItemLocationEnum.OffHand,
-                    Attribute = AttributeEnum.Attack
-                },
-                new ItemModel {
-                    Name = "I5",
-                    Description = "I5",
-                    ImageURI = "item.png",
-                    Range = 10,
-                    Damage = 10,
-                    Value = 9,
+                    Value = 10,
                     Location = ItemLocationEnum.Finger,
-                    Attribute = AttributeEnum.Attack
-                },
-                new ItemModel {
-                    Name = "I6",
-                    Description = "I6",
-                    ImageURI = "item.png",
-                    Range = 10,
-                    Damage = 10,
-                    Value = 9,
-                    Location = ItemLocationEnum.Feet,
-                    Attribute = AttributeEnum.Attack
+                    Attribute = AttributeEnum.Speed
                 },
             };
 
