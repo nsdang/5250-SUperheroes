@@ -55,6 +55,12 @@ namespace Game.Views
                 return;
             }
 
+            if (ViewModel.Data.Job == CharacterJobEnum.Unknown)
+            {
+                await DisplayAlert("Missing Information!", "Please choose a Class for the hero.", "Return");
+                return;
+            }
+
             // If the character's stats in the data box is invalid, display the alert
             if (!Is_Stat_Valid(Health_Value.Text) ||
                 !Is_Stat_Valid(Attack_Value.Text) ||
