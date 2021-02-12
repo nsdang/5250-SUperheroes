@@ -146,6 +146,13 @@
                 <Setter Property="TextColor" Value="{StaticResource TriciaryTextColor}" />
             </Style>
 
+            <Style TargetType="Label"
+                x:Key="ScoreListStyle"
+                BasedOn="{StaticResource ListStyle}">
+                <Setter Property="FontSize" Value="21" />
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+
             <!--<Style TargetType="Label"
                 x:Key="MessageLargeStyle"
                 BasedOn="{StaticResource MessageStyle}">
