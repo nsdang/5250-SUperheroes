@@ -135,7 +135,7 @@
     <AndroidResource Include="Resources\drawable\Accountant.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\icon_bob.png" />
+    <AndroidResource Include="Resources\drawable\Carpenter.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
