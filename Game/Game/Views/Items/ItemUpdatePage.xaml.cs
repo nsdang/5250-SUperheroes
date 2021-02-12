@@ -51,6 +51,13 @@ namespace Game.Views
                 return;
             }
 
+            // If the attribute in the data box is empty, display the alert
+            if (ViewModel.Data.Attribute == AttributeEnum.Unknown)
+            {
+                await DisplayAlert("Missing Information!", "Please choose an attribute for the item.", "Return");
+                return;
+            }
+
             // If the image in the data box is empty, use the default one..
             if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
             {
