@@ -127,9 +127,7 @@
 
                         <Label Grid.Row="1" Grid.Column="1"
                             Text="{Binding Data.Attack}" 
-                             TextColor="WhiteSmoke"
-                             HorizontalOptions="Center"
-                            Style="{StaticResource ValueStyle}"/>
+                            Style="{StaticResource ReadPageValueStyleLabel}"/>
 
                         <Label Grid.Row="2" Grid.Column="0"
                             Text="   Defense" 
@@ -138,9 +136,7 @@
 
                         <Label Grid.Row="2" Grid.Column="1"
                             Text="{Binding Data.Defense}" 
-                            TextColor="WhiteSmoke"
-                             HorizontalOptions="Center"
-                            Style="{StaticResource ValueStyle}"/>
+                            Style="{StaticResource ReadPageValueStyleLabel}"/>
 
                         <Label Grid.Row="3" Grid.Column="0"
                             Text="   Speed"
@@ -149,9 +145,7 @@
 
                         <Label Grid.Row="3" Grid.Column="1"
                             Text="{Binding Data.Speed}" 
-                           TextColor="WhiteSmoke"
-                            HorizontalOptions="Center"
-                            Style="{StaticResource ValueStyle}"/>
+                            Style="{StaticResource ReadPageValueStyleLabel}"/>
                     </Grid>
                 </StackLayout>
             </Frame>
