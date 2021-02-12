@@ -124,7 +124,8 @@
                     <Label
                         Text="Description" Style="{StaticResource LabelStyle}"/>
                     <Editor
-                        Placeholder="Enter item description here." PlaceholderColor="Olive" HeightRequest="100"/>
+                        Placeholder="Enter item description here." PlaceholderColor="Olive" HeightRequest="100"
+                        Text="{Binding Data.Description}"/>
                 </StackLayout>
 
                 <Button Text="Create Item"
