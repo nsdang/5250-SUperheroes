@@ -55,6 +55,7 @@ namespace Game.Views
                 return;
             }
 
+            // If the job is not selected, display the alert
             if (ViewModel.Data.Job == CharacterJobEnum.Unknown)
             {
                 await DisplayAlert("Missing Information!", "Please choose a Class for the hero.", "Return");
