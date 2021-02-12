@@ -104,14 +104,14 @@
                         Text="Yes" 
                         Clicked="Delete_Clicked" 
                         Grid.Column="0"
-                        Style ="{StaticResource DeleteButtonStyle}">>
+                        Style ="{StaticResource DeleteButtonStyle}">
                     </Button>       
                     <BoxView Grid.Column="1"/>
                     <Button 
                         Text="No" 
                         Grid.Column="1"
                         Clicked="Cancel_Clicked" 
-                        Style ="{StaticResource DeleteButtonStyle}">>
+                        Style ="{StaticResource DeleteButtonStyle}">
                     </Button>   
                 </Grid>
             </StackLayout>
