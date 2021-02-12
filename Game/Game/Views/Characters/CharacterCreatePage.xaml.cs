@@ -105,7 +105,7 @@ namespace Game.Views
             string imageURI = ViewModel.Data.Job.ToString() + ".png";
 
             // NOTE: wait for all character's image to change the ImageURI value
-            ViewModel.Data.ImageURI = "CaptainSU.png";
+            ViewModel.Data.ImageURI = "Flying.png";
 
             HeroImage.Source = ViewModel.Data.ImageURI;
         }
