@@ -96,27 +96,14 @@
                     <Button 
                         Text="Yes" 
                         Clicked="Delete_Clicked" 
-                        Grid.Column="0"
-                        HorizontalOptions="Center"
-                        FontSize="Large"
-                        BorderWidth="3" 
-                        HeightRequest = "50"
-                        BackgroundColor="CadetBlue"
-                        TextColor="Gold"
-                        BorderColor="black">
+                        Style ="{StaticResource DeleteButtonStyle}">
                     </Button>
                     <BoxView Grid.Column="1"/>
                     <Button 
                         Text="No" 
                         Grid.Column="1"
                         Clicked="Cancel_Clicked" 
-                        HorizontalOptions="Center"
-                        FontSize="Large"
-                        BorderWidth="3" 
-                        HeightRequest = "50"
-                        BackgroundColor="CadetBlue"
-                        TextColor="Gold"
-                        BorderColor="black">
+                        Style ="{StaticResource DeleteButtonStyle}">
                     </Button>
                 </Grid>
             </StackLayout>
