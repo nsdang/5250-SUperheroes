@@ -59,13 +59,6 @@ namespace Game.Models
 
             switch (value)
             {
-                //case CharacterJobEnum.Fighter:
-                //    Message = "Fighter";
-                //    break;
-
-                //case CharacterJobEnum.Cleric:
-                //    Message = "Cleric";
-                //    break;
 
                 case CharacterJobEnum.Flying:
                     Message = "Flying";
