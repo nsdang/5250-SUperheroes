@@ -59,14 +59,13 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.CurrentHealth
                 },
                 new ItemModel {
-                    Name = "I6",
-                    Description = "I6",
+                    Name = "Midi-chlorians",
+                    Description = "An injection of midi-chlorians\nor m-cells grants a hero\n" +
+                    "temporary access to a mystical\nability known as the force\nfor the rest of the battle.",
                     ImageURI = "item.png",
-                    Range = 10,
-                    Damage = 10,
-                    Value = 9,
-                    Location = ItemLocationEnum.Feet,
-                    Attribute = AttributeEnum.Attack
+                    Value = 10,
+                    Location = ItemLocationEnum.Finger,
+                    Attribute = AttributeEnum.Speed
                 },
             };
 
