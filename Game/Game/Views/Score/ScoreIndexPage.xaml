@@ -55,28 +55,26 @@
 
                                         <Label Grid.Column="0" Grid.Row="0"
                                                Text="{Binding Name}" 
-                                               FontSize="21"
-                                               Style="{StaticResource ListStyle}"/>
+                                               Style="{StaticResource ScoreListStyle}"/>
 
                                         <Label Grid.Column="0" Grid.Row="1"
                                                Text="Rounds" 
-                                                FontSize="21"
-                                               Style="{StaticResource ListStyle}"/>
+                                               Style="{StaticResource ScoreListStyle}"/>
+
 
                                         <Label Grid.Column="1" Grid.Row="1"
                                                Text="{Binding RoundCount}" 
-                                                FontSize="21"
-                                               Style="{StaticResource ListStyle}"/>
+                                               Style="{StaticResource ScoreListStyle}"/>
+
 
                                         <Label Grid.Column="0" Grid.Row="2"
                                                Text="Score" 
-                                                FontSize="21"
-                                               Style="{StaticResource ListStyle}"/>
+                                               Style="{StaticResource ScoreListStyle}"/>
+
 
                                         <Label Grid.Column="1" Grid.Row="2"
                                                Text="{Binding ScoreTotal}" 
-                                                FontSize="21"
-                                               Style="{StaticResource ListStyle}"/>
+                                               Style="{StaticResource ScoreListStyle}"/>
 
                                     </Grid>
 
