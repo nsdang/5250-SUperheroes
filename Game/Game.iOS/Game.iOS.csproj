@@ -184,7 +184,7 @@
     <BundleResource Include="Resources\icon_steve.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\icon_yinying.png" />
+    <BundleResource Include="Resources\Accountant.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\icon_bob.png" />
