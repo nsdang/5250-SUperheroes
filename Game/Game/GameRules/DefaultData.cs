@@ -253,7 +253,7 @@ namespace Game.GameRules
 
                 new MonsterModel {
                     Name = "Steve",
-                    Job = (CharacterJobEnum)9,
+                    Job = (CharacterJobEnum)10,
                     Description = "Plays video games soo much that his head transformed into a game controller",
                     ImageURI = "Boss.png",
                 },
