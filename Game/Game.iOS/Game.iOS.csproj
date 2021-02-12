@@ -172,7 +172,7 @@
     <BundleResource Include="Resources\mapcell.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\CaptainSU.png" />
+    <BundleResource Include="Resources\Flying.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\icon_anais.png" />
