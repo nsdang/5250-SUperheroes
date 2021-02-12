@@ -51,14 +51,12 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.CurrentHealth
                 },
                 new ItemModel {
-                    Name = "I5",
-                    Description = "I5",
+                    Name = "Bag of cookies",
+                    Description = "Can recover minor amount\nof health for entire\nteam.",
                     ImageURI = "item.png",
-                    Range = 10,
-                    Damage = 10,
-                    Value = 9,
-                    Location = ItemLocationEnum.Finger,
-                    Attribute = AttributeEnum.Attack
+                    Value = 10,
+                    Location = ItemLocationEnum.PrimaryHand,
+                    Attribute = AttributeEnum.CurrentHealth
                 },
                 new ItemModel {
                     Name = "I6",
