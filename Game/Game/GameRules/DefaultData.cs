@@ -255,7 +255,7 @@ namespace Game.GameRules
                     Name = "Steve",
                     Job = (CharacterJobEnum)9,
                     Description = "Plays video games soo much that his head transformed into a game controller",
-                    ImageURI = "icon_steve.png",
+                    ImageURI = "Boss.png",
                 },
 
             };
