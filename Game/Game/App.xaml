@@ -196,7 +196,15 @@
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="HorizontalOptions" Value="Center" />
             </Style>
-            
+
+            <Style TargetType ="Label"
+                   x:Key="ReadPageValueStyleLabel"
+                   BasedOn="{StaticResource ValueStyle}">
+                <Setter Property="TextColor" Value="WhiteSmoke">
+                </Setter>
+                <Setter Property="HorizontalOptions" Value="Center"></Setter>
+            </Style>
+
             <!-- Image -->
             <Style TargetType="Image"
                 x:Key="ImageLargeStyle">
