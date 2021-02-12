@@ -47,10 +47,23 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Save_Clicked(object sender, EventArgs e)
         {
-            // If the image in the data box is empty, use the default one..
-            if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
+            // If the name in the data box is empty, display the alert
+            if (string.IsNullOrEmpty(ViewModel.Data.Name) || string.IsNullOrWhiteSpace(ViewModel.Data.Name))
             {
-                ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
+                await DisplayAlert("Invalid Input!", "Please enter a valid name.", "Return");
+                return;
+            }
+
+            if (ViewModel.Data.Location == ItemLocationEnum.Unknown)
+            {
+                await DisplayAlert("Missing Information!", "Please choose a location for the item.", "Return");
+                return;
+            }
+
+            if (ViewModel.Data.Attribute == AttributeEnum.Unknown)
+            {
+                await DisplayAlert("Missing Information!", "Please choose an attribute for the item.", "Return");
+                return;
             }
 
             MessagingCenter.Send(this, "Create", ViewModel.Data);
