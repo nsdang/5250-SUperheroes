@@ -43,6 +43,14 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Save_Clicked(object sender, EventArgs e)
         {
+
+            // If the name in the data box is empty, display the alert
+            if (string.IsNullOrEmpty(ViewModel.Data.Name) || string.IsNullOrWhiteSpace(ViewModel.Data.Name))
+            {
+                await DisplayAlert("Invalid Input!", "Please enter a valid name.", "Return");
+                return;
+            }
+
             // If the image in the data box is empty, use the default one..
             if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
             {
