@@ -8,39 +8,57 @@
             VerticalOptions="CenterAndExpand"
             HorizontalOptions="CenterAndExpand">
             
-            <StackLayout
-                VerticalOptions="Center"
+            <StackLayout 
                 HorizontalOptions="Center">
 
-                <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
+                <Label Text="SUperheroes"
+                       FontSize="Large"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       TextDecorations="Underline"
+                       >
+                </Label>
+
+                <Label
+                    Margin="0, 10, 0, 0"
+                     Text="But are they really?"
+                     HorizontalOptions="Center">
+                </Label>
+
+                <Frame
+                        BorderColor="OrangeRed"
+                        BackgroundColor="Orange"
+                        CornerRadius="100"
+                        Margin="20"
+                        Padding="30">
                     <Image
-                         Source="item.png"
+                         Source="Flying.png"
                          Style="{StaticResource ImageLargeStyle}"/>
+                </Frame>
                 
-                </StackLayout>
-                
-                <StackLayout HorizontalOptions="Center" Padding="70,5,70,0"> 
-               
-                    <Label 
-                        Text="Your Game Iformation"
-                        Style="{StaticResource CenterMessageStyle}"
-                        FontSize="Micro"
-                        LineBreakMode="WordWrap"
-                        MaxLines="5"
-                        />
+              
+                <Label
+                     Text="Once, they used to be deserving of the title."
+                     HorizontalOptions="Center">
+                </Label>
 
-                    <Label 
-                        Text="Help them on their mission."
-                        Style="{StaticResource CenterMessageStyle}"
-                        FontSize="Micro"
-                        LineBreakMode="WordWrap"
-                        MaxLines="5"
-                        />
-                </StackLayout>
 
-                <Button
-                    Text="Enter"
+                <Label
+                     Text="But age has made them deluded, jaded, arrogant."
+                     HorizontalOptions="Center">
+                </Label>
+
+
+                <Label
+                     Text="They have turned their backs on the common people."
+                     HorizontalOptions="Center">
+                </Label>
+
+                <Button 
+                    Margin="0, 15, 0, 0"
+                    Text="Enter at your own risk"
                     Clicked="GameButton_Clicked"/>
+
 
             </StackLayout>
         </ScrollView>
