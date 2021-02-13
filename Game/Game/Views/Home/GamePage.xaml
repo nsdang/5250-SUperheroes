@@ -6,49 +6,70 @@
 
     <ContentPage.Content>
 
-        <ScrollView Orientation="Vertical" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never" Padding="10">
+        <StackLayout>
 
-            <FlexLayout x:Name="flexLayout"
-                        Wrap="Wrap"
-                        JustifyContent="SpaceAround"
-                        AlignContent="SpaceAround">
+            <Label
+                Text="SUperheroes">
+            </Label>
+            <Grid 
+            VerticalOptions="FillAndExpand">
 
-                <StackLayout Style="{StaticResource CardImageTextBox}">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
 
-                    <ImageButton
-                        Source="item.png"
-                        Style="{StaticResource ImageLargeStyle}"
-                        Clicked="VillageButton_Clicked"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
 
-                    <Label 
-                        Text="Village"
-                        Style="{StaticResource CenterMessageStyle}"/>
-                </StackLayout>
+                <Button Grid.Column="0" Grid.Row="0"
+                Text="Game Start"
+                WidthRequest="130"
+                HeightRequest="130"
+                FontSize="Medium"
+                Margin="10"
+                BackgroundColor="Orange"
+                BorderColor="Black"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                Clicked="DungeonButton_Clicked"/>
 
-                <StackLayout Style="{StaticResource CardImageTextBox}">
+                <Button Grid.Column="1" Grid.Row="0"
+                Text="Society"
+                Margin="10"
+                WidthRequest="100"
+                HeightRequest="100"
+                BackgroundColor="Orange"
+                BorderColor="Black"
+                HorizontalOptions="Start"
+                VerticalOptions="End"
+                Clicked="VillageButton_Clicked"/>
 
-                    <ImageButton
-                        Source="item.png"
-                        Style="{StaticResource ImageLargeStyle}"
-                        Clicked="DungeonButton_Clicked"/>
+                <Button Grid.Column="0" Grid.Row="1"
+                 Text="Auto Battle"
+                 Margin="10"
+                 WidthRequest="100"
+                 HeightRequest="100"
+                 BackgroundColor="Orange"
+                 BorderColor="Black"
+                 HorizontalOptions="End"
+                 VerticalOptions="Start"
+                 Clicked="AutobattleButton_Clicked"/>
 
-                    <Label 
-                        Text="Dungeon"
-                        Style="{StaticResource CenterMessageStyle}"/>
-                </StackLayout>
 
-                <StackLayout Style="{StaticResource CardImageTextBox}">
-
-                    <ImageButton
-                        Source="item.png"
-                        Style="{StaticResource ImageLargeStyle}"
-                        Clicked="AutobattleButton_Clicked"/>
-
-                    <Label 
-                        Text="Auto Battle"
-                        Style="{StaticResource CenterMessageStyle}"/>
-                </StackLayout>
-            </FlexLayout>
-        </ScrollView>
+                <Button Grid.Column="1" Grid.Row="1"
+                 Text="About Us"
+                 Margin="10"
+                 WidthRequest="100"
+                 HeightRequest="100"
+                 BackgroundColor="Orange"
+                 BorderColor="Black"
+                 HorizontalOptions="Start"
+                 VerticalOptions="Start"
+                 Clicked="AutobattleButton_Clicked"/>
+            </Grid>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
