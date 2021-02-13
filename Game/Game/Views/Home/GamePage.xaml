@@ -6,10 +6,13 @@
 
     <ContentPage.Content>
 
-        <StackLayout>
-
+        <StackLayout
+            VerticalOptions="Center">
             <Label
-                Text="SUperheroes">
+                Text="SUperheroes"
+                Margin="10"
+                TextColor="Black"
+                Style="{StaticResource CenterMessageLargeStyle}">
             </Label>
             <Grid 
             VerticalOptions="FillAndExpand">
