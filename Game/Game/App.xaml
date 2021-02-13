@@ -212,6 +212,7 @@
                 <Setter Property="HorizontalOptions" Value="Center"></Setter>
             </Style>
 
+
             <!-- Image -->
             <Style TargetType="Image"
                 x:Key="ImageLargeStyle">
@@ -320,6 +321,17 @@
                 <Setter Property="TextColor" Value="Gold"/>
                 <Setter Property ="BorderColor" Value="Black"/>
             </Style>
+
+            <Style TargetType="Button"
+                   x:Key="PageButtonStyle">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="HeightRequest" Value="100"/>
+                <Setter Property="WidthRequest" Value="100"/>
+                <Setter Property ="BorderColor" Value="Black"/>
+                <Setter Property ="BackgroundColor" Value="Orange"/>
+                <Setter Property ="Margin" Value="10"/>
+            </Style>
+
 
             <!-- Stack Layouts -->
             <Style TargetType="StackLayout"
