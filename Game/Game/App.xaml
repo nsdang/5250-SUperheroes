@@ -324,7 +324,7 @@
 
             <Style TargetType="Button"
                    x:Key="PageButtonStyle">
-                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="FontSize" Value="Micro"/>
                 <Setter Property="HeightRequest" Value="100"/>
                 <Setter Property="WidthRequest" Value="100"/>
                 <Setter Property ="BorderColor" Value="Black"/>
