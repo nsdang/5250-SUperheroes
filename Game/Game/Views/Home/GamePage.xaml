@@ -29,31 +29,21 @@
                 WidthRequest="130"
                 HeightRequest="130"
                 FontSize="Medium"
-                Margin="10"
-                BackgroundColor="Orange"
-                BorderColor="Black"
+                Style="{StaticResource PageButtonStyle}"
                 HorizontalOptions="End"
                 VerticalOptions="End"
                 Clicked="DungeonButton_Clicked"/>
 
                 <Button Grid.Column="1" Grid.Row="0"
                 Text="Society"
-                Margin="10"
-                WidthRequest="100"
-                HeightRequest="100"
-                BackgroundColor="Orange"
-                BorderColor="Black"
+                Style="{StaticResource PageButtonStyle}"
                 HorizontalOptions="Start"
                 VerticalOptions="End"
                 Clicked="VillageButton_Clicked"/>
 
                 <Button Grid.Column="0" Grid.Row="1"
                  Text="Auto Battle"
-                 Margin="10"
-                 WidthRequest="100"
-                 HeightRequest="100"
-                 BackgroundColor="Orange"
-                 BorderColor="Black"
+                 Style="{StaticResource PageButtonStyle}"
                  HorizontalOptions="End"
                  VerticalOptions="Start"
                  Clicked="AutobattleButton_Clicked"/>
@@ -61,11 +51,7 @@
 
                 <Button Grid.Column="1" Grid.Row="1"
                  Text="About Us"
-                 Margin="10"
-                 WidthRequest="100"
-                 HeightRequest="100"
-                 BackgroundColor="Orange"
-                 BorderColor="Black"
+                 Style="{StaticResource PageButtonStyle}"
                  HorizontalOptions="Start"
                  VerticalOptions="Start"
                  Clicked="AutobattleButton_Clicked"/>
