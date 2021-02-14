@@ -13,8 +13,8 @@
     </ContentPage.ToolbarItems>
 
 
-    <ScrollView>
-        <StackLayout Style="{StaticResource OuterBoxStack}"
+    <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+        <StackLayout Style="{StaticResource OuterBoxStack}" Padding="0,100,0,0"
             Spacing="10">
 
             <Label Text="Detail Page" Style="{StaticResource HeaderStyle}"/>
