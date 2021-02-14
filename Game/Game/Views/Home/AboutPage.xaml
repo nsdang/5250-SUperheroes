@@ -13,7 +13,14 @@
       Orientation="Vertical">
 
         <StackLayout Style="{StaticResource VerticalStack}" Padding="0,100,0,0">
-
+           
+            <Label Text="SUper Hero"
+                   FontSize="60"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="Black"
+                   Style="{StaticResource HeaderStyle}"/>
+            
             <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand">
 
                 <Image Source="item.png" Style="{StaticResource ImageMediumStyle}"/>
