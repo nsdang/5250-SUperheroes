@@ -8,16 +8,20 @@
              Title="{Binding Title}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Update" Clicked="Update_Clicked" IconImageSource="icon_edit.png"/>
         <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IconImageSource="icon_delete.png"/>
     </ContentPage.ToolbarItems>
 
 
-    <ScrollView>
-        <StackLayout Style="{StaticResource OuterBoxStack}"
+    <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+        <StackLayout Style="{StaticResource OuterBoxStack}" Padding="0,100,0,0"
             Spacing="10">
 
-            <Label Text="Detail Page" Style="{StaticResource HeaderStyle}"/>
+            <Label Text="Detail Page"
+                   FontSize="40"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="Black"
+                   Style="{StaticResource HeaderStyle}"/>
 
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
@@ -56,7 +60,7 @@
                     Text="{Binding Data.ScoreTotal}"
                     Style="{StaticResource ValueStyle}"/>
             </StackLayout>
-            
+
             <StackLayout Style="{StaticResource HorizontalStack}">
                 <Label 
                     Text="Number of Rounds:"                      
@@ -117,6 +121,7 @@
                 Text="{Binding Data.ItemsDroppedList}"
                 Style="{StaticResource ValueStyle}"/>
 
+            <Button Text="Update"  WidthRequest="120" HeightRequest="60" FontSize="Large" HorizontalOptions="EndAndExpand" Clicked="Update_Clicked"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>

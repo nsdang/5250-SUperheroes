@@ -29,9 +29,6 @@
 
                 <Button Grid.Column="0" Grid.Row="0"
                 Text="Game Start"
-                WidthRequest="130"
-                HeightRequest="130"
-                FontSize="Medium"
                 Style="{StaticResource PageButtonStyle}"
                 HorizontalOptions="End"
                 VerticalOptions="End"

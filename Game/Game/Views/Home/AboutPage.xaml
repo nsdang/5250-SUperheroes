@@ -8,29 +8,36 @@
              Title="About">
 
     <ScrollView
-      Padding="10,10,10,10"
-      VerticalOptions="Start"
-      HorizontalOptions="FillAndExpand"
+      VerticalOptions="StartAndExpand"
+      HorizontalOptions="CenterAndExpand"
       Orientation="Vertical">
 
-        <StackLayout Style="{StaticResource VerticalStack}">
-
+        <StackLayout Style="{StaticResource VerticalStack}" Padding="0,100,0,0">
+           
+            <Label Text="SUper Hero"
+                   FontSize="60"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="Black"
+                   Style="{StaticResource HeaderStyle}"/>
+            
             <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand">
-
-                <Image Source="item.png" Style="{StaticResource ImageMediumStyle}"/>
-                <Label Text="PerSUnas" Style="{StaticResource HeaderStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-                <Label Text="Dang Song Nguyen" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-                <Label Text="Carolina Angelica" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-                <Label Text="Ajer Lodhi" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-                <Label x:Name="CurrentDateTime" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+                <Frame BackgroundColor="Orange" CornerRadius ="1" BorderColor="Black" HeightRequest="30" WidthRequest="100">
+                    <Label TextColor="Black" Text="PerSUnas" Style="{StaticResource HeaderStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+                </Frame>
+                <Label Text="Dang Song Nguyen" TextColor ="White" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+                <Label Text="Carolina Angelica" TextColor ="White" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+                <Label Text="Ajer Lodhi" TextColor ="White" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+                <Label x:Name="CurrentDateTime" TextColor ="White"  Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
             </StackLayout>
 
             <!--Database Settings Frame-->
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
+            <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center" Padding="100,0,0,0">
 
                 <Label
                         Text="Database Settings"
+                        HorizontalOptions="Center"
                         Style="{DynamicResource LabelStyle}"/>
 
                 <Switch
@@ -41,6 +48,7 @@
             </StackLayout>
 
             <StackLayout Style="{StaticResource VerticalStack}"
+                         HorizontalOptions="End"
                         x:Name="DatabaseSettingsFrame"
                         IsVisible="False">
 
@@ -76,11 +84,12 @@
             </StackLayout>
 
             <!--Debug Settings Frame-->
-            <StackLayout Style="{StaticResource HorizontalStack}">
+            <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center" Padding="100,0,0,0">
 
                 <Label
                     Text="Debug Settings"
                     Style="{DynamicResource LabelStyle}"
+                    HorizontalOptions="Center"
                     />
 
                 <Switch
@@ -90,7 +99,7 @@
                     IsToggled="False"/>
             </StackLayout>
 
-            <StackLayout Style="{StaticResource VerticalStack}" x:Name="DebugSettingsFrame" IsVisible="False">
+            <StackLayout Style="{StaticResource VerticalStack}" x:Name="DebugSettingsFrame" IsVisible="False" HorizontalOptions="Center" Padding="100,0,0,0">
 
                 <StackLayout Style="{StaticResource VerticalStack}" Padding="5,0,0,0">
 
@@ -120,7 +129,7 @@
                                 />
                         </StackLayout>
 
-                        <StackLayout Style="{StaticResource HorizontalStack}">
+                        <StackLayout Style="{StaticResource HorizontalStack}" Spacing="10" HorizontalOptions="Center">
                             <Button
                                 Text="Get"
                                 Clicked="GetItemsGet_Command"/>
