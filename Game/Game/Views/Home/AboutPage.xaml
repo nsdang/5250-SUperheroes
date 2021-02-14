@@ -99,7 +99,7 @@
                     IsToggled="False"/>
             </StackLayout>
 
-            <StackLayout Style="{StaticResource VerticalStack}" x:Name="DebugSettingsFrame" IsVisible="False">
+            <StackLayout Style="{StaticResource VerticalStack}" x:Name="DebugSettingsFrame" IsVisible="False" HorizontalOptions="Center" Padding="100,0,0,0">
 
                 <StackLayout Style="{StaticResource VerticalStack}" Padding="5,0,0,0">
 
@@ -129,7 +129,7 @@
                                 />
                         </StackLayout>
 
-                        <StackLayout Style="{StaticResource HorizontalStack}">
+                        <StackLayout Style="{StaticResource HorizontalStack}" Spacing="10" HorizontalOptions="Center">
                             <Button
                                 Text="Get"
                                 Clicked="GetItemsGet_Command"/>
