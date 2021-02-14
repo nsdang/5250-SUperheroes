@@ -23,7 +23,6 @@
             
             <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand">
 
-                <Image Source="item.png" Style="{StaticResource ImageMediumStyle}"/>
                 <Label Text="PerSUnas" Style="{StaticResource HeaderStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
                 <Label Text="Dang Song Nguyen" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
                 <Label Text="Carolina Angelica" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
@@ -33,7 +32,7 @@
 
             <!--Database Settings Frame-->
 
-            <StackLayout Style="{StaticResource HorizontalStack}">
+            <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="End">
 
                 <Label
                         Text="Database Settings"
@@ -47,6 +46,7 @@
             </StackLayout>
 
             <StackLayout Style="{StaticResource VerticalStack}"
+                         HorizontalOptions="End"
                         x:Name="DatabaseSettingsFrame"
                         IsVisible="False">
 
@@ -82,7 +82,7 @@
             </StackLayout>
 
             <!--Debug Settings Frame-->
-            <StackLayout Style="{StaticResource HorizontalStack}">
+            <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
 
                 <Label
                     Text="Debug Settings"
