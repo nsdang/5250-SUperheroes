@@ -32,10 +32,11 @@
 
             <!--Database Settings Frame-->
 
-            <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="End">
+            <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center" Padding="100,0,0,0">
 
                 <Label
                         Text="Database Settings"
+                        HorizontalOptions="Center"
                         Style="{DynamicResource LabelStyle}"/>
 
                 <Switch
@@ -82,11 +83,12 @@
             </StackLayout>
 
             <!--Debug Settings Frame-->
-            <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
+            <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center" Padding="100,0,0,0">
 
                 <Label
                     Text="Debug Settings"
                     Style="{DynamicResource LabelStyle}"
+                    HorizontalOptions="Center"
                     />
 
                 <Switch
