@@ -43,10 +43,16 @@ namespace Game.Views
         /// <param name="e"></param>
         public async void Save_Clicked(object sender, EventArgs e)
         {
-            // If the image in the data box is empty, use the default one..
-            if (string.IsNullOrEmpty(ViewModel.Data.ImageURI))
+            if (string.IsNullOrEmpty(ViewModel.Data.Name) || string.IsNullOrWhiteSpace(ViewModel.Data.Name))
             {
-                ViewModel.Data.ImageURI = Services.ItemService.DefaultImageURI;
+                await DisplayAlert("Invalid Input!", "Please enter a valid name.", "Return");
+                return;
+            }
+
+            if (!Is_Score_Valid(ScoreValue.Text))
+            {
+                await DisplayAlert("Invalid Input!", "Please enter a valid value for score.", "Return");
+                return;
             }
 
             MessagingCenter.Send(this, "Create", ViewModel.Data);
@@ -61,6 +67,24 @@ namespace Game.Views
         public async void Cancel_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync();
+        }
+
+        /// <summary>
+        /// Check if the inputs for stat is valid or not
+        /// </summary>
+        /// <param name="stat_str"></param>
+        /// <returns></returns>
+        public bool Is_Score_Valid(string score_str)
+        {
+            if (int.TryParse(score_str, out int stat))
+            {
+                if (stat >= 0)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

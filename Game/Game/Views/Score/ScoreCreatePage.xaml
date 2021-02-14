@@ -56,7 +56,8 @@
                     <Entry Grid.Row="0" Grid.Column="1"
                         Text="{Binding Data.Name}" 
                         Style="{StaticResource EntryStyle}"
-                        HorizontalTextAlignment="Center"/>
+                        HorizontalTextAlignment="Center"
+                        x:Name="ScoreName"/>
 
                     <Label Grid.Row="1" Grid.Column="0"
                         Text="Score" 
@@ -65,7 +66,8 @@
                     <Entry Grid.Row="1" Grid.Column="1"
                         Text="{Binding Data.ScoreTotal}" 
                         Style="{StaticResource EntryStyle}"
-                        HorizontalTextAlignment="Center"/>
+                        HorizontalTextAlignment="Center"
+                        x:Name="ScoreValue"/>
 
                     <Label Grid.Row="1" Grid.Column="0"
                         Text="Score" 
