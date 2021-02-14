@@ -22,7 +22,7 @@
                    Style="{StaticResource HeaderStyle}"/>
             
             <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand">
-                <Frame BackgroundColor="Orange" BorderColor="Black" HeightRequest="30" WidthRequest="100">
+                <Frame BackgroundColor="Orange" CornerRadius ="1" BorderColor="Black" HeightRequest="30" WidthRequest="100">
                     <Label TextColor="Black" Text="PerSUnas" Style="{StaticResource HeaderStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
                 </Frame>
                 <Label Text="Dang Song Nguyen" TextColor ="White" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
