@@ -23,22 +23,30 @@
 
     <ContentPage.Content>
 
-        <ScrollView>
+        <ScrollView HorizontalOptions="Center" VerticalOptions="Center">
             <StackLayout Style="{StaticResource OuterBoxStack}"
-                Spacing="10">
+                         Spacing="20"
+                         HorizontalOptions="Center">
 
-                <Label Text="Create Page" Style="{StaticResource HeaderStyle}"/>
+                <Label Text="Create Page"
+                        FontSize="40"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        TextColor="Black"
+                        Style="{StaticResource HeaderStyle}"/>
 
                 <Grid
-                    RowSpacing="1"
-                    ColumnSpacing="2"
-                    VerticalOptions="Center">
+                    RowSpacing="5"
+                    ColumnSpacing="7"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center">
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="200" />
                     </Grid.ColumnDefinitions>
 
                     <Label Grid.Row="0" Grid.Column="0"
@@ -47,7 +55,8 @@
                     
                     <Entry Grid.Row="0" Grid.Column="1"
                         Text="{Binding Data.Name}" 
-                        Style="{StaticResource EntryStyle}"/>
+                        Style="{StaticResource EntryStyle}"
+                        HorizontalTextAlignment="Center"/>
 
                     <Label Grid.Row="1" Grid.Column="0"
                         Text="Score" 
@@ -55,13 +64,21 @@
                     
                     <Entry Grid.Row="1" Grid.Column="1"
                         Text="{Binding Data.ScoreTotal}" 
-                        Style="{StaticResource EntryStyle}"/>
+                        Style="{StaticResource EntryStyle}"
+                        HorizontalTextAlignment="Center"/>
 
                     <Label Grid.Row="1" Grid.Column="0"
                         Text="Score" 
                         Style="{StaticResource LabelStyle}"/>
-
                 </Grid>
+
+                <Button Text="Create Score"
+                        FontSize="Medium"
+                        WidthRequest="170"
+                        HeightRequest="45"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="Center"
+                        Clicked="Save_Clicked"/>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
