@@ -8,12 +8,11 @@
              Title="About">
 
     <ScrollView
-      Padding="10,10,10,10"
-      VerticalOptions="Start"
-      HorizontalOptions="FillAndExpand"
+      VerticalOptions="StartAndExpand"
+      HorizontalOptions="CenterAndExpand"
       Orientation="Vertical">
 
-        <StackLayout Style="{StaticResource VerticalStack}">
+        <StackLayout Style="{StaticResource VerticalStack}" Padding="0,100,0,0">
 
             <StackLayout Style="{StaticResource VerticalStack}" HorizontalOptions="CenterAndExpand">
 
