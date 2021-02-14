@@ -18,54 +18,76 @@
                    Style="{StaticResource HeaderStyle}"/>
 
             <StackLayout>
-                <StackLayout Style="{StaticResource HorizontalStack}">
+                <Grid RowSpacing="0" ColumnSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="140"/>
+                        <ColumnDefinition Width="85"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
                     <Label 
                        Text="Name : " 
+                        Grid.Row="0"
+                        Grid.Column="0"
                         Style="{StaticResource LabelStyle}"/>
                     <Label 
                         Text="{Binding Data.Name}" 
+                        Grid.Row="0"
+                        Grid.Column="1"                            
                         Style="{StaticResource ValueStyle}"/>
-                </StackLayout>
 
-                <StackLayout Style="{StaticResource HorizontalStack}">
-                    <Label 
+                        <Label 
                         Text="Game Date:"
+                        Grid.Row="1"
+                        Grid.Column="0"
                         Style="{StaticResource LabelStyle}"/>
 
                     <Label 
                         Text="{Binding Data.GameDate}"
+                        Grid.Row="1"
+                        Grid.Column="1"
                         Style="{StaticResource ValueStyle}"/>
-                </StackLayout>
 
-                <StackLayout Style="{StaticResource HorizontalStack}">
-                    <Label 
-                        Text="AutoBattle:"                      
+                        <Label 
+                        Text="AutoBattle:"  
+                        Grid.Row="2"
+                        Grid.Column="0"                            
                         Style="{StaticResource LabelStyle}"/>
 
                     <Label 
                         Text="{Binding Data.AutoBattle}"
+                        Grid.Row="2"
+                        Grid.Column="1"
                         Style="{StaticResource ValueStyle}"/>
-                </StackLayout>
 
-                <StackLayout Style="{StaticResource HorizontalStack}">
-                    <Label 
+                        <Label 
                         Text="Score:" 
+                        Grid.Row="3"
+                        Grid.Column="0"
                         Style="{StaticResource LabelStyle}"/>
                     <Label 
                         Text="{Binding Data.ScoreTotal}"
+                        Grid.Row="3"
+                        Grid.Column="1"
                         Style="{StaticResource ValueStyle}"/>
-                </StackLayout>
 
-                <StackLayout Style="{StaticResource HorizontalStack}">
-                    <Label 
-                        Text="Number of Rounds:"                      
+                        <Label 
+                        Text="Number of Rounds:"
+                        Grid.Row="4"
+                        Grid.Column="0"
                         Style="{StaticResource LabelStyle}"/>
 
                     <Label 
                         Text="{Binding Data.RoundCount}"
+                        Grid.Row="4"
+                        Grid.Column="1"
                         Style="{StaticResource ValueStyle}"/>
-                </StackLayout>
-   
+                </Grid>
             </StackLayout>
 
             <StackLayout 
