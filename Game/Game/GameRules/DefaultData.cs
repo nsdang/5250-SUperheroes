@@ -68,24 +68,6 @@ namespace Game.GameRules
                     Attribute = AttributeEnum.Speed
                 },
             };
-
-            for (int i = 0; i < 2; i++)
-            {
-                var item = new ItemModel
-                {
-                    ImageURI = "item.png",
-                    Range = 2,
-                    Damage = 10,
-                    Value = 9,
-                    Location = ItemLocationEnum.PrimaryHand,
-                    Attribute = AttributeEnum.Attack
-                };
-                item.Name = "I" + (datalist.Count+1).ToString();
-                item.Description = item.Name;
-
-                datalist.Add(item);
-            }
-
             return datalist;
         }
 
