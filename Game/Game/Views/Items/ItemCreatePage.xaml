@@ -29,6 +29,8 @@
                          Spacing="20"
                          HorizontalOptions="Center">
 
+                <StackLayout Spacing="5" HorizontalOptions="Center">
+
                     <Grid VerticalOptions="Center" HorizontalOptions="Center">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="93"/>
