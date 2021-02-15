@@ -127,25 +127,33 @@ namespace Game.Views
         /// </summary>
         /// <param name="location"></param>
         /// <returns></returns>
-        public List<ItemModel> Get_Item_List_BasedOn_Location (string location)
+        public List<string> Get_Item_List_BasedOn_Location (string location)
         {
             ItemIndexViewModel ItemList = ItemIndexViewModel.Instance;
+            List<string> result = new List<string>();
             if (location == "Hand")
             {
-                return ItemList.GetLocationItems(ItemLocationEnum.PrimaryHand);
+                foreach (var item in ItemList.GetLocationItems(ItemLocationEnum.PrimaryHand))
+                {
+                    result.Add(item.Id);
+                }
             }
             else if (location == "Head")
             {
-                return ItemList.GetLocationItems(ItemLocationEnum.Head);
+                foreach (var item in ItemList.GetLocationItems(ItemLocationEnum.Head))
+                {
+                    result.Add(item.Id);
+                }
             }
             else if (location == "Finger")
             {
-                return ItemList.GetLocationItems(ItemLocationEnum.Finger);
+                foreach (var item in ItemList.GetLocationItems(ItemLocationEnum.Finger))
+                {
+                    result.Add(item.Id);
+                }
             }
-            else
-            {
-                return ItemList.GetLocationItems(ItemLocationEnum.PrimaryHand);
-            }
+
+            return result;
         }
     }
 }

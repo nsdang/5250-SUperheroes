@@ -13,9 +13,9 @@ namespace Game.ViewModels
         /// <summary>
         /// List of available Items for equip
         /// </summary>
-        List<ItemModel> handItemList { get; set; }
-        List<ItemModel> fingerItemList { get; set; }
-        List<ItemModel> headItemList { get; set; }
+        List<string> handItemList { get; set; }
+        List<string> fingerItemList { get; set; }
+        List<string> headItemList { get; set; }
 
         public T Data
         {
@@ -27,7 +27,7 @@ namespace Game.ViewModels
             }
         }
 
-        public List<ItemModel> HandItemList
+        public List<string> HandItemList
         {
             get { return handItemList; }
             set
@@ -38,7 +38,7 @@ namespace Game.ViewModels
             }
         }
 
-        public List<ItemModel> FingerItemList
+        public List<string> FingerItemList
         {
             get { return fingerItemList; }
             set
@@ -49,7 +49,7 @@ namespace Game.ViewModels
             }
         }
 
-        public List<ItemModel> HeadItemList
+        public List<string> HeadItemList
         {
             get { return headItemList; }
             set
