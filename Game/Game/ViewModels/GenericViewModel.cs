@@ -1,4 +1,5 @@
-﻿using Game.Models;
+﻿using System.Collections.Generic;
+using Game.Models;
 
 namespace Game.ViewModels
 {
@@ -9,6 +10,14 @@ namespace Game.ViewModels
         /// </summary>
         T bindingData { get; set; }
 
+        /// <summary>
+        /// List of available Items for equip
+        /// </summary>
+        List<ItemModel> weaponItemList { get; set; }
+        List<ItemModel> shieldItemList { get; set; }
+        List<ItemModel> armorItemList { get; set; }
+        List<ItemModel> accessoryItemList { get; set; }
+
         public T Data
         {
             get { return bindingData; }
@@ -16,6 +25,50 @@ namespace Game.ViewModels
                 var data = bindingData;
                 SetProperty(ref data, value);
                 bindingData = data;
+            }
+        }
+
+        public List<ItemModel> WeaponItemList
+        {
+            get { return weaponItemList; }
+            set
+            {
+                var data = weaponItemList;
+                SetProperty(ref data, value);
+                weaponItemList = data;
+            }
+        }
+
+        public List<ItemModel> ShieldItemList
+        {
+            get { return shieldItemList; }
+            set
+            {
+                var data = shieldItemList;
+                SetProperty(ref data, value);
+                shieldItemList = data;
+            }
+        }
+
+        public List<ItemModel> ArmorItemList
+        {
+            get { return armorItemList; }
+            set
+            {
+                var data = armorItemList;
+                SetProperty(ref data, value);
+                armorItemList = data;
+            }
+        }
+
+        public List<ItemModel> AccessoryItemList
+        {
+            get { return accessoryItemList; }
+            set
+            {
+                var data = accessoryItemList;
+                SetProperty(ref data, value);
+                accessoryItemList = data;
             }
         }
 

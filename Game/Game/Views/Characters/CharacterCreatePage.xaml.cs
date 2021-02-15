@@ -24,12 +24,6 @@ namespace Game.Views
         // The Character to create
         public GenericViewModel<CharacterModel> ViewModel = new GenericViewModel<CharacterModel>();
 
-        // The list of available Items for equip
-        readonly List<ItemModel> weaponItemList_;
-        readonly List<ItemModel> shieldItemList_;
-        readonly List<ItemModel> armorItemList_;
-        readonly List<ItemModel> accessoryItemList_;
-
         // Empty Constructor for UTs
         public CharacterCreatePage(bool UnitTest){}
 
@@ -40,10 +34,10 @@ namespace Game.Views
         {
             InitializeComponent();
 
-            weaponItemList_ = Get_Item_List_BasedOn_Location("Weapon");
-            shieldItemList_ = Get_Item_List_BasedOn_Location("Shield");
-            armorItemList_ = Get_Item_List_BasedOn_Location("Armor");
-            accessoryItemList_ = Get_Item_List_BasedOn_Location("Accessory");
+            this.ViewModel.WeaponItemList = Get_Item_List_BasedOn_Location("Weapon");
+            this.ViewModel.ShieldItemList = Get_Item_List_BasedOn_Location("Shield");
+            this.ViewModel.ArmorItemList = Get_Item_List_BasedOn_Location("Armor");
+            this.ViewModel.AccessoryItemList = Get_Item_List_BasedOn_Location("Accessory");
 
             this.ViewModel.Data = new CharacterModel();
 

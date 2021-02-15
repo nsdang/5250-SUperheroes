@@ -182,36 +182,40 @@
                                 TextColor="Black"
                                 Style="{StaticResource LabelStyle}"/>
 
-                                <!--<Picker  Grid.Row="0" Grid.Column="1"
-                                         SelectedItem="{Binding Data.PrimaryHand, Converter={StaticResource StringEnum}, Mode=TwoWay}"
-                                         HorizontalTextAlignment="Center"/>-->
+                                <Picker  Grid.Row="0" Grid.Column="1"
+                                         ItemsSource="{Binding WeaponItemList}"
+                                         SelectedItem="{Binding Data.PrimaryHand, Mode=TwoWay}"
+                                         HorizontalTextAlignment="Center"/>
 
                                 <Label Grid.Row="1" Grid.Column="0"
                                 Text="Shield" 
                                 TextColor="Black"
                                 Style="{StaticResource LabelStyle}"/>
 
-                                <!--<Picker  Grid.Row="1" Grid.Column="1"
-                                         SelectedItem="{Binding Data.OffHand, Converter={StaticResource StringEnum}, Mode=TwoWay}"
-                                         HorizontalTextAlignment="Center"/>-->
+                                <Picker  Grid.Row="1" Grid.Column="1"
+                                         ItemsSource="{Binding ShieldItemList}"
+                                         SelectedItem="{Binding Data.OffHand, Mode=TwoWay}"
+                                         HorizontalTextAlignment="Center"/>
 
                                 <Label Grid.Row="2" Grid.Column="0"
                                 Text="Armor" 
                                 TextColor="Black"
                                 Style="{StaticResource LabelStyle}"/>
 
-                                <!--<Picker  Grid.Row="2" Grid.Column="1"
-                                         SelectedItem="{Binding Data.Head, Converter={StaticResource StringEnum}, Mode=TwoWay}"
-                                         HorizontalTextAlignment="Center"/>-->
+                                <Picker  Grid.Row="2" Grid.Column="1"
+                                         ItemsSource="{Binding ArmorItemList}"
+                                         SelectedItem="{Binding Data.Head, Mode=TwoWay}"
+                                         HorizontalTextAlignment="Center"/>
 
                                 <Label Grid.Row="3" Grid.Column="0"
                                 Text="Accessory"
                                 TextColor="Black"
                                 Style="{StaticResource LabelStyle}"/>
 
-                                <!--<Picker  Grid.Row="3" Grid.Column="1"
-                                         SelectedItem="{Binding Data.Necklass, Converter={StaticResource StringEnum}, Mode=TwoWay}"
-                                         HorizontalTextAlignment="Center"/>-->
+                                <Picker  Grid.Row="3" Grid.Column="1"
+                                         ItemsSource="{Binding AccessoryItemList}"
+                                         SelectedItem="{Binding Data.Necklass, Mode=TwoWay}"
+                                         HorizontalTextAlignment="Center"/>
                             </Grid>
                         </StackLayout>
                     </Frame>
