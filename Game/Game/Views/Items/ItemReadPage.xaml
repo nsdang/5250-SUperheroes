@@ -12,9 +12,8 @@
     </ContentPage.ToolbarItems>
 
 
-    <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <StackLayout Style="{StaticResource OuterBoxStack}"
-            Spacing="10">
+    <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+        <StackLayout Style="{StaticResource OuterBoxStack}" Padding="0,100,0,0">
 
             <Frame
                 Style="{StaticResource CruFrames}"
