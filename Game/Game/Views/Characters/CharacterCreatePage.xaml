@@ -22,12 +22,11 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-
-        <ScrollView HorizontalOptions="Center" VerticalOptions="Center">
+        <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
             <StackLayout Style="{StaticResource OuterBoxStack}"
+                         Padding="0,100,0,0"
                          Spacing="20"
                          HorizontalOptions="Center">
-
                 <Image
                     x:Name="HeroImage"
                     Source="{Binding Data.ImageURI}"
