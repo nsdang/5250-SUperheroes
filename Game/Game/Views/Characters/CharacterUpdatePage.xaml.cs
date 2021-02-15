@@ -33,12 +33,11 @@ namespace Game.Views
         {
             InitializeComponent();
 
+            data.HandItemList = Get_Item_List_BasedOn_Location("Hand");
+            data.HeadItemList = Get_Item_List_BasedOn_Location("Head");
+            data.FingerItemList = Get_Item_List_BasedOn_Location("Finger");
+
             BindingContext = this.ViewModel = data;
-
-            this.ViewModel.HandItemList = Get_Item_List_BasedOn_Location("Hand");
-            this.ViewModel.HeadItemList = Get_Item_List_BasedOn_Location("Head");
-            this.ViewModel.FingerItemList = Get_Item_List_BasedOn_Location("Finger");
-
             this.ViewModel.Title = "Update " + data.Title;
 
         }
