@@ -22,18 +22,13 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <ScrollView HorizontalOptions="Center" VerticalOptions="Center">
+        <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
             <StackLayout Style="{StaticResource OuterBoxStack}"
+                         Padding="0,100,0,0"
                          Spacing="20"
                          HorizontalOptions="Center">
 
                 <StackLayout Spacing="5" HorizontalOptions="Center">
-                    <Label Text="Update Page"
-                        FontSize="40"
-                        FontAttributes="Bold"
-                        HorizontalOptions="Center"
-                        TextColor="Black"
-                        Style="{StaticResource HeaderStyle}"/>
 
                     <Grid VerticalOptions="Center" HorizontalOptions="Center">
                         <Grid.ColumnDefinitions>
