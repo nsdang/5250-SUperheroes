@@ -16,13 +16,6 @@
         <StackLayout Style="{StaticResource OuterBoxStack}"
             Spacing="10">
 
-            <Label Text="Detail Page"
-                   FontSize="40"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center"
-                   TextColor="Black"
-                   Style="{StaticResource HeaderStyle}"/>
-
             <Frame
                 Style="{StaticResource CruFrames}"
                 WidthRequest="140"
