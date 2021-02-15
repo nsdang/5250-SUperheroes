@@ -81,7 +81,7 @@
                              Spacing="8">
 
                     <Label Text="Stats" Style="{StaticResource LabelStyle}"/>
-                    <Line X1="0" Y1="0" X2="220" Y2="0" Stroke="Black"/>
+                    <Line X1="0" Y1="0" X2="255" Y2="0" Stroke="Black"/>
 
                     <Frame
                     Style="{StaticResource CruFrames}"
@@ -103,8 +103,8 @@
                                 </Grid.RowDefinitions>
 
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="60"/>
-                                    <ColumnDefinition Width="70" />
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="30" />
                                 </Grid.ColumnDefinitions>
                        
                                 <Label Grid.Row="0" Grid.Column="0"
@@ -147,6 +147,71 @@
                                 Text="{Binding Data.Speed}" 
                                 Style="{StaticResource BasicEntryStyle}"/>
                                 
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
+
+                    <Label Text="Items" Style="{StaticResource LabelStyle}"/>
+                    <Line X1="0" Y1="0" X2="255" Y2="0" Stroke="Black"/>
+                    <Frame
+                    Style="{StaticResource CruFrames}"
+                    WidthRequest="250"
+                    HorizontalOptions="Center"
+                	>
+                        <StackLayout>
+                            <Grid
+                                RowSpacing="1"
+                                ColumnSpacing="2"
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="100" />
+                                </Grid.ColumnDefinitions>
+                       
+                                <Label Grid.Row="0" Grid.Column="0"
+                                Text="Weapon" 
+                                TextColor="Black"
+                                Style="{StaticResource LabelStyle}"/>
+
+                                <!--<Picker  Grid.Row="0" Grid.Column="1"
+                                         SelectedItem="{Binding Data.PrimaryHand, Converter={StaticResource StringEnum}, Mode=TwoWay}"
+                                         HorizontalTextAlignment="Center"/>-->
+
+                                <Label Grid.Row="1" Grid.Column="0"
+                                Text="Shield" 
+                                TextColor="Black"
+                                Style="{StaticResource LabelStyle}"/>
+
+                                <!--<Picker  Grid.Row="1" Grid.Column="1"
+                                         SelectedItem="{Binding Data.OffHand, Converter={StaticResource StringEnum}, Mode=TwoWay}"
+                                         HorizontalTextAlignment="Center"/>-->
+
+                                <Label Grid.Row="2" Grid.Column="0"
+                                Text="Armor" 
+                                TextColor="Black"
+                                Style="{StaticResource LabelStyle}"/>
+
+                                <!--<Picker  Grid.Row="2" Grid.Column="1"
+                                         SelectedItem="{Binding Data.Head, Converter={StaticResource StringEnum}, Mode=TwoWay}"
+                                         HorizontalTextAlignment="Center"/>-->
+
+                                <Label Grid.Row="3" Grid.Column="0"
+                                Text="Accessory"
+                                TextColor="Black"
+                                Style="{StaticResource LabelStyle}"/>
+
+                                <!--<Picker  Grid.Row="3" Grid.Column="1"
+                                         SelectedItem="{Binding Data.Necklass, Converter={StaticResource StringEnum}, Mode=TwoWay}"
+                                         HorizontalTextAlignment="Center"/>-->
                             </Grid>
                         </StackLayout>
                     </Frame>
