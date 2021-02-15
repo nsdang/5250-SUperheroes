@@ -120,12 +120,27 @@ namespace Game.Models
                 return false;
             }
 
-            if (CurrentHealth < (CurrentHealth * 1 / 5) && ShameLevel > 15)
+            if (CurrentHealth < (CurrentHealth * 1 / 5))
             {
                 return true;
             }
 
             return false;
         }
+
+        /// <summary>
+        /// Return true if hero damages monsters with pyschic attack
+        /// </summary>
+        /// <param name="cm"></param>
+        /// <returns></returns>
+        public bool IsAttackPsychic()
+        {
+            if (Job == CharacterJobEnum.Psychic)
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 }
