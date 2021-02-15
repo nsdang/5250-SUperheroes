@@ -10,13 +10,6 @@
     <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
         <StackLayout Style="{StaticResource OuterBoxStack}" Padding ="0,100,0,0" HorizontalOptions="Center" VerticalOptions="Center">
 
-            <Label Text="Delete Page"
-                   FontSize="40"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center"
-                   TextColor="Black"
-                   Style="{StaticResource HeaderStyle}"/>
-
             <StackLayout>
                 <Grid RowSpacing="0" ColumnSpacing="0">
                     <Grid.ColumnDefinitions>

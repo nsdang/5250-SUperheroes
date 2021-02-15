@@ -7,16 +7,9 @@
              x:Class="Game.Views.ItemDeletePage"
              Title="{Binding Title}">
 
-    <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+    <ScrollView HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
         <StackLayout Style="{StaticResource OuterBoxStack}"
-                Spacing="10">
-
-            <Label Text="Delete Page"
-                   FontSize="40"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center"
-                   TextColor="Black"
-                   Style="{StaticResource HeaderStyle}"/>
+                Padding="0,100,0,0">
 
             <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
             <Grid RowSpacing="0" ColumnSpacing="0">

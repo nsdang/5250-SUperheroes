@@ -13,13 +13,6 @@
         <StackLayout Style="{StaticResource OuterBoxStack}"
                      Padding="0,100,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
-            <Label Text="Delete Page"
-                   FontSize="40"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center"
-                   TextColor="Black"
-                   Style="{StaticResource HeaderStyle}"/>
-
             <Image Source="{Binding Data.ImageURI}" Style="{StaticResource ImageLargeStyle}"/>
 
             <Grid RowSpacing="0" ColumnSpacing="0">
