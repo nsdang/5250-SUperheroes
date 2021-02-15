@@ -13,10 +13,9 @@ namespace Game.ViewModels
         /// <summary>
         /// List of available Items for equip
         /// </summary>
-        List<ItemModel> weaponItemList { get; set; }
-        List<ItemModel> shieldItemList { get; set; }
-        List<ItemModel> armorItemList { get; set; }
-        List<ItemModel> accessoryItemList { get; set; }
+        List<ItemModel> handItemList { get; set; }
+        List<ItemModel> fingerItemList { get; set; }
+        List<ItemModel> headItemList { get; set; }
 
         public T Data
         {
@@ -28,47 +27,36 @@ namespace Game.ViewModels
             }
         }
 
-        public List<ItemModel> WeaponItemList
+        public List<ItemModel> HandItemList
         {
-            get { return weaponItemList; }
+            get { return handItemList; }
             set
             {
-                var data = weaponItemList;
+                var data = handItemList;
                 SetProperty(ref data, value);
-                weaponItemList = data;
+                handItemList = data;
             }
         }
 
-        public List<ItemModel> ShieldItemList
+        public List<ItemModel> FingerItemList
         {
-            get { return shieldItemList; }
+            get { return fingerItemList; }
             set
             {
-                var data = shieldItemList;
+                var data = fingerItemList;
                 SetProperty(ref data, value);
-                shieldItemList = data;
+                fingerItemList = data;
             }
         }
 
-        public List<ItemModel> ArmorItemList
+        public List<ItemModel> HeadItemList
         {
-            get { return armorItemList; }
+            get { return headItemList; }
             set
             {
-                var data = armorItemList;
+                var data = headItemList;
                 SetProperty(ref data, value);
-                armorItemList = data;
-            }
-        }
-
-        public List<ItemModel> AccessoryItemList
-        {
-            get { return accessoryItemList; }
-            set
-            {
-                var data = accessoryItemList;
-                SetProperty(ref data, value);
-                accessoryItemList = data;
+                headItemList = data;
             }
         }
 

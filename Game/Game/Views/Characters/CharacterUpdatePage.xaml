@@ -191,7 +191,7 @@
                                 Style="{StaticResource LabelStyle}"/>
 
                                 <Picker  Grid.Row="0" Grid.Column="1"
-                                         ItemsSource="{Binding WeaponItemList}"
+                                         ItemsSource="{Binding HeadItemList}"
                                          SelectedItem="{Binding Data.Head, Mode=TwoWay}"
                                          HorizontalTextAlignment="Center"/>
 
@@ -201,7 +201,7 @@
                                 Style="{StaticResource LabelStyle}"/>
 
                                 <Picker  Grid.Row="1" Grid.Column="1"
-                                         ItemsSource="{Binding ShieldItemList}"
+                                         ItemsSource="{Binding FingerItemList}"
                                          SelectedItem="{Binding Data.Finger, Mode=TwoWay}"
                                          HorizontalTextAlignment="Center"/>
 
@@ -211,7 +211,7 @@
                                 Style="{StaticResource LabelStyle}"/>
 
                                 <Picker  Grid.Row="2" Grid.Column="1"
-                                         ItemsSource="{Binding ArmorItemList}"
+                                         ItemsSource="{Binding HandItemList}"
                                          SelectedItem="{Binding Data.PrimaryHand, Mode=TwoWay}"
                                          HorizontalTextAlignment="Center"/>
                             </Grid>

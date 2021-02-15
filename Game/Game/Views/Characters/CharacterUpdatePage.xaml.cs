@@ -35,9 +35,9 @@ namespace Game.Views
 
             BindingContext = this.ViewModel = data;
 
-            this.ViewModel.WeaponItemList = Get_Item_List_BasedOn_Location("Hand");
-            this.ViewModel.ShieldItemList = Get_Item_List_BasedOn_Location("Head");
-            this.ViewModel.AccessoryItemList = Get_Item_List_BasedOn_Location("Finger");
+            this.ViewModel.HandItemList = Get_Item_List_BasedOn_Location("Hand");
+            this.ViewModel.HeadItemList = Get_Item_List_BasedOn_Location("Head");
+            this.ViewModel.FingerItemList = Get_Item_List_BasedOn_Location("Finger");
 
             this.ViewModel.Title = "Update " + data.Title;
 

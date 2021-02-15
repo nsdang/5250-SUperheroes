@@ -34,10 +34,9 @@ namespace Game.Views
         {
             InitializeComponent();
 
-            this.ViewModel.WeaponItemList = Get_Item_List_BasedOn_Location("Weapon");
-            this.ViewModel.ShieldItemList = Get_Item_List_BasedOn_Location("Shield");
-            this.ViewModel.ArmorItemList = Get_Item_List_BasedOn_Location("Armor");
-            this.ViewModel.AccessoryItemList = Get_Item_List_BasedOn_Location("Accessory");
+            this.ViewModel.HandItemList = Get_Item_List_BasedOn_Location("Hand");
+            this.ViewModel.HeadItemList = Get_Item_List_BasedOn_Location("Head");
+            this.ViewModel.FingerItemList = Get_Item_List_BasedOn_Location("Finger");
 
             this.ViewModel.Data = new CharacterModel();
 
@@ -131,21 +130,17 @@ namespace Game.Views
         public List<ItemModel> Get_Item_List_BasedOn_Location (string location)
         {
             ItemIndexViewModel ItemList = ItemIndexViewModel.Instance;
-            if (location == "Weapon")
+            if (location == "Hand")
             {
                 return ItemList.GetLocationItems(ItemLocationEnum.PrimaryHand);
             }
-            else if (location == "Shield")
-            {
-                return ItemList.GetLocationItems(ItemLocationEnum.OffHand);
-            }
-            else if (location == "Armor")
+            else if (location == "Head")
             {
                 return ItemList.GetLocationItems(ItemLocationEnum.Head);
             }
-            else if (location == "Accessory")
+            else if (location == "Finger")
             {
-                return ItemList.GetLocationItems(ItemLocationEnum.Necklass);
+                return ItemList.GetLocationItems(ItemLocationEnum.Finger);
             }
             else
             {
