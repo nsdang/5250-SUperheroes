@@ -232,7 +232,7 @@
                             Style="{StaticResource LabelStyle}"/>
 
                         <Label Grid.Row="1" Grid.Column="1"
-                            Text="{Binding Data.Finger}" 
+                            Text="{Binding Data.RightFinger}" 
                               Style="{StaticResource ReadPageValueStyleLabel}"/>
 
                         <Label Grid.Row="2" Grid.Column="0"
