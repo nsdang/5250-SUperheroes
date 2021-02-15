@@ -10,6 +10,7 @@
 
             <StackLayout
                 VerticalOptions="Center">
+
             <Grid 
                 VerticalOptions="FillAndExpand"
                 HorizontalOptions="Center"
@@ -28,35 +29,23 @@
 
                 <Button Grid.Column="0" Grid.Row="0"
                         Text="Characters"
-                        Style="{StaticResource PageButtonStyle}"
-                        WidthRequest="200"
-                        HeightRequest="70"
-                        FontSize="Small"
+                        Style="{StaticResource VillagePageButtonStyle}"
                         Clicked="CharactersButton_Clicked"/>
 
                 <Button Grid.Column="0" Grid.Row="1"
                         Text="Monsters"
-                        Style="{StaticResource PageButtonStyle}"
-                        WidthRequest="200"
-                        HeightRequest="70"
-                        FontSize="Small"
+                        Style="{StaticResource VillagePageButtonStyle}"
                         Clicked="MonstersButton_Clicked"/>
 
                 <Button Grid.Column="0" Grid.Row="2"
                         Text="Items"
-                        Style="{StaticResource PageButtonStyle}"
-                        WidthRequest="200"
-                        HeightRequest="70"
-                        FontSize="Small"
+                        Style="{StaticResource VillagePageButtonStyle}"
                         Clicked="ItemsButton_Clicked"/>
 
 
                 <Button Grid.Column="0" Grid.Row="3"
                         Text="Scores"
-                        Style="{StaticResource PageButtonStyle}"
-                        WidthRequest="200"
-                        HeightRequest="70"
-                        FontSize="Small"
+                        Style="{StaticResource VillagePageButtonStyle}"
                         Clicked="ScoresButton_Clicked"/>
             </Grid>
         </StackLayout>

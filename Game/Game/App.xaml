@@ -332,6 +332,15 @@
                 <Setter Property ="Margin" Value="10"/>
             </Style>
 
+            <Style TargetType="Button"
+                   x:Key="VillagePageButtonStyle">
+                <Setter Property="FontSize" Value="Small"/>
+                <Setter Property="HeightRequest" Value="70"/>
+                <Setter Property="WidthRequest" Value="200"/>
+                <Setter Property ="BorderColor" Value="Black"/>
+                <Setter Property ="BackgroundColor" Value="Orange"/>
+                <Setter Property ="Margin" Value="10"/>
+            </Style>
 
             <!-- Stack Layouts -->
             <Style TargetType="StackLayout"
