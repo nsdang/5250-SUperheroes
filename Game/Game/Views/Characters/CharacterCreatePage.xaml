@@ -193,7 +193,7 @@
 
                                 <Picker  Grid.Row="1" Grid.Column="1"
                                          ItemsSource="{Binding FingerItemList}"
-                                         SelectedItem="{Binding Data.Finger, Mode=TwoWay}"
+                                         SelectedItem="{Binding Data.RightFinger, Mode=TwoWay}"
                                          HorizontalTextAlignment="Center"/>
 
                                 <Label Grid.Row="2" Grid.Column="0"
