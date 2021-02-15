@@ -5,6 +5,7 @@ using Xamarin.Forms.Xaml;
 
 using Game.ViewModels;
 using Game.Models;
+using System.Collections.Generic;
 
 namespace Game.Views
 {
@@ -92,6 +93,36 @@ namespace Game.Views
             }
 
             return false;
+        }
+
+        /// <summary>
+        /// Get all the items for a set location
+        /// </summary>
+        /// <param name="location"></param>
+        /// <returns></returns>
+        public List<ItemModel> Get_Item_List_BasedOn_Location(string location)
+        {
+            ItemIndexViewModel ItemList = ItemIndexViewModel.Instance;
+            if (location == "Weapon")
+            {
+                return ItemList.GetLocationItems(ItemLocationEnum.PrimaryHand);
+            }
+            else if (location == "Shield")
+            {
+                return ItemList.GetLocationItems(ItemLocationEnum.OffHand);
+            }
+            else if (location == "Armor")
+            {
+                return ItemList.GetLocationItems(ItemLocationEnum.Head);
+            }
+            else if (location == "Accessory")
+            {
+                return ItemList.GetLocationItems(ItemLocationEnum.Necklass);
+            }
+            else
+            {
+                return ItemList.GetLocationItems(ItemLocationEnum.PrimaryHand);
+            }
         }
     }
 }
