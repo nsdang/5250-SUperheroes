@@ -2,6 +2,7 @@
 using Game.ViewModels;
 
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 using Xamarin.Forms;
@@ -23,6 +24,12 @@ namespace Game.Views
         // The Character to create
         public GenericViewModel<CharacterModel> ViewModel = new GenericViewModel<CharacterModel>();
 
+        // The list of available Items for equip
+        readonly List<ItemModel> weaponItemList_;
+        readonly List<ItemModel> shieldItemList_;
+        readonly List<ItemModel> armorItemList_;
+        readonly List<ItemModel> accessoryItemList_;
+
         // Empty Constructor for UTs
         public CharacterCreatePage(bool UnitTest){}
 
@@ -32,6 +39,11 @@ namespace Game.Views
         public CharacterCreatePage()
         {
             InitializeComponent();
+
+            weaponItemList_ = Get_Item_List_BasedOn_Location("Weapon");
+            shieldItemList_ = Get_Item_List_BasedOn_Location("Shield");
+            armorItemList_ = Get_Item_List_BasedOn_Location("Armor");
+            accessoryItemList_ = Get_Item_List_BasedOn_Location("Accessory");
 
             this.ViewModel.Data = new CharacterModel();
 
@@ -115,6 +127,36 @@ namespace Game.Views
             ViewModel.Data.ImageURI = "Flying.png";
 
             HeroImage.Source = ViewModel.Data.ImageURI;
+        }
+
+        /// <summary>
+        /// Get all the items for a set location
+        /// </summary>
+        /// <param name="location"></param>
+        /// <returns></returns>
+        public List<ItemModel> Get_Item_List_BasedOn_Location (string location)
+        {
+            ItemIndexViewModel ItemList = ItemIndexViewModel.Instance;
+            if (location == "Weapon")
+            {
+                return ItemList.GetLocationItems(ItemLocationEnum.PrimaryHand);
+            }
+            else if (location == "Shield")
+            {
+                return ItemList.GetLocationItems(ItemLocationEnum.OffHand);
+            }
+            else if (location == "Armor")
+            {
+                return ItemList.GetLocationItems(ItemLocationEnum.Head);
+            }
+            else if (location == "Accessory")
+            {
+                return ItemList.GetLocationItems(ItemLocationEnum.Necklass);
+            }
+            else
+            {
+                return ItemList.GetLocationItems(ItemLocationEnum.PrimaryHand);
+            }
         }
     }
 }
