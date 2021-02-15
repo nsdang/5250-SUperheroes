@@ -5,12 +5,19 @@
              >
 
     <ContentPage.Content>
+        <ScrollView
+            Orientation="Vertical"
+            HorizontalScrollBarVisibility="Never"
+            VerticalScrollBarVisibility="Never"
+            Padding="10"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="StartAndExpand">
 
-        <ScrollView Orientation="Vertical" HorizontalScrollBarVisibility="Never" VerticalScrollBarVisibility="Never" Padding="10">
-
-            <StackLayout
-                VerticalOptions="Center">
-
+            <StackLayout Style="{StaticResource OuterBoxStack}"
+                         Padding="0,100,0,0"
+                         Spacing="20"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center">
             <Grid 
                 VerticalOptions="FillAndExpand"
                 HorizontalOptions="Center"
