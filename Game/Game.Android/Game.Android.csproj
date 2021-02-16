@@ -129,7 +129,7 @@
     <AndroidResource Include="Resources\drawable\mcdonaldsemployee.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Boss.png" />
+    <AndroidResource Include="Resources\drawable\boss.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\bronzering.PNG" />
