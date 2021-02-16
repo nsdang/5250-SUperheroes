@@ -45,7 +45,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Cookie",
                     Description = "Can increase moderate\namount of health.",
-                    ImageURI = "item.png",
+                    ImageURI = "cookie.png",
                     Value = 25,
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.CurrentHealth
