@@ -114,10 +114,9 @@ namespace Game.Views
         /// </summary>
         public void Image_OnPickerSourceChange(object sender, System.EventArgs e)
         {
-            string imageURI = ViewModel.Data.Job.ToString() + ".png";
+            string imageURI = ViewModel.Data.Job.ToString().ToLower() + ".png";
 
-            // NOTE: wait for all character's image to change the ImageURI value
-            ViewModel.Data.ImageURI = "Flying.png";
+            ViewModel.Data.ImageURI = imageURI;
 
             HeroImage.Source = ViewModel.Data.ImageURI;
         }
