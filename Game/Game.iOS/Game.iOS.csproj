@@ -192,4 +192,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\bronzering.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bronzehelmet.PNG" />
+  </ItemGroup>
 </Project>
