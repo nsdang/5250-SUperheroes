@@ -85,7 +85,7 @@ namespace Game.Views
         /// <param name="e"></param>
         public void Value_OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
-            ValueValue.Text = String.Format("{0}", e.NewValue);
+            ValueValue.Text = String.Format("{0:00}", e.NewValue);
         }
     }
 }

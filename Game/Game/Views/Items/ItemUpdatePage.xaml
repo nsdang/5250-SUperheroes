@@ -71,7 +71,10 @@
                             HorizontalOptions="End"
                             HorizontalTextAlignment="End"/>
 
-                            <Stepper 
+                            <Stepper
+                                Maximum="50"
+                                Minimum="0"
+                                Increment="1"
                             Value="{Binding Data.Value, Mode=TwoWay}"
                             ValueChanged="Value_OnStepperValueChanged"/>
 
