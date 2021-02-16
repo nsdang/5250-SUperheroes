@@ -139,6 +139,7 @@
     <Content Include="cookie.png" />
     <Content Include="Flying.png" />
     <Content Include="icon_add.png" />
+    <Content Include="light.png" />
     <Content Include="midichlorian.PNG" />
     <Content Include="physical.png" />
     <Content Include="psychic.png" />
