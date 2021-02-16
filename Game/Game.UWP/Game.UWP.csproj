@@ -137,6 +137,7 @@
     <Content Include="bronzehelmet.PNG" />
     <Content Include="bronzering.PNG" />
     <Content Include="cookie.png" />
+    <Content Include="dark.png" />
     <Content Include="Flying.png" />
     <Content Include="icon_add.png" />
     <Content Include="light.png" />
