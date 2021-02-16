@@ -132,9 +132,6 @@
     <AndroidResource Include="Resources\drawable\Boss.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Carpenter.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\bronzering.PNG" />
   </ItemGroup>
   <ItemGroup>

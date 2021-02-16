@@ -184,9 +184,6 @@
     <BundleResource Include="Resources\Boss.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Carpenter.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\bronzering.PNG" />
   </ItemGroup>
   <ItemGroup>
