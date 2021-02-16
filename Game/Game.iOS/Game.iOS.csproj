@@ -175,7 +175,7 @@
     <BundleResource Include="Resources\flying.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Vet.png" />
+    <BundleResource Include="Resources\vet.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\mcdonaldsemployee.png" />
