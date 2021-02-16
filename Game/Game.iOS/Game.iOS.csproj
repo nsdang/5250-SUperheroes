@@ -201,4 +201,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\cookie.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bagofcookies.PNG" />
+  </ItemGroup>
 </Project>
