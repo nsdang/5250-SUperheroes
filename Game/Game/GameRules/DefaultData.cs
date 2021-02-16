@@ -62,7 +62,7 @@ namespace Game.GameRules
                     Name = "Midi-chlorians",
                     Description = "An injection of midi-chlorians\nor m-cells grants a hero\n" +
                     "temporary access to a mystical\nability known as the force\nfor the rest of the battle.",
-                    ImageURI = "item.png",
+                    ImageURI = "midichlorian.png",
                     Value = 10,
                     Location = ItemLocationEnum.Finger,
                     Attribute = AttributeEnum.Speed
