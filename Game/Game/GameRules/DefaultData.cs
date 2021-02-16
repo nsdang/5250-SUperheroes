@@ -53,7 +53,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Bag of cookies",
                     Description = "Can recover minor amount\nof health for entire\nteam.",
-                    ImageURI = "item.png",
+                    ImageURI = "bagofcookies.png",
                     Value = 10,
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.CurrentHealth
