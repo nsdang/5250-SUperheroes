@@ -208,7 +208,7 @@ namespace Game.GameRules
                     Name = "Bob",
                     Job = (CharacterJobEnum)6,
                     Description = "Carpenter that fights with a wrench",
-                    ImageURI = "Carpenter.png",
+                    ImageURI = "carpenter.png",
                 },
 
                 new MonsterModel {
