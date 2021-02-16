@@ -104,6 +104,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="accountant.png" />
     <Content Include="Assets\BadgeLogo.scale-100.png" />
     <Content Include="Assets\BadgeLogo.scale-125.png" />
     <Content Include="Assets\BadgeLogo.scale-150.png" />
@@ -136,6 +137,7 @@
     <Content Include="brassknuckles.PNG" />
     <Content Include="bronzehelmet.PNG" />
     <Content Include="bronzering.PNG" />
+    <Content Include="carpenter.png" />
     <Content Include="cookie.png" />
     <Content Include="dark.png" />
     <Content Include="flying.png" />
@@ -145,14 +147,12 @@
     <Content Include="physical.png" />
     <Content Include="psychic.png" />
     <Content Include="Vet.png" />
-    <Content Include="Carpenter.png" />
     <Content Include="icon_cancel.png" />
     <Content Include="McDonaldsEmployee.png" />
     <Content Include="icon_delete.png" />
     <Content Include="icon_edit.png" />
     <Content Include="icon_new.png" />
     <Content Include="Boss.png" />
-    <Content Include="Accountant.png" />
     <Content Include="item.png" />
     <Content Include="mapcell.png" />
     <Content Include="Properties\Default.rd.xml" />

@@ -172,7 +172,7 @@
     <BundleResource Include="Resources\mapcell.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\flying.png" />
+    <BundleResource Include="Resources\Flying.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Vet.png" />
@@ -182,12 +182,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Boss.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Accountant.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Carpenter.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\bronzering.PNG" />
@@ -208,15 +202,9 @@
     <BundleResource Include="Resources\midichlorian.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\psychic.png" />
+    <BundleResource Include="Resources\accountant.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\physical.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\light.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\dark.png" />
+    <BundleResource Include="Resources\carpenter.png" />
   </ItemGroup>
 </Project>
