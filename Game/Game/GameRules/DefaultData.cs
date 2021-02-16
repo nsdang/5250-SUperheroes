@@ -215,7 +215,7 @@ namespace Game.GameRules
                     Name = "Yinying",
                     Job = (CharacterJobEnum)7,
                     Description = "Accountant that can throw cash with sharp accuracy",
-                    ImageURI = "Accountant.png",
+                    ImageURI = "accountant.png",
                 },
 
                 new MonsterModel {
