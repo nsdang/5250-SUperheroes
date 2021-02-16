@@ -93,14 +93,8 @@ namespace Game.Views
         /// <summary>
         /// Change the displayed image on Location Picker change
         /// </summary>
-        public void Image_OnPickerSourceChange(object sender, System.EventArgs e)
+        public void Image_OnEntryChange(object sender, System.EventArgs e)
         {
-            string imageURI = ViewModel.Data.Location.ToString() + ".png";
-
-            // NOTE: wait for all item's image to change the ImageURI value
-            ViewModel.Data.ImageURI = "item.png";
-            // ViewModel.Data.ImageURI = imageURI;
-
             ItemImage.Source = ViewModel.Data.ImageURI;
         }
     }

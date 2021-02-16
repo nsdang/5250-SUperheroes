@@ -41,8 +41,7 @@
                         SelectedItem="{Binding Data.Location, Converter={StaticResource StringEnum}, Mode=TwoWay}" 
                         x:Name="LocationPicker"
                         Title="Location"
-                        HorizontalTextAlignment="Center"
-                        SelectedIndexChanged="Image_OnPickerSourceChange"/>
+                        HorizontalTextAlignment="Center"/>
                     </Grid>
                    
                     <Image
@@ -118,6 +117,14 @@
                         HorizontalTextAlignment="Center"/>
 
                     </Grid>
+
+                    <Label
+                        Text="ImageURI" Style="{StaticResource LabelStyle}"/>
+                    <Entry
+                        Completed="Image_OnEntryChange"
+                        Style="{StaticResource EntryStyle}"
+                        Placeholder="Enter the image file here." PlaceholderColor="Olive"
+                        Text="{Binding Data.ImageURI}"/>
 
                     <Label
                         Text="Description" Style="{StaticResource LabelStyle}"/>
