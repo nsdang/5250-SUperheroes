@@ -27,7 +27,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Bronze Helmet",
                     Description = "A helmet provided to every\nSUperhero and SUbsidized\nby the government.",
-                    ImageURI = "item.png",
+                    ImageURI = "bronzehelmet.png",
                     Value = 5,
                     Location = ItemLocationEnum.Head,
                     Attribute = AttributeEnum.Defense
