@@ -102,8 +102,8 @@
                                 </Grid.RowDefinitions>
 
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="80"/>
-                                    <ColumnDefinition Width="30" />
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="70" />
                                 </Grid.ColumnDefinitions>
                        
                                 <Label Grid.Row="0" Grid.Column="0"
