@@ -195,4 +195,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\bronzehelmet.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\brassknuckles.PNG" />
+  </ItemGroup>
 </Project>
