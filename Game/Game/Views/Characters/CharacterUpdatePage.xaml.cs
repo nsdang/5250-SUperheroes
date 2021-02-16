@@ -111,21 +111,21 @@ namespace Game.Views
             {
                 foreach (var item in ItemList.GetLocationItems(ItemLocationEnum.PrimaryHand))
                 {
-                    result.Add(item.Id);
+                    result.Add(item.Name);
                 }
             }
             else if (location == "Head")
             {
                 foreach (var item in ItemList.GetLocationItems(ItemLocationEnum.Head))
                 {
-                    result.Add(item.Id);
+                    result.Add(item.Name);
                 }
             }
             else if (location == "Finger")
             {
                 foreach (var item in ItemList.GetLocationItems(ItemLocationEnum.Finger))
                 {
-                    result.Add(item.Id);
+                    result.Add(item.Name);
                 }
             }
 
