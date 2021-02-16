@@ -222,7 +222,7 @@ namespace Game.GameRules
                     Name = "Carolina",
                     Job = (CharacterJobEnum)8,
                     Description = "Mc Donald's worker that throws fries",
-                    ImageURI = "McDonaldsEmployee.png",
+                    ImageURI = "mcdonaldsemployee.png",
                 },
 
                 new MonsterModel {
