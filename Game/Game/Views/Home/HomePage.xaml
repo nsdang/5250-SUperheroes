@@ -35,24 +35,40 @@
                          Source="Flying.png"
                          Style="{StaticResource ImageLargeStyle}"/>
                 </Frame>
-                
-              
-                <Label
-                     Text="Once, they used to be deserving of the title."
-                     HorizontalOptions="Center">
-                </Label>
+
+                <Frame
+                    BackgroundColor="Black"
+                    BorderColor="Orange"
+                    CornerRadius="1"
+                    WidthRequest="350">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Label 
+                                TextColor="Crimson"
+                                Text="Once, they used to be deserving of the title."
+                                HorizontalOptions="Center">
+                            </Label>
 
 
-                <Label
-                     Text="But age has made them deluded, jaded, arrogant."
-                     HorizontalOptions="Center">
-                </Label>
+                            <Label Grid.Row="1"
+                                TextColor="Crimson"
+                                Text="But age has made them deluded, jaded, arrogant."
+                                HorizontalOptions="Center">
+                            </Label>
 
 
-                <Label
-                     Text="They have turned their backs on the common people."
-                     HorizontalOptions="Center">
-                </Label>
+                            <Label Grid.Row="2"
+                                 TextColor="Crimson"
+                                 Text="They have turned their backs on the common people."
+                                 HorizontalOptions="Center">
+                            </Label>
+                    </Grid>
+                </Frame>
 
                 <Button 
                     Margin="0, 15, 0, 0"
