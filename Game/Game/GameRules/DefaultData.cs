@@ -18,7 +18,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Bronze Ring",
                     Description = "A ring provided to every\nSUperhero and SUbsidized\nby the government.",
-                    ImageURI = "item.png",
+                    ImageURI = "bronzering.png",
                     Range = 10,
                     Value = 5,
                     Location = ItemLocationEnum.Finger,
@@ -27,7 +27,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Bronze Helmet",
                     Description = "A helmet provided to every\nSUperhero and SUbsidized\nby the government.",
-                    ImageURI = "item.png",
+                    ImageURI = "bronzehelmet.png",
                     Value = 5,
                     Location = ItemLocationEnum.Head,
                     Attribute = AttributeEnum.Defense
@@ -35,7 +35,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Brass Knuckles",
                     Description = "A set of fist loaded weapons\nprovided to every SUperhero\nand SUbsidized by the\ngovernment.",
-                    ImageURI = "item.png",
+                    ImageURI = "brassknuckles.png",
                     Range = 10,
                     Damage = 5,
                     Value = 5,
@@ -45,7 +45,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Cookie",
                     Description = "Can increase moderate\namount of health.",
-                    ImageURI = "item.png",
+                    ImageURI = "cookie.png",
                     Value = 25,
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.CurrentHealth
@@ -53,7 +53,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Bag of cookies",
                     Description = "Can recover minor amount\nof health for entire\nteam.",
-                    ImageURI = "item.png",
+                    ImageURI = "bagofcookies.png",
                     Value = 10,
                     Location = ItemLocationEnum.PrimaryHand,
                     Attribute = AttributeEnum.CurrentHealth
@@ -62,7 +62,7 @@ namespace Game.GameRules
                     Name = "Midi-chlorians",
                     Description = "An injection of midi-chlorians\nor m-cells grants a hero\n" +
                     "temporary access to a mystical\nability known as the force\nfor the rest of the battle.",
-                    ImageURI = "item.png",
+                    ImageURI = "midichlorian.png",
                     Value = 10,
                     Location = ItemLocationEnum.Finger,
                     Attribute = AttributeEnum.Speed
@@ -117,7 +117,7 @@ namespace Game.GameRules
                     Description = "C1",
                     Level = 1,
                     MaxHealth = 5,
-                    ImageURI = "Flying.png",
+                    ImageURI = "flying.png",
                     Head = ItemIndexViewModel.Instance.GetItem(HeadString).Name,
                     PrimaryHand = ItemIndexViewModel.Instance.GetItem(PrimaryHandString).Name,
                     RightFinger = ItemIndexViewModel.Instance.GetItem(RightFingerString).Name,
@@ -133,7 +133,7 @@ namespace Game.GameRules
                     Description = "C2",
                     Level = 1,
                     MaxHealth = 5,
-                    ImageURI = "item.png",
+                    ImageURI = "psychic.png",
                     Head = ItemIndexViewModel.Instance.GetItem(HeadString).Name,
                     PrimaryHand = ItemIndexViewModel.Instance.GetItem(PrimaryHandString).Name,
                     RightFinger = ItemIndexViewModel.Instance.GetItem(RightFingerString).Name,
@@ -149,7 +149,7 @@ namespace Game.GameRules
                     Description = "C3",
                     Level = 1,
                     MaxHealth = 5,
-                    ImageURI = "item.png",
+                    ImageURI = "physical.png",
                     Head = ItemIndexViewModel.Instance.GetItem(HeadString).Name,
                     PrimaryHand = ItemIndexViewModel.Instance.GetItem(PrimaryHandString).Name,
                     RightFinger = ItemIndexViewModel.Instance.GetItem(RightFingerString).Name,
@@ -165,7 +165,7 @@ namespace Game.GameRules
                     Description = "C4",
                     Level = 1,
                     MaxHealth = 5,
-                    ImageURI = "item.png",
+                    ImageURI = "light.png",
                     Head = ItemIndexViewModel.Instance.GetItem(HeadString).Name,
                     PrimaryHand = ItemIndexViewModel.Instance.GetItem(PrimaryHandString).Name,
                     RightFinger = ItemIndexViewModel.Instance.GetItem(RightFingerString).Name,
@@ -181,7 +181,7 @@ namespace Game.GameRules
                     Description = "C5",
                     Level = 1,
                     MaxHealth = 5,
-                    ImageURI = "item.png",
+                    ImageURI = "dark.png",
                     Head = ItemIndexViewModel.Instance.GetItem(HeadString).Name,
                     PrimaryHand = ItemIndexViewModel.Instance.GetItem(PrimaryHandString).Name,
                     RightFinger = ItemIndexViewModel.Instance.GetItem(RightFingerString).Name,
@@ -208,21 +208,21 @@ namespace Game.GameRules
                     Name = "Bob",
                     Job = (CharacterJobEnum)6,
                     Description = "Carpenter that fights with a wrench",
-                    ImageURI = "Carpenter.png",
+                    ImageURI = "carpenter.png",
                 },
 
                 new MonsterModel {
                     Name = "Yinying",
                     Job = (CharacterJobEnum)7,
                     Description = "Accountant that can throw cash with sharp accuracy",
-                    ImageURI = "Accountant.png",
+                    ImageURI = "accountant.png",
                 },
 
                 new MonsterModel {
                     Name = "Carolina",
                     Job = (CharacterJobEnum)8,
                     Description = "Mc Donald's worker that throws fries",
-                    ImageURI = "McDonaldsEmployee.png",
+                    ImageURI = "mcdonaldsemployee.png",
                 },
 
                 new MonsterModel {
@@ -230,14 +230,14 @@ namespace Game.GameRules
                     Job = (CharacterJobEnum)9,
                     Description = "A vet who was obsessed with the cats in the clinic and loved eating fish." +
                     " One day, she got bitten by a cat while eating some salmon. This turned her into a fish-cat. ",
-                    ImageURI = "Vet.png",
+                    ImageURI = "vet.png",
                 },
 
                 new MonsterModel {
                     Name = "Steve",
                     Job = (CharacterJobEnum)10,
                     Description = "Plays video games soo much that his head transformed into a game controller",
-                    ImageURI = "Boss.png",
+                    ImageURI = "boss.png",
                 },
 
             };

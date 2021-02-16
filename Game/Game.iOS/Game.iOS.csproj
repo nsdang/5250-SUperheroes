@@ -172,21 +172,39 @@
     <BundleResource Include="Resources\mapcell.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Flying.png" />
+    <BundleResource Include="Resources\flying.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Vet.png" />
+    <BundleResource Include="Resources\vet.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\McDonaldsEmployee.png" />
+    <BundleResource Include="Resources\mcdonaldsemployee.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Boss.png" />
+    <BundleResource Include="Resources\boss.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Accountant.png" />
+    <BundleResource Include="Resources\bronzering.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Carpenter.png" />
+    <BundleResource Include="Resources\bronzehelmet.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\brassknuckles.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cookie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bagofcookies.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\midichlorian.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\accountant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\carpenter.png" />
   </ItemGroup>
 </Project>
