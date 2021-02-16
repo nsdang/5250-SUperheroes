@@ -207,4 +207,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\midichlorian.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\psychic.png" />
+  </ItemGroup>
 </Project>
