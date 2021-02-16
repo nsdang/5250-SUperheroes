@@ -108,7 +108,7 @@ namespace Game.Views
         /// </summary>
         public void Image_OnPickerSourceChange(object sender, System.EventArgs e)
         {
-            string imageURI = ViewModel.Data.Job.ToString() + ".png";
+            string imageURI = ViewModel.Data.Job.ToString().ToLower() + ".png";
 
             ViewModel.Data.ImageURI = imageURI;
 
