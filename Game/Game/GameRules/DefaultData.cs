@@ -117,7 +117,7 @@ namespace Game.GameRules
                     Description = "C1",
                     Level = 1,
                     MaxHealth = 5,
-                    ImageURI = "Flying.png",
+                    ImageURI = "flying.png",
                     Head = ItemIndexViewModel.Instance.GetItem(HeadString).Name,
                     PrimaryHand = ItemIndexViewModel.Instance.GetItem(PrimaryHandString).Name,
                     RightFinger = ItemIndexViewModel.Instance.GetItem(RightFingerString).Name,
