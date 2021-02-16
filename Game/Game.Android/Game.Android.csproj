@@ -120,7 +120,7 @@
     <AndroidResource Include="Resources\drawable\mapcell.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Flying.png" />
+    <AndroidResource Include="Resources\drawable\flying.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Vet.png" />
