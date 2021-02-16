@@ -81,12 +81,12 @@ namespace Game.GameRules
         var datalist = new List<ScoreModel>()
             {
                 new ScoreModel {
-                    Name = "First Score",
+                    Name = "Riot 1",
                     Description = "Test Data",
                 },
 
                 new ScoreModel {
-                    Name = "Second Score",
+                    Name = "Riot 2",
                     Description = "Test Data",
                 }
             };
