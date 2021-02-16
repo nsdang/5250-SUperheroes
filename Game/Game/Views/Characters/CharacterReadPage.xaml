@@ -196,14 +196,14 @@
             <Frame
                     Style="{StaticResource CruFrames}"
                     WidthRequest="120"
-                    Padding="0,5,0,5"
+                    Padding="10,5,80,5"
                 	>
                 <StackLayout>
                     <Grid
                         RowSpacing="1"
                         ColumnSpacing="2"
                         VerticalOptions="Center"
-                        HorizontalOptions="Center">
+                        HorizontalOptions="Start">
 
                         <Grid.RowDefinitions>
                             <RowDefinition Height="auto" />
@@ -214,7 +214,7 @@
 
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="60"/>
-                            <ColumnDefinition Width="70" />
+                            <ColumnDefinition Width="140" />
                         </Grid.ColumnDefinitions>
 
                         <Label Grid.Row="0" Grid.Column="0"
