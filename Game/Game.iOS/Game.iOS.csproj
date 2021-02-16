@@ -201,4 +201,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\midichlorian.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\accountant.png" />
+  </ItemGroup>
 </Project>
