@@ -35,7 +35,7 @@ namespace Game.GameRules
                 new ItemModel {
                     Name = "Brass Knuckles",
                     Description = "A set of fist loaded weapons\nprovided to every SUperhero\nand SUbsidized by the\ngovernment.",
-                    ImageURI = "item.png",
+                    ImageURI = "brassknuckles.png",
                     Range = 10,
                     Damage = 5,
                     Value = 5,
