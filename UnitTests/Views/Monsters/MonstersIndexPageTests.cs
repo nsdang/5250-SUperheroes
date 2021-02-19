@@ -80,7 +80,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-
+        /*
         [Test]
         public void MonsterIndexPage_OnMonsterSelected_Clicked_Default_Should_Pass()
         {
@@ -114,7 +114,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-
+        */
         [Test]
         public void MonsterIndexPage_OnAppearing_Valid_Should_Pass()
         {
@@ -147,7 +147,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-
+        /*
         [Test]
         public void MonsterIndexPage_AddItemClicked_Valid_Should_Pass()
         {
@@ -160,7 +160,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-
+        */
 
     }
 }
