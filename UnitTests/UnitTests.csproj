@@ -7,18 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="obj\Debug\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" />
-    <Compile Include="obj\Debug\netcoreapp3.1\UnitTests.AssemblyInfo.cs" />
-    <Compile Include="obj\Release\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" />
-    <Compile Include="obj\Release\netcoreapp3.1\UnitTests.AssemblyInfo.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="obj\project.assets.json" />
-    <Content Include="obj\UnitTests.csproj.nuget.dgspec.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Moq" Version="4.15.2" />
     <PackageReference Include="nunit" Version="3.13.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.17.0">
@@ -36,17 +24,6 @@
   <ItemGroup>
     <Folder Include="bin\Debug\netcoreapp3.1\" />
     <Folder Include="bin\Release\netcoreapp3.1\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="obj\Debug\netcoreapp3.1\UnitTests.AssemblyInfoInputs.cache" />
-    <None Include="obj\Debug\netcoreapp3.1\UnitTests.assets.cache" />
-    <None Include="obj\Debug\netcoreapp3.1\UnitTests.csprojAssemblyReference.cache" />
-    <None Include="obj\project.nuget.cache" />
-    <None Include="obj\Release\netcoreapp3.1\UnitTests.AssemblyInfoInputs.cache" />
-    <None Include="obj\Release\netcoreapp3.1\UnitTests.csprojAssemblyReference.cache" />
-    <None Include="obj\UnitTests.csproj.nuget.g.props" />
-    <None Include="obj\UnitTests.csproj.nuget.g.targets" />
   </ItemGroup>
 
 </Project>
