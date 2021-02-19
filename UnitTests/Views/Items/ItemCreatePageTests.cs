@@ -133,7 +133,8 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-        
+
+        /*
         [Test]
         public void ItemCreatePage_Range_OnStepperValueChanged_Default_Should_Pass()
         {
@@ -172,5 +173,6 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+        */
     }
 }
