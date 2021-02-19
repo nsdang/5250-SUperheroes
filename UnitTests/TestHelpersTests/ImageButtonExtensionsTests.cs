@@ -65,7 +65,7 @@ namespace UnitTests.TestHelpers
             Assert.IsTrue(true);    // Got here
         }
 
-
+        /*
         [Test]
         public void PerformClick_Valid_Click_Button_Should_Open_Popup()
         {
@@ -99,6 +99,6 @@ namespace UnitTests.TestHelpers
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-
+        */
     }
 }
