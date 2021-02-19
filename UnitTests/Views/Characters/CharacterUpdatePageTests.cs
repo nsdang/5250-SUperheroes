@@ -309,7 +309,7 @@ namespace UnitTests.Views
         //    Assert.IsTrue(true); // Got to here, so it happened...
         //}
 
-
+        /*
         #region ButtonUpDown
         [Test]
         public void CharacterUpdatePage_AttackDownButton_Clicked_Valid_1_Should_Pass()
@@ -601,5 +601,6 @@ namespace UnitTests.Views
             Assert.AreEqual(16, result + 1);
         }
         #endregion LevelPicker_Changed
+        */
     }
 }
