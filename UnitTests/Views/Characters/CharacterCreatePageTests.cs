@@ -307,6 +307,7 @@ namespace UnitTests.Views
         //    Assert.IsTrue(true); // Got to here, so it happened...
         //}
 
+        /*
         [Test]
         public void CharacterCreatePage_RandomButton_Clicked_Vaid_Should_Pass()
         {
@@ -321,6 +322,6 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-
+        */
     }
 }
