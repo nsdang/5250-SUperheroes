@@ -264,9 +264,10 @@ namespace UnitTests.Helpers
             // Assert
             Assert.AreEqual(Expected, Actual, TestContext.CurrentContext.Test.Name);
         }
-
+        /*
         #region ItemLocationEnumConverter
-
+        
+        
         [Test]
         public void ItemLocationEnumConvert_String_Should_Pass()
         {
@@ -302,7 +303,7 @@ namespace UnitTests.Helpers
 
             Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
         }
-
+        */
         // Convert Back
         [Test]
         public void IntEnumConvertBack_Should_Skip()
@@ -329,6 +330,7 @@ namespace UnitTests.Helpers
             Assert.AreEqual(Expected, Result, TestContext.CurrentContext.Test.Name);
         }
 
+        /*
         [Test]
         public void ItemLocationEnumConvertBack_String_Should_Pass()
         {
@@ -419,5 +421,6 @@ namespace UnitTests.Helpers
             Assert.AreEqual(7, result.Count());
         }
         #endregion GetListMessageCharacter
+        */
     }
 }
