@@ -38,6 +38,7 @@ namespace UnitTests.Views
             Application.Current = null;
         }
 
+        /*
         [Test]
         public void CharacterIndexPage_Constructor_Default_Should_Pass()
         {
@@ -79,6 +80,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+        */
         /*
         [Test]
         public void CharacterIndexPage_OnCharacterSelected_Clicked_Default_Should_Pass()
@@ -113,8 +115,8 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-        */
-
+        
+        
         [Test]
         public void CharacterIndexPage_OnAppearing_Valid_Should_Pass()
         {
@@ -146,7 +148,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-        /*
+        
         [Test]
         public void CharacterIndexPage_AddItemClicked_Valid_Should_Pass()
         {
