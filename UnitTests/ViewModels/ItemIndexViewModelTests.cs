@@ -684,5 +684,19 @@ namespace UnitTests.ViewModels
             // Asset
             Assert.AreEqual(null, result); 
         }
+
+        [Test]
+        public void ItemIndexViewModel_GetItem_Negative_One_ID_Should_Return_Null()
+        {
+            // Arrange
+
+            // Act
+            var result = ViewModel.GetItem("-1");
+
+            // Reset
+
+            // Asset
+            Assert.AreEqual(null, result);
+        }
     }
 }
