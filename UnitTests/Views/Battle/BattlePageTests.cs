@@ -712,7 +712,7 @@ namespace UnitTests.Views
             Assert.AreEqual(HitStatusEnum.Default, BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.CharacterHitEnum);
         }
 
-        /*      [Test]
+           [Test]
               public void BattleSettingsPage_ShowBattleMode_Default_Should_Pass()
               {
                   // Arrange
@@ -1017,7 +1017,6 @@ namespace UnitTests.Views
                            // Assert
                            Assert.IsTrue(true); // Got Here
                        }
-               */
     }
 
 }
