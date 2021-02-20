@@ -71,7 +71,6 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
-        /*
         [Test]
         public void ScoreDeletePage_Delete_Clicked_Default_Should_Pass()
         {
@@ -99,6 +98,5 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-        */
     }
 }
