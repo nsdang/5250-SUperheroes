@@ -44,7 +44,7 @@ namespace UnitTests.Views
             Application.Current = null;
         }
 
-        /*
+        
         [Test]
         public void BattleSettingsPage_Constructor_Default_Should_Pass()
         {
@@ -336,6 +336,6 @@ namespace UnitTests.Views
             // Assert
             Assert.AreEqual(HitStatusEnum.Default, BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.CharacterHitEnum);
         }
-        */
+        
     }
 }
