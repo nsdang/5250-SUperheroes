@@ -256,5 +256,19 @@ namespace UnitTests.ViewModels
             // Assert
             Assert.AreEqual(2, countAfter); // Count of 0 for the load was skipped
         }
+
+        [Test]
+        public void MonsterIndexViewModel_Get_DataSet_Should_Not_Return_Null()
+        {
+            // Arrange
+
+            // Act
+            var result = ViewModel.DataSet;
+
+            // Reset
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
     }
 }
