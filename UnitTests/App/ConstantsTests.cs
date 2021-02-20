@@ -9,7 +9,7 @@ namespace UnitTests.Views
     [TestFixture]
     public class ConstantsTests
     {
-   /*    [Test]
+       [Test]
         public void Constants_DatabasePath_Default_Should_Pass()
         {
             // Arrange
@@ -41,6 +41,6 @@ namespace UnitTests.Views
 
             // Assert
             Assert.AreEqual("game.db3", result);
-        }*/
+        }
     }
 }
