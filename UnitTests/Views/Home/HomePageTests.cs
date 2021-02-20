@@ -38,7 +38,7 @@ namespace UnitTests.Views
             Application.Current = null;
         }
 
-/*        [Test]
+        [Test]
         public void HomePage_Constructor_Default_Should_Pass()
         {
             // Arrange
@@ -63,6 +63,6 @@ namespace UnitTests.Views
 
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
-        }*/
+        }
     }
 }
