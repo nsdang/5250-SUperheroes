@@ -67,6 +67,22 @@ namespace UnitTests.ViewModels
             Assert.IsNotNull(result.PartyCharacterList);
         }
 
+        [Test]
+        public void BattleEngineViewModel_Set_Default_Should_Pass()
+        {
+            // Arrange
+            var result = ViewModel;
+
+            // Act
+            result.PartyCharacterList = new ObservableCollection<CharacterModel>();
+
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(0, result.PartyCharacterList.Count());
+        }
+
         //[Test]
         //public void BattleEngineViewModel_Get_Default_Should_Pass()
         //{
