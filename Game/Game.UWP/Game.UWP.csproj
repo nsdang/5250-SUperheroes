@@ -142,6 +142,7 @@
     <Content Include="dark.png" />
     <Content Include="flying.png" />
     <Content Include="icon_add.png" />
+    <Content Include="icon_save.png" />
     <Content Include="light.png" />
     <Content Include="midichlorian.PNG" />
     <Content Include="physical.png" />
