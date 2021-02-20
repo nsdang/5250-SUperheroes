@@ -670,5 +670,19 @@ namespace UnitTests.ViewModels
             // Assert
             Assert.AreNotEqual(null, result);  // Update returned Pass
         }
+
+        [Test]
+        public void ItemIndexViewModel_GetItem_Null_Should_Return_Null()
+        {
+            // Arrange
+
+            // Act
+            var result = ViewModel.GetItem(null);
+
+            // Reset
+
+            // Asset
+            Assert.AreEqual(null, result); 
+        }
     }
 }
