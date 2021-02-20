@@ -35,7 +35,6 @@ namespace UnitTests.Views
             Application.Current = null;
         }
 
-        /*
         [Test]
         public void MainPage_Constructor_Default_Should_Pass()
         {
@@ -154,6 +153,5 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true);
         }
-        */
     }
 }
