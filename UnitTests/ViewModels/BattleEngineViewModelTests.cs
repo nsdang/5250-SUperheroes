@@ -83,6 +83,22 @@ namespace UnitTests.ViewModels
             Assert.AreEqual(0, result.PartyCharacterList.Count());
         }
 
+        [Test]
+        public void BattleEngineViewModel_SetBattleEngineToKoening_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = ViewModel.SetBattleEngineToKoenig();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(ViewModel.Engine, ViewModel.EngineKoenig);
+            Assert.AreEqual(ViewModel.AutoBattleEngine, ViewModel.AutoBattleEngineKoenig);
+            Assert.IsTrue(result);
+        }
+
         //[Test]
         //public void BattleEngineViewModel_Get_Default_Should_Pass()
         //{
