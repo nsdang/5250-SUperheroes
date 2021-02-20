@@ -43,7 +43,7 @@ namespace UnitTests.Views
         {
             Application.Current = null;
         }
-
+        /*
         [Test]
         public void CharacterCreatePage_Constructor_Default_Should_Pass()
         {
@@ -114,7 +114,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-
+        */
         //[Test]
         //public void CharacterCreatePage_Attack_OnStepperAttackChanged_Default_Should_Pass()
         //{
