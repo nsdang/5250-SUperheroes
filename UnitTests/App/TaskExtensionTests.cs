@@ -15,7 +15,7 @@ namespace UnitTests.Views
     [TestFixture]
     public class TaskExtensionsTests
     {
-        /*
+        
         [Test]
         public void TaskExtensions_DatabasePath_Default_Should_Pass()
         {
@@ -116,7 +116,6 @@ namespace UnitTests.Views
             IDataStore<ItemModel> DataSource_SQL = new TestDatabaseService<ItemModel>(false);
             Assert.ThrowsAsync<NotImplementedException>(async () => await DataSource_SQL.GetNeedsInitializationAsync());
         }
-        */
     }
 
 #pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
@@ -124,13 +123,13 @@ namespace UnitTests.Views
     {
         static bool _error=false;
 
-        /*
+  
         public TestDatabaseService(bool condition, Action<Exception> onException = null)
         {
             _error = condition;
             InitializeAsync().SafeFireAndForget(false, onException);
         }
-        */
+     
 
         async Task InitializeAsync()
         {
