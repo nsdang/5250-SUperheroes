@@ -42,7 +42,7 @@ namespace UnitTests.Views
         {
             Application.Current = null;
         }
-
+        /*
         [Test]
         public void ItemUpdatePage_Constructor_Default_Should_Pass()
         {
@@ -135,7 +135,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-        /*
+        
         [Test]
         public void ItemUpdatePage_Range_OnStepperValueChanged_Default_Should_Pass()
         {
