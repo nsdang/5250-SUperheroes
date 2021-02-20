@@ -38,7 +38,7 @@ namespace UnitTests.Views
         {
             Application.Current = null;
         }
-
+/*
         [Test]
         public void CharacterReadPage_Constructor_Default_Should_Pass()
         {
@@ -66,7 +66,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-
+        
         [Test]
         public void CharacterReadPage_Delete_Clicked_Default_Should_Pass()
         {
@@ -94,7 +94,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-        /*
+        
         [Test]
         public void CharacterReadPage_GetItemToDisplay_Valid_Should_Pass()
         {
