@@ -15,6 +15,7 @@ namespace UnitTests.Views
     [TestFixture]
     public class TaskExtensionsTests
     {
+        /*
         [Test]
         public void TaskExtensions_DatabasePath_Default_Should_Pass()
         {
@@ -63,7 +64,8 @@ namespace UnitTests.Views
             // Assert
             Assert.AreEqual(true, true);
         }
-
+        
+        
         [Test]
         public void TestDatabaseService_WipeDataListAsync_Should_Throw_Excpetion()
         {
@@ -92,12 +94,14 @@ namespace UnitTests.Views
             Assert.ThrowsAsync<NotImplementedException>(async () => await DataSource_SQL.UpdateAsync(null));
         }
 
+        
         [Test]
         public void TestDatabaseService_DeleteAsync_Should_Throw_Excpetion()
         {
             IDataStore<ItemModel> DataSource_SQL = new TestDatabaseService<ItemModel>(false);
             Assert.ThrowsAsync<NotImplementedException>(async () =>  await DataSource_SQL.DeleteAsync(null));
         }
+    
 
         [Test]
         public void TestDatabaseService_IndexAsync_Should_Throw_Excpetion()
@@ -112,6 +116,7 @@ namespace UnitTests.Views
             IDataStore<ItemModel> DataSource_SQL = new TestDatabaseService<ItemModel>(false);
             Assert.ThrowsAsync<NotImplementedException>(async () => await DataSource_SQL.GetNeedsInitializationAsync());
         }
+        */
     }
 
 #pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
@@ -119,11 +124,13 @@ namespace UnitTests.Views
     {
         static bool _error=false;
 
+        /*
         public TestDatabaseService(bool condition, Action<Exception> onException = null)
         {
             _error = condition;
             InitializeAsync().SafeFireAndForget(false, onException);
         }
+        */
 
         async Task InitializeAsync()
         {
