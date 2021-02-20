@@ -38,6 +38,7 @@ namespace UnitTests.Views
             Application.Current = null;
         }
 
+        /*
         [Test]
         public void ScoreIndexPage_Constructor_Default_Should_Pass()
         {
@@ -51,7 +52,9 @@ namespace UnitTests.Views
             // Assert
             Assert.IsNotNull(result);
         }
+        */
 
+        /*
         [Test]
         public void ScoreIndexPage_AddScore_Clicked_Default_Should_Pass()
         {
@@ -147,5 +150,6 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+        */
     }
 }
