@@ -38,7 +38,7 @@ namespace UnitTests.Views
             Application.Current = null;
         }
 
-/*        [Test]
+       [Test]
         public void CharacterUpdatePage_Constructor_Default_Should_Pass()
         {
             // Arrange
@@ -108,7 +108,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-*/
+
         //[Test]
         //public void CharacterUpdatePage_Attack_OnStepperValueChanged_Default_Should_Pass()
         //{
