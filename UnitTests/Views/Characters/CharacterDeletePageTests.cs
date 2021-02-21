@@ -91,12 +91,12 @@ namespace UnitTests.Views
             // Arrange
 
             // Act
-            OnBackButtonPressed();
+            var BackButtonReturn = OnBackButtonPressed();
 
             // Reset
 
             // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
+            Assert.IsTrue(BackButtonReturn); // Got to here, so it happened...
         }
         
     }
