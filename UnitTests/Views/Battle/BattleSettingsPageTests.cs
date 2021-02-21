@@ -35,6 +35,9 @@ namespace UnitTests.Views
             app = new App();
             Application.Current = app;
 
+            // For now, set the engine to the Koenig Engine, change when ready 
+            BattleEngineViewModel.Instance.SetBattleEngineToKoenig();
+
             page = new BattleSettingsPage();
         }
 
@@ -44,7 +47,6 @@ namespace UnitTests.Views
             Application.Current = null;
         }
 
-        
         [Test]
         public void BattleSettingsPage_Constructor_Default_Should_Pass()
         {
@@ -91,7 +93,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(!current); // Got to here, so it happened...
         }
-        
+
         [Test]
         public void BattleSettingsPage_AllowMonsterItems_Toggled_True_Default_Should_Pass()
         {
@@ -132,7 +134,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(!current); // Got to here, so it happened...
         }
-        
+
         [Test]
         public void BattleSettingsPage_AllowCriticalMiss_Toggled_True_Default_Should_Pass()
         {
@@ -174,7 +176,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(!current); // Got to here, so it happened...
         }
-        
+
         [Test]
         public void BattleSettingsPage_AllowCriticalHit_Toggled_True_Default_Should_Pass()
         {
@@ -336,6 +338,5 @@ namespace UnitTests.Views
             // Assert
             Assert.AreEqual(HitStatusEnum.Default, BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.CharacterHitEnum);
         }
-        
     }
 }

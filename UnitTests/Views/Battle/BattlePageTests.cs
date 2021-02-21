@@ -30,6 +30,9 @@ namespace UnitTests.Views
             app = new App();
             Application.Current = app;
 
+            // For now, set the engine to the Koenig Engine, change when ready 
+            BattleEngineViewModel.Instance.SetBattleEngineToKoenig();
+
             page = new BattlePage();
 
             // Put seed data into the system for all tests
@@ -712,20 +715,20 @@ namespace UnitTests.Views
             Assert.AreEqual(HitStatusEnum.Default, BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.CharacterHitEnum);
         }
 
-           [Test]
-              public void BattleSettingsPage_ShowBattleMode_Default_Should_Pass()
-              {
-                  // Arrange
+        [Test]
+        public void BattleSettingsPage_ShowBattleMode_Default_Should_Pass()
+        {
+            // Arrange
 
-                  // Act
-                  page.ShowBattleMode();
+            // Act
+            page.ShowBattleMode();
 
-                  // Reset
+            // Reset
 
-                  // Assert
-                  Assert.IsTrue(true); // Got Here
-              }
-     
+            // Assert
+            Assert.IsTrue(true); // Got Here
+        }
+
         [Test]
         public void BattleSettingsPage_ShowBattleModeUIElements_Starting_Should_Pass()
         {
@@ -743,40 +746,40 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got Here
         }
 
-       
-            [Test]
-            public void BattleSettingsPage_ShowBattleModeUIElements_NewRound_Should_Pass()
-            {
-                // Arrange
-                var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum ;
-                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = BattleStateEnum.NewRound;
+        [Test]
+        public void BattleSettingsPage_ShowBattleModeUIElements_NewRound_Should_Pass()
+        {
+            // Arrange
+            var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum ;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = BattleStateEnum.NewRound;
 
-                // Act
-                page.ShowBattleModeUIElements();
+            // Act
+            page.ShowBattleModeUIElements();
 
-                // Reset
-                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = save;
+            // Reset
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = save;
 
-                // Assert
-                Assert.IsTrue(true); // Got Here
-            }
-       [Test]
-            public void BattleSettingsPage_ShowBattleModeUIElements_GameOver_Should_Pass()
-            {
-                // Arrange
-                var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum ;
-                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = BattleStateEnum.GameOver;
+            // Assert
+            Assert.IsTrue(true); // Got Here
+        }
 
-                // Act
-                page.ShowBattleModeUIElements();
+        [Test]
+        public void BattleSettingsPage_ShowBattleModeUIElements_GameOver_Should_Pass()
+        {
+            // Arrange
+            var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum ;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = BattleStateEnum.GameOver;
 
-                // Reset
-                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = save;
+            // Act
+            page.ShowBattleModeUIElements();
 
-                // Assert
-                Assert.IsTrue(true); // Got Here
-            }
-        
+            // Reset
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = save;
+
+            // Assert
+            Assert.IsTrue(true); // Got Here
+        }
+
         [Test]
         public void BattleSettingsPage_ShowBattleModeUIElements_RoundOver_Should_Pass()
         {
@@ -794,7 +797,7 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got Here
         }
 
-       [Test]
+        [Test]
         public void BattleSettingsPage_ShowBattleModeUIElements_Battling_Should_Pass()
         {
             // Arrange
@@ -828,40 +831,40 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got Here
         }
 
-                [Test]
-            public void BattleSettingsPage_ShowBattleModeDisplay_MapAbility_Should_Pass()
-              {
-                  // Arrange
-                  var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum;
-                  BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum = BattleModeEnum.MapAbility;
+        [Test]
+        public void BattleSettingsPage_ShowBattleModeDisplay_MapAbility_Should_Pass()
+        {
+            // Arrange
+            var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum = BattleModeEnum.MapAbility;
 
-                  // Act
-                  page.ShowBattleModeDisplay();
+            // Act
+            page.ShowBattleModeDisplay();
 
-                  // Reset
-                  BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum = save;
+            // Reset
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum = save;
 
-                  // Assert
-                  Assert.IsTrue(true); // Got Here
-              }
+            // Assert
+            Assert.IsTrue(true); // Got Here
+        }
 
-              [Test]
-              public void BattleSettingsPage_ShowBattleModeDisplay_MapFull_Should_Pass()
-              {
-                  // Arrange
-                  var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum;
-                  BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum = BattleModeEnum.MapFull;
+        [Test]
+        public void BattleSettingsPage_ShowBattleModeDisplay_MapFull_Should_Pass()
+        {
+            // Arrange
+            var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum = BattleModeEnum.MapFull;
 
-                  // Act
-                  page.ShowBattleModeDisplay();
+            // Act
+            page.ShowBattleModeDisplay();
 
-                  // Reset
-                  BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum = save;
+            // Reset
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum = save;
 
-                  // Assert
-                  Assert.IsTrue(true); // Got Here
-              }
-     
+            // Assert
+            Assert.IsTrue(true); // Got Here
+        }
+
         [Test]
         public void BattleSettingsPage_ShowBattleModeDisplay_MapNext_Should_Pass()
         {
@@ -878,7 +881,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got Here
         }
-         
+
         [Test]
         public void BattleSettingsPage_ShowBattleModeDisplay_SimpleAbility_Should_Pass()
         {
@@ -895,7 +898,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got Here
         }
-        
+
         [Test]
         public void BattleSettingsPage_ShowBattleModeDisplay_SimpleUnknown_Should_Pass()
         {
@@ -913,110 +916,108 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got Here
         }
 
-        
-               [Test]
-               public void BattleSettingsPage_ShowBattleModeDisplay_SimpleNext_Should_Pass()
-               {
-                   // Arrange
-                   var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum;
-                   BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum = BattleModeEnum.SimpleNext;
+        [Test]
+        public void BattleSettingsPage_ShowBattleModeDisplay_SimpleNext_Should_Pass()
+        {
+            // Arrange
+            var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum = BattleModeEnum.SimpleNext;
 
-                   // Act
-                   page.ShowBattleModeDisplay();
+            // Act
+            page.ShowBattleModeDisplay();
 
-                   // Reset
-                   BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum = save;
+            // Reset
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleSettingsModel.BattleModeEnum = save;
 
-                   // Assert
-                   Assert.IsTrue(true); // Got Here
-               }
+            // Assert
+            Assert.IsTrue(true); // Got Here
+        }
 
-               [Test]
-               public void BattleSettingsPage_MapIcon_Clicked_Character_Should_Pass()
-               {
-                   // Arrange
-                   var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
-                   BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+        [Test]
+        public void BattleSettingsPage_MapIcon_Clicked_Character_Should_Pass()
+        {
+            // Arrange
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
+            BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
-                   var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
-                   BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
+            var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
+            BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
 
-                   BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.PopulateMapModel(BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList);
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.PopulateMapModel(BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList);
 
-                   // Make UI Map
-                   page.CreateMapGridObjects();
+            // Make UI Map
+            page.CreateMapGridObjects();
 
-                   var nameImage = "MapR0C0ImageButton";
-                   page.MapLocationObject.TryGetValue(nameImage, out object dataImage);
+            var nameImage = "MapR0C0ImageButton";
+            page.MapLocationObject.TryGetValue(nameImage, out object dataImage);
 
-                   // Act
+            // Act
 
-                   // Force the click event to fire
-                   ((ImageButton)dataImage).PropagateUpClicked();
+            // Force the click event to fire
+            ((ImageButton)dataImage).PropagateUpClicked();
 
-                   // Reset
+            // Reset
 
-                   // Assert
-                   Assert.IsTrue(true); // Got Here
-               }
+            // Assert
+            Assert.IsTrue(true); // Got Here
+        }
 
-               [Test]
-               public void BattleSettingsPage_MapIcon_Clicked_Monster_Should_Pass()
-               {
-                   // Arrange
-                   var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
-                   BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+        [Test]
+        public void BattleSettingsPage_MapIcon_Clicked_Monster_Should_Pass()
+        {
+            // Arrange
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
+            BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
-                   var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
-                   BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
+            var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
+            BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
 
-                   BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.PopulateMapModel(BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList);
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.PopulateMapModel(BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList);
 
-                   // Make UI Map
-                   page.CreateMapGridObjects();
+            // Make UI Map
+            page.CreateMapGridObjects();
 
-                   var nameImage = "MapR5C0ImageButton";
-                   page.MapLocationObject.TryGetValue(nameImage, out object dataImage);
+            var nameImage = "MapR5C0ImageButton";
+            page.MapLocationObject.TryGetValue(nameImage, out object dataImage);
 
-                   // Act
+            // Act
 
-                   // Force the click event to fire
-                   ((ImageButton)dataImage).PropagateUpClicked();
+            // Force the click event to fire
+            ((ImageButton)dataImage).PropagateUpClicked();
 
-                   // Reset
+            // Reset
 
-                   // Assert
-                   Assert.IsTrue(true); // Got Here
-               }
+            // Assert
+            Assert.IsTrue(true); // Got Here
+        }
 
-               [Test]
-              public void BattleSettingsPage_MapIcon_Clicked_Empty_Should_Pass()
-                       {
-                           // Arrange
-                           var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
-                           BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
+        [Test]
+        public void BattleSettingsPage_MapIcon_Clicked_Empty_Should_Pass()
+        {
+            // Arrange
+            var CharacterPlayer = new PlayerInfoModel(new CharacterModel());
+            BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
-                           var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
-                           BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
+            var MonsterPlayer = new PlayerInfoModel(new MonsterModel());
+            BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Add(MonsterPlayer);
 
-                           BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.PopulateMapModel(BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList);
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MapModel.PopulateMapModel(BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList);
 
-                           // Make UI Map
-                           page.DrawMapGridInitialState();
+            // Make UI Map
+            page.DrawMapGridInitialState();
 
-                           var nameImage = "MapR3C3ImageButton";
-                           page.MapLocationObject.TryGetValue(nameImage, out object dataImage);
+            var nameImage = "MapR3C3ImageButton";
+            page.MapLocationObject.TryGetValue(nameImage, out object dataImage);
 
-                           // Act
+            // Act
 
-                           // Force the click event to fire
-                           ((ImageButton)dataImage).PropagateUpClicked();
+            // Force the click event to fire
+            ((ImageButton)dataImage).PropagateUpClicked();
 
-                           // Reset
+            // Reset
 
-                           // Assert
-                           Assert.IsTrue(true); // Got Here
-                       }
+            // Assert
+            Assert.IsTrue(true); // Got Here
+        }
     }
-
 }
