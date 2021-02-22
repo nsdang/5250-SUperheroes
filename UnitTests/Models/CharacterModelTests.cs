@@ -1010,5 +1010,35 @@ namespace UnitTests.Models
             // Assert
             Assert.IsFalse(result);
         }
+
+        [Test]
+        public void CharacterModel_IsAttackPsychic_Should_Pass()
+        {
+            // ArDefense
+            var data = new CharacterModel{ Job = CharacterJobEnum.Psychic };
+
+            // Act
+            var result = data.IsAttackPsychic();
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
+        [Test]
+        public void CharacterModel_IsAttackPsychic_Should_Not_Pass()
+        {
+            // ArDefense
+            var data = new CharacterModel();
+
+            // Act
+            var result = data.IsAttackPsychic();
+
+            // Reset
+
+            // Assert
+            Assert.IsFalse(result);
+        }
     }
 }
