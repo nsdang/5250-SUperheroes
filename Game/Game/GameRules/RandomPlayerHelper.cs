@@ -287,7 +287,6 @@ namespace Game.GameRules
             }
 
             return result;
-            return new MonsterModel();
         }
     }
 }
