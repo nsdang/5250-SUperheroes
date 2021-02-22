@@ -1264,5 +1264,24 @@ namespace UnitTests.Models
 
             Assert.AreEqual(2, Result);
         }
+
+        [Test]
+        public void BasePlayerModel_ClearBuffs_Default_Should_Pass()
+        {
+            // Arrange
+            var data = new BasePlayerModel<CharacterModel>();
+            data.BuffAttackValue = 1;
+            data.BuffDefenseValue = 1;
+            data.BuffHealthValue = 1;
+            data.BuffSpeedValue = 1;
+
+            // Act
+            data.ClearBuffs();
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(data.BuffHealthValue == 0 && data.BuffAttackValue == 0 && data.BuffDefenseValue == 0 && data.BuffSpeedValue == 0);
+        }
     }
 }
