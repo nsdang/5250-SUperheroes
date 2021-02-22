@@ -436,5 +436,19 @@ namespace UnitTests.Models
             Assert.IsTrue(result);
         }
 
+        [Test]
+        public void PlayerInfoModel_FormatOutput_Should_Pass()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new CharacterModel());
+
+            // Act
+            var result = data.FormatOutput();
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(result.Length > 0);
+        }
     }
 }
