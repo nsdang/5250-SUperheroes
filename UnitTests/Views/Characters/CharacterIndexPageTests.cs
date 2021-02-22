@@ -165,6 +165,25 @@ namespace UnitTests.Views
         */
 
         [Test]
+        public void CharacterIndexPage_OnImageClicked_Clicked_Default_Should_Pass()
+        {
+            // Arrange
+
+            var selectedCharacter = new CharacterModel();
+
+            var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(selectedCharacter, 0);
+
+            // Act
+            page.OnImageClicked(null, selectedCharacterChangedEventArgs);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+
+        [Test]
         public void CharacterIndexPage_OnImageClicked_Clicked_Null_Should_Return_Null()
         {
             // Arrange
