@@ -221,5 +221,20 @@ namespace UnitTests.Models
             // Assert 
             Assert.AreEqual(false, result);
         }
+
+        [Test]
+        public void ScoreModel_CalculateScore_Default_Should_Pass()
+        {
+            // Arrange
+            var dataScore = new ScoreModel();
+
+            // Act
+            var result = dataScore.CalculateScore();
+
+            // Reset
+
+            // Assert 
+            Assert.AreEqual(0, result);
+        }
     }
 }
