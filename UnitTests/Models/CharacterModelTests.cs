@@ -955,5 +955,20 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual("1 + 1D 1", result);
         }
+
+        [Test]
+        public void CharacterModel_IsShameLevelHigh_Less15_Should_Pass()
+        {
+            // ArDefense
+            var data = new CharacterModel { ShameLevel = 10 };
+
+            // Act
+            var result = data.IsShameLevelHigh();
+
+            // Reset
+
+            // Assert
+            Assert.IsFalse(result);
+        }
     }
 }
