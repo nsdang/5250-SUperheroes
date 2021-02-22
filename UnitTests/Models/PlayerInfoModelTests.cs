@@ -361,5 +361,20 @@ namespace UnitTests.Models
             Assert.IsTrue(result);
         }
 
+        [Test]
+        public void PlayerInfoModel_UseAbility_Curse_Ability_Should_Pass()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Cleric });
+
+            // Act
+            var result = data.UseAbility(AbilityEnum.Curse);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
     }
 }
