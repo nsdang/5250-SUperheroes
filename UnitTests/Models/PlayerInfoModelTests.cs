@@ -376,5 +376,20 @@ namespace UnitTests.Models
             Assert.IsTrue(result);
         }
 
+        [Test]
+        public void PlayerInfoModel_UseAbility_Bandage_Ability_Should_Pass()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new MonsterModel());
+
+            // Act
+            var result = data.UseAbility(AbilityEnum.Bandage);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
     }
 }
