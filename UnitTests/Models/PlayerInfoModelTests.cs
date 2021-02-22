@@ -284,5 +284,21 @@ namespace UnitTests.Models
             Assert.IsFalse(result);
         }
 
+        [Test]
+        public void PlayerInfoModel_UseAbility_Unknown_Ability_Should_Not_Pass()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new MonsterModel());
+            data.AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum("Unknown"), 0);
+
+            // Act
+            var result = data.UseAbility(AbilityEnum.Unknown);
+
+            // Reset
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
     }
 }
