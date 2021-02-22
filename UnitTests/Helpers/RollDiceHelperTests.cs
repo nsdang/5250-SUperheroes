@@ -24,7 +24,6 @@ namespace UnitTests.Helpers
             Assert.AreEqual(true, result);
         }
 
-        /*
         [Test]
         public void RollDiceHelper_SetForcedRollValue_Valid_1_Should_Return_1()
         {
@@ -40,7 +39,6 @@ namespace UnitTests.Helpers
             // Assert
             Assert.AreEqual(1, result);
         }
-        */
 
         [Test]
         public void RollDiceHelper_SetForcedRollValue_InValid_Dice_neg1_Should_Return_0()
