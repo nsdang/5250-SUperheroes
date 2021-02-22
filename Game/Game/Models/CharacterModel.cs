@@ -120,7 +120,7 @@ namespace Game.Models
                 return false;
             }
 
-            if (CurrentHealth < (CurrentHealth * 1 / 5))
+            if (CurrentHealth < (MaxHealth * 1 / 5))
             {
                 return true;
             }

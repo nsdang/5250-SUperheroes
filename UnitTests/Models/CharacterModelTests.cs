@@ -970,5 +970,25 @@ namespace UnitTests.Models
             // Assert
             Assert.IsFalse(result);
         }
+
+
+        [Test]
+        public void CharacterModel_IsShameLevelHigh_CurrentHealthValid_Should_Pass()
+        {
+            // ArDefense
+            var data = new CharacterModel { 
+                ShameLevel = 16,
+                CurrentHealth = 1,
+                MaxHealth = 10
+            };
+
+            // Act
+            var result = data.IsShameLevelHigh();
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(result);
+        }
     }
 }
