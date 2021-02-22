@@ -73,5 +73,21 @@ namespace UnitTests.ViewModels
             // Assert
             Assert.AreEqual(list, result.HandItemList);
         }
+
+        [Test]
+        public void GenericViewModel_Set_Get_FingerItemList_Should_Pass()
+        {
+            // Arrange
+            var data = new ItemModel();
+            List<string> list = new List<string>();
+
+            // Act
+            var result = new GenericViewModel<ItemModel>(data);
+            result.FingerItemList = list;
+            // Reset
+
+            // Assert
+            Assert.AreEqual(list, result.FingerItemList);
+        }
     }
 }
