@@ -89,5 +89,21 @@ namespace UnitTests.ViewModels
             // Assert
             Assert.AreEqual(list, result.FingerItemList);
         }
+
+        [Test]
+        public void GenericViewModel_Set_Get_HeadItemList_Should_Pass()
+        {
+            // Arrange
+            var data = new ItemModel();
+            List<string> list = new List<string>();
+
+            // Act
+            var result = new GenericViewModel<ItemModel>(data);
+            result.HeadItemList = list;
+            // Reset
+
+            // Assert
+            Assert.AreEqual(list, result.HeadItemList);
+        }
     }
 }
