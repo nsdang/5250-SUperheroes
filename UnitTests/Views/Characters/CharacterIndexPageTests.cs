@@ -148,7 +148,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-        
+
         /*
         [Test]
         public void CharacterIndexPage_AddItemClicked_Valid_Should_Pass()
@@ -163,5 +163,20 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
         */
+
+        [Test]
+        public void CharacterIndexPage_OnImageClicked_Clicked_Null_Should_Return_Null()
+        {
+            // Arrange
+            var selectedCharacter = new CharacterModel();
+
+            // Act
+            page.OnImageClicked(null, null);
+           
+            //Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
     }
 }
