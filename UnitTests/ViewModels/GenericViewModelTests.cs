@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 using Game.Models;
 using Game.ViewModels;
+using Game.Views;
 
 namespace UnitTests.ViewModels
 {
@@ -55,6 +56,22 @@ namespace UnitTests.ViewModels
 
             // Assert
             Assert.AreEqual(null, result.Data.Name);
+        }
+
+        [Test]
+        public void GenericViewModel_Set_Get_HandItemList_Should_Pass()
+        {
+            // Arrange
+            var data = new ItemModel();
+            List<string> list = new List<string>();
+
+            // Act
+            var result = new GenericViewModel<ItemModel>(data);
+            result.HandItemList = list;
+            // Reset
+
+            // Assert
+            Assert.AreEqual(list, result.HandItemList);
         }
     }
 }
