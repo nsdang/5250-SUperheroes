@@ -300,5 +300,22 @@ namespace UnitTests.Models
             Assert.IsFalse(result);
         }
 
+        [Test]
+        public void PlayerInfoModel_UseAbility_None_Ability_Should_Pass()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new MonsterModel());
+            data.AbilityTracker.Add(AbilityEnumHelper.ConvertStringToEnum("None"), 1);
+
+            // Act
+            var result = data.UseAbility(AbilityEnum.None);
+
+            // Reset
+
+            // Assert
+            Assert.True(result);
+        }
+
+
     }
 }
