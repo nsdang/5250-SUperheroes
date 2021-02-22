@@ -421,6 +421,20 @@ namespace UnitTests.Models
             Assert.IsTrue(result);
         }
 
+        [Test]
+        public void PlayerInfoModel_UseAbility_Focus_Ability_Should_Pass()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Fighter });
+
+            // Act
+            var result = data.UseAbility(AbilityEnum.Focus);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(result);
+        }
 
     }
 }
