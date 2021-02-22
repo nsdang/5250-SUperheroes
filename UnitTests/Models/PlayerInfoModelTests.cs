@@ -268,5 +268,21 @@ namespace UnitTests.Models
             // Assert
             Assert.AreEqual(AbilityEnum.Unknown, result);
         }
+
+        [Test]
+        public void PlayerInfoModel_UseAbility_Invalid_Ability_Should_Not_Pass()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new MonsterModel());
+
+            // Act
+            var result = data.UseAbility(AbilityEnum.Unknown);
+
+            // Reset
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
     }
 }
