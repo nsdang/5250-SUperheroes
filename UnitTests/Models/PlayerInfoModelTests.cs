@@ -391,5 +391,20 @@ namespace UnitTests.Models
             Assert.IsTrue(result);
         }
 
+        [Test]
+        public void PlayerInfoModel_UseAbility_Nimble_Ability_Should_Pass()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new CharacterModel{ Job = CharacterJobEnum.Fighter });
+
+            // Act
+            var result = data.UseAbility(AbilityEnum.Nimble);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
     }
 }
