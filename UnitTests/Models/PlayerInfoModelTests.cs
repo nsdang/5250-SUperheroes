@@ -316,6 +316,21 @@ namespace UnitTests.Models
             Assert.True(result);
         }
 
+        [Test]
+        public void PlayerInfoModel_UseAbility_Heal_Ability_Should_Pass()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new CharacterModel{ Job = CharacterJobEnum.Cleric });
+
+            // Act
+            var result = data.UseAbility(AbilityEnum.Heal);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
 
     }
 }
