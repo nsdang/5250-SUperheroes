@@ -406,5 +406,21 @@ namespace UnitTests.Models
             Assert.IsTrue(result);
         }
 
+        [Test]
+        public void PlayerInfoModel_UseAbility_Toughness_Ability_Should_Pass()
+        {
+            // Arrange
+            var data = new PlayerInfoModel(new CharacterModel { Job = CharacterJobEnum.Fighter });
+
+            // Act
+            var result = data.UseAbility(AbilityEnum.Toughness);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
+
     }
 }
