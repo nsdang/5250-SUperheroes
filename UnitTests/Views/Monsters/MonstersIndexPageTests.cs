@@ -115,6 +115,23 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
         */
+
+        [Test]
+        public void MonsterIndexPage_OnImageDeleted_Clicked_Not_Null_Should_Pass()
+        {
+            // Arrange
+            ImageButton img = new ImageButton();
+            CharacterModel cm = new CharacterModel();
+            img.BindingContext = cm;
+
+            // Act
+            page.OnImageDeleted(img, null);
+
+            //Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
         [Test]
         public void MonsterIndexPage_OnAppearing_Valid_Should_Pass()
         {
