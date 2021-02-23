@@ -75,6 +75,7 @@ namespace UnitTests.Views
         public void ItemUpdatePage_Save_Clicked_Default_Should_Pass()
         {
             // Arrange
+            page.ViewModel.Data.Attribute = AttributeEnum.Defense;
 
             // Act
             page.Save_Clicked(null, null);
