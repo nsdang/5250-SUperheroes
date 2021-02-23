@@ -267,5 +267,23 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true);
         }
+
+        [Test]
+        public void CharacterIndexPage_OnImageDeleted_Clicked_Not_Null_Should_Pass()
+        {
+            // Arrange
+
+            ImageButton img = new ImageButton();
+            CharacterModel cm = new CharacterModel();
+            img.BindingContext = cm;
+
+            // Act
+            page.OnImageDeleted(img, null);
+
+            //Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
     }
 }
