@@ -172,8 +172,8 @@ namespace UnitTests.Views
             // Arrange
 
             ImageButton img = new ImageButton();
-            CharacterModel cm = new CharacterModel();
-            img.BindingContext = cm;
+            ItemModel im = new ItemModel();
+            img.BindingContext = im;
 
             // Act
             page.OnImageClicked(img, null);
@@ -205,7 +205,7 @@ namespace UnitTests.Views
             // Arrange
 
             ImageButton img = new ImageButton();
-            CharacterModel cm = new CharacterModel();
+            ItemModel cm = new ItemModel();
             img.BindingContext = cm;
 
             // Act
