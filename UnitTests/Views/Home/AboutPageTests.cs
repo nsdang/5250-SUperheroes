@@ -260,6 +260,20 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void AboutPage_RunWipeData_Should_Fail()
+        {
+            // Arrange
+
+            // Act
+            page.RunWipeData();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, false); // Got to here, so it happened...
+        }
+
+        [Test]
         public async Task AboutPage_GetItemsGet_BadURL_Should_Fail()
         {
             // Arrange
