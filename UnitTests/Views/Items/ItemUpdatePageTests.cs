@@ -135,7 +135,22 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-        
+
+        [Test]
+        public void ItemUpdatePage_Save_Clicked_Null_Name_Should_Pass()
+        {
+            // Arrange
+            page.ViewModel.Data.Name = null;
+
+            // Act
+            page.Save_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
         /*
         [Test]
         public void ItemUpdatePage_Range_OnStepperValueChanged_Default_Should_Pass()
