@@ -180,6 +180,19 @@ namespace UnitTests.Views
             Assert.IsTrue(result);
         }
 
+        [Test]
+        public void MonsterCreatePage_If_IsStatValid_Greater_Than_10_Should_Fail()
+        {
+            // Arrange
+
+            // Act
+            var result = page.Is_Stat_Valid("13");
+
+            // Reset
+
+            // Assert
+            Assert.IsFalse(result);
+        }
 
         //[Test]
         //public void MonsterCreatePage_Attack_OnStepperAttackChanged_Default_Should_Pass()
