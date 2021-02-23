@@ -119,6 +119,8 @@ namespace UnitTests.Views
         public void ItemCreatePage_Save_Clicked_Null_Should_Pass()
         {
             // Arrange
+            page.ViewModel.Data.Attribute = AttributeEnum.Attack;
+            page.ViewModel.Data.Location = ItemLocationEnum.OffHand;
 
             // Act
             page.Save_Clicked(null, null);
