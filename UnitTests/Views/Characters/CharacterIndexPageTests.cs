@@ -191,10 +191,10 @@ namespace UnitTests.Views
 
         //    // Act
         //    page.OnImageClicked(null, null);
-           
+
         //    //Reset
 
-            // Assert
+        // Assert
         //    Assert.IsTrue(true);
         //}
 
@@ -219,6 +219,21 @@ namespace UnitTests.Views
             Assert.IsTrue(true);
         }
         */
+
+        [Test]
+        public void CharacterIndexPage_OnImageClicked_Clicked_Null_Should_Return_Null()
+        {
+            // Arrange
+ 
+            ImageButton img = new ImageButton();
+            // Act
+            page.OnImageClicked(img, null);
+
+            //Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
 
     }
 }
