@@ -110,6 +110,20 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void MonsterUpdatePage_If_IsStatValid_Greater_Than_10_Should_Fail()
+        {
+            // Arrange
+
+            // Act
+            var result = page.Is_Stat_Valid("13");
+
+            // Reset
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+        [Test]
         public void MonsterUpdatePage_If_IsStatValid_Is_Valid_Should_Pass()
         {
             // Arrange
