@@ -212,7 +212,6 @@ namespace UnitTests.Views
         }
 
         [Test]
-    [Test]
         public void MonsterIndexPage_AddMonster_Clicked_Null_Should_Pass()
         {
             // Arrange
@@ -224,6 +223,21 @@ namespace UnitTests.Views
 
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void MonsterIndexPage_OnImageClicked_Clicked_Default_Should_Pass()
+        {
+            // Arrange
+
+            ImageButton img = new ImageButton();
+            // Act
+            page.OnImageClicked(img, null);
+
+            //Reset
+
+            // Assert
+            Assert.IsTrue(true);
         }
     }
 }
