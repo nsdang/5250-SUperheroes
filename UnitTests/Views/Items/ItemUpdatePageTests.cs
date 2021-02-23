@@ -89,6 +89,7 @@ namespace UnitTests.Views
         public void ItemUpdatePage_Save_Clicked_Null_Image_Should_Pass()
         {
             // Arrange
+            page.ViewModel.Data.Attribute = AttributeEnum.CurrentHealth;
             page.ViewModel.Data.ImageURI = null;
 
             // Act
