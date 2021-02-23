@@ -194,6 +194,24 @@ namespace UnitTests.Views
     }
     */
 
+        [Test]
+        public void MonsterIndexPage_OnImageClicked_Clicked_Not_Null_Should_Pass()
+        {
+            // Arrange
+            ImageButton img = new ImageButton();
+            CharacterModel cm = new CharacterModel();
+            img.BindingContext = cm;
+
+            // Act
+            page.OnImageClicked(img, null);
+
+            //Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
+        [Test]
     [Test]
         public void MonsterIndexPage_AddMonster_Clicked_Null_Should_Pass()
         {
