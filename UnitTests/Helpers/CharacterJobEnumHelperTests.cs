@@ -23,5 +23,35 @@ namespace UnitTests.Helpers
 
             // Assert
         }
+
+
+        [Test]
+        public void CharacterJobEnumHelper_GetListMonsterJob_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnumHelper.GetListMonsterJob;
+
+            // Assert
+            Assert.AreEqual(5, result.Count());
+
+            // Assert
+        }
+
+
+        [Test]
+        public void CharacterJobEnumHelper_ConvertStringToEnum_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = CharacterJobEnumHelper.ConvertStringToEnum("Flying");
+
+            // Assert
+            Assert.AreEqual(CharacterJobEnum.Flying, result);
+
+            // Assert
+        }
     }
 }
