@@ -124,6 +124,20 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void MonsterCreatePage_If_IsStatValid_Is_String_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = page.Is_Stat_Valid("Thing");
+
+            // Reset
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
         //[Test]
         //public void MonsterCreatePage_Attack_OnStepperAttackChanged_Default_Should_Pass()
         //{
