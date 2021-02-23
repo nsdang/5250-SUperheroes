@@ -113,5 +113,19 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void ScoreCreatePage_If_Is_Score_Valid_NoInt_Should_Fail()
+        {
+            // Arrange
+
+            // Act
+            page.Is_Score_Valid("AString");
+
+            // Reset
+
+            // Assert
+            Assert.IsFalse(false); // Got to here, so it happened...
+        }
     }
 }
