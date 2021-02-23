@@ -73,6 +73,20 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void CharacterCreatePage_If_IsStatValid_Is_Not_Int_Should_Fail()
+        {
+            // Arrange
+
+            // Act
+            var result = page.Is_Stat_Valid("Thing");
+
+            // Reset
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+        [Test]
         public void CharacterCreatePage_If_IsStatValid_Is_Neg_Should_Fail()
         {
             // Arrange
