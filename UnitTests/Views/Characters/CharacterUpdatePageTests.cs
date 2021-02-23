@@ -123,6 +123,20 @@ namespace UnitTests.Views
             Assert.IsNotNull(result);
         }
 
+        [Test]
+        public void CharacterUpdatePage_If_IsStatValid_Is_Not_Int_Should_Fail()
+        {
+            // Arrange
+
+            // Act
+            var result = page.Is_Stat_Valid("Thing");
+
+            // Reset
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
         //[Test]
         //public void CharacterUpdatePage_Attack_OnStepperValueChanged_Default_Should_Pass()
         //{
