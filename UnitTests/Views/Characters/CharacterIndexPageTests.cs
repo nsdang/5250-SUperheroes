@@ -235,5 +235,23 @@ namespace UnitTests.Views
             Assert.IsTrue(true);
         }
 
+        [Test]
+        public void CharacterIndexPage_OnImageClicked_Clicked_Not_Null_Should_Pass()
+        {
+            // Arrange
+
+            ImageButton img = new ImageButton();
+            CharacterModel cm = new CharacterModel();
+            img.BindingContext = cm;
+
+            // Act
+            page.OnImageClicked(img, null);
+
+            //Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
+
     }
 }
