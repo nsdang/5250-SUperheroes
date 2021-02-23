@@ -170,6 +170,7 @@ namespace UnitTests.Views
         {
             // Arrange
             page.ViewModel.Data.Attribute = AttributeEnum.Unknown;
+            page.ViewModel.Data.Location = ItemLocationEnum.RightFinger;
 
             // Act
             page.Save_Clicked(null, null);
