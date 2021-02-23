@@ -109,6 +109,20 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void CharacterUpdatePage_If_IsStatValid_Is_String_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = page.Is_Stat_Valid("Thing");
+
+            // Reset
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
         //[Test]
         //public void CharacterUpdatePage_Attack_OnStepperValueChanged_Default_Should_Pass()
         //{
