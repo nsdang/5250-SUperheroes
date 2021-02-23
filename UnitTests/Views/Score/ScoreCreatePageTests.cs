@@ -127,5 +127,19 @@ namespace UnitTests.Views
             // Assert
             Assert.IsFalse(false); // Got to here, so it happened...
         }
+
+        [Test]
+        public void ScoreCreatePage_If_IsScoreValid_Is_Neg_Should_Fail()
+        {
+            // Arrange
+
+            // Act
+            var result = page.Is_Score_Valid("-10");
+
+            // Reset
+
+            // Assert
+            Assert.IsFalse(result);
+        }
     }
 }
