@@ -101,6 +101,21 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void ItemCreatePage_Image_OnEntryChange_Null_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            page.Image_OnEntryChange(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+
+        [Test]
         public void ItemCreatePage_Save_Clicked_Null_Should_Pass()
         {
             // Arrange
