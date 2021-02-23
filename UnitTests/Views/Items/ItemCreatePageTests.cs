@@ -135,6 +135,21 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void ItemCreatePage_Save_Clicked_Attribute_Unknown_Should_Pass()
+        {
+            // Arrange
+            page.ViewModel.Data.Attribute = AttributeEnum.Unknown;
+
+            // Act
+            page.Save_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
         public void ItemCreatePage_Save_Clicked_Null_Name_Should_Pass()
         {
             // Arrange
