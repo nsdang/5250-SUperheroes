@@ -162,5 +162,18 @@ namespace UnitTests.Views
         }
         */
 
+        [Test]
+        public void MonsterIndexPage_AddMonster_Clicked_Null_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            page.AddMonster_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
     }
 }
