@@ -143,7 +143,21 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-        
+
+        [Test]
+        public void CharacterCreatePage_Image_OnPickerSourceChange_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            page.Image_OnPickerSourceChange(null,null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
         //[Test]
         //public void CharacterCreatePage_Attack_OnStepperAttackChanged_Default_Should_Pass()
         //{
