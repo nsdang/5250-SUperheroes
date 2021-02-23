@@ -71,6 +71,7 @@ namespace UnitTests.Views
         public void MonsterCreatePage_Save_Clicked_Default_Should_Pass()
         {
             // Arrange
+            page.ViewModel.Data.Job = CharacterJobEnum.Accountant;
 
             // Act
             page.Save_Clicked(null, null);
@@ -208,6 +209,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsFalse(result);
         }
+
 
         //[Test]
         //public void MonsterCreatePage_Attack_OnStepperAttackChanged_Default_Should_Pass()
