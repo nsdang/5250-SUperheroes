@@ -137,6 +137,19 @@ namespace UnitTests.Views
             Assert.IsFalse(result);
         }
 
+        [Test]
+        public void CharacterUpdatePage_If_IsStatValid_Is_Neg_Should_Fail()
+        {
+            // Arrange
+
+            // Act
+            var result = page.Is_Stat_Valid("-50");
+
+            // Reset
+
+            // Assert
+            Assert.IsFalse(result);
+        }
         //[Test]
         //public void CharacterUpdatePage_Attack_OnStepperValueChanged_Default_Should_Pass()
         //{
