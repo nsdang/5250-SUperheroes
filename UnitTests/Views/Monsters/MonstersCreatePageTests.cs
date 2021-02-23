@@ -110,6 +110,20 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void MonsterCreatePage_Image_OnPickerSourceChange_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            page.Image_OnPickerSourceChange(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
         //[Test]
         //public void MonsterCreatePage_Attack_OnStepperAttackChanged_Default_Should_Pass()
         //{
@@ -298,19 +312,19 @@ namespace UnitTests.Views
         //    Assert.IsTrue(true); // Got to here, so it happened...
         //}
 
-      //  [Test]
-       // public void MonsterCreatePage_RandomButton_Clicked_Vaid_Should_Pass()
+        //  [Test]
+        // public void MonsterCreatePage_RandomButton_Clicked_Vaid_Should_Pass()
         //{
-          //  // Arrange
-           // page.ViewModel.Data.ImageURI = null;
+        //  // Arrange
+        // page.ViewModel.Data.ImageURI = null;
 
-            // Act
-//            page.RandomButton_Clicked(null, null);
+        // Act
+        //            page.RandomButton_Clicked(null, null);
 
-            // Reset
+        // Reset
 
-            // Assert
-           // Assert.IsTrue(true); // Got to here, so it happened...
+        // Assert
+        // Assert.IsTrue(true); // Got to here, so it happened...
         //}
     }
 }
