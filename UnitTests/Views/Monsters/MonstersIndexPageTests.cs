@@ -121,7 +121,7 @@ namespace UnitTests.Views
         {
             // Arrange
             ImageButton img = new ImageButton();
-            CharacterModel cm = new CharacterModel();
+            MonsterModel cm = new MonsterModel();
             img.BindingContext = cm;
 
             // Act
@@ -199,7 +199,7 @@ namespace UnitTests.Views
         {
             // Arrange
             ImageButton img = new ImageButton();
-            CharacterModel cm = new CharacterModel();
+            MonsterModel cm = new MonsterModel();
             img.BindingContext = cm;
 
             // Act
