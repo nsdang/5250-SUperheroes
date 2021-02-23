@@ -166,6 +166,21 @@ namespace UnitTests.Views
             Assert.IsFalse(result);
         }
 
+        [Test]
+        public void MonsterCreatePage_If_IsStatValid_Is_Valid_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            var result = page.Is_Stat_Valid("5");
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
+
         //[Test]
         //public void MonsterCreatePage_Attack_OnStepperAttackChanged_Default_Should_Pass()
         //{
