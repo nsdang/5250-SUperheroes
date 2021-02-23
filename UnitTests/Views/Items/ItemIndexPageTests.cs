@@ -183,5 +183,20 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true);
         }
+
+        [Test]
+        public void ItemIndexPage_OnImageDeleted_Clicked_Null_Should_Return_Null()
+        {
+            // Arrange
+            ImageButton img = new ImageButton();
+            
+            // Act
+            page.OnImageDeleted(img, null);
+
+            //Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
     }
 }
