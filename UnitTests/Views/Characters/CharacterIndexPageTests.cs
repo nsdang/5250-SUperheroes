@@ -195,14 +195,15 @@ namespace UnitTests.Views
         //    //Reset
 
             // Assert
-            Assert.IsTrue(true);
-        }
+        //    Assert.IsTrue(true);
+        //}
 
 
         //    // Assert
         //    Assert.IsTrue(true);
         //}
 
+        /*
         [Test]
         public void CharacterIndexPage_OnImageDeleted_Clicked_Null_Should_Return_Null()
         {
@@ -217,5 +218,7 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true);
         }
+        */
+
     }
 }
