@@ -149,6 +149,21 @@ namespace UnitTests.Views
 
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
-        } 
+        }
+
+        [Test]
+        public void ItemIndexPage_OnImageClicked_Clicked_Null_Should_Return_Null()
+        {
+            // Arrange
+
+            ImageButton img = new ImageButton();
+            // Act
+            page.OnImageClicked(img, null);
+
+            //Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
     }
 }
