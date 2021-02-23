@@ -202,5 +202,20 @@ namespace UnitTests.Views
         //    // Assert
         //    Assert.IsTrue(true);
         //}
+
+        [Test]
+        public void CharacterIndexPage_OnImageDeleted_Clicked_Null_Should_Return_Null()
+        {
+            // Arrange
+            var selectedCharacter = new CharacterModel();
+
+            // Act
+            page.OnImageDeleted(null, null);
+
+            //Reset
+
+            // Assert
+            Assert.IsTrue(true);
+        }
     }
 }
