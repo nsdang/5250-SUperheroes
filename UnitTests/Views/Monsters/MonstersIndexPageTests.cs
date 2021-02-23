@@ -164,22 +164,37 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
-        /*
         [Test]
-        public void MonsterIndexPage_AddItemClicked_Valid_Should_Pass()
+        public void MonsterIndexPage_OnImageDeleted_Clicked_Default_Should_Pass()
         {
             // Arrange
-            // Act
-            page.AddItem_Clicked(null, null);
+            ImageButton img = new ImageButton();
 
-            // Reset
+            // Act
+            page.OnImageDeleted(img, null);
+
+            //Reset
 
             // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
+            Assert.IsTrue(true);
         }
-        */
 
-        [Test]
+    /*
+    [Test]
+    public void MonsterIndexPage_AddItemClicked_Valid_Should_Pass()
+    {
+        // Arrange
+        // Act
+        page.AddItem_Clicked(null, null);
+
+        // Reset
+
+        // Assert
+        Assert.IsTrue(true); // Got to here, so it happened...
+    }
+    */
+
+    [Test]
         public void MonsterIndexPage_AddMonster_Clicked_Null_Should_Pass()
         {
             // Arrange
