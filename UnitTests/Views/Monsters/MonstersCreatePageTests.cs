@@ -138,6 +138,20 @@ namespace UnitTests.Views
             Assert.IsNotNull(result);
         }
 
+        [Test]
+        public void MonsterCreatePage_If_IsStatValid_Is_Not_Int_Should_Fail()
+        {
+            // Arrange
+
+            // Act
+            var result = page.Is_Stat_Valid("Thing");
+
+            // Reset
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
         //[Test]
         //public void MonsterCreatePage_Attack_OnStepperAttackChanged_Default_Should_Pass()
         //{
