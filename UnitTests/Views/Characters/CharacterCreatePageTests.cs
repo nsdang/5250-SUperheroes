@@ -186,6 +186,20 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void CharacterCreatePage_Save_Clicked_Valid_Input_Should_Pass()
+        {
+            // Arrange
+            page.ViewModel.Data.Job = CharacterJobEnum.Flying;
+
+            // Act
+            page.Save_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
         [Test]
         public void CharacterCreatePage_OnBackButtonPressed_Valid_Should_Pass()
