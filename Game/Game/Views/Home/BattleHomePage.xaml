@@ -28,11 +28,11 @@
                 </Grid.ColumnDefinitions>
 
                 <Button Grid.Column="0" Grid.Row="0"
-                Text="Game Start"
+                Text="Battle Page"
                 Style="{StaticResource PageButtonStyle}"
                 HorizontalOptions="End"
                 VerticalOptions="End"
-                Clicked="DungeonButton_Clicked"/>
+                Clicked="BattlePageButton_Clicked"/>
 
                 <Button Grid.Column="1" Grid.Row="0"
                 Text="Society"
