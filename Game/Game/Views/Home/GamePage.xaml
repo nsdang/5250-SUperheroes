@@ -62,7 +62,7 @@
                  Style="{StaticResource PageButtonStyle}"
                  HorizontalOptions="Start"
                  VerticalOptions="Start"
-                 Clicked="AboutUsButton_Clicked"/>
+                 Clicked="BattleHomeButton_Clicked"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
