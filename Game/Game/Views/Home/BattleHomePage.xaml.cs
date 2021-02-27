@@ -68,5 +68,15 @@ namespace Game.Views
 			await Navigation.PushAsync(new RoundOverPage());
 		}
 
+		/// <summary>
+		/// Jump to the Score page
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		public async void ScorePageButton_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new ScorePage());
+		}
+
 	}
 }

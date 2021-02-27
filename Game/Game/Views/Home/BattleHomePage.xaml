@@ -66,11 +66,11 @@
 
 
                 <Button Grid.Column="1" Grid.Row="2"
-                 Text="PickItems"
+                 Text="Score Page"
                  Style="{StaticResource PageButtonStyle}"
                  HorizontalOptions="Start"
                  VerticalOptions="Start"
-                 Clicked="PickItemsButton_Clicked"/>
+                 Clicked="ScorePageButton_Clicked"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
