@@ -9,15 +9,81 @@
              Title="{Binding Title}">
 
     <ContentPage.Content>
+        <StackLayout>
+
+            <Label Text="Team Formation" Style="{StaticResource CenterMessageLargeStyle}"/>
+            <Label Text="Teams" TextDecorations="Underline"/>
+            <CollectionView
+                ItemsSource="{Binding PartyCharacterList}"
+                x:Name="PartyListView" 
+                SelectionMode="Single"
+                HeightRequest="250"
+                ItemsLayout="HorizontalList"
+                SelectionChanged ="OnPartyCharacterItemSelected">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Image 
+                            Source="{Binding ImageURI}"/>
+
+                    </DataTemplate>
+
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button 
+                    x:Name="BeginBattleButton"
+                    Clicked="BattleButton_Clicked" 
+                    Text="Confirm Team"
+                    IsEnabled="False"/>
+            
+            <Label Text="Characters" TextDecorations="Underline"/>
+
+            <CollectionView
+                ItemsSource="{Binding DatabaseCharacterList}"
+                 x:Name="CharactersListView"
+                SelectionMode ="Single"
+                SelectionChanged ="OnDatabaseCharacterItemSelected">
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                     Span="4">
+                    </GridItemsLayout>
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Image 
+                            Source="{Binding ImageURI}"/>
+                    
+                    </DataTemplate>
+
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+<!--            <Label Text="Count" Style="{StaticResource CenterMessageStyle}"/> -->
+
+            <Label Style="{StaticResource CenterMessageStyle}" 
+                            x:Name="PartyCountLabel"
+                            Text="0"/>
+
+          
+        </StackLayout>
+       
+                
+        <!--
         <ScrollView VerticalScrollBarVisibility="Never">
+            
             <StackLayout Style="{StaticResource OuterBoxStack}">
 
-                <Label Text="Battle Time" Style="{StaticResource CenterMessageLargeStyle}"/>
+                <Label Text="Team Formation" Style="{StaticResource CenterMessageLargeStyle}"/>
 
+                
                 <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
 
                     <StackLayout HorizontalOptions="Start">
-
+                        
+                       
                         <Label Text="Characters" Style="{StaticResource CenterMessageStyle}"/>
 
                         <ListView 
@@ -122,5 +188,6 @@
 
             </StackLayout>
         </ScrollView>
+        -->
     </ContentPage.Content>
 </ContentPage>
