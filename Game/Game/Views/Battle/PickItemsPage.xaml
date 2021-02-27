@@ -5,8 +5,18 @@
              >
 
     <ContentPage.Content>
-        <StackLayout Style="{StaticResource VerticalStack}">
-            <Label Text="Pick Items Page..."></Label>
+        <StackLayout>
+            <Label Text="Rewards"
+                   Style="{StaticResource CenterMessageLargeStyle}"></Label>
+
+            <Label Text="Unique Items" TextDecorations="Underline"/>
+
+            <Label Text="Common Items" TextDecorations="Underline"/>
+
+            <Label Text="Equip on?" TextDecorations="Underline"/>
+
+            <Label Text="Chosen Character: "></Label>
+           
 
             <Button Clicked="CloseButton_Clicked" Text="Close"></Button>
         </StackLayout>
