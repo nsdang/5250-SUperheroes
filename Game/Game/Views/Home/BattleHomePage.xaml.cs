@@ -8,16 +8,16 @@ namespace Game.Views
 	/// The Main Game Page
 	/// </summary>
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class GamePage : ContentPage
+	public partial class BattleHomePage : ContentPage
 	{
 		/// <summary>
 		/// Constructor
 		/// </summary>
-		public GamePage ()
+		public BattleHomePage ()
 		{
-			InitializeComponent ();
+            InitializeComponent();
 		}
-
+/*
 		/// <summary>
 		/// Jump to the Dungeon
 		/// </summary>
@@ -57,5 +57,6 @@ namespace Game.Views
 		{
 			await Navigation.PushAsync(new AboutPage());
 		}
+*/
 	}
 }
