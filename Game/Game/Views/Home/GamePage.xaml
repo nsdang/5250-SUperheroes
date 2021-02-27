@@ -57,11 +57,10 @@
                  VerticalOptions="Start"
                  Clicked="AboutUsButton_Clicked"/>
 
-                <Button Grid.Column="0" Grid.Row="2"
+                <Button Grid.ColumnSpan ="2"  Grid.Row="2"
                  Text="Battle Home"
                  Style="{StaticResource PageButtonStyle}"
-                 HorizontalOptions="Start"
-                 VerticalOptions="Start"
+                 HorizontalOptions="Center"
                  Clicked="BattleHomeButton_Clicked"/>
             </Grid>
         </StackLayout>
