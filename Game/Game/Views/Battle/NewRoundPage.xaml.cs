@@ -51,9 +51,7 @@ namespace Game.Views
 
         public async void TeamsButton_Clicked(object sender, EventArgs e)
         {
-            Navigation.PopAsync();
-            await Navigation.PushAsync(new PickCharactersPage());
-            
+            await Navigation.PopModalAsync();
         }
 
         /// <summary>
