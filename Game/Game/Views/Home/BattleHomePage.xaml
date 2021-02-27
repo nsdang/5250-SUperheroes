@@ -58,11 +58,11 @@
                  Clicked="PickItemsButton_Clicked"/>
 
                 <Button Grid.Column="0" Grid.Row="2"
-                 Text="Pick Characters"
+                 Text="Round Over"
                  Style="{StaticResource PageButtonStyle}"
                  HorizontalOptions="End"
                  VerticalOptions="Start"
-                 Clicked="PickCharactersButton_Clicked"/>
+                 Clicked="RoundOverButton_Clicked"/>
 
 
                 <Button Grid.Column="1" Grid.Row="2"
