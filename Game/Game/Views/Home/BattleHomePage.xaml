@@ -9,8 +9,9 @@
         <StackLayout
             VerticalOptions="Center">
             <Label
-                Text="SUperheroes"
+                Text="Battle Page Demo"
                 Margin="10"
+                FontFamily="Comic Sans MS"
                 TextColor="Black"
                 Style="{StaticResource CenterMessageLargeStyle}">
             </Label>
