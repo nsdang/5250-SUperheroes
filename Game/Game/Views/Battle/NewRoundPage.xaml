@@ -4,6 +4,30 @@
              x:Class="Game.Views.NewRoundPage">
 
     <ContentPage.Content>
+
+        <StackLayout>
+            <Label Text="Starting Round" Style="{StaticResource CenterMessageLargeStyle}"/>
+
+            <Label Text="Teams"
+                   TextDecorations="Underline"/>
+
+            <FlexLayout x:Name="PartyListFrame"
+                        JustifyContent="Start"
+                        AlignContent="Start"
+                        Wrap="Wrap"/>
+
+            <Label Text="Enemies"
+                   TextDecorations="Underline"/>
+
+            <FlexLayout x:Name="MonsterListFrame"
+                        JustifyContent="Start"
+                        AlignContent="Start"
+                        Wrap="Wrap"/>
+
+            <Button Clicked="BeginButton_Clicked" Text="Start Round"/>
+            
+        </StackLayout>
+        <!--
         <ScrollView VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
 
             <StackLayout Style="{StaticResource VerticalStack}">
@@ -31,6 +55,6 @@
                 <Button Clicked="BeginButton_Clicked" Text="Begin"/>
                 
             </StackLayout>
-        </ScrollView>
-    </ContentPage.Content>
+        </ScrollView>-->
+    </ContentPage.Content> 
 </ContentPage>
