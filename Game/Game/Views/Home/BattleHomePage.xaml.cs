@@ -49,13 +49,13 @@ namespace Game.Views
 		}
 
 		/// <summary>
-		/// Jump to the about us page
+		/// Jump to the PickItems page
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		public async void AboutUsButton_Clicked(object sender, EventArgs e)
+		public async void PickItemsButton_Clicked(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new AboutPage());
+			await Navigation.PushAsync(new PickItemsPage());
 		}
 
 	}
