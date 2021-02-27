@@ -5,7 +5,8 @@
 
     <ContentPage.Content>
 
-        <StackLayout>
+        <ScrollView VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
+            <StackLayout>
             <Label Text="Starting Round" Style="{StaticResource CenterMessageLargeStyle}"/>
 
             <Label Text="Teams"
@@ -55,7 +56,7 @@
 
                 <Button Clicked="BeginButton_Clicked" Text="Begin"/>
                 
-            </StackLayout>
-        </ScrollView>-->
+            </StackLayout>-->
+        </ScrollView>
     </ContentPage.Content> 
 </ContentPage>
