@@ -49,12 +49,19 @@ namespace Game.Views
 			await Navigation.PopModalAsync();
 		}
 
-		/// <summary>
-		/// Return a stack layout with the Player information inside
-		/// </summary>
-		/// <param name="data"></param>
-		/// <returns></returns>
-		public StackLayout CreatePlayerDisplayBox(PlayerInfoModel data)
+        public async void TeamsButton_Clicked(object sender, EventArgs e)
+        {
+            var prev = Navigation.NavigationStack.LastOrDefault();
+            await Navigation.PushAsync(new PickCharactersPage());
+            Navigation.RemovePage(prev);
+        }
+
+        /// <summary>
+        /// Return a stack layout with the Player information inside
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public StackLayout CreatePlayerDisplayBox(PlayerInfoModel data)
 		{
             if (data == null)
             {
