@@ -35,11 +35,11 @@
                 Clicked="BattlePageButton_Clicked"/>
 
                 <Button Grid.Column="1" Grid.Row="0"
-                Text="Society"
+                Text="New Round"
                 Style="{StaticResource PageButtonStyle}"
                 HorizontalOptions="Start"
                 VerticalOptions="End"
-                Clicked="VillageButton_Clicked"/>
+                Clicked="NewRoundButton_Clicked"/>
 
                 <Button Grid.Column="0" Grid.Row="1"
                  Text="Auto Battle"
