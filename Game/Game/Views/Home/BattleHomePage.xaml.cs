@@ -39,13 +39,13 @@ namespace Game.Views
 		}
 
 		/// <summary>
-		/// Jump to the Dungeon
+		/// Jump to the Pick Characters page
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		public async void AutobattleButton_Clicked(object sender, EventArgs e)
+		public async void PickCharactersButton_Clicked(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new AutoBattlePage());
+			await Navigation.PushAsync(new PickCharactersPage());
 		}
 
 		/// <summary>

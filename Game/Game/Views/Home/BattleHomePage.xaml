@@ -42,11 +42,11 @@
                 Clicked="NewRoundButton_Clicked"/>
 
                 <Button Grid.Column="0" Grid.Row="1"
-                 Text="Auto Battle"
+                 Text="Pick Characters"
                  Style="{StaticResource PageButtonStyle}"
                  HorizontalOptions="End"
                  VerticalOptions="Start"
-                 Clicked="AutobattleButton_Clicked"/>
+                 Clicked="PickCharactersButton_Clicked"/>
 
 
                 <Button Grid.Column="1" Grid.Row="1"
