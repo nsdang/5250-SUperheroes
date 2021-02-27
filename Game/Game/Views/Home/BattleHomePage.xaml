@@ -20,6 +20,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
@@ -50,6 +51,21 @@
 
 
                 <Button Grid.Column="1" Grid.Row="1"
+                 Text="PickItems"
+                 Style="{StaticResource PageButtonStyle}"
+                 HorizontalOptions="Start"
+                 VerticalOptions="Start"
+                 Clicked="PickItemsButton_Clicked"/>
+
+                <Button Grid.Column="0" Grid.Row="2"
+                 Text="Pick Characters"
+                 Style="{StaticResource PageButtonStyle}"
+                 HorizontalOptions="End"
+                 VerticalOptions="Start"
+                 Clicked="PickCharactersButton_Clicked"/>
+
+
+                <Button Grid.Column="1" Grid.Row="2"
                  Text="PickItems"
                  Style="{StaticResource PageButtonStyle}"
                  HorizontalOptions="Start"
