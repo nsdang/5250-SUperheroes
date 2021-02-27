@@ -51,9 +51,9 @@ namespace Game.Views
 
         public async void TeamsButton_Clicked(object sender, EventArgs e)
         {
-            var prev = Navigation.NavigationStack.LastOrDefault();
+            Navigation.PopAsync();
             await Navigation.PushAsync(new PickCharactersPage());
-            Navigation.RemovePage(prev);
+            
         }
 
         /// <summary>
