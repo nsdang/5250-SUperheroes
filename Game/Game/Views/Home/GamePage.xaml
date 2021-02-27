@@ -20,6 +20,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
@@ -51,6 +52,13 @@
 
                 <Button Grid.Column="1" Grid.Row="1"
                  Text="About Us"
+                 Style="{StaticResource PageButtonStyle}"
+                 HorizontalOptions="Start"
+                 VerticalOptions="Start"
+                 Clicked="AboutUsButton_Clicked"/>
+
+                <Button Grid.Column="0" Grid.Row="2"
+                 Text="Battle Home"
                  Style="{StaticResource PageButtonStyle}"
                  HorizontalOptions="Start"
                  VerticalOptions="Start"
