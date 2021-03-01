@@ -4,8 +4,8 @@
              x:Class="Game.Views.BattlePage"
              >
 
-    <NavigationPage.TitleView>
-        <!--Menu Bar-->
+    <!--<NavigationPage.TitleView>
+        Menu Bar
         <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
             <Frame Padding="10,0,0,0"/>
             <Label Text="SUperheroes vs People" Style="{StaticResource CenterMessageLargeStyle}"/>
@@ -15,7 +15,7 @@
             <Frame Padding="10,0,0,0"/>
             <Label x:Name="BattleModeValue" Text="" Style="{StaticResource ValueStyleMicro}" HorizontalTextAlignment="Center"/>
         </StackLayout>
-    </NavigationPage.TitleView>
+    </NavigationPage.TitleView>-->
 
     <ContentPage.Content>
         <AbsoluteLayout
@@ -29,8 +29,8 @@
                         IsVisible="True" 
                         AbsoluteLayout.LayoutBounds="1,1,1,1" 
                         AbsoluteLayout.LayoutFlags="All">
-                <!--<Frame Padding="10,0,0,0"/>
-                <Label x:Name="BattleModeValue" Text="" Style="{StaticResource ValueStyleMicro}" HorizontalTextAlignment="Center" IsVisible="false"/>-->
+                <Frame Padding="10,0,0,0"/>
+                <Label x:Name="BattleModeValue" Text="" Style="{StaticResource ValueStyleMicro}" HorizontalTextAlignment="Center" IsVisible="false"/>
 
                 <!--The Top of the Battle UI Holds the List of Players-->
                 <StackLayout VerticalOptions="Start" x:Name="TopPlayerDisplay">
@@ -158,10 +158,43 @@
                 <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="10">
                     <Label Text="GAME OVER" Style="{StaticResource CenterMessageLargeStyle}"/>
 
-                    <FlexLayout x:Name="CharacterListFrame"
-                                    JustifyContent="Start"
-                                    AlignContent="Start"
-                                    Wrap="Wrap"/>
+                    <FlexLayout
+                    	BindableLayout.ItemsSource="{Binding Dataset}"
+                    	Wrap="Wrap"
+                    	Direction="Row"
+                        AlignItems="Start"
+                        JustifyContent="SpaceAround"
+                        AlignContent="Center"
+                        >
+
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate>
+                                <Frame
+                                    Style="{StaticResource IndexPageMiniFrames}">
+
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="140"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Grid.Row="0" Grid.ColumnSpan="2"
+                                            Source="{Binding ImageURI}">
+                                        </Image>
+
+                                        <Label Grid.Row="1" Grid.ColumnSpan="2"
+                                               Text="{Binding Name}"
+                                               HorizontalOptions="Center">
+                                        </Label>
+
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </FlexLayout>
 
                     <Button x:Name="ExitButton" Clicked="ExitButton_Clicked" Text="Back to Title" WidthRequest="150"></Button>
 
