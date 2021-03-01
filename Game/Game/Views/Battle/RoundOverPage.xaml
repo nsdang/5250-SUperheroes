@@ -20,6 +20,15 @@
 
                         <Label Text="WIN" Style="{StaticResource CenterMessageLargeStyle}"/>
 
+                        <StackLayout Style="{StaticResource HorizontalStack}">
+                            <Label 
+                                Text="Score:" 
+                                Style="{StaticResource LabelStyle}"/>
+                            <Label 
+                                Text="{Binding Data.ScoreTotal}"
+                                Style="{StaticResource ValueStyle}"/>
+                        </StackLayout>
+
                         <Button Clicked="CloseButton_Clicked" Text="Close"/>
 
                         <StackLayout Style="{StaticResource HorizontalStack}">
