@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Game.Views.BattlePage">
+             x:Class="Game.Views.BattlePage"
+             >
 
     <NavigationPage.TitleView>
         <!--Menu Bar-->
         <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
             <Frame Padding="10,0,0,0"/>
-            <Label Text="Elves vs Monsters" Style="{StaticResource CenterMessageLargeStyle}"/>
+            <Label Text="SUperheroes vs People" Style="{StaticResource CenterMessageLargeStyle}"/>
             <Frame Padding="10,0,0,0"/>
             <ImageButton Source="icon_edit.png" Clicked="Setttings_Clicked" Style="{StaticResource BattleToolbarStyle}"/>
             <ImageButton Source="icon_cancel.png" Clicked="ExitButton_Clicked" Style="{StaticResource BattleToolbarStyle}"/>
@@ -28,6 +29,8 @@
                         IsVisible="True" 
                         AbsoluteLayout.LayoutBounds="1,1,1,1" 
                         AbsoluteLayout.LayoutFlags="All">
+                <!--<Frame Padding="10,0,0,0"/>
+                <Label x:Name="BattleModeValue" Text="" Style="{StaticResource ValueStyleMicro}" HorizontalTextAlignment="Center" IsVisible="false"/>-->
 
                 <!--The Top of the Battle UI Holds the List of Players-->
                 <StackLayout VerticalOptions="Start" x:Name="TopPlayerDisplay">
@@ -35,13 +38,29 @@
                         x:Name="GamePlayersTopDisplay" 
                         IsVisible="true" 
                         VerticalOptions="Start" 
-                        HorizontalOptions="CenterAndExpand">
+                        HorizontalOptions="CenterAndExpand"
+                                 Spacing="12">
+
+                        <Label Text="Turn 1" Style="{StaticResource CenterMessageLargeStyle}" HorizontalOptions="CenterAndExpand" />
+
+                        <Line Stroke="Black" StrokeThickness="5" HorizontalOptions="CenterAndExpand" WidthRequest="350" X1="0" Y1="0" X2="400" Y2="0"/>
+
+                        <FlexLayout x:Name="MonsterFlexLayout" Wrap="Wrap" JustifyContent="SpaceAround"/>
+
+                        <!--<StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
+                            <Button Text="Normal Attack"/>
+                            <Button Text="Moderate Attack"/>
+                            <Button Text="Special Attack"/>
+                        </StackLayout>-->
+
+                        <FlexLayout x:Name="CharacterFlexLayout" Wrap="Wrap" JustifyContent="SpaceAround"/>
+
+                        <!--<Label Text="Monsters" Style="{StaticResource CenterMessageStyle}" HorizontalOptions="CenterAndExpand"/>
+                        <StackLayout x:Name="MonsterBox" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand"/>
 
                         <Label Text="Characters" Style="{StaticResource CenterMessageStyle}" HorizontalOptions="CenterAndExpand"/>
-                        <StackLayout x:Name="CharacterBox" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand"/>
+                        <StackLayout x:Name="CharacterBox" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand"/>-->
 
-                        <Label Text="Monsters" Style="{StaticResource CenterMessageStyle}" HorizontalOptions="CenterAndExpand"/>
-                        <StackLayout x:Name="MonsterBox" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand"/>
                     </StackLayout>
                 </StackLayout>
 
