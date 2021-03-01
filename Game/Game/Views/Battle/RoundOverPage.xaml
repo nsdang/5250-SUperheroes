@@ -18,7 +18,7 @@
 
                     <StackLayout Style="{StaticResource VerticalStack}">
 
-                        <Label Text="Round Cleared" Style="{StaticResource CenterMessageLargeStyle}"/>
+                        <Label Text="WIN" Style="{StaticResource CenterMessageLargeStyle}"/>
 
                         <Button Clicked="CloseButton_Clicked" Text="Close"/>
 
