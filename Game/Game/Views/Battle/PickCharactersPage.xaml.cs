@@ -96,55 +96,7 @@ namespace Game.Views
 
             UpdateNextButtonState();
         }
-
-        /*
-        /// <summary>
-        /// The row selected from the list
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        public void OnDatabaseCharacterItemSelected(object sender, SelectedItemChangedEventArgs args)
-        {
-            CharacterModel data = args.SelectedItem as CharacterModel;
-            if (data == null)
-            {
-                return;
-            }
-
-            // Manually deselect Character.
-            CharactersListView.SelectedItem = null;
-
-            // Don't add more than the party max
-            if (BattleEngineViewModel.Instance.PartyCharacterList.Count() < BattleEngineViewModel.Instance.Engine.EngineSettings.MaxNumberPartyCharacters)
-            {
-                BattleEngineViewModel.Instance.PartyCharacterList.Add(data);
-            }
-
-            UpdateNextButtonState();
-        }
-        
-
-        /// <summary>
-        /// The row selected from the list
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="args"></param>
-        public void OnPartyCharacterItemSelected(object sender, SelectedItemChangedEventArgs args)
-        {
-            CharacterModel data = args.SelectedItem as CharacterModel;
-            if (data == null)
-            {
-                return;
-            }
-
-            // Manually deselect Character.
-            PartyListView.SelectedItem = null;
-
-            // Remove the character from the list
-            BattleEngineViewModel.Instance.PartyCharacterList.Remove(data);
-
-            UpdateNextButtonState();
-        }
+   
         
         /// <summary>
         /// Next Button is based on the count
@@ -154,7 +106,7 @@ namespace Game.Views
         /// Show the Count of the party
         /// 
         /// </summary>
-        */
+       
         public void UpdateNextButtonState()
         {
             // If no characters disable Next button
