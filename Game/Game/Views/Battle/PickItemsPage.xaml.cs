@@ -1,6 +1,7 @@
 ﻿using Game.Models;
 using Game.ViewModels;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -13,6 +14,11 @@ namespace Game.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PickItemsPage : ContentPage
     {
+        // In our game, only one dropped item can be selected and assigned
+        // to a single character per user choice
+        ItemModel selectedItem;
+        PlayerInfoModel selectedCharacter;
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -22,7 +28,7 @@ namespace Game.Views
 
             DrawCharacterList();
 
-            DrawItemLists();
+            DrawDropList();
         }
 
         /// <summary>
@@ -45,26 +51,9 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Draw the List of Items
-        /// 
-        /// The Ones Dropped
-        /// 
-        /// The Ones Selected
-        /// 
-        /// </summary>
-        public void DrawItemLists()
-        {
-            DrawDroppedItems();
-            DrawSelectedItems();
-
-            // Only need to update the selected, the Dropped is set in the constructor
-            TotalSelected.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Count().ToString();
-        }
-
-        /// <summary>
         /// Add the Dropped Items to the Display
         /// </summary>
-        public void DrawDroppedItems()
+        public void DrawDropList()
         {
             // Clear and Populate the Dropped Items
             var FlexList = ItemListFoundFrame.Children.ToList();
@@ -76,24 +65,6 @@ namespace Game.Views
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Distinct())
             {
                 ItemListFoundFrame.Children.Add(GetItemToDisplay(data));
-            }
-        }
-
-        /// <summary>
-        /// Add the Dropped Items to the Display
-        /// </summary>
-        public void DrawSelectedItems()
-        {
-            // Clear and Populate the Dropped Items
-            var FlexList = ItemListSelectedFrame.Children.ToList();
-            foreach (var data in FlexList)
-            {
-                ItemListSelectedFrame.Children.Remove(data);
-            }
-
-            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList)
-            {
-                ItemListSelectedFrame.Children.Add(GetItemToDisplay(data));
             }
         }
 
@@ -136,8 +107,18 @@ namespace Game.Views
 
             if (ClickableButton)
             {
-                // Add a event to the user can click the item and see more
-                ItemButton.Clicked += (sender, args) => ShowPopup(data);
+                ItemButton.Clicked += (sender, args) =>
+                {
+                    selectedItem = new ItemModel();
+                    var FlexList = ItemListSelectedFrame.Children.ToList();
+                    foreach (var data in FlexList)
+                    {
+                        ItemListSelectedFrame.Children.Remove(data);
+                    }
+
+                    selectedItem = data;
+                    ItemListSelectedFrame.Children.Add(GetItemToDisplay(data));
+                };
             }
 
             // Put the Image Button and Text inside a layout
@@ -154,6 +135,7 @@ namespace Game.Views
             return ItemStack;
         }
 
+       
         /// <summary>
         /// Return a stack layout with the Player information inside
         /// </summary>
@@ -166,11 +148,17 @@ namespace Game.Views
                 data = new PlayerInfoModel();
             }
 
-            // Hookup the image
-            var PlayerImage = new Image
+            var PlayerImageButton = new ImageButton
             {
-                Style = (Style)Application.Current.Resources["ImageBattleLargeStyle"],
+                Style = (Style)Application.Current.Resources["ImageMediumStyle"],
                 Source = data.ImageURI
+            };
+
+            PlayerImageButton.Clicked += (sender, args) =>
+            {
+                selectedCharacter = new PlayerInfoModel();
+                selectedCharacter = data;
+                ChosenCharacter.Text = data.Name;
             };
 
             // Add the Level
@@ -222,44 +210,17 @@ namespace Game.Views
                 Padding = 0,
                 Spacing = 0,
                 Children = {
-                    PlayerImage,
+                    PlayerImageButton,
                     PlayerNameLabel,
                     PlayerLevelLabel,
                     PlayerHPLabel,
                 },
             };
 
+
+
             return PlayerStack;
         }
-
-        /// <summary>
-        /// Show the Popup for the Item
-        /// </summary>
-        /// <param name="data"></param>
-        /// <returns></returns>
-        public bool ShowPopup(ItemModel data)
-        {
-            PopupLoadingView.IsVisible = true;
-            PopupItemImage.Source = data.ImageURI;
-
-            PopupItemName.Text = data.Name;
-            PopupItemDescription.Text = data.Description;
-            PopupItemLocation.Text = data.Location.ToMessage();
-            PopupItemAttribute.Text = data.Attribute.ToMessage();
-            PopupItemValue.Text = " + " + data.Value.ToString();
-            return true;
-        }
-
-        /// <summary>
-        /// Close the popup
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void ClosePopup_Clicked(object sender, EventArgs e)
-        {
-            PopupLoadingView.IsVisible = false;
-        }
-
 
         /// <summary>
         /// Closes the Round Over Popup
@@ -273,11 +234,26 @@ namespace Game.Views
         /// <param name="e"></param>
         public void CloseButton_Clicked(object sender, EventArgs e)
         {
-            // Reset to a new Round
-            BattleEngineViewModel.Instance.Engine.Round.NewRound();
+            if (selectedCharacter != null && selectedItem != null)
+            {
+                BattleEngineViewModel.Instance.Engine.Round.SwapCharacterItem(selectedCharacter, selectedItem.Location, selectedItem); ;
+                // Reset to a new Round
+                BattleEngineViewModel.Instance.Engine.Round.NewRound();
 
-            // Show the New Round Screen
-            //ShowModalNewRoundPage();
+                // Show the New Round Screen
+                ShowModalNewRoundPage();
+            }
+        }
+
+        /// <summary>
+        /// Show the Page for New Round
+        /// 
+        /// Upcomming Monsters
+        /// 
+        /// </summary>
+        public async void ShowModalNewRoundPage()
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new NewRoundPage()));
         }
     }
 }
