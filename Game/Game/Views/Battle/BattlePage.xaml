@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Game.Views.BattlePage">
 
-    <NavigationPage.TitleView>
-        <!--Menu Bar-->
+    <!--<NavigationPage.TitleView>
+        Menu Bar
         <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
             <Frame Padding="10,0,0,0"/>
             <Label Text="Elves vs Monsters" Style="{StaticResource CenterMessageLargeStyle}"/>
@@ -14,7 +14,7 @@
             <Frame Padding="10,0,0,0"/>
             <Label x:Name="BattleModeValue" Text="" Style="{StaticResource ValueStyleMicro}" HorizontalTextAlignment="Center"/>
         </StackLayout>
-    </NavigationPage.TitleView>
+    </NavigationPage.TitleView>-->
 
     <ContentPage.Content>
         <AbsoluteLayout
@@ -28,6 +28,9 @@
                         IsVisible="True" 
                         AbsoluteLayout.LayoutBounds="1,1,1,1" 
                         AbsoluteLayout.LayoutFlags="All">
+
+                <Frame Padding="10,0,0,0"/>
+                <Label x:Name="BattleModeValue" Text="" Style="{StaticResource ValueStyleMicro}" HorizontalTextAlignment="Center" IsVisible="false"/>
 
                 <!--The Top of the Battle UI Holds the List of Players-->
                 <StackLayout VerticalOptions="Start" x:Name="TopPlayerDisplay">
