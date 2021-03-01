@@ -7,6 +7,7 @@ using Xamarin.Forms.Xaml;
 using Game.Models;
 using Game.ViewModels;
 using System.Linq;
+using Game.Engine.EngineKoenig;
 
 namespace Game.Views
 {
@@ -178,6 +179,7 @@ namespace Game.Views
         public async void BattleButton_Clicked(object sender, EventArgs e)
         {
             CreateEngineCharacterList();
+            BattleEngineViewModel.Instance.Engine.Round.NewRound();
 
             await Navigation.PushModalAsync(new NavigationPage(new NewRoundPage()));
             await Navigation.PopAsync();
