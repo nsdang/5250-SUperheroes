@@ -946,5 +946,24 @@ namespace Game.Views
                     break;
             }
         }
+
+        /// <summary>
+        /// Clear and Add the Characters that survived
+        /// </summary>
+        public void DrawCharacterList()
+        {
+            // Clear and Populate the Characters Remaining
+            var FlexList = CharacterListFrame.Children.ToList();
+            foreach (var data in FlexList)
+            {
+                CharacterListFrame.Children.Remove(data);
+            }
+
+            // Draw the Characters
+            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList)
+            {
+                CharacterListFrame.Children.Add(CreatePlayerDisplayBox(data));
+            }
+        }
     }
 }
