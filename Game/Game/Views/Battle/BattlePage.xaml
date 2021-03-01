@@ -155,24 +155,16 @@
 
                                     <Grid>
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="20"></RowDefinition>
                                             <RowDefinition></RowDefinition>
                                             <RowDefinition Height="20"></RowDefinition>
                                         </Grid.RowDefinitions>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="140"></ColumnDefinition>
-                                            <ColumnDefinition Width="40"></ColumnDefinition>
                                         </Grid.ColumnDefinitions>
 
-                                        <ImageButton Grid.Row="0" Grid.Column="1"
-                                            Source="icon_delete.png"
-                                            Clicked="OnImageDeleted">
-
-                                        </ImageButton>
-                                        <ImageButton Grid.Row="1" Grid.ColumnSpan="2"
-                                            Source="{Binding ImageURI}"
-                                            Clicked="OnImageClicked">
-                                        </ImageButton>
+                                        <Image Grid.Row="1" Grid.ColumnSpan="2"
+                                            Source="{Binding ImageURI}">
+                                        </Image>
 
                                         <Label Grid.Row="2" Grid.ColumnSpan="2"
                                                Text="{Binding Name}"
