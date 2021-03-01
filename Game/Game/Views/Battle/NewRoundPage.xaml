@@ -7,56 +7,28 @@
 
         <ScrollView VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
             <StackLayout>
-            <Label Text="Starting Round" Style="{StaticResource CenterMessageLargeStyle}"/>
+                <Label Text="Starting Round" Style="{StaticResource CenterMessageLargeStyle}"/>
 
-            <Label Text="Teams"
+                <Label Text="Teams"
                    TextDecorations="Underline"/>
-
-            <FlexLayout x:Name="PartyListFrame"
-                        JustifyContent="Start"
-                        AlignContent="Start"
-                        Wrap="Wrap"/>
-
-            <Label Text="Enemies"
-                   TextDecorations="Underline"/>
-
-            <FlexLayout x:Name="MonsterListFrame"
-                        JustifyContent="Start"
-                        AlignContent="Start"
-                        Wrap="Wrap"/>
-
-            <Button Clicked="BeginButton_Clicked" Text="Start Round"/>
-            <Button Clicked="TeamsButton_Clicked" Text="Teams"/>
-
-        </StackLayout>
-        <!--
-        <ScrollView VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
-
-            <StackLayout Style="{StaticResource VerticalStack}">
-
-                <Label Text="Beginning a Round" Style="{StaticResource CenterMessageLargeStyle}"/>
-
-                <Button Clicked="BeginButton_Clicked" Text="Begin"/>
-
-                <Label Text="Characters" Style="{StaticResource MessageLargeStyle}"/>
 
                 <FlexLayout x:Name="PartyListFrame"
-                                    JustifyContent="Start"
-                                    AlignContent="Start"
-                                    Wrap="Wrap"/>
+                        JustifyContent="Start"
+                        AlignContent="Start"
+                        Wrap="Wrap"/>
 
-                <Label Text="Monsters" Style="{StaticResource MessageLargeStyle}"/>
+                <Label Text="Enemies"
+                   TextDecorations="Underline"/>
 
                 <FlexLayout x:Name="MonsterListFrame"
-                                    JustifyContent="Start"
-                                    AlignContent="Start"
-                                    Wrap="Wrap"/>
+                        JustifyContent="Start"
+                        AlignContent="Start"
+                        Wrap="Wrap"/>
 
-                <StackLayout Padding="1"></StackLayout>
+                <Button Clicked="BeginButton_Clicked" Text="Start Round"/>
+                <Button Clicked="TeamsButton_Clicked" Text="Teams"/>
 
-                <Button Clicked="BeginButton_Clicked" Text="Begin"/>
-                
-            </StackLayout>-->
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content> 
 </ContentPage>
