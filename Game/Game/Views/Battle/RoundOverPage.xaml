@@ -56,7 +56,8 @@
                                     Wrap="Wrap"/>
 
                         <Button Clicked="CloseButton_Clicked" Text="Close"/>
-
+                        <Button Clicked="RewardButton_Clicked" Text="Rewards"/>
+                        
                     </StackLayout>
                 </ScrollView>
             </StackLayout>

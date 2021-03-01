@@ -313,5 +313,15 @@ namespace Game.Views
             await Navigation.PopModalAsync();
         }
 
+        /// <summary>
+		///Goes to the item pool page
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		public async void RewardButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new PickItemsPage()));
+        }
+
     }
 }
