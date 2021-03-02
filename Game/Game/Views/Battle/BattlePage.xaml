@@ -1,14 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Game.Views.BattlePage"
-             >
+             x:Class="Game.Views.BattlePage">
 
     <!--<NavigationPage.TitleView>
         Menu Bar
         <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
             <Frame Padding="10,0,0,0"/>
-            <Label Text="SUperheroes vs People" Style="{StaticResource CenterMessageLargeStyle}"/>
+            <Label Text="Elves vs Monsters" Style="{StaticResource CenterMessageLargeStyle}"/>
             <Frame Padding="10,0,0,0"/>
             <ImageButton Source="icon_edit.png" Clicked="Setttings_Clicked" Style="{StaticResource BattleToolbarStyle}"/>
             <ImageButton Source="icon_cancel.png" Clicked="ExitButton_Clicked" Style="{StaticResource BattleToolbarStyle}"/>
@@ -29,8 +28,6 @@
                         IsVisible="True" 
                         AbsoluteLayout.LayoutBounds="1,1,1,1" 
                         AbsoluteLayout.LayoutFlags="All">
-                <Frame Padding="10,0,0,0"/>
-                <Label x:Name="BattleModeValue" Text="" Style="{StaticResource ValueStyleMicro}" HorizontalTextAlignment="Center" IsVisible="false"/>
 
                 <Frame Padding="10,0,0,0"/>
                 <Label x:Name="BattleModeValue" Text="" Style="{StaticResource ValueStyleMicro}" HorizontalTextAlignment="Center" IsVisible="false"/>
@@ -48,7 +45,47 @@
                         <StackLayout x:Name="CharacterBox" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand"/>
 
                         <Label Text="Monsters" Style="{StaticResource CenterMessageStyle}" HorizontalOptions="CenterAndExpand"/>
-                        <StackLayout x:Name="MonsterBox" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand"/>
+                        <StackLayout x:Name="MonsterBox" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand"/>-->
+
+                        <StackLayout Style="{StaticResource VerticalStack}"
+                                     x:Name="TurnCounter"
+                                     VerticalOptions="Start"
+                                     HorizontalOptions="CenterAndExpand"
+                                     Spacing="10">
+                            <Label Text="Turn 1" Style="{StaticResource CenterMessageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
+                            <Line Stroke="Black" StrokeThickness="3" HorizontalOptions="CenterAndExpand" WidthRequest="350" X1="0" Y1="0" X2="400" Y2="0"/> 
+                        </StackLayout>
+
+                        <FlexLayout x:Name="MonsterFlexLayout" Wrap="Wrap" JustifyContent="SpaceAround"/>
+
+                        <Label x:Name="VSLabel" Text="VS" Style="{StaticResource CenterMessageLargeStyle}" HorizontalOptions="CenterAndExpand" HeightRequest="100"/>
+
+                        <StackLayout Style="{StaticResource HorizontalStack}"
+                                     x:Name="AttackButtons"
+                                     VerticalOptions="Start"
+                                     HorizontalOptions="CenterAndExpand"
+                                     Spacing="8"
+                                     HeightRequest="100">
+
+                            <Button Text="Basic Attack"
+                                    WidthRequest="70"
+                                    VerticalOptions="CenterAndExpand"
+                                    HorizontalOptions="Center"
+                                    Clicked="AttackButton_Clicked"/>
+                            <Button Text="Moderate Attack"
+                                    WidthRequest="70"
+                                    VerticalOptions="CenterAndExpand"
+                                    HorizontalOptions="Center"
+                                    Clicked="AttackButton_Clicked"/>
+                            <Button Text="Special Attack"
+                                    WidthRequest="70"
+                                    VerticalOptions="CenterAndExpand"
+                                    HorizontalOptions="Center"
+                                    Clicked="AttackButton_Clicked"/>
+                        </StackLayout>
+
+                        <FlexLayout x:Name="CharacterFlexLayout" Wrap="Wrap" JustifyContent="SpaceAround"/>
+                        
                     </StackLayout>
                 </StackLayout>
 
@@ -157,43 +194,10 @@
                 <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="10">
                     <Label Text="GAME OVER" Style="{StaticResource CenterMessageLargeStyle}"/>
 
-                    <FlexLayout
-                    	BindableLayout.ItemsSource="{Binding Dataset}"
-                    	Wrap="Wrap"
-                    	Direction="Row"
-                        AlignItems="Start"
-                        JustifyContent="SpaceAround"
-                        AlignContent="Center"
-                        >
-
-                        <BindableLayout.ItemTemplate>
-                            <DataTemplate>
-                                <Frame
-                                    Style="{StaticResource IndexPageMiniFrames}">
-
-                                    <Grid>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition></RowDefinition>
-                                            <RowDefinition Height="20"></RowDefinition>
-                                        </Grid.RowDefinitions>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="140"></ColumnDefinition>
-                                        </Grid.ColumnDefinitions>
-
-                                        <Image Grid.Row="0" Grid.ColumnSpan="2"
-                                            Source="{Binding ImageURI}">
-                                        </Image>
-
-                                        <Label Grid.Row="1" Grid.ColumnSpan="2"
-                                               Text="{Binding Name}"
-                                               HorizontalOptions="Center">
-                                        </Label>
-
-                                    </Grid>
-                                </Frame>
-                            </DataTemplate>
-                        </BindableLayout.ItemTemplate>
-                    </FlexLayout>
+                    <FlexLayout x:Name="CharacterListFrame"
+                                    JustifyContent="Start"
+                                    AlignContent="Start"
+                                    Wrap="Wrap"/>
 
                     <Button x:Name="ExitButton" Clicked="ExitButton_Clicked" Text="Back to Title" WidthRequest="150"></Button>
 
