@@ -57,6 +57,9 @@
                         </StackLayout>
 
                         <FlexLayout x:Name="MonsterFlexLayout" Wrap="Wrap" JustifyContent="SpaceAround"/>
+
+                        <Label x:Name="VSLabel" Text="VS" Style="{StaticResource CenterMessageLargeStyle}" HorizontalOptions="CenterAndExpand" HeightRequest="100"/>
+
                         <FlexLayout x:Name="CharacterFlexLayout" Wrap="Wrap" JustifyContent="SpaceAround"/>
                         
                     </StackLayout>
