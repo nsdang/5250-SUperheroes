@@ -64,9 +64,16 @@
                                     AlignContent="Start"
                                     Wrap="Wrap"/>
 
-                        <Button Clicked="CloseButton_Clicked" Text="Title Screen"/>
-                        <Button Clicked="RewardButton_Clicked" Text="Next Battle"/>
-                        
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            
+                            <Button Grid.Column="0" Clicked="CloseButton_Clicked" Text="Title Screen"/>
+                            <Button Grid.Column="1" Clicked="RewardButton_Clicked" Text="Next Battle"/>
+                            
+                        </Grid>
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
