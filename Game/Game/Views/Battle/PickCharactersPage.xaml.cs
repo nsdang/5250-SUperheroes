@@ -133,8 +133,7 @@ namespace Game.Views
             CreateEngineCharacterList();
             BattleEngineViewModel.Instance.Engine.Round.NewRound();
 
-            await Navigation.PushModalAsync(new NavigationPage(new NewRoundPage()));
-            await Navigation.PopAsync();
+            await Navigation.PushAsync(new NewRoundPage());
         }
 
         /// <summary>
