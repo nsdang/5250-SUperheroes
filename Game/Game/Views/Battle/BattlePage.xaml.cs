@@ -772,6 +772,18 @@ namespace Game.Views
         }
 
         /// <summary>
+        /// Battle Over, so Exit Button
+        /// Need to show this for the user to click on.
+        /// The Quit does a prompt, exit just exits
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public async void CloseButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+
+        /// <summary>
         /// The Next Round Button
         /// </summary>
         /// <param name="sender"></param>
@@ -780,7 +792,7 @@ namespace Game.Views
         {
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
             ShowBattleMode();
-            await Navigation.PushModalAsync(new NewRoundPage());
+            await Navigation.PushAsync(new NewRoundPage());
         }
 
         /// <summary>
@@ -804,7 +816,7 @@ namespace Game.Views
         public async void ShowScoreButton_Clicked(object sender, EventArgs args)
         {
             ShowBattleMode();
-            await Navigation.PushModalAsync(new ScorePage());
+            await Navigation.PushAsync(new ScorePage());
         }
 
         /// <summary>
@@ -816,7 +828,7 @@ namespace Game.Views
         public async void ShowModalRoundOverPage()
         {
             ShowBattleMode();
-            await Navigation.PushModalAsync(new RoundOverPage());
+            await Navigation.PushAsync(new RoundOverPage());
         }
 
         /// <summary>
@@ -825,7 +837,7 @@ namespace Game.Views
         public async Task ShowBattleSettingsPage()
         {
             ShowBattleMode();
-            await Navigation.PushModalAsync(new BattleSettingsPage());
+            await Navigation.PushAsync(new BattleSettingsPage());
         }
         #endregion PageHandelers
 
