@@ -32,6 +32,9 @@
                 <Frame Padding="10,0,0,0"/>
                 <Label x:Name="BattleModeValue" Text="" Style="{StaticResource ValueStyleMicro}" HorizontalTextAlignment="Center" IsVisible="false"/>
 
+                <Frame Padding="10,0,0,0"/>
+                <Label x:Name="BattleModeValue" Text="" Style="{StaticResource ValueStyleMicro}" HorizontalTextAlignment="Center" IsVisible="false"/>
+
                 <!--The Top of the Battle UI Holds the List of Players-->
                 <StackLayout VerticalOptions="Start" x:Name="TopPlayerDisplay">
                     <StackLayout Style="{StaticResource VerticalStack}"
@@ -39,28 +42,13 @@
                         IsVisible="true" 
                         VerticalOptions="Start" 
                         HorizontalOptions="CenterAndExpand"
-                                 Spacing="12">
+                        Spacing="12">
 
-                        <Label Text="Turn 1" Style="{StaticResource CenterMessageLargeStyle}" HorizontalOptions="CenterAndExpand" />
+                        <!--<Label Text="Characters" Style="{StaticResource CenterMessageStyle}" HorizontalOptions="CenterAndExpand"/>
+                        <StackLayout x:Name="CharacterBox" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand"/>
 
-                        <Line Stroke="Black" StrokeThickness="5" HorizontalOptions="CenterAndExpand" WidthRequest="350" X1="0" Y1="0" X2="400" Y2="0"/>
-
-                        <FlexLayout x:Name="MonsterFlexLayout" Wrap="Wrap" JustifyContent="SpaceAround"/>
-
-                        <!--<StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand">
-                            <Button Text="Normal Attack"/>
-                            <Button Text="Moderate Attack"/>
-                            <Button Text="Special Attack"/>
-                        </StackLayout>-->
-
-                        <FlexLayout x:Name="CharacterFlexLayout" Wrap="Wrap" JustifyContent="SpaceAround"/>
-
-                        <!--<Label Text="Monsters" Style="{StaticResource CenterMessageStyle}" HorizontalOptions="CenterAndExpand"/>
+                        <Label Text="Monsters" Style="{StaticResource CenterMessageStyle}" HorizontalOptions="CenterAndExpand"/>
                         <StackLayout x:Name="MonsterBox" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand"/>
-
-                        <Label Text="Characters" Style="{StaticResource CenterMessageStyle}" HorizontalOptions="CenterAndExpand"/>
-                        <StackLayout x:Name="CharacterBox" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand"/>-->
-
                     </StackLayout>
                 </StackLayout>
 
@@ -113,13 +101,22 @@
                     <StackLayout 
                             Style="{StaticResource VerticalStack}" 
                             HeightRequest="100"
-                            HorizontalOptions="CenterAndExpand">
+                            HorizontalOptions="CenterAndExpand"
+                            x:Name="MessageDisplayBox" 
+                            IsVisible="false">
+                        
+                        <Button Text="Battle Log"
+                                WidthRequest="70"
+                                VerticalOptions="CenterAndExpand"
+                                HorizontalOptions="Start"/>
 
-                        <StackLayout x:Name="MessageDisplayBox" 
-                            IsVisible="false"
+                        <Frame Style="{StaticResource PlayerBattleOuterFrame}"
+                               BackgroundColor="LightSteelBlue">
+                        <StackLayout 
                             Style="{StaticResource VerticalStack}" 
                                     VerticalOptions="StartAndExpand"
-                                    HorizontalOptions="CenterAndExpand">
+                                    HorizontalOptions="CenterAndExpand"
+                            Margin="5,5,5,5">
 
                             <Label x:Name="BattleMessages" 
                                     HorizontalOptions="FillAndExpand" 
@@ -128,7 +125,8 @@
                                     LineHeight="1"
                                     CharacterSpacing="1"
                                     Style="{StaticResource LabelStyle}"
-                                    FontSize="Micro"/>
+                                    FontSize="Micro"
+                                   TextColor="Black"/>
 
                             <!--<WebView
                         x:Name="HtmlBox"
@@ -142,6 +140,7 @@
                         IsVisible="false"
                         />-->
                         </StackLayout>
+                        </Frame>
                     </StackLayout>
                 </StackLayout>
             </StackLayout>

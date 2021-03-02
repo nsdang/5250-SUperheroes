@@ -100,10 +100,8 @@ namespace Game.Views
             //// Add one black PlayerInfoDisplayBox to hold space incase the list is empty
             //MonsterBox.Children.Add(PlayerInfoDisplayBox(null));
 
-            /* ------------------------------------------------------*/
-
-            var CharacterBoxList1 = CharacterFlexLayout.Children.ToList();
-            foreach (var data in CharacterBoxList1)
+            var CharacterBoxList = CharacterFlexLayout.Children.ToList();
+            foreach (var data in CharacterBoxList)
             {
                 CharacterFlexLayout.Children.Remove(data);
             }
@@ -114,8 +112,8 @@ namespace Game.Views
                 CharacterFlexLayout.Children.Add(PlayerInfoDisplayBox(data));
             }
 
-            var MonsterBoxList1 = MonsterFlexLayout.Children.ToList();
-            foreach (var data in MonsterBoxList1)
+            var MonsterBoxList = MonsterFlexLayout.Children.ToList();
+            foreach (var data in MonsterBoxList)
             {
                 MonsterFlexLayout.Children.Remove(data);
             }
@@ -878,6 +876,9 @@ namespace Game.Views
             AttackButton.IsVisible = false;
             MessageDisplayBox.IsVisible = false;
             BattlePlayerInfomationBox.IsVisible = false;
+            TurnCounter.IsVisible = false;
+            VSLabel.IsVisible = false;
+            AttackButtons.IsVisible = false;
         }
 
         /// <summary>
@@ -916,6 +917,7 @@ namespace Game.Views
                     //GameUIDisplay.IsVisible = false;
                     AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
                     StartBattleButton.IsVisible = true;
+                    VSLabel.IsVisible = true;
                     break;
 
                 case BattleStateEnum.NewRound:
@@ -936,9 +938,11 @@ namespace Game.Views
                 case BattleStateEnum.RoundOver:
                 case BattleStateEnum.Battling:
                     GameUIDisplay.IsVisible = true;
-                    BattlePlayerInfomationBox.IsVisible = true;
+                    //BattlePlayerInfomationBox.IsVisible = true;
                     MessageDisplayBox.IsVisible = true;
-                    AttackButton.IsVisible = true;
+                    //AttackButton.IsVisible = true;
+                    TurnCounter.IsVisible = true;
+                    AttackButtons.IsVisible = true;
                     break;
 
                 // Based on the State disable buttons
