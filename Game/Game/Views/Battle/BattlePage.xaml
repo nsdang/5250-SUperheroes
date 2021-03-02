@@ -138,10 +138,18 @@
                     <StackLayout 
                             Style="{StaticResource VerticalStack}" 
                             HeightRequest="100"
-                            HorizontalOptions="CenterAndExpand">
+                            HorizontalOptions="CenterAndExpand"
+                            x:Name="MessageDisplayBox" 
+                            IsVisible="false">
+                        
+                        <Button Text="Battle Log"
+                                WidthRequest="70"
+                                VerticalOptions="CenterAndExpand"
+                                HorizontalOptions="Start"/>
 
-                        <StackLayout x:Name="MessageDisplayBox" 
-                            IsVisible="false"
+                        <Frame Style="{StaticResource PlayerBattleOuterFrame}"
+                               IsVisible="False">
+                        <StackLayout 
                             Style="{StaticResource VerticalStack}" 
                                     VerticalOptions="StartAndExpand"
                                     HorizontalOptions="CenterAndExpand">
@@ -167,6 +175,7 @@
                         IsVisible="false"
                         />-->
                         </StackLayout>
+                        </Frame>
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
