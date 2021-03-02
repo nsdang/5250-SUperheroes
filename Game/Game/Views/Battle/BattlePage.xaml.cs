@@ -877,6 +877,7 @@ namespace Game.Views
             MessageDisplayBox.IsVisible = false;
             BattlePlayerInfomationBox.IsVisible = false;
             TurnCounter.IsVisible = false;
+            VSLabel.IsVisible = false;
         }
 
         /// <summary>
@@ -915,6 +916,7 @@ namespace Game.Views
                     //GameUIDisplay.IsVisible = false;
                     AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
                     StartBattleButton.IsVisible = true;
+                    VSLabel.IsVisible = true;
                     break;
 
                 case BattleStateEnum.NewRound:

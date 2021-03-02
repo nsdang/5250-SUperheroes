@@ -60,6 +60,30 @@
 
                         <Label x:Name="VSLabel" Text="VS" Style="{StaticResource CenterMessageLargeStyle}" HorizontalOptions="CenterAndExpand" HeightRequest="100"/>
 
+                        <StackLayout Style="{StaticResource HorizontalStack}"
+                                     x:Name="AttackButtons"
+                                     VerticalOptions="Start"
+                                     HorizontalOptions="CenterAndExpand"
+                                     Spacing="10"
+                                     HeightRequest="100">
+
+                            <Button Text="Basic Attack"
+                                    WidthRequest="70"
+                                    VerticalOptions="CenterAndExpand"
+                                    HorizontalOptions="Center"
+                                    Clicked="AttackButton_Clicked"/>
+                            <Button Text="Moderate Attack"
+                                    WidthRequest="70"
+                                    VerticalOptions="CenterAndExpand"
+                                    HorizontalOptions="Center"
+                                    Clicked="AttackButton_Clicked"/>
+                            <Button Text="Special Attack"
+                                    WidthRequest="70"
+                                    VerticalOptions="CenterAndExpand"
+                                    HorizontalOptions="Center"
+                                    Clicked="AttackButton_Clicked"/>
+                        </StackLayout>
+
                         <FlexLayout x:Name="CharacterFlexLayout" Wrap="Wrap" JustifyContent="SpaceAround"/>
                         
                     </StackLayout>
