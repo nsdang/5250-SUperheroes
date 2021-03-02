@@ -32,6 +32,8 @@ namespace Game.Views
             DrawCharacterList();
 
             DrawItemLists();
+
+            DrawDeadMonsterBoxes();
         }
 
         /// <summary>
@@ -322,6 +324,23 @@ namespace Game.Views
         {
             await Navigation.PushModalAsync(new NavigationPage(new PickItemsPage()));
         }
+        /// <summary>
+        /// Draw the Dead Monster Boxes
+        /// </summary>
+        public void DrawDeadMonsterBoxes()
+        {
 
+            var MonsterBoxList = MonsterFlexLayout.Children.ToList();
+            foreach (var data in MonsterBoxList)
+            {
+                MonsterFlexLayout.Children.Remove(data);
+            }
+
+            // Draw the Monsters
+            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
+            {
+                MonsterFlexLayout.Children.Add(PlayerInfoDisplayBox(data));
+            }
+        }
     }
 }
