@@ -979,6 +979,7 @@ namespace Game.Views
             }
         }
 
+        /*
         /// <summary>
         /// Clear and Add the Characters that survived
         /// </summary>
@@ -997,6 +998,7 @@ namespace Game.Views
                 CharacterListFrame.Children.Add(CreatePlayerDisplayBox(data));
             }
         }
+        */
 
         /// <summary>
         /// Return a stack layout with the Player information inside
@@ -1080,24 +1082,8 @@ namespace Game.Views
         /// </summary>
         public void DrawDeadPlayerBoxes()
         {
-            var CharacterBoxList = CharacterFlexLayout.Children.ToList();
-            List<PlayerInfoModel> CharacterTempList = new List<PlayerInfoModel>();
-
-            /*
-            foreach (var data in BattleEngineViewModel.Instance.PartyCharacterList)
-            {
-                CharacterTempList.Add(new PlayerInfoModel(data));
-            }
-            */
-
-            // Draw the Characters
-            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList) 
-            {
                 foreach (var partyData in BattleEngineViewModel.Instance.PartyCharacterList)
-                    if(!partyData.Equals(data))
-                        CharacterFlexLayout.Children.Add(PlayerInfoDisplayBox(new PlayerInfoModel(partyData)));
-            }
-
+                        CharacterDeadLayout.Children.Add(PlayerInfoDisplayBox(new PlayerInfoModel(partyData)));       
            
         }
 
