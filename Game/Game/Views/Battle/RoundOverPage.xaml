@@ -20,7 +20,7 @@
 
                         <Label Text="WIN" Style="{StaticResource CenterMessageLargeStyle}"/>
 
-                        <StackLayout Style="{StaticResource HorizontalStack}">
+                        <StackLayout Style="{StaticResource HorizontalStack}" HorizontalOptions="Center">
                             <Label 
                                 Text="Score:" 
                                 Style="{StaticResource LabelStyle}"/>
