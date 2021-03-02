@@ -63,6 +63,9 @@ namespace Game.Views
 
             // Set the Battle Mode
             ShowBattleMode();
+
+            // Draws all dead characters
+            DrawDeadPlayerBoxes();
         }
 
         /// <summary>
@@ -1072,5 +1075,32 @@ namespace Game.Views
 
             return PlayerStack;
         }
+
+        /// Draw the dead Player Boxes
+        /// </summary>
+        public void DrawDeadPlayerBoxes()
+        {
+            var CharacterBoxList = CharacterFlexLayout.Children.ToList();
+            List<PlayerInfoModel> CharacterTempList = new List<PlayerInfoModel>();
+
+            /*
+            foreach (var data in BattleEngineViewModel.Instance.PartyCharacterList)
+            {
+                CharacterTempList.Add(new PlayerInfoModel(data));
+            }
+            */
+
+            // Draw the Characters
+            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList) 
+            {
+                foreach (var partyData in BattleEngineViewModel.Instance.PartyCharacterList)
+                    if(!partyData.Equals(data))
+                        CharacterFlexLayout.Children.Add(PlayerInfoDisplayBox(new PlayerInfoModel(partyData)));
+            }
+
+           
+        }
+
+
     }
 }
