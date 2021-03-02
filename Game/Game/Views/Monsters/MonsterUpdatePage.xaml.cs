@@ -51,15 +51,6 @@ namespace Game.Views
                 return;
             }
 
-            // If the character's stats in the data box is invalid, display the alert
-            if (!Is_Stat_Valid(Attack_Value.Text) ||
-                !Is_Stat_Valid(Defense_Value.Text) ||
-                !Is_Stat_Valid(Speed_Value.Text))
-            {
-                await DisplayAlert("Invalid Input!", "Please enter a valid value for character's stats. The input must be integers and between 0 and 10.", "Okay");
-                return;
-            }
-
             MessagingCenter.Send(this, "Update", ViewModel.Data);
             await Navigation.PopModalAsync();
         }
@@ -75,21 +66,28 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Check if the inputs for stat is valid or not
+        /// Change and assign value on slider value change
         /// </summary>
         /// <param name="stat_str"></param>
         /// <returns></returns>
-        public bool Is_Stat_Valid(string stat_str)
+        public void OnSliderValueChanged(object sender, ValueChangedEventArgs args)
         {
-            if (int.TryParse(stat_str, out int stat))
+            if (sender == Attack_Slider)
             {
-                if (stat >= MIN_VALUE_STAT && stat <= MAX_VALUE_STAT)
-                {
-                    return true;
-                }
+                Attack_Value.Text = String.Format("{0:00}", (int)args.NewValue);
+                ViewModel.Data.Attack = (int)args.NewValue;
+            }
+            else if (sender == Defense_Slider)
+            {
+                Defense_Value.Text = String.Format("{0:00}", (int)args.NewValue);
+                ViewModel.Data.Defense = (int)args.NewValue;
+            }
+            else if (sender == Speed_Slider)
+            {
+                Speed_Value.Text = String.Format("{0:00}", (int)args.NewValue);
+                ViewModel.Data.Speed = (int)args.NewValue;
             }
 
-            return false;
         }
     }
 }
