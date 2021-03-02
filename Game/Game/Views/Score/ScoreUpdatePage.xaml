@@ -34,6 +34,8 @@
                         Text="Name : " 
                         Style="{StaticResource LabelStyle}"/>
                     <Entry
+                        Placeholder="Enter a Name"
+                        PlaceholderColor="Red"
                         Text="{Binding Data.Name}" 
                         Style="{StaticResource EntryStyle}"
                         HorizontalTextAlignment="Center"
