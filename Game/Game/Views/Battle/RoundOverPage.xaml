@@ -35,7 +35,7 @@
                                     AlignContent="Start"
                                     Wrap="Wrap"/>
 
-                        <Label Text="Items Found" Style="{StaticResource MessageStyle}"/>
+                        <Label Text="Loot" Style="{StaticResource MessageStyle}"/>
 
                         <FlexLayout x:Name="ItemListFoundFrame"
                                     JustifyContent="Start"
