@@ -20,6 +20,7 @@ namespace Game.Views
         {
             InitializeComponent();
 
+            /*
             // Update the Round Count
             TotalRound.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.RoundCount.ToString();
 
@@ -28,12 +29,12 @@ namespace Game.Views
 
             // Update the Selected Number, this gets updated later when selected refresh happens
             TotalSelected.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Count().ToString();
+            */
 
             DrawCharacterList();
 
             DrawItemLists();
 
-            DrawDeadMonsterBoxes();
         }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace Game.Views
             }
         }
 
+
         /// <summary>
         /// Draw the List of Items
         /// 
@@ -66,11 +68,12 @@ namespace Game.Views
         public void DrawItemLists()
         {
             DrawDroppedItems();
-            DrawSelectedItems();
+           // DrawSelectedItems();
 
             // Only need to update the selected, the Dropped is set in the constructor
-            TotalSelected.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Count().ToString();
+            //TotalSelected.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Count().ToString();
         }
+
 
         /// <summary>
         /// Add the Dropped Items to the Display
@@ -90,6 +93,7 @@ namespace Game.Views
             }
         }
 
+        /*
         /// <summary>
         /// Add the Dropped Items to the Display
         /// </summary>
@@ -107,6 +111,7 @@ namespace Game.Views
                 ItemListSelectedFrame.Children.Add(GetItemToDisplay(data));
             }
         }
+        */
 
         /// <summary>
         /// Look up the Item to Display
@@ -290,6 +295,7 @@ namespace Game.Views
             ShowModalNewRoundPage();
 		}
 
+        /*
 		/// <summary>
 		/// Start next Round, returning to the battle screen
 		/// </summary>
@@ -303,6 +309,7 @@ namespace Game.Views
             // Show what was picked up
             DrawItemLists();
         }
+        */
 
         /// <summary>
         /// Show the Page for New Round
@@ -324,23 +331,39 @@ namespace Game.Views
         {
             await Navigation.PushModalAsync(new NavigationPage(new PickItemsPage()));
         }
+
         /// <summary>
-        /// Draw the Dead Monster Boxes
+        /// Put the Player into a Display Box
         /// </summary>
-        public void DrawDeadMonsterBoxes()
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public StackLayout PlayerInfoDisplayBox(PlayerInfoModel data)
         {
-
-            var MonsterBoxList = MonsterFlexLayout.Children.ToList();
-            foreach (var data in MonsterBoxList)
+            if (data == null)
             {
-                MonsterFlexLayout.Children.Remove(data);
+                data = new PlayerInfoModel
+                {
+                    ImageURI = ""
+                };
             }
 
-            // Draw the Monsters
-            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
+            // Hookup the image
+            var PlayerImage = new Image
             {
-                MonsterFlexLayout.Children.Add(PlayerInfoDisplayBox(data));
-            }
+                Style = (Style)Application.Current.Resources["PlayerBattleMediumStyle"],
+                Source = data.ImageURI
+            };
+
+            // Put the Image Button and Text inside a layout
+            var PlayerStack = new StackLayout
+            {
+                Style = (Style)Application.Current.Resources["PlayerBattleDisplayBox"],
+                Children = {
+                    PlayerImage,
+                },
+            };
+
+            return PlayerStack;
         }
     }
 }

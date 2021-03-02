@@ -42,12 +42,6 @@
                                     AlignContent="Start"
                                     Wrap="Wrap"/>
 
-                        <Label Text="Items Selected" Style="{StaticResource MessageStyle}"/>
-
-                        <FlexLayout x:Name="ItemListSelectedFrame"
-                                    JustifyContent="Start"
-                                    AlignContent="Start"
-                                    Wrap="Wrap"/>
 
                         <Grid>
                             <Grid.ColumnDefinitions>
