@@ -70,36 +70,59 @@ namespace Game.Views
         /// </summary>
         public void DrawPlayerBoxes()
         {
-            var CharacterBoxList = CharacterBox.Children.ToList();
+            //var CharacterBoxList = CharacterBox.Children.ToList();
+            //foreach (var data in CharacterBoxList)
+            //{
+            //    CharacterBox.Children.Remove(data);
+            //}
+
+            //// Draw the Characters
+            //foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).ToList())
+            //{
+            //    CharacterBox.Children.Add(PlayerInfoDisplayBox(data));
+            //}
+
+            //var MonsterBoxList = MonsterBox.Children.ToList();
+            //foreach (var data in MonsterBoxList)
+            //{
+            //    MonsterBox.Children.Remove(data);
+            //}
+
+            //// Draw the Monsters
+            //foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
+            //{
+            //    MonsterBox.Children.Add(PlayerInfoDisplayBox(data));
+            //}
+
+            //// Add one black PlayerInfoDisplayBox to hold space in case the list is empty
+            //CharacterBox.Children.Add(PlayerInfoDisplayBox(null));
+
+            //// Add one black PlayerInfoDisplayBox to hold space incase the list is empty
+            //MonsterBox.Children.Add(PlayerInfoDisplayBox(null));
+
+            var CharacterBoxList = CharacterFlexLayout.Children.ToList();
             foreach (var data in CharacterBoxList)
             {
-                CharacterBox.Children.Remove(data);
+                CharacterFlexLayout.Children.Remove(data);
             }
 
             // Draw the Characters
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Character).ToList())
             {
-                CharacterBox.Children.Add(PlayerInfoDisplayBox(data));
+                CharacterFlexLayout.Children.Add(PlayerInfoDisplayBox(data));
             }
 
-            var MonsterBoxList = MonsterBox.Children.ToList();
+            var MonsterBoxList = MonsterFlexLayout.Children.ToList();
             foreach (var data in MonsterBoxList)
             {
-                MonsterBox.Children.Remove(data);
+                MonsterFlexLayout.Children.Remove(data);
             }
 
             // Draw the Monsters
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.PlayerList.Where(m => m.PlayerType == PlayerTypeEnum.Monster).ToList())
             {
-                MonsterBox.Children.Add(PlayerInfoDisplayBox(data));
+                MonsterFlexLayout.Children.Add(PlayerInfoDisplayBox(data));
             }
-
-            // Add one black PlayerInfoDisplayBox to hold space in case the list is empty
-            CharacterBox.Children.Add(PlayerInfoDisplayBox(null));
-
-            // Add one black PlayerInfoDisplayBox to hold space incase the list is empty
-            MonsterBox.Children.Add(PlayerInfoDisplayBox(null));
-
         }
 
         /// <summary>

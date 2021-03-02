@@ -38,13 +38,27 @@
                         x:Name="GamePlayersTopDisplay" 
                         IsVisible="true" 
                         VerticalOptions="Start" 
-                        HorizontalOptions="CenterAndExpand">
+                        HorizontalOptions="CenterAndExpand"
+                        Spacing="12">
 
-                        <Label Text="Characters" Style="{StaticResource CenterMessageStyle}" HorizontalOptions="CenterAndExpand"/>
+                        <!--<Label Text="Characters" Style="{StaticResource CenterMessageStyle}" HorizontalOptions="CenterAndExpand"/>
                         <StackLayout x:Name="CharacterBox" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand"/>
 
                         <Label Text="Monsters" Style="{StaticResource CenterMessageStyle}" HorizontalOptions="CenterAndExpand"/>
-                        <StackLayout x:Name="MonsterBox" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand"/>
+                        <StackLayout x:Name="MonsterBox" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand"/>-->
+
+                        <StackLayout Style="{StaticResource VerticalStack}"
+                                     x:Name="TurnCounter"
+                                     VerticalOptions="Start"
+                                     HorizontalOptions="CenterAndExpand"
+                                     Spacing="10">
+                            <Label Text="Turn 1" Style="{StaticResource CenterMessageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
+                            <Line Stroke="Black" StrokeThickness="5" HorizontalOptions="CenterAndExpand" WidthRequest="350" X1="0" Y1="0" X2="400" Y2="0"/> 
+                        </StackLayout>
+
+                        <FlexLayout x:Name="MonsterFlexLayout" Wrap="Wrap" JustifyContent="SpaceAround"/>
+                        <FlexLayout x:Name="CharacterFlexLayout" Wrap="Wrap" JustifyContent="SpaceAround"/>
+                        
                     </StackLayout>
                 </StackLayout>
 
