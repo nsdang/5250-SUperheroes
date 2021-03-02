@@ -56,7 +56,6 @@ namespace Game.Views
             // If the name in the data box is empty, display the alert
             if (string.IsNullOrEmpty(ViewModel.Data.Name) || string.IsNullOrWhiteSpace(ViewModel.Data.Name))
             {
-                await DisplayAlert("Invalid Input!", "Please enter a valid name.", "Return");
                 return;
             }
 
