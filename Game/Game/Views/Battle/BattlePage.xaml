@@ -53,7 +53,7 @@
                                      HorizontalOptions="CenterAndExpand"
                                      Spacing="10">
                             <Label Text="Turn 1" Style="{StaticResource CenterMessageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
-                            <Line Stroke="Black" StrokeThickness="5" HorizontalOptions="CenterAndExpand" WidthRequest="350" X1="0" Y1="0" X2="400" Y2="0"/> 
+                            <Line Stroke="Black" StrokeThickness="3" HorizontalOptions="CenterAndExpand" WidthRequest="350" X1="0" Y1="0" X2="400" Y2="0"/> 
                         </StackLayout>
 
                         <FlexLayout x:Name="MonsterFlexLayout" Wrap="Wrap" JustifyContent="SpaceAround"/>
@@ -64,7 +64,7 @@
                                      x:Name="AttackButtons"
                                      VerticalOptions="Start"
                                      HorizontalOptions="CenterAndExpand"
-                                     Spacing="10"
+                                     Spacing="8"
                                      HeightRequest="100">
 
                             <Button Text="Basic Attack"
@@ -152,7 +152,8 @@
                         <StackLayout 
                             Style="{StaticResource VerticalStack}" 
                                     VerticalOptions="StartAndExpand"
-                                    HorizontalOptions="CenterAndExpand">
+                                    HorizontalOptions="CenterAndExpand"
+                            Margin="5,5,5,5">
 
                             <Label x:Name="BattleMessages" 
                                     HorizontalOptions="FillAndExpand" 
