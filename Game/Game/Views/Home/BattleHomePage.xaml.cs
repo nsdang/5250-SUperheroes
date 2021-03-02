@@ -45,7 +45,7 @@ namespace Game.Views
 		/// <param name="e"></param>
 		public async void PickCharactersButton_Clicked(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new NavigationPage(new PickCharactersPage()));
+			await Navigation.PushModalAsync(new NavigationPage(new PickCharactersPage()));
 		}
 
 		/// <summary>
