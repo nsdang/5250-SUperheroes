@@ -31,6 +31,7 @@ namespace Game.Views
             TotalSelected.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Count().ToString();
             */
 
+            TotalScore.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ExperienceGainedTotal.ToString();
             DrawCharacterList();
 
             DrawItemLists();
