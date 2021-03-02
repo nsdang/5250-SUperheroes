@@ -148,7 +148,7 @@
                                 HorizontalOptions="Start"/>
 
                         <Frame Style="{StaticResource PlayerBattleOuterFrame}"
-                               IsVisible="False">
+                               BackgroundColor="LightSteelBlue">
                         <StackLayout 
                             Style="{StaticResource VerticalStack}" 
                                     VerticalOptions="StartAndExpand"
@@ -161,7 +161,8 @@
                                     LineHeight="1"
                                     CharacterSpacing="1"
                                     Style="{StaticResource LabelStyle}"
-                                    FontSize="Micro"/>
+                                    FontSize="Micro"
+                                   TextColor="Black"/>
 
                             <!--<WebView
                         x:Name="HtmlBox"
