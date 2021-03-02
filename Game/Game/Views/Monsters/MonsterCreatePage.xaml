@@ -60,6 +60,8 @@
 
                     <BoxView Grid.Row="1" Grid.Column="0"/>
                     <Entry Grid.Row="1" Grid.Column="0"
+                           Placeholder="Enter a Name"
+                           PlaceholderColor="Red"
                         Text="{Binding Data.Name}" 
                         Style="{StaticResource EntryStyle}"
                         HorizontalTextAlignment="Center"/>
