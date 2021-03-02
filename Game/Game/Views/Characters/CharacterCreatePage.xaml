@@ -105,48 +105,61 @@
 
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="60"/>
-                                    <ColumnDefinition Width="70" />
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition Width="50" />
                                 </Grid.ColumnDefinitions>
-                       
+
                                 <Label Grid.Row="0" Grid.Column="0"
                                 Text="Health" 
                                 TextColor="Black"
                                 Style="{StaticResource LabelStyle}"/>
 
-                                <Entry  Grid.Row="0" Grid.Column="1"
-                                x:Name="Health_Value"
-                                Text="{Binding Data.MaxHealth}" 
-                                Style="{StaticResource BasicEntryStyle}"/>
+                                <Label Text="0" x:Name="Health_Value" Style="{StaticResource ValueStyle}" Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+                                <Slider Grid.Row="0" Grid.Column="2"
+                                        x:Name="Health_Slider"
+                                        VerticalOptions="Center"
+                                        Minimum="0"
+                                        Maximum="10"
+                                        ValueChanged="OnSliderValueChanged"/>
 
                                 <Label Grid.Row="1" Grid.Column="0"
                                 Text="Attack" 
                                 TextColor="Black"
                                 Style="{StaticResource LabelStyle}"/>
 
-                                <Entry  Grid.Row="1" Grid.Column="1"
-                                x:Name="Attack_Value"
-                                Text="{Binding Data.Attack}" 
-                                Style="{StaticResource BasicEntryStyle}"/>
+                                <Label Text="0" x:Name="Attack_Value" Style="{StaticResource ValueStyle}" Grid.Row="1" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+                                <Slider Grid.Row="1" Grid.Column="2"
+                                        x:Name="Attack_Slider"
+                                        VerticalOptions="Center"
+                                        Minimum="0"
+                                        Maximum="10"
+                                        ValueChanged="OnSliderValueChanged"/>
 
                                 <Label Grid.Row="2" Grid.Column="0"
                                 Text="Defense" 
                                 TextColor="Black"
                                 Style="{StaticResource LabelStyle}"/>
 
-                                <Entry  Grid.Row="2" Grid.Column="1"
-                                x:Name="Defense_Value"
-                                Text="{Binding Data.Defense}" 
-                                Style="{StaticResource BasicEntryStyle}"/>
+                                <Label Text="0" x:Name="Defense_Value" Style="{StaticResource ValueStyle}" Grid.Row="2" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+                                <Slider Grid.Row="2" Grid.Column="2"
+                                        x:Name="Defense_Slider"
+                                        VerticalOptions="Center"
+                                        Minimum="0"
+                                        Maximum="10"
+                                        ValueChanged="OnSliderValueChanged"/>
 
                                 <Label Grid.Row="3" Grid.Column="0"
                                 Text="Speed"
                                 TextColor="Black"
                                 Style="{StaticResource LabelStyle}"/>
 
-                                <Entry  Grid.Row="3" Grid.Column="1"
-                                x:Name="Speed_Value"
-                                Text="{Binding Data.Speed}" 
-                                Style="{StaticResource BasicEntryStyle}"/>
+                                <Label Text="0" x:Name="Speed_Value" Style="{StaticResource ValueStyle}" Grid.Row="3" Grid.Column="1" HorizontalOptions="CenterAndExpand"/>
+                                <Slider Grid.Row="3" Grid.Column="2"
+                                        x:Name="Speed_Slider"
+                                        VerticalOptions="Center"
+                                        Minimum="0"
+                                        Maximum="10"
+                                        ValueChanged="OnSliderValueChanged"/>
                                 
                             </Grid>
                         </StackLayout>
