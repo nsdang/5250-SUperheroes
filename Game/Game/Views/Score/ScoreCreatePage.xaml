@@ -48,6 +48,8 @@
                         Style="{StaticResource LabelStyle}"/>
                     
                     <Entry Grid.Row="0" Grid.Column="1"
+                           Placeholder="Enter a Name"
+                           PlaceholderColor="Red"
                         Text="{Binding Data.Name}" 
                         Style="{StaticResource EntryStyle}"
                         HorizontalTextAlignment="Center"
