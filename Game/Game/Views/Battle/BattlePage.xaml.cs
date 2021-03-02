@@ -878,6 +878,7 @@ namespace Game.Views
             BattlePlayerInfomationBox.IsVisible = false;
             TurnCounter.IsVisible = false;
             VSLabel.IsVisible = false;
+            AttackButtons.IsVisible = false;
         }
 
         /// <summary>
@@ -939,8 +940,9 @@ namespace Game.Views
                     GameUIDisplay.IsVisible = true;
                     BattlePlayerInfomationBox.IsVisible = true;
                     MessageDisplayBox.IsVisible = true;
-                    AttackButton.IsVisible = true;
+                    //AttackButton.IsVisible = true;
                     TurnCounter.IsVisible = true;
+                    AttackButtons.IsVisible = true;
                     break;
 
                 // Based on the State disable buttons
