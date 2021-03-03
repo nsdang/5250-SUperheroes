@@ -330,7 +330,7 @@ namespace Game.Views
 		/// <param name="e"></param>
 		public async void RewardButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new PickItemsPage()));
+            await Navigation.PushAsync(new NavigationPage(new PickItemsPage()));
         }
 
         /// <summary>
