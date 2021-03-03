@@ -213,4 +213,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\physical.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\psychic.png" />
+  </ItemGroup>
 </Project>
