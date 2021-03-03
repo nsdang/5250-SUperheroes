@@ -210,4 +210,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\icon_save.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\physical.png" />
+  </ItemGroup>
 </Project>
