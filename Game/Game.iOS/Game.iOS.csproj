@@ -219,4 +219,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\light.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\dark.png" />
+  </ItemGroup>
 </Project>
