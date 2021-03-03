@@ -145,7 +145,6 @@
     <Content Include="icon_save.png" />
     <Content Include="light.png" />
     <Content Include="midichlorian.PNG" />
-    <Content Include="physical.png" />
     <Content Include="psychic.png" />
     <Content Include="vet.png" />
     <Content Include="icon_cancel.png" />
