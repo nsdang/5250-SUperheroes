@@ -44,21 +44,8 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public override bool TakeTurn(PlayerInfoModel Attacker)
         {
-            // Choose Action.  Such as Move, Attack etc.
-
-            // INFO: Teams, if you have other actions they would go here.
-
-            // If the action is not set, then try to set it or use Attact
-
-            // Based on the current action...
-
-            // Increment Turn Count so you know what turn number
-
-            // Save the Previous Action off
-
-            // Reset the Action to unknown for next time
-
-            throw new System.NotImplementedException();
+            // INFO: Teams, work out your turn logic
+            return base.TakeTurn(Attacker);
         }
 
         /// <summary>
@@ -68,23 +55,7 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public override ActionEnum DetermineActionChoice(PlayerInfoModel Attacker)
         {
-            // If it is the characters turn, and NOT auto battle, use what was sent into the engine
-
-            /*
-             * The following is Used for Monsters, and Auto Battle Characters
-             * 
-             * Order of Priority
-             * If can attack Then Attack
-             * Next use Ability or Move
-             */
-
-            // Assume Move if nothing else happens
-
-            // Check to see if ability is avaiable
-
-            // See if Desired Target is within Range, and if so attack away
-
-            throw new System.NotImplementedException();
+            return base.DetermineActionChoice(Attacker);
         }
 
         /// <summary>
@@ -107,25 +78,7 @@ namespace Game.Engine.EngineGame
              * 
              */
 
-            // If the Monster the calculate the options
-            if (Attacker.PlayerType == PlayerTypeEnum.Monster)
-            {
-                // For Attack, Choose Who
-
-                // Get X, Y for Defender
-
-                // Get X, Y for the Attacker
-
-                // Find Location Nearest to Defender that is Open.
-
-                // Get the Open Locations
-
-                // Format a message to show
-
-                throw new System.NotImplementedException();
-            }
-
-            return true;
+            return base.MoveAsTurn(Attacker);
         }
 
         /// <summary>
@@ -135,15 +88,8 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool ChooseToUseAbility(PlayerInfoModel Attacker)
         {
-            // See if healing is needed.
-
-            // If not needed, then role dice to see if other ability should be used
-            // Choose the % chance
-            // Select the ability
-
-            // Don't try
-
-            throw new System.NotImplementedException();
+            // INFO: Teams, consider if you have abilities
+            return base.ChooseToUseAbility(Attacker);
         }
 
         /// <summary>
@@ -151,7 +97,8 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool UseAbility(PlayerInfoModel Attacker)
         {
-            throw new System.NotImplementedException();
+            // INFO: Teams, consider if you have abilities
+            return base.UseAbility(Attacker);
         }
 
         /// <summary>
@@ -168,12 +115,7 @@ namespace Game.Engine.EngineGame
         public override bool Attack(PlayerInfoModel Attacker)
         {
             // INFO: Teams, AttackChoice will auto pick the target, good for auto battle
-
-            // Manage autobattle
-
-            // Do Attack
-
-            throw new System.NotImplementedException();
+            return base.Attack(Attacker);
         }
 
         /// <summary>
@@ -181,7 +123,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override PlayerInfoModel AttackChoice(PlayerInfoModel data)
         {
-            throw new System.NotImplementedException();
+            return base.AttackChoice(data);
         }
 
         /// <summary>
@@ -189,11 +131,8 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override PlayerInfoModel SelectCharacterToAttack()
         {
-            // Select first in the list
-
             // TODO: Teams, You need to implement your own Logic can not use mine.
-
-            throw new System.NotImplementedException();
+            return base.SelectCharacterToAttack();
         }
 
         /// <summary>
@@ -201,13 +140,8 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override PlayerInfoModel SelectMonsterToAttack()
         {
-            // Select first one to hit in the list for now...
-            // Attack the Weakness (lowest HP) MonsterModel first 
-
             // TODO: Teams, You need to implement your own Logic can not use mine.
-
-            throw new System.NotImplementedException();
-
+            return base.SelectMonsterToAttack();
         }
 
         /// <summary>
@@ -215,31 +149,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool TurnAsAttack(PlayerInfoModel Attacker, PlayerInfoModel Target)
         {
-            // Set Messages to empty
-
-            // Do the Attack
-
-            // Hackathon
-            // ?? Hackathon Scenario ?? 
-
-            // See if the Battle Settings Overrides the Roll
-
-            // Based on the Hit Status, what to do...
-            // It's a Miss
-
-            // It's a Hit
-
-            //Calculate Damage
-
-            // Apply the Damage
-
-            // Check if Dead and Remove
-
-            // If it is a character apply the experience earned
-
-            // Battle Message 
-
-            throw new System.NotImplementedException();
+            return base.TurnAsAttack(Attacker, Target);
         }
 
         /// <summary>
@@ -248,7 +158,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override HitStatusEnum BattleSettingsOverride(PlayerInfoModel Attacker)
         {
-            throw new System.NotImplementedException();
+            return base.BattleSettingsOverride(Attacker);
         }
 
         /// <summary>
@@ -256,17 +166,15 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override HitStatusEnum BattleSettingsOverrideHitStatusEnum(HitStatusEnum myEnum)
         {
-            // Based on the Hit Status, establish a message
-
-            throw new System.NotImplementedException();
+            return base.BattleSettingsOverrideHitStatusEnum(myEnum);
         }
 
         /// <summary>
         /// Apply the Damage to the Target
         /// </summary>
-        public override void ApplyDamage(PlayerInfoModel Target)
+        public override int ApplyDamage(PlayerInfoModel Target)
         {
-            throw new System.NotImplementedException();
+            return base.ApplyDamage(Target);
         }
 
         /// <summary>
@@ -274,7 +182,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override HitStatusEnum CalculateAttackStatus(PlayerInfoModel Attacker, PlayerInfoModel Target)
         {
-            throw new System.NotImplementedException();
+            return base.CalculateAttackStatus(Attacker, Target);
         }
 
         /// <summary>
@@ -283,7 +191,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool CalculateExperience(PlayerInfoModel Attacker, PlayerInfoModel Target)
         {
-            throw new System.NotImplementedException();
+            return base.CalculateExperience(Attacker, Target);
         }
 
         /// <summary>
@@ -291,7 +199,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool RemoveIfDead(PlayerInfoModel Target)
         {
-            throw new System.NotImplementedException();
+            return base.RemoveIfDead(Target);
         }
 
         /// <summary>
@@ -303,20 +211,8 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool TargetDied(PlayerInfoModel Target)
         {
-            // Mark Status in output
-
-            // Removing the 
-
             // INFO: Teams, Hookup your Boss if you have one...
-
-            // Using a switch so in the future additional PlayerTypes can be added (Boss...)
-            // Add the Character to the killed list
-
-            // Add one to the monsters killed count...
-
-            // Add the MonsterModel to the killed list
-
-            throw new System.NotImplementedException();
+            return base.TargetDied(Target);
         }
 
         /// <summary>
@@ -324,14 +220,8 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override int DropItems(PlayerInfoModel Target)
         {
-            // Drop Items to ItemModel Pool
-
-            // I feel generous, even when characters die, random drops happen :-)
-            // If Random drops are enabled, then add some....
-
-            // Add to ScoreModel
-
-            throw new System.NotImplementedException();
+            // INFO: Teams, work out how you want to drop items.
+            return base.DropItems(Target);
         }
 
         /// <summary>
@@ -341,7 +231,7 @@ namespace Game.Engine.EngineGame
         /// <param name="DefenseScore"></param>
         public override HitStatusEnum RollToHitTarget(int AttackScore, int DefenseScore)
         {
-            throw new System.NotImplementedException();
+            return base.RollToHitTarget(AttackScore, DefenseScore);
         }
 
         /// <summary>
@@ -350,13 +240,7 @@ namespace Game.Engine.EngineGame
         public override List<ItemModel> GetRandomMonsterItemDrops(int round)
         {
             // TODO: Teams, You need to implement your own modification to the Logic cannot use mine as is.
-
-            // You decide how to drop monster items, level, etc.
-
-            // The Number drop can be Up to the Round Count, but may be less.  
-            // Negative results in nothing dropped
-
-            throw new System.NotImplementedException();
+            return base.GetRandomMonsterItemDrops(round);
         }
 
         /// <summary>
@@ -364,7 +248,7 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override bool DetermineCriticalMissProblem(PlayerInfoModel attacker)
         {
-            throw new System.NotImplementedException();
+            return base.DetermineCriticalMissProblem(attacker);
         }
     }
 }
