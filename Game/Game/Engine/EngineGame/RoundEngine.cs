@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Game.Engine.EngineBase;
 using Game.Engine.EngineInterfaces;
 using Game.Engine.EngineModels;
@@ -53,7 +54,61 @@ namespace Game.Engine.EngineGame
         public override int AddMonstersToRound()
         {
             // INFO: Teams, work out your logic
-            return base.AddMonstersToRound();
+            int currentRound = EngineSettings.BattleScore.RoundCount;
+            List<MonsterModel> monsters = Game.GameRules.DefaultData.LoadData(new MonsterModel());
+            List<MonsterModel> temp = new List<MonsterModel>();
+            int count = 0;
+
+            if (currentRound != 0 && currentRound % 2 == 0)
+            {   // Randomize between caro yin and anais
+                temp.Add(monsters.Find(m => m.Name.Equals("Carolina")));
+                temp.Add(monsters.Find(m => m.Name.Equals("Yinying")));
+                temp.Add(monsters.Find(m => m.Name.Equals("Anais")));
+
+                while (count < EngineSettings.MaxNumberPartyMonsters)
+                {
+                    Random rnd = new Random();
+                    int index = rnd.Next(3);
+
+                    EngineSettings.MonsterList.Add(new PlayerInfoModel(temp[index]));
+                    count++;
+                }
+            }
+            else if (currentRound != 0 && currentRound % 3 == 0)
+            { // at least one steve
+                temp.Add(monsters.Find(m => m.Name.Equals("Steve")));
+                temp.Add(monsters.Find(m => m.Name.Equals("Anais")));
+
+                while (count < EngineSettings.MaxNumberPartyMonsters - 1)
+                {
+                    Random rnd = new Random();
+                    int index = rnd.Next(2);
+
+                    EngineSettings.MonsterList.Add(new PlayerInfoModel(temp[index]));
+                    count++;
+                }
+
+                // make sure there is at least one steve
+                EngineSettings.MonsterList.Add(new PlayerInfoModel(monsters.Find(m => m.Name.Equals("Steve"))));
+            }
+            else
+            {
+                // randomize between bob caro yin
+                temp.Add(monsters.Find(m => m.Name.Equals("Carolina")));
+                temp.Add(monsters.Find(m => m.Name.Equals("Yinying")));
+                temp.Add(monsters.Find(m => m.Name.Equals("Bob")));
+
+                while (count < EngineSettings.MaxNumberPartyMonsters)
+                {
+                    Random rnd = new Random();
+                    int index = rnd.Next(3);
+
+                    EngineSettings.MonsterList.Add(new PlayerInfoModel(temp[index]));
+                    count++;
+                }
+            }
+
+            return EngineSettings.MonsterList.Count;
         }
 
         /// <summary>
