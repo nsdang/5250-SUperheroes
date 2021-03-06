@@ -149,5 +149,22 @@ namespace UnitTests.Views
             // Assert
             Assert.NotNull(result);
         }
+
+        [Test]
+        public void PickItemsPage_GetItemToDisplay_Click_Button_Valid_Should_Pass()
+        {
+            // Arrange
+            var item = ItemIndexViewModel.Instance.GetDefaultItem(ItemLocationEnum.Head);
+            var StackItem = page.GetItemToDisplay(item);
+            var dataImage = StackItem.Children[0];
+
+            // Act
+            ((ImageButton)dataImage).PropagateUpClicked();
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
     }
 }
