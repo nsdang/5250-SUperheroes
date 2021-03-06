@@ -111,9 +111,10 @@ namespace Game.Views
                 {
                     selectedItem = new ItemModel();
                     var FlexList = ItemListSelectedFrame.Children.ToList();
-                    foreach (var data in FlexList)
+
+                    if (FlexList.Count > 0)
                     {
-                        ItemListSelectedFrame.Children.Remove(data);
+                        ItemListSelectedFrame.Children.Remove(FlexList.FirstOrDefault());
                     }
 
                     selectedItem = data;

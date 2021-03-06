@@ -226,6 +226,25 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+        [Test]
+        public void PickItemsPage_GetItemToDisplay_Click_Button_Valid_Items_Should_Pass()
+        {
+            // Arrange
+            var item = ItemIndexViewModel.Instance.GetDefaultItem(ItemLocationEnum.Head);
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Add(item);
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Add(item);
+
+            // Act
+            var StackItem = page.GetItemToDisplay(item);
+           // ((ImageButton)dataImage).PropagateUpClicked();
+            var dataImage = StackItem.Children[0];
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
 
     }
 }
