@@ -61,9 +61,9 @@ namespace Game.Engine.EngineGame
 
             if (currentRound != 0 && currentRound % 2 == 0)
             {   // Randomize between caro yin and anais
-                temp.Add(monsters.Find(m => m.Name.Equals("Carolina")));
-                temp.Add(monsters.Find(m => m.Name.Equals("Yinying")));
-                temp.Add(monsters.Find(m => m.Name.Equals("Anais")));
+                temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.McDonaldsEmployee)));
+                temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.Accountant)));
+                temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.Vet)));
 
                 while (count < EngineSettings.MaxNumberPartyMonsters)
                 {
@@ -76,8 +76,8 @@ namespace Game.Engine.EngineGame
             }
             else if (currentRound != 0 && currentRound % 3 == 0)
             { // at least one steve
-                temp.Add(monsters.Find(m => m.Name.Equals("Steve")));
-                temp.Add(monsters.Find(m => m.Name.Equals("Anais")));
+                temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.Boss)));
+                temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.Vet)));
 
                 while (count < EngineSettings.MaxNumberPartyMonsters - 1)
                 {
@@ -89,14 +89,14 @@ namespace Game.Engine.EngineGame
                 }
 
                 // make sure there is at least one steve
-                EngineSettings.MonsterList.Add(new PlayerInfoModel(monsters.Find(m => m.Name.Equals("Steve"))));
+                EngineSettings.MonsterList.Add(new PlayerInfoModel(monsters.Find(m => m.Job.Equals(CharacterJobEnum.Boss))));
             }
             else
             {
                 // randomize between bob caro yin
-                temp.Add(monsters.Find(m => m.Name.Equals("Carolina")));
-                temp.Add(monsters.Find(m => m.Name.Equals("Yinying")));
-                temp.Add(monsters.Find(m => m.Name.Equals("Bob")));
+                temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.McDonaldsEmployee)));
+                temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.Accountant)));
+                temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.Carpenter)));
 
                 while (count < EngineSettings.MaxNumberPartyMonsters)
                 {
