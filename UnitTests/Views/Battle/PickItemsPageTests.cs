@@ -133,5 +133,21 @@ namespace UnitTests.Views
             // Assert
             Assert.NotNull(result); 
         }
+
+        [Test]
+        public void PickItemsPage_GetItemToDisplay_Empty_Id_Should_Pass()
+        {
+            // Arrange
+            ItemModel item = new ItemModel();
+            item.Id = "";
+
+            // Act
+            var result = page.GetItemToDisplay(item);
+
+            // Reset
+
+            // Assert
+            Assert.NotNull(result);
+        }
     }
 }
