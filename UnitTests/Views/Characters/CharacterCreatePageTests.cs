@@ -159,6 +159,24 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void CharacterCreatePage_OnSlideValueChanged_Default_Should_Pass()
+        {
+            // Arrange
+            Slider Health_Slider = new Slider();
+     
+            Health_Slider.Value = 3;
+
+            // Act
+            OnSliderValueChanged(Health_Slider, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+
+        }
+
         //[Test]
         //public void CharacterCreatePage_Attack_OnStepperAttackChanged_Default_Should_Pass()
         //{
