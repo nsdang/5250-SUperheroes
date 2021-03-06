@@ -16,8 +16,8 @@ namespace Game.Views
     {
         // In our game, only one dropped item can be selected and assigned
         // to a single character per user choice
-        ItemModel selectedItem;
-        PlayerInfoModel selectedCharacter;
+        public ItemModel selectedItem;
+        public PlayerInfoModel selectedCharacter;
 
         /// <summary>
         /// Constructor

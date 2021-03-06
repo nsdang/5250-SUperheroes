@@ -11,6 +11,7 @@ using Game.Views;
 using Xamarin.Forms.Mocks;
 using Xamarin.Forms;
 using Game.ViewModels;
+using Game.Models;
 
 namespace UnitTests.Views
 {
@@ -60,6 +61,26 @@ namespace UnitTests.Views
         public void PickItemsPage_CloseButton_Clicked_Default_Should_Pass()
         {
             // Arrange
+            // Act
+            page.CloseButton_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void PickItemsPage_CloseButton_Clicked_NotNull_Default_Should_Pass()
+        {
+            // Arrange
+            PlayerInfoModel pm = new PlayerInfoModel(new CharacterModel());
+
+            ItemModel item = Game.GameRules.DefaultData.LoadData(new ItemModel()).FirstOrDefault();
+
+            page.selectedCharacter = pm;
+            page.selectedItem = item;
+
             // Act
             page.CloseButton_Clicked(null, null);
 
