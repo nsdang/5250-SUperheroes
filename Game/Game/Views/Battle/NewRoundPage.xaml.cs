@@ -46,7 +46,7 @@ namespace Game.Views
 		/// <param name="e"></param>
 		public async void BeginButton_Clicked(object sender, EventArgs e)
 		{
-            await Navigation.PushAsync(new BattlePage());
+            await Navigation.PopModalAsync();
         }
 
         public async void TeamsButton_Clicked(object sender, EventArgs e)

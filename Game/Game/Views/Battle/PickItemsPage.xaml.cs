@@ -238,6 +238,8 @@ namespace Game.Views
             {
                 BattleEngineViewModel.Instance.Engine.Round.SwapCharacterItem(selectedCharacter, selectedItem.Location, selectedItem); ;
                 // Reset to a new Round
+
+                // Reset to a new Round
                 BattleEngineViewModel.Instance.Engine.Round.NewRound();
 
                 // Show the New Round Screen
@@ -253,7 +255,7 @@ namespace Game.Views
         /// </summary>
         public async void ShowModalNewRoundPage()
         {
-            await Navigation.PushModalAsync(new NavigationPage(new NewRoundPage()));
+            await Navigation.PopModalAsync();
         }
     }
 }

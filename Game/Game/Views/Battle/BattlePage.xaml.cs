@@ -791,8 +791,9 @@ namespace Game.Views
         public async void NextRoundButton_Clicked(object sender, EventArgs e)
         {
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
+
             ShowBattleMode();
-            await Navigation.PushAsync(new NewRoundPage());
+            await Navigation.PushModalAsync(new NewRoundPage());
         }
 
         /// <summary>
@@ -803,9 +804,8 @@ namespace Game.Views
         public async void StartButton_Clicked(object sender, EventArgs e)
         {
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
-
             ShowBattleMode();
-
+            await Navigation.PushModalAsync(new NewRoundPage());
         }
 
         /// <summary>

@@ -131,9 +131,9 @@ namespace Game.Views
         public async void BattleButton_Clicked(object sender, EventArgs e)
         {
             CreateEngineCharacterList();
-            BattleEngineViewModel.Instance.Engine.Round.NewRound();
 
-            await Navigation.PushAsync(new NewRoundPage());
+            await Navigation.PushModalAsync(new NavigationPage(new BattlePage()));
+            await Navigation.PopAsync();
         }
 
         /// <summary>
