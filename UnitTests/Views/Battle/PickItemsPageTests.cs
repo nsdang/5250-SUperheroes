@@ -131,7 +131,7 @@ namespace UnitTests.Views
             // Reset
 
             // Assert
-            Assert.NotNull(result); 
+            Assert.NotNull(result);
         }
 
         [Test]
@@ -177,6 +177,28 @@ namespace UnitTests.Views
 
             // Act
             ((ImageButton)dataImage).PropagateUpClicked();
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void PickItemsPage_DrawCharacterList_Valid_Should_Pass()
+        {
+            // Arrange
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.CharacterModelDeathList.Add(new PlayerInfoModel(new CharacterModel()));
+
+            // Draw the Monsters
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.MonsterModelDeathList.Add(new PlayerInfoModel(new CharacterModel()));
+
+            // Do it two times
+            page.DrawCharacterList();
+
+            // Act
+            page.DrawCharacterList();
 
             // Reset
 
