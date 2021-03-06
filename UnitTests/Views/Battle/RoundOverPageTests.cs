@@ -72,19 +72,6 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void RoundOverPage_AutoAssignButton_Clicked_Default_Should_Pass()
-        {
-            // Arrange
-            // Act
-            page.AutoAssignButton_Clicked(null, null);
-
-            // Reset
-
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
-
-        [Test]
         public void RoundOverPage_ClosePopup_Clicked_Default_Should_Pass()
         {
             // Arrange
@@ -221,27 +208,6 @@ namespace UnitTests.Views
 
             // Act  BattleEngineViewModel.Instance.Engine.EngineSettings.
             page.DrawItemLists();
-
-            // Reset
-
-            // Assert
-            Assert.IsTrue(true); // Got to here, so it happened...
-        }
-
-        [Test]
-        public void RoundOverPage_DrawSelectedItems_Valid_Should_Pass()
-        {
-            // Arrange
-
-            // Draw the Items
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Add(new ItemModel());
-            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Add(new ItemModel());
-
-            // Draw two times
-            page.DrawSelectedItems();
-
-            // Act
-            page.DrawSelectedItems();
 
             // Reset
 
