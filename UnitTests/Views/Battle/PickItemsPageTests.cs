@@ -103,5 +103,20 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
+
+        [Test]
+        public void PickItemsPage_Constructor_DropList_NotNull_Default_Should_Pass()
+        {
+            // Arrange
+            ItemModel item = Game.GameRules.DefaultData.LoadData(new ItemModel()).FirstOrDefault();
+
+            // Act
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Add(item);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
     }
 }
