@@ -121,6 +121,7 @@ namespace Game.Views
                 Source = data.ImageURI,
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
+                IsEnabled = false,
             };
             PlayerImage.Clicked += OnImageButtonClicked;
 
