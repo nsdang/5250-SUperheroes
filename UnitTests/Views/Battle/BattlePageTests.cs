@@ -1032,5 +1032,18 @@ namespace UnitTests.Views
             // Assert
             Assert.IsNotNull(result); // Got to here, so it happened...
         }
+
+        [Test]
+        public void BattlePage_CreatePlayerDisplayBox_Null_Should_Pass()
+        {
+            // Arrange
+            // Act
+            var result = page.CreatePlayerDisplayBox(null);
+
+            // Reset
+
+            // Assert
+            Assert.IsNotNull(result); // Got to here, so it happened...
+        }
     }
 }
