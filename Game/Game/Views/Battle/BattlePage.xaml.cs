@@ -119,11 +119,14 @@ namespace Game.Views
             {
                 Style = (Style)Application.Current.Resources["PlayerBattleMediumStyle"],
                 Source = data.ImageURI,
+                BindingContext = data,
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center,
-                IsEnabled = false,
             };
-            PlayerImage.Clicked += OnImageButtonClicked;
+            if (data.PlayerType == PlayerTypeEnum.Monster)
+            {
+                PlayerImage.Clicked += OnImageButtonClicked;
+            }
 
             // Put the Image Button and Text inside a layout
             var PlayerStack = new StackLayout
@@ -135,18 +138,27 @@ namespace Game.Views
             };
 
             return PlayerStack;
+
         }
 
         // Handling clicked action on the image button for characters
         public void OnImageButtonClicked(object sender, EventArgs e)
         {
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum != BattleStateEnum.ChooseDefender)
+            {
+                return;
+            }
+
             ImageButton img = sender as ImageButton;
-            MonsterModel selected = img.BindingContext as MonsterModel;
+            PlayerInfoModel selected = img.BindingContext as PlayerInfoModel;
             if (selected == null)
             {
                 return;
             }
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = new PlayerInfoModel(selected);
+            BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(new PlayerInfoModel(selected));
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
+            HideUIElements();
+            ShowBattleModeUIElements();
         }
 
         #region BattleMapMode
@@ -695,7 +707,7 @@ namespace Game.Views
         /// <summary>
         /// Decide The Turn and who to Attack
         /// </summary>
-        public void SetAttackerAndDefender()
+        public void SetAttackerAndDefenderAuto()
         {
             BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
 
@@ -706,6 +718,33 @@ namespace Game.Views
 
                     // for now just auto selecting
                     BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(BattleEngineViewModel.Instance.Engine.Round.Turn.AttackChoice(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker));
+                    break;
+
+                case PlayerTypeEnum.Monster:
+                default:
+
+                    // Monsters turn, so auto pick a Character to Attack
+                    BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(BattleEngineViewModel.Instance.Engine.Round.Turn.AttackChoice(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker));
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Decide The Turn and who to Attack
+        /// </summary>
+        public void SetAttackerAndDefender()
+        {
+            BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
+
+            switch (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType)
+            {
+                case PlayerTypeEnum.Character:
+                    // User would select who to attack
+
+                    // for now just auto selecting
+                    BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.ChooseDefender;
+                    HideUIElements();
+                    ShowBattleModeUIElements();
                     break;
 
                 case PlayerTypeEnum.Monster:
@@ -937,7 +976,6 @@ namespace Game.Views
                     GameOverDisplay.IsVisible = true;
                     break;
 
-                case BattleStateEnum.RoundOver:
                 case BattleStateEnum.Battling:
                     GameUIDisplay.IsVisible = true;
                     //BattlePlayerInfomationBox.IsVisible = true;
@@ -947,7 +985,14 @@ namespace Game.Views
                     AttackButtons.IsVisible = true;
                     break;
 
+                case BattleStateEnum.ChooseDefender:
+                    GameUIDisplay.IsVisible = true;
+                    MessageDisplayBox.IsVisible = true;
+                    TurnCounter.IsVisible = true;
+                    break;
+
                 // Based on the State disable buttons
+                case BattleStateEnum.RoundOver:
                 case BattleStateEnum.Unknown:
                 default:
                     break;
