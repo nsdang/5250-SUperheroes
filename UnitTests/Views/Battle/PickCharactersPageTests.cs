@@ -154,20 +154,20 @@ namespace UnitTests.Views
         public void PickCharactersPage_OnPartyCharacterItemSelected_Default_Should_Pass()
         {
             // Arrange
+            CollectionView cv = new CollectionView
+            {
+                SelectionMode = SelectionMode.Single
+            };
 
-            var selectedCharacter = new CharacterModel();
-            var unselectedCharacter = new CharacterModel();
-            List<CharacterModel> list1 = new List<CharacterModel>();
-            List<CharacterModel> list2 = new List<CharacterModel>();
-
-            //var selectedCharacterChangedEventArgs = new SelectionChangedEventArgs();
+            CharacterModel cm = Game.GameRules.DefaultData.LoadData(new CharacterModel()).FirstOrDefault();
 
             // Act
-            page.OnPartyCharacterItemSelected(null, null);
-
+            cv.SelectionChanged += (OnPartyCharacterItemSelected);
+            cv.SelectedItem = cm;
+            
             // Reset
 
-            // Assert
+            //Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 

@@ -89,7 +89,7 @@ namespace Game.Views
             }
 
             // Manually deselect Character.
-            PartyListView.SelectedItem = null;
+      //      PartyListView.SelectedItem = null;
 
             // Remove the character from the list
             BattleEngineViewModel.Instance.PartyCharacterList.Remove(data);
@@ -110,6 +110,8 @@ namespace Game.Views
         public void UpdateNextButtonState()
         {
             // If no characters disable Next button
+            if (BeginBattleButton == null)
+                return;
             BeginBattleButton.IsEnabled = true;
 
             var currentCount = BattleEngineViewModel.Instance.PartyCharacterList.Count();
