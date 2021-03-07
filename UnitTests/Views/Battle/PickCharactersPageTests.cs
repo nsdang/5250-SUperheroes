@@ -159,6 +159,7 @@ namespace UnitTests.Views
                 SelectionMode = SelectionMode.Single
             };
 
+
             CharacterModel cm = Game.GameRules.DefaultData.LoadData(new CharacterModel()).FirstOrDefault();
 
             // Act
@@ -203,8 +204,6 @@ namespace UnitTests.Views
                 SelectionMode = SelectionMode.Single
             };
 
-            cv.SetBinding(ItemsView.ItemsSourceProperty, "DatabaseCharacterList");
-
             List<CharacterModel> selectedCharacter = Game.GameRules.DefaultData.LoadData(new CharacterModel());
 
             // Act
@@ -221,15 +220,20 @@ namespace UnitTests.Views
         public void PickCharactersPage_OnDatabaseCharacterItemSelected_Default_Should_Pass()
         {
             // Arrange
+            CollectionView cv = new CollectionView
+            {
+                SelectionMode = SelectionMode.Single
+            };
 
-            //var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(null, 0);
+            CharacterModel cm = Game.GameRules.DefaultData.LoadData(new CharacterModel()).FirstOrDefault();
 
             // Act
-            page.OnDatabaseCharacterItemSelected(null, null);
+            cv.SelectionChanged += (OnDatabaseCharacterItemSelected);
+            cv.SelectedItem = cm;
 
             // Reset
 
-            // Assert
+            //Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
     }
