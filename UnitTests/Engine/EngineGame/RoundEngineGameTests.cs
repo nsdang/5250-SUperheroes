@@ -1207,6 +1207,23 @@ namespace UnitTests.Engine.EngineGame
             Assert.IsNotNull(result);
         }
 
+
+        [Test]
+        public void RoundEngine_AddMonstersToRound_Round_DivisbleBy2_Valid_Default_Should_Pass()
+        {
+            // Arrange
+            Engine.EngineSettings.BattleScore.RoundCount = 2;
+            Engine.EngineSettings.MaxNumberPartyMonsters = 6;
+
+            // Act
+            var result = Engine.Round.AddMonstersToRound();
+
+            // Reset
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
         [Test]
         public void RoundEngine_EndRound_Base_Valid_Default_Should_Pass()
         {
