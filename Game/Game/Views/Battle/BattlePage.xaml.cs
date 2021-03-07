@@ -987,6 +987,7 @@ namespace Game.Views
 
                 case BattleStateEnum.ChooseDefender:
                     GameUIDisplay.IsVisible = true;
+                    BattlePlayerInfomationBox.IsVisible = true;
                     MessageDisplayBox.IsVisible = true;
                     TurnCounter.IsVisible = true;
                     break;
