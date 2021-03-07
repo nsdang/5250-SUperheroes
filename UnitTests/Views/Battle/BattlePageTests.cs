@@ -1019,5 +1019,18 @@ namespace UnitTests.Views
             // Assert
             Assert.IsTrue(true); // Got Here
         }
+
+        [Test]
+        public void BattlePage_CreatePlayerDisplayBox_Valid_Should_Pass()
+        {
+            // Arrange
+            // Act
+            var result = page.CreatePlayerDisplayBox(new PlayerInfoModel(new CharacterModel { Name = "test" }));
+
+            // Reset
+
+            // Assert
+            Assert.IsNotNull(result); // Got to here, so it happened...
+        }
     }
 }
