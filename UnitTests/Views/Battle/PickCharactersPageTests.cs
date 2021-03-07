@@ -195,29 +195,30 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void PickCharactersPage_OnDatabaseCharacterItemSelected_Default_Should_Pass()
+        public void PickCharactersPage_OnDatabaseCharacterItemSelected_Invalid_Should_Pass()
         {
             // Arrange
+            CollectionView cv = new CollectionView
+            {
+                SelectionMode = SelectionMode.Single
+            };
 
-            var selectedCharacter = new CharacterModel();
+            cv.SetBinding(ItemsView.ItemsSourceProperty, "DatabaseCharacterList");
 
-            var la = new EventArgs();
-
-            var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(selectedCharacter, 0);
-
-          //  var args = new SelectionChangedEventArgs(0,0,0,0,0,0,0,0,0);
+            List<CharacterModel> selectedCharacter = Game.GameRules.DefaultData.LoadData(new CharacterModel());
 
             // Act
-            page.OnDatabaseCharacterItemSelected(null, null);
+            cv.SelectionChanged += (OnDatabaseCharacterItemSelected);
+            cv.SelectedItem = selectedCharacter;
 
             // Reset
 
-            // Assert
+            //Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
         [Test]
-        public void PickCharactersPage_OnDatabaseCharacterItemSelected_InValid_Should_Pass()
+        public void PickCharactersPage_OnDatabaseCharacterItemSelected_Default_Should_Pass()
         {
             // Arrange
 
