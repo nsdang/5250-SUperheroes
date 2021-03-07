@@ -9,14 +9,20 @@
         // Not specified
         Unknown = 0,
 
-        // Attack
+        // Basic Attack
         Attack = 1,
 
         // Move
         Move = 10,
 
         // Ability
-        Ability = 20
+        Ability = 20,
+
+        // Moderate Attack
+        ModerateAttack = 30,
+
+        // Special Attack
+        SpecialAttack = 40
     }
 
     /// <summary>
