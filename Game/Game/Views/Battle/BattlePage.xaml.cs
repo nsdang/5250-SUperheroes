@@ -634,7 +634,7 @@ namespace Game.Views
         }
 
         /// <summary>
-        /// Attack Action
+        /// Moderate Attack Action
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -643,6 +643,15 @@ namespace Game.Views
             NextAttackExample();
         }
 
+        /// <summary>
+        /// Special Attack Action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void SpeciallAttackButton_Clicked(object sender, EventArgs e)
+        {
+            NextAttackExample();
+        }
 
         /// <summary>
         /// Settings Page
