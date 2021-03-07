@@ -44,8 +44,61 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public override bool TakeTurn(PlayerInfoModel Attacker)
         {
-            // INFO: Teams, work out your turn logic
-            return base.TakeTurn(Attacker);
+            // Choose Action.  Such as Move, Attack etc.
+
+            // INFO: Teams, if you have other actions they would go here.
+
+            bool result = false;
+
+            // If the action is not set, then try to set it or use Attact
+            if (EngineSettings.CurrentAction == ActionEnum.Unknown)
+            {
+                // Set the action if one is not set
+                EngineSettings.CurrentAction = DetermineActionChoice(Attacker);
+
+                // When in doubt, attack...
+                if (EngineSettings.CurrentAction == ActionEnum.Unknown)
+                {
+                    EngineSettings.CurrentAction = ActionEnum.Attack;
+                }
+            }
+
+            switch (EngineSettings.CurrentAction)
+            {
+                //case ActionEnum.Unknown:
+                //    // Action already happened
+                //    break;
+
+                case ActionEnum.Attack:
+                    result = Attack(Attacker);
+                    break;
+
+                case ActionEnum.ModerateAttack:
+                    result = Attack(Attacker);
+                    break;
+
+                case ActionEnum.SpecialAttack:
+                    result = Attack(Attacker);
+                    break;
+
+                case ActionEnum.Ability:
+                    result = UseAbility(Attacker);
+                    break;
+
+                case ActionEnum.Move:
+                    result = MoveAsTurn(Attacker);
+                    break;
+            }
+
+            EngineSettings.BattleScore.TurnCount++;
+
+            // Save the Previous Action off
+            EngineSettings.PreviousAction = EngineSettings.CurrentAction;
+
+            // Reset the Action to unknown for next time
+            EngineSettings.CurrentAction = ActionEnum.Unknown;
+
+            return result;
         }
 
         /// <summary>
@@ -115,7 +168,32 @@ namespace Game.Engine.EngineGame
         public override bool Attack(PlayerInfoModel Attacker)
         {
             // INFO: Teams, AttackChoice will auto pick the target, good for auto battle
-            return base.Attack(Attacker);
+            if (EngineSettings.BattleScore.AutoBattle)
+            {
+                // For Attack, Choose Who
+                EngineSettings.CurrentDefender = AttackChoice(Attacker);
+
+                if (EngineSettings.CurrentDefender == null)
+                {
+                    return false;
+                }
+            }
+
+            // Do Attack
+            if (EngineSettings.CurrentAction == ActionEnum.Attack)
+            {
+                TurnAsAttack(Attacker, EngineSettings.CurrentDefender);
+            }
+            else if (EngineSettings.CurrentAction == ActionEnum.ModerateAttack)
+            {
+                TurnAsAttack(Attacker, EngineSettings.CurrentDefender);
+            }
+            else if (EngineSettings.CurrentAction == ActionEnum.SpecialAttack)
+            {
+                TurnAsAttack(Attacker, EngineSettings.CurrentDefender);
+            }
+
+            return true;
         }
 
         /// <summary>
