@@ -186,11 +186,11 @@ namespace Game.Engine.EngineGame
             }
             else if (EngineSettings.CurrentAction == ActionEnum.ModerateAttack)
             {
-                TurnAsAttack(Attacker, EngineSettings.CurrentDefender);
+                TurnAsModerateAttack(Attacker, EngineSettings.CurrentDefender);
             }
             else if (EngineSettings.CurrentAction == ActionEnum.SpecialAttack)
             {
-                TurnAsAttack(Attacker, EngineSettings.CurrentDefender);
+                TurnAsSpecialAttack(Attacker, EngineSettings.CurrentDefender);
             }
 
             return true;
@@ -226,6 +226,22 @@ namespace Game.Engine.EngineGame
         /// // MonsterModel Attacks CharacterModel
         /// </summary>
         public override bool TurnAsAttack(PlayerInfoModel Attacker, PlayerInfoModel Target)
+        {
+            return base.TurnAsAttack(Attacker, Target);
+        }
+
+        /// <summary>
+        /// // CharacterModel Moderate Attacks MonsterModel
+        /// </summary>
+        public bool TurnAsModerateAttack(PlayerInfoModel Attacker, PlayerInfoModel Target)
+        {
+            return base.TurnAsAttack(Attacker, Target);
+        }
+
+        /// <summary>
+        /// // CharacterModel Special Attacks MonsterModel
+        /// </summary>
+        public bool TurnAsSpecialAttack(PlayerInfoModel Attacker, PlayerInfoModel Target)
         {
             return base.TurnAsAttack(Attacker, Target);
         }
