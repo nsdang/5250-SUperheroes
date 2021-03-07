@@ -115,11 +115,14 @@ namespace Game.Views
             }
 
             // Hookup the image
-            var PlayerImage = new Image
+            var PlayerImage = new ImageButton
             {
                 Style = (Style)Application.Current.Resources["PlayerBattleMediumStyle"],
-                Source = data.ImageURI
+                Source = data.ImageURI,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
             };
+            PlayerImage.Clicked += OnImageButtonClicked;
 
             // Put the Image Button and Text inside a layout
             var PlayerStack = new StackLayout
@@ -131,6 +134,18 @@ namespace Game.Views
             };
 
             return PlayerStack;
+        }
+
+        // Handling clicked action on the image button for characters
+        public void OnImageButtonClicked(object sender, EventArgs e)
+        {
+            ImageButton img = sender as ImageButton;
+            MonsterModel selected = img.BindingContext as MonsterModel;
+            if (selected == null)
+            {
+                return;
+            }
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender = new PlayerInfoModel(selected);
         }
 
         #region BattleMapMode
