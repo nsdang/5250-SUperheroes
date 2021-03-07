@@ -9,7 +9,6 @@ using System.Collections.ObjectModel;
 
 using Xamarin.Forms.Mocks;
 using Xamarin.Forms;
-
 using Game;
 using Game.Views;
 using Game.ViewModels;
@@ -176,15 +175,22 @@ namespace UnitTests.Views
         public void PickCharactersPage_OnPartyCharacterItemSelected_InValid_Should_Pass()
         {
             // Arrange
+            CollectionView cv = new CollectionView
+            {
+                SelectionMode = SelectionMode.Single
+            };
 
-            var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(null, 0);
+            cv.SetBinding(ItemsView.ItemsSourceProperty, "PartyCharacterList");
 
+            List<CharacterModel> selectedCharacter = Game.GameRules.DefaultData.LoadData(new CharacterModel());
+            
             // Act
-            page.OnPartyCharacterItemSelected(null, null);
-
+            cv.SelectionChanged += (OnPartyCharacterItemSelected);
+            cv.SelectedItem = selectedCharacter;
+            
             // Reset
 
-            // Assert
+            //Assert
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
@@ -195,7 +201,11 @@ namespace UnitTests.Views
 
             var selectedCharacter = new CharacterModel();
 
+            var la = new EventArgs();
+
             var selectedCharacterChangedEventArgs = new SelectedItemChangedEventArgs(selectedCharacter, 0);
+
+          //  var args = new SelectionChangedEventArgs(0,0,0,0,0,0,0,0,0);
 
             // Act
             page.OnDatabaseCharacterItemSelected(null, null);
