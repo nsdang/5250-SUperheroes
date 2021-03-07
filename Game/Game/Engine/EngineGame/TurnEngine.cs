@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 
 using Game.Models;
 using Game.Engine.EngineInterfaces;
@@ -235,7 +236,41 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public bool TurnAsModerateAttack(PlayerInfoModel Attacker, PlayerInfoModel Target)
         {
-            return base.TurnAsAttack(Attacker, Target);
+            if (Attacker == null)
+            {
+                return false;
+            }
+
+            if (Target == null)
+            {
+                return false;
+            }
+
+            // Set Messages to empty
+            EngineSettings.BattleMessagesModel.ClearMessages();
+
+            // Do the Attack
+            EngineSettings.BattleMessagesModel.AttackStatus = " use Moderate Attack ";
+
+            //Calculate Damage
+            // TODO: Make a call to seperate function based on character job
+            EngineSettings.BattleMessagesModel.DamageAmount = Attacker.GetDamageRollValue();
+
+            // Apply the Damage
+            ApplyDamage(Target);
+
+            EngineSettings.BattleMessagesModel.TurnMessageSpecial = EngineSettings.BattleMessagesModel.GetCurrentHealthMessage();
+
+            // Check if Dead and Remove
+            RemoveIfDead(Target);
+
+            // If it is a character apply the experience earned
+            CalculateExperience(Attacker, Target);
+
+            EngineSettings.BattleMessagesModel.TurnMessage = Attacker.Name + EngineSettings.BattleMessagesModel.AttackStatus + Target.Name + EngineSettings.BattleMessagesModel.TurnMessageSpecial + EngineSettings.BattleMessagesModel.ExperienceEarned;
+            Debug.WriteLine(EngineSettings.BattleMessagesModel.TurnMessage);
+
+            return true;
         }
 
         /// <summary>
