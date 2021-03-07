@@ -648,7 +648,7 @@ namespace Game.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void SpeciallAttackButton_Clicked(object sender, EventArgs e)
+        public void SpecialAttackButton_Clicked(object sender, EventArgs e)
         {
             NextAttackExample();
         }
