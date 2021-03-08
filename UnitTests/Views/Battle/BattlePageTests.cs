@@ -9,6 +9,7 @@ using Game;
 using Game.Views;
 using Game.Models;
 using Game.ViewModels;
+using Game.Engine.EngineModels;
 
 namespace UnitTests.Views
 {
@@ -1171,6 +1172,22 @@ namespace UnitTests.Views
         {
             // Arrange
 
+            // Act
+            page.SetAttackerAndDefenderAuto();
+
+            // Reset
+
+            //Assert
+            Assert.IsTrue(true);
+
+        }
+
+        [Test]
+        public void BattlePage_SetAttackerAndDefenderAuto_Default_Monster_Should_Pass()
+        {
+            // Arrange
+            EngineSettingsModel EngineSettings = EngineSettingsModel.Instance;
+            EngineSettings.PlayerList[0] = new PlayerInfoModel(new MonsterModel());
             // Act
             page.SetAttackerAndDefenderAuto();
 
