@@ -1088,5 +1088,21 @@ namespace UnitTests.Views
             //Assert
             Assert.IsNotNull(result);
         }
+
+        [Test]
+        public void BattlePage_OnImageButtonClicked_BattleEnum_Invalid_Should_Pass()
+        {
+            // Arrange
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+
+            // Act
+            page.OnImageButtonClicked(null, null);
+
+            // Reset
+
+            //Assert
+            Assert.IsTrue(true);
+        }
+
     }
 }
