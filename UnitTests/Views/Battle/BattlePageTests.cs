@@ -1104,5 +1104,21 @@ namespace UnitTests.Views
             Assert.IsTrue(true);
         }
 
+        [Test]
+        public void BattlePage_OnImageButtonClicked_BattleEnum_Valid_Null_Should_Pass()
+        {
+            // Arrange
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.ChooseDefender;
+            ImageButton img = new ImageButton();
+
+            // Act
+            page.OnImageButtonClicked(img, null);
+
+            // Reset
+
+            //Assert
+            Assert.IsTrue(true);
+        }
+
     }
 }
