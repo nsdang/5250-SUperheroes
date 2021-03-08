@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Game.Engine.EngineBase;
 using Game.Engine.EngineInterfaces;
 using Game.Engine.EngineModels;
@@ -53,8 +54,13 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public override int AddMonstersToRound()
         {
+           if (EngineSettings.BattleScore.AutoBattle)
+            {
+                return base.AddMonstersToRound();
+            }
+            
             // INFO: Teams, work out your logic
-            int currentRound = EngineSettings.BattleScore.RoundCount;
+            int currentRound = 1 + EngineSettings.BattleScore.RoundCount;
             List<MonsterModel> monsters = Game.GameRules.DefaultData.LoadData(new MonsterModel());
             List<MonsterModel> temp = new List<MonsterModel>();
             int count = 0;
@@ -108,7 +114,7 @@ namespace Game.Engine.EngineGame
                 }
             }
 
-            return EngineSettings.MonsterList.Count;
+            return EngineSettings.MonsterList.Count();
         }
 
         /// <summary>

@@ -1165,5 +1165,19 @@ namespace UnitTests.Views
             //Assert
             Assert.IsTrue(true);
         }
+
+        [Test]
+        public void BattlePage_SetAttackerAndDefenderAuto_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            page.SpecialAttackButton_Clicked(null, null);
+
+            // Reset
+
+            //Assert
+            Assert.IsTrue(true);
+        }
     }
 }
