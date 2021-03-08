@@ -49,9 +49,6 @@
     <Compile Update="Views\Characters\CharacterDeletePage.xaml.cs">
       <DependentUpon>CharacterDeletePage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Home\BattleHomePage.xaml.cs">
-      <DependentUpon>BattleHomePage.xaml</DependentUpon>
-    </Compile>
     <Compile Update="Views\Monsters\MonsterDeletePage.xaml.cs">
       <DependentUpon>MonsterDeletePage.xaml</DependentUpon>
     </Compile>
