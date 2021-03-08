@@ -1167,17 +1167,18 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void BattlePage_SetAttackerAndDefenderAuto_Default_Should_Pass()
+        public void BattlePage_SetAttackerAndDefenderAuto_Default_Character_Should_Pass()
         {
             // Arrange
 
             // Act
-            page.SpecialAttackButton_Clicked(null, null);
+            page.SetAttackerAndDefenderAuto();
 
             // Reset
 
             //Assert
             Assert.IsTrue(true);
+
         }
     }
 }
