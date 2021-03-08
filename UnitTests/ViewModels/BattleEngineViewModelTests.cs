@@ -153,5 +153,23 @@ namespace UnitTests.ViewModels
         //    Assert.AreEqual(0, result.DatabaseCharacterList.Count());
         //    Assert.AreEqual(0, result.PartyCharacterList.Count());
         //}
+
+        [Test]
+        public void BattleEngineViewModel_Add_Default_Should_Pass()
+        {
+            // Arrange
+            var result = ViewModel;
+
+
+            //  Act
+            result.DatabaseCharacterList = null;
+
+
+            // Reset
+
+            // Assert
+           
+            Assert.IsNull(result.DatabaseCharacterList);
+        }
     }
 }
