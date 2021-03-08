@@ -156,6 +156,46 @@ namespace Game.Views
                 return;
             }
             BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(new PlayerInfoModel(selected));
+
+            var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
+
+            // Output the Message of what happened.
+            GameMessage();
+
+            // Show the outcome on the Board
+            DrawGameAttackerDefenderBoard();
+
+            if (RoundCondition == RoundEnum.NewRound)
+            {
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
+
+                // Pause
+                Task.Delay(WaitTime);
+
+                Debug.WriteLine("New Round");
+
+                // Show the Round Over, after that is cleared, it will show the New Round Dialog
+                ShowModalRoundOverPage();
+                return;
+            }
+
+            // Check for Game Over
+            if (RoundCondition == RoundEnum.GameOver)
+            {
+                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+
+                // Wrap up
+                BattleEngineViewModel.Instance.Engine.EndBattle();
+
+                // Pause
+                Task.Delay(WaitTime);
+
+                Debug.WriteLine("Game Over");
+
+                GameOver();
+                return;
+            }
+
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
             HideUIElements();
             ShowBattleModeUIElements();
@@ -686,11 +726,14 @@ namespace Game.Views
             // Hold the current state
             var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
 
-            // Output the Message of what happened.
-            GameMessage();
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType == PlayerTypeEnum.Monster)
+            {
+                // Output the Message of what happened.
+                GameMessage();
 
-            // Show the outcome on the Board
-            DrawGameAttackerDefenderBoard();
+                // Show the outcome on the Board
+                DrawGameAttackerDefenderBoard();
+            }
 
             if (RoundCondition == RoundEnum.NewRound)
             {
@@ -998,7 +1041,7 @@ namespace Game.Views
 
                 case BattleStateEnum.Battling:
                     GameUIDisplay.IsVisible = true;
-                    //BattlePlayerInfomationBox.IsVisible = true;
+                    BattlePlayerInfomationBox.IsVisible = true;
                     MessageDisplayBox.IsVisible = true;
                     //AttackButton.IsVisible = true;
                     TurnCounter.IsVisible = true;
