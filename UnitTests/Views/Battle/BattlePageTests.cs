@@ -1152,5 +1152,18 @@ namespace UnitTests.Views
             Assert.IsTrue(true);
         }
 
+        [Test]
+        public void BattlePage_SpecialAttackButton_Clicked_Default_Should_Pass()
+        {
+            // Arrange
+
+            // Act
+            page.SpecialAttackButton_Clicked(null, null);
+
+            // Reset
+
+            //Assert
+            Assert.IsTrue(true);
+        }
     }
 }
