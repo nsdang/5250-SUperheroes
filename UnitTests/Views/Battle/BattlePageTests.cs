@@ -1074,5 +1074,19 @@ namespace UnitTests.Views
             //Assert
             Assert.IsTrue(true);
         }
+
+        [Test]
+        public void BattlePage_PlayerInfoDisplayBox_Null_Should_Return_Not_Null()
+        {
+            // Arrange
+
+            // Act
+            var result = page.PlayerInfoDisplayBox(null);
+
+            // Reset
+
+            //Assert
+            Assert.IsNotNull(result);
+        }
     }
 }
