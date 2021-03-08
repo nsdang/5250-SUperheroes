@@ -52,7 +52,7 @@
                                      VerticalOptions="Start"
                                      HorizontalOptions="CenterAndExpand"
                                      Spacing="10">
-                            <Label Text="Turn 1" Style="{StaticResource CenterMessageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
+                            <Label x:Name="Turn" Text="Turn 1" Style="{StaticResource CenterMessageLargeStyle}" HorizontalOptions="CenterAndExpand"/>
                             <Line Stroke="Black" StrokeThickness="3" HorizontalOptions="CenterAndExpand" WidthRequest="350" X1="0" Y1="0" X2="400" Y2="0"/> 
                         </StackLayout>
 

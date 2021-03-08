@@ -33,6 +33,8 @@ namespace Game.Views
         bool UnitTestSetting;
         public BattlePage(bool UnitTest) { UnitTestSetting = UnitTest; }
 
+        public int Turncounter = 0;
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -45,6 +47,8 @@ namespace Game.Views
 
             // Set up the UI to Defaults
             BindingContext = BattleEngineViewModel.Instance;
+
+            Turn.Text = "Turn " + Turncounter.ToString();
 
             // Create and Draw the Map
             InitializeMapGrid();
@@ -173,6 +177,9 @@ namespace Game.Views
                 Task.Delay(WaitTime);
 
                 Debug.WriteLine("New Round");
+
+                Turncounter = 0;
+                Turn.Text = "Turn " + Turncounter.ToString();
 
                 // Show the Round Over, after that is cleared, it will show the New Round Dialog
                 ShowModalRoundOverPage();
@@ -670,6 +677,8 @@ namespace Game.Views
         /// <param name="e"></param>
         public void AttackButton_Clicked(object sender, EventArgs e)
         {
+            Turncounter++;
+            Turn.Text = "Turn " + Turncounter.ToString();
             NextAttackExample();
         }
 
@@ -743,6 +752,9 @@ namespace Game.Views
                 Task.Delay(WaitTime);
 
                 Debug.WriteLine("New Round");
+
+                Turncounter = 0;
+                Turn.Text = "Turn " + Turncounter.ToString();
 
                 // Show the Round Over, after that is cleared, it will show the New Round Dialog
                 ShowModalRoundOverPage();
