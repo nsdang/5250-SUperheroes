@@ -1069,6 +1069,23 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(false, result);
         }
 
+        [Test]
+        public void TurnEngine_TurnAsModerateAttack_Valid_Character_Target_Null_Should_Fail()
+        {
+            // Arrange
+            var Character = new CharacterModel();
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
+
+            // Act
+            var result = Eng.TurnAsModerateAttack(CharacterPlayer, null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
         #endregion TurnAsModerateAttack
 
         #region RemoveIfDead
