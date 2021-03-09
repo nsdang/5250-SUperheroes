@@ -14,6 +14,7 @@ namespace UnitTests.Engine.EngineGame
     [TestFixture]
     public class TurnEngineKoenigTests
     {
+        TurnEngine Eng;
         #region TestSetup
         BattleEngine Engine;
 
@@ -22,6 +23,7 @@ namespace UnitTests.Engine.EngineGame
         {
             Engine = new BattleEngine();
             Engine.StartBattle(true);   // Start engine in auto battle mode
+            Eng = new TurnEngine();
         }
 
         [TearDown]
@@ -1051,6 +1053,23 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(true, result);
         }
         #endregion TurnAsAttack
+
+        #region TurnAsModerateAttack
+        [Test]
+        public void TurnEngine_TurnAsModerateAttack_Valid_Character_Attacks_Null_Should_Fail()
+        {
+            // Arrange
+            
+            // Act
+            var result = Eng.TurnAsModerateAttack(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        #endregion TurnAsModerateAttack
 
         #region RemoveIfDead
         [Test]
