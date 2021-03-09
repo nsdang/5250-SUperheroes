@@ -1405,12 +1405,12 @@ namespace UnitTests.Engine.EngineGame
 
 
             // Act
-            var result = Engine.Round.AddMonstersToRound();
+            var result = Engine.Round.NewRound();
 
             // Reset
 
             // Assert
-            Assert.AreEqual(6, result);
+            Assert.AreEqual(true, result);
         }
 
 
