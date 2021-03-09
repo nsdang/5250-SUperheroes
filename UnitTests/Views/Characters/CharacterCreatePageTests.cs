@@ -160,15 +160,14 @@ namespace UnitTests.Views
         }
 
         [Test]
-        public void CharacterCreatePage_OnSlideValueChanged_Default_Should_Pass()
+        public void CharacterCreatePage_OnSlideValueChanged_HealthSlider_Default_Should_Pass()
         {
             // Arrange
-            Slider Health_Slider = new Slider();
-     
-            Health_Slider.Value = 3;
+            Slider healthSlider = (Slider) page.FindByName("Health_Slider");
+            healthSlider.Value = 3; 
 
             // Act
-            OnSliderValueChanged(Health_Slider, null);
+            OnSliderValueChanged(healthSlider, null);
 
             // Reset
 
