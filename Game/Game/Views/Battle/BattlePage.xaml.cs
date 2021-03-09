@@ -169,6 +169,8 @@ namespace Game.Views
             // Show the outcome on the Board
             DrawGameAttackerDefenderBoard();
 
+            RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
+
             if (RoundCondition == RoundEnum.NewRound)
             {
                 BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
@@ -743,6 +745,8 @@ namespace Game.Views
                 // Show the outcome on the Board
                 DrawGameAttackerDefenderBoard();
             }
+
+            RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
 
             if (RoundCondition == RoundEnum.NewRound)
             {
