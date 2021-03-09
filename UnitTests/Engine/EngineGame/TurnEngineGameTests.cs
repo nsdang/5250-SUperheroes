@@ -1109,6 +1109,61 @@ namespace UnitTests.Engine.EngineGame
 
         #endregion TurnAsModerateAttack
 
+        #region TurnAsSpecialAttack
+        [Test]
+        public void TurnEngine_TurnAsSpecialAttack_Valid_Character_Attacks_Null_Should_Fail()
+        {
+            // Arrange
+
+            // Act
+            var result = Eng.TurnAsSpecialAttack(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void TurnEngine_TurnAsSpecialAttack_Valid_Character_Target_Null_Should_Fail()
+        {
+            // Arrange
+            var Character = new CharacterModel();
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
+
+            // Act
+            var result = Eng.TurnAsSpecialAttack(CharacterPlayer, null);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void TurnEngine_TurnAsSpecialAttack_Valid_Character_Attacks_NotNull_Should_Pass()
+        {
+            // Arrange
+            var Character = new CharacterModel();
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
+
+            var Monster = new MonsterModel();
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+
+            // Act
+            var result = Eng.TurnAsSpecialAttack(MonsterPlayer, CharacterPlayer);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
+        #endregion TurnAsSpecialAttack
+
         #region RemoveIfDead
         [Test]
         public void TurnEngine_RemoveIfDead_Valid_Dead_True_Should_Return_False()
