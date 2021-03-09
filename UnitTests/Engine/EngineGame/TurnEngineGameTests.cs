@@ -691,6 +691,21 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(true, result);
         }
 
+        [Test]
+        public void TurnEngine_TakeTurn_WhenSpecial_Should_Pass()
+        {
+            // Arrange
+            var PlayerInfo = new PlayerInfoModel(new CharacterModel());
+            Engine.EngineSettings.CurrentAction = ActionEnum.SpecialAttack;
+            // Act
+            var result = Engine.Round.Turn.TakeTurn(PlayerInfo);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
         #endregion TakeTurn
 
         #region DropItems
