@@ -49,11 +49,6 @@ namespace Game.Views
             await Navigation.PopModalAsync();
         }
 
-        public async void TeamsButton_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PopModalAsync();
-        }
-
         /// <summary>
         /// Return a stack layout with the Player information inside
         /// </summary>

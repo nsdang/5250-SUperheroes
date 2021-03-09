@@ -26,7 +26,6 @@
                         Wrap="Wrap"/>
 
                 <Button Clicked="BeginButton_Clicked" Text="Start Round"/>
-                <Button Clicked="TeamsButton_Clicked" Text="Teams"/>
 
             </StackLayout>
         </ScrollView>
