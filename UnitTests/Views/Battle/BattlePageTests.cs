@@ -1122,26 +1122,22 @@ namespace UnitTests.Views
             Assert.IsTrue(true);
         }
 
-        /*
         [Test]
         public void BattlePage_OnImageButtonClicked_BattleEnum_Valid_NotNull_Should_Pass()
         {
             // Arrange
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.ChooseDefender;
-            BattleEngineViewModel.Instance.Engine.EngineSettings.RoundStateEnum = RoundEnum.NewRound;
             CharacterModel cm = Game.GameRules.DefaultData.LoadData(new CharacterModel()).FirstOrDefault();
+            PlayerInfoModel pcm = new PlayerInfoModel(cm);
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(pcm);
 
-            MonsterModel mm = Game.GameRules.DefaultData.LoadData(new MonsterModel()).FirstOrDefault();
-            PlayerInfoModel pm = new PlayerInfoModel(cm);
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(pm);
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Clear();
 
-            BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Add(new PlayerInfoModel(mm));
-
-            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = new PlayerInfoModel(cm); 
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = pcm; 
 
             ImageButton img = new ImageButton();
 
-            img.BindingContext = pm;
+            img.BindingContext = pcm;
 
             // Act
             page.OnImageButtonClicked(img, null);
@@ -1150,7 +1146,7 @@ namespace UnitTests.Views
 
             //Assert
             Assert.IsTrue(true);
-        }*/
+        }
         
         [Test]
         public void BattlePage_MonderateAttackButton_Clicked_Default_Should_Pass()
