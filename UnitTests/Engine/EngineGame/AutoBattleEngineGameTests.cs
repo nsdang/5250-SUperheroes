@@ -99,6 +99,7 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(true, result);
         }
 
+        /*
         [Test]
         public async Task AutoBattleEngine_RunAutoBattle_Valid_Monsters_1_Should_Pass()
         {
@@ -131,6 +132,7 @@ namespace UnitTests.Engine.EngineGame
             //Assert
             Assert.AreEqual(true, result);
         }
+        */
         #endregion RunAutoBattle
 
         #region CreateCharacterParty
