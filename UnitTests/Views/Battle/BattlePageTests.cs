@@ -1122,7 +1122,7 @@ namespace UnitTests.Views
             Assert.IsTrue(true);
         }
 
-        
+        /*
         [Test]
         public void BattlePage_OnImageButtonClicked_BattleEnum_Valid_NotNull_Should_Pass()
         {
@@ -1150,7 +1150,7 @@ namespace UnitTests.Views
 
             //Assert
             Assert.IsTrue(true);
-        }
+        }*/
         
         [Test]
         public void BattlePage_MonderateAttackButton_Clicked_Default_Should_Pass()
