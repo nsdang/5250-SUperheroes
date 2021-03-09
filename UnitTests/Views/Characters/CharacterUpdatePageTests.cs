@@ -124,6 +124,90 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void CharacterUpdatePage_OnSlideValueChanged_AttackSlider_Default_Should_Pass()
+        {
+            // Arrange
+            Slider attackSlider = (Slider)page.FindByName("Attack_Slider");
+            attackSlider.Value = 3;
+
+            // Act
+            OnSliderValueChanged(attackSlider, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+
+        }
+
+        [Test]
+        public void CharacterUpdatePage_OnSlideValueChanged_HealthSlider_Default_Should_Pass()
+        {
+            // Arrange
+            Slider healthSlider = (Slider)page.FindByName("Health_Slider");
+            healthSlider.Value = 3;
+
+            // Act
+            OnSliderValueChanged(healthSlider, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+
+        }
+
+        [Test]
+        public void CharacterUpdatePage_OnSlideValueChanged_LevelSlider_Default_Should_Pass()
+        {
+            // Arrange
+            Slider levelSlider = (Slider)page.FindByName("Level_Slider");
+            levelSlider.Value = 3;
+
+            // Act
+            OnSliderValueChanged(levelSlider, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+
+        }
+
+        [Test]
+        public void CharacterUpdatePage_OnSlideValueChanged_DefenseSlider_Default_Should_Pass()
+        {
+            // Arrange
+            Slider defenseSlider = (Slider)page.FindByName("Defense_Slider");
+            defenseSlider.Value = 3;
+
+            // Act
+            OnSliderValueChanged(defenseSlider, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+
+        }
+
+        [Test]
+        public void CharacterUpdatePage_OnSlideValueChanged_SpeedSlider_Default_Should_Pass()
+        {
+            // Arrange
+            Slider speedSlider = (Slider)page.FindByName("Speed_Slider");
+            speedSlider.Value = 3;
+
+            // Act
+            OnSliderValueChanged(speedSlider, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true);
+
+        }
 
         //[Test]
         //public void CharacterUpdatePage_Attack_OnStepperValueChanged_Default_Should_Pass()
