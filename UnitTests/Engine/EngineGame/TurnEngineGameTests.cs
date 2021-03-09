@@ -675,6 +675,22 @@ namespace UnitTests.Engine.EngineGame
             // Assert
             Assert.AreEqual(true, result);
         }
+
+        [Test]
+        public void TurnEngine_TakeTurn_WhenModerate_Should_Pass()
+        {
+            // Arrange
+            var PlayerInfo = new PlayerInfoModel(new CharacterModel());
+            Engine.EngineSettings.CurrentAction = ActionEnum.ModerateAttack;
+            // Act
+            var result = Engine.Round.Turn.TakeTurn(PlayerInfo);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
+
         #endregion TakeTurn
 
         #region DropItems
