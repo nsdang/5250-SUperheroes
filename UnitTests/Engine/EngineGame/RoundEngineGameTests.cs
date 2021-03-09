@@ -1393,5 +1393,27 @@ namespace UnitTests.Engine.EngineGame
         }
 
         #endregion CallingBase
+
+        #region AddMonstersToRound
+        [Test]
+        public void RoundEngine_AddMonstersToRound_If_Divisible_By_2_ShouldPass()
+        {
+            // Arrange
+            Engine.EngineSettings.BattleScore.RoundCount = 6;
+            Engine.Round.ClearLists();
+            // Make the List
+
+
+            // Act
+            var result = Engine.Round.AddMonstersToRound();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(6, result);
+        }
+
+
+        #endregion AddMonstersToRound
     }
 }

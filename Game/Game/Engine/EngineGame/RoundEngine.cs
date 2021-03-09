@@ -54,10 +54,6 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public override int AddMonstersToRound()
         {
-           if (EngineSettings.BattleScore.AutoBattle)
-            {
-                return base.AddMonstersToRound();
-            }
             
             // INFO: Teams, work out your logic
             int currentRound = 1 + EngineSettings.BattleScore.RoundCount;
@@ -65,7 +61,7 @@ namespace Game.Engine.EngineGame
             List<MonsterModel> temp = new List<MonsterModel>();
             int count = 0;
 
-            if (currentRound != 0 && currentRound % 2 == 0)
+            if (currentRound % 2 == 0)
             {   // Randomize between caro yin and anais
                 temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.McDonaldsEmployee)));
                 temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.Accountant)));
@@ -80,7 +76,7 @@ namespace Game.Engine.EngineGame
                     count++;
                 }
             }
-            else if (currentRound != 0 && currentRound % 3 == 0)
+            else if (currentRound % 3 == 0)
             { // at least one steve
                 temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.Boss)));
                 temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.Vet)));
