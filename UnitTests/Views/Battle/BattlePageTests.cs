@@ -10,6 +10,7 @@ using Game.Views;
 using Game.Models;
 using Game.ViewModels;
 using Game.Engine.EngineModels;
+using System.Linq;
 
 namespace UnitTests.Views
 {
@@ -1121,13 +1122,25 @@ namespace UnitTests.Views
             Assert.IsTrue(true);
         }
 
+        
         [Test]
         public void BattlePage_OnImageButtonClicked_BattleEnum_Valid_NotNull_Should_Pass()
         {
             // Arrange
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.ChooseDefender;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.RoundStateEnum = RoundEnum.NewRound;
+            CharacterModel cm = Game.GameRules.DefaultData.LoadData(new CharacterModel()).FirstOrDefault();
+
+            MonsterModel mm = Game.GameRules.DefaultData.LoadData(new MonsterModel()).FirstOrDefault();
+            PlayerInfoModel pm = new PlayerInfoModel(cm);
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(pm);
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Add(new PlayerInfoModel(mm));
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker = new PlayerInfoModel(cm); 
+
             ImageButton img = new ImageButton();
-            PlayerInfoModel pm = new PlayerInfoModel(new CharacterModel());
+
             img.BindingContext = pm;
 
             // Act
@@ -1138,7 +1151,7 @@ namespace UnitTests.Views
             //Assert
             Assert.IsTrue(true);
         }
-
+        
         [Test]
         public void BattlePage_MonderateAttackButton_Clicked_Default_Should_Pass()
         {
