@@ -233,11 +233,14 @@ namespace UnitTests.Views
             var item = ItemIndexViewModel.Instance.GetDefaultItem(ItemLocationEnum.Head);
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Add(item);
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Add(item);
+            FlexLayout l = (FlexLayout) page.FindByName("ItemListSelectedFrame");
+            l.Children.Add(new Label());
+            var StackItem = page.GetItemToDisplay(item);
+            var dataImage = StackItem.Children[0];
 
             // Act
-            var StackItem = page.GetItemToDisplay(item);
-           // ((ImageButton)dataImage).PropagateUpClicked();
-            var dataImage = StackItem.Children[0];
+            ((ImageButton)dataImage).PropagateUpClicked();
+            
 
             // Reset
 
