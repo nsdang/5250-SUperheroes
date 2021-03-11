@@ -25,7 +25,7 @@ namespace Scenario
             EngineViewModel.Engine.StartBattle(false);
 
             EngineViewModel.Engine.EngineSettings.BattleSettingsModel.CharacterHitEnum = HitStatusEnum.Default;
-            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum= HitStatusEnum.Default;
+            EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Default;
 
             EngineViewModel.Engine.EngineSettings.BattleSettingsModel.AllowCriticalHit = false;
             EngineViewModel.Engine.EngineSettings.BattleSettingsModel.AllowCriticalMiss = false;
@@ -69,7 +69,7 @@ namespace Scenario
             // Act
 
             // Assert
-           
+
 
             // Act
             var result = EngineViewModel;
@@ -187,7 +187,7 @@ namespace Scenario
             var CharacterPlayerChicken = new PlayerInfoModel(
                 new CharacterModel
                 {
-                    Speed = 1, 
+                    Speed = 1,
                     Level = 1,
                     CurrentHealth = 1,
                     ExperienceTotal = 1,
@@ -207,5 +207,53 @@ namespace Scenario
             Assert.AreEqual(HitStatusEnum.Miss, result);
         }
         #endregion Scenario2
+
+
+        #region Scenario14
+
+        [Test]
+        public async Task HackathonScenario_Scenario_14_Valid_Default_Should_Pass()
+        {
+            /* 
+            * Scenario Number:  
+            *      14
+            *      
+            * Description: 
+            *     There is a switch that enables fighting one big boss
+            * 
+            * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
+            *      Added a condition on the AddMonstersToRound() and make a boolean variable on EngineettingsModel
+            * 
+            * Test Algrorithm:
+            *      Create a button that activates boss round in pickCharacters
+            *      If clicked, it will change the boolean IsBossEnabled to true
+            *      
+            *      
+            *      
+            * 
+            * Test Conditions:
+            *      Default condition is sufficient
+            * 
+            * Validation:
+            *      Verify Correct enum is retured from CalculateAttackStatus method
+            */
+
+            // Arrange
+            BattleEngineViewModel.Instance.Engine.Round.ClearLists();
+            Game.Helpers.DiceHelper.ForceRollsToNotRandom = true;
+            Game.Helpers.DiceHelper.EnableForcedRolls();
+            int result = Game.Helpers.DiceHelper.SetForcedRollValue(6);
+            BattleEngineViewModel.Instance.Engine.EngineSettings.isBossEnabled = true;
+
+            // Act
+            int count = BattleEngineViewModel.Instance.Engine.Round.AddMonstersToRound();
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(1, count);
+
+            #endregion Scenario14
+        }
     }
 }
