@@ -684,6 +684,13 @@ namespace Game.Views
             NextAttackExample();
         }
 
+        public void RestButton_Clicked(object sender, EventArgs e)
+        {
+            Turncounter++;
+            Turn.Text = "Turn " + Turncounter.ToString();
+            NextRestExample();
+        }
+
         /// <summary>
         /// Moderate Attack Action
         /// </summary>
@@ -712,6 +719,35 @@ namespace Game.Views
         public async void Setttings_Clicked(object sender, EventArgs e)
         {
             await ShowBattleSettingsPage();
+        }
+
+        public void NextRestExample()
+        {
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
+
+            BattleEngineViewModel.Instance.Engine.Round.SetCurrentAttacker(BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn());
+            BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(null);
+
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType == PlayerTypeEnum.Monster)
+            {
+                return;
+            }
+
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.CurrentHealth <= BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.MaxHealth - 2)
+            {
+                BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.CurrentHealth += 2;
+            }
+
+            // Hold the current state
+            var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
+
+                // Output the Message of what happened.
+            GameMessage();
+
+                // Show the outcome on the Board
+            DrawGameAttackerDefenderBoard();
+
+            RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
         }
 
         /// <summary>

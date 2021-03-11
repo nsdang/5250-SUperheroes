@@ -82,6 +82,11 @@
                                     VerticalOptions="CenterAndExpand"
                                     HorizontalOptions="Center"
                                     Clicked="SpecialAttackButton_Clicked"/>
+                            <Button Text="Rest"
+                                    WidthRequest="70"
+                                    VerticalOptions="CenterAndExpand"
+                                    HorizontalOptions="Center"
+                                    Clicked="RestButton_Clicked"/>
                         </StackLayout>
 
                         <FlexLayout x:Name="CharacterFlexLayout" Wrap="Wrap" JustifyContent="SpaceAround"/>
