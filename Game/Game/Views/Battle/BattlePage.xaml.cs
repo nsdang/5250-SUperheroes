@@ -686,8 +686,6 @@ namespace Game.Views
 
         public void RestButton_Clicked(object sender, EventArgs e)
         {
-            Turncounter++;
-            Turn.Text = "Turn " + Turncounter.ToString();
             NextRestExample();
         }
 
@@ -733,6 +731,9 @@ namespace Game.Views
                 return;
             }
 
+            Turncounter++;
+            Turn.Text = "Turn " + Turncounter.ToString();
+
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.CurrentHealth <= BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.MaxHealth - 2)
             {
                 BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.CurrentHealth += 2;
@@ -746,8 +747,6 @@ namespace Game.Views
 
                 // Show the outcome on the Board
             DrawGameAttackerDefenderBoard();
-
-            RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
         }
 
         /// <summary>

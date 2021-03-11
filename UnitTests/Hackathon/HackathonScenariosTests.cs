@@ -207,6 +207,63 @@ namespace Scenario
             Assert.AreEqual(HitStatusEnum.Miss, result);
         }
         #endregion Scenario2
+        #region Scenario34
+        [Test]
+        public async Task HackathonScenario_Scenario_34_Valid_Default_Should_Pass()
+        {
+            /* 
+            * Scenario Number:  
+            *      34
+            *      
+            * Description: 
+            *     Take 5 ...
+            *     Allow characters to choose to do nothing for their turn, they just sit back and take in all that is happening around them. Resting restores 2 health per rest.
+            * 
+            * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
+            *      Override CalculateAttackStatus method from TurnEngine.cs
+            * 
+            * Test Algrorithm:
+            *      Create Character named CharacterPlayerChicken
+            *      Find Monster named "Bob"
+            *      Call modified CalculateAttackStatus from TurnEngine.cs
+            *      Set Current Health to 1 so he is weak
+            *      
+            * 
+            * Test Conditions:
+            *      Default condition is sufficient
+            * 
+            * Validation:
+            *      Verify Correct enum is retured from CalculateAttackStatus method
+            */
+
+            //Arrange
+
+            // Set Character Conditions     
+            var CharacterPlayer = new PlayerInfoModel(
+                new CharacterModel
+                {
+                    Speed = 1,
+                    Level = 1,
+                    CurrentHealth = 3,
+                    MaxHealth = 10,
+                    ExperienceTotal = 1,
+                    ExperienceRemaining = 1,
+                    Name = "Lazy",
+                });
+            EngineViewModel.Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
+
+            EngineViewModel.Engine.EngineSettings.CurrentAttacker = CharacterPlayer;
+            var prevHealth = EngineViewModel.Engine.EngineSettings.CurrentAttacker.GetCurrentHealth();
+
+            //Act
+            var curHealth = EngineViewModel.Engine.Round.Turn.;
+
+            //Reset
+
+            //Assert
+            Assert.AreEqual(HitStatusEnum.Miss, result);
+        }
+        #endregion Scenario2
 
 
         #region Scenario14
