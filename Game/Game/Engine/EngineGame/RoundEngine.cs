@@ -54,59 +54,79 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public override int AddMonstersToRound()
         {
-            
-            // INFO: Teams, work out your logic
-            int currentRound = 1 + EngineSettings.BattleScore.RoundCount;
-            List<MonsterModel> monsters = Game.GameRules.DefaultData.LoadData(new MonsterModel());
-            List<MonsterModel> temp = new List<MonsterModel>();
-            int count = 0;
+            if (EngineSettings.isBossEnabled == true)
+            {
+                int result = Game.Helpers.DiceHelper.RollDice(1, 10);
 
-            if (currentRound % 2 == 0)
-            {   // Randomize between caro yin and anais
-                temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.McDonaldsEmployee)));
-                temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.Accountant)));
-                temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.Vet)));
-
-                while (count < EngineSettings.MaxNumberPartyMonsters)
+                if (result <= 7)
                 {
-                    Random rnd = new Random();
-                    int index = rnd.Next(3);
+                    MonsterModel steve
+                        = Game.GameRules.DefaultData.LoadData(new MonsterModel()).Find(m => m.Name.Equals("Steve"));
 
-                    EngineSettings.MonsterList.Add(new PlayerInfoModel(temp[index]));
-                    count++;
+                    steve.CurrentHealth = 1000;
+                    steve.MaxHealth = 1000;
+                    steve.Attack = 50;
+
+                    EngineSettings.MonsterList.Add(new PlayerInfoModel(steve));
                 }
-            }
-            else if (currentRound % 3 == 0)
-            { // at least one steve
-                temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.Boss)));
-                temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.Vet)));
-
-                while (count < EngineSettings.MaxNumberPartyMonsters - 1)
-                {
-                    Random rnd = new Random();
-                    int index = rnd.Next(2);
-
-                    EngineSettings.MonsterList.Add(new PlayerInfoModel(temp[index]));
-                    count++;
-                }
-
-                // make sure there is at least one steve
-                EngineSettings.MonsterList.Add(new PlayerInfoModel(monsters.Find(m => m.Job.Equals(CharacterJobEnum.Boss))));
             }
             else
             {
-                // randomize between bob caro yin
-                temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.McDonaldsEmployee)));
-                temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.Accountant)));
-                temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.Carpenter)));
+                // INFO: Teams, work out your logic
+                int currentRound = 1 + EngineSettings.BattleScore.RoundCount;
+                List<MonsterModel> monsters = Game.GameRules.DefaultData.LoadData(new MonsterModel());
+                List<MonsterModel> temp = new List<MonsterModel>();
+                int count = 0;
 
-                while (count < EngineSettings.MaxNumberPartyMonsters)
+
+
+                if (currentRound % 2 == 0)
+                {   // Randomize between caro yin and anais
+                    temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.McDonaldsEmployee)));
+                    temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.Accountant)));
+                    temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.Vet)));
+
+                    while (count < EngineSettings.MaxNumberPartyMonsters)
+                    {
+                        Random rnd = new Random();
+                        int index = rnd.Next(3);
+
+                        EngineSettings.MonsterList.Add(new PlayerInfoModel(temp[index]));
+                        count++;
+                    }
+                }
+                else if (currentRound % 3 == 0)
+                { // at least one steve
+                    temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.Boss)));
+                    temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.Vet)));
+
+                    while (count < EngineSettings.MaxNumberPartyMonsters - 1)
+                    {
+                        Random rnd = new Random();
+                        int index = rnd.Next(2);
+
+                        EngineSettings.MonsterList.Add(new PlayerInfoModel(temp[index]));
+                        count++;
+                    }
+
+                    // make sure there is at least one steve
+                    EngineSettings.MonsterList.Add(new PlayerInfoModel(monsters.Find(m => m.Job.Equals(CharacterJobEnum.Boss))));
+                }
+                else
                 {
-                    Random rnd = new Random();
-                    int index = rnd.Next(3);
+                    // randomize between bob caro yin
+                    temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.McDonaldsEmployee)));
+                    temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.Accountant)));
+                    temp.Add(monsters.Find(m => m.Job.Equals(CharacterJobEnum.Carpenter)));
 
-                    EngineSettings.MonsterList.Add(new PlayerInfoModel(temp[index]));
-                    count++;
+                    while (count < EngineSettings.MaxNumberPartyMonsters)
+                    {
+                        Random rnd = new Random();
+                        int index = rnd.Next(3);
+
+                        EngineSettings.MonsterList.Add(new PlayerInfoModel(temp[index]));
+                        count++;
+                    }
                 }
             }
 
