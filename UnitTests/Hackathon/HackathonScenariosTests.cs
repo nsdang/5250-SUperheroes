@@ -305,7 +305,11 @@ namespace Scenario
             *      
             * 
             * Test Conditions:
-            *      Default condition is sufficient
+            *      Clear the list of momsters
+            *      Force the dice to have a value of 6
+            *      Set the isBossEnabled boolean to true
+            *      Call the AddMonstersToRound() 
+            *      Check if only one monster is returned
             * 
             * Validation:
             *      Verify Correct enum is retured from CalculateAttackStatus method
