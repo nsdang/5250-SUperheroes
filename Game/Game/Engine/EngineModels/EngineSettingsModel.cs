@@ -101,5 +101,8 @@ namespace Game.Engine.EngineModels
         // Hold the Battle State, Unknown is default
          public BattleStateEnum BattleStateEnum { get; set; } = BattleStateEnum.Unknown;
 
+        // Boss enabled boolean
+        public bool isBossEnabled { get; set; } = false;
+
     }
 }

@@ -150,7 +150,7 @@ namespace Game.Views
         {
             // CreateEngineCharacterList();
             SwitchEnabled.Text = "Boss Round Enabled";
-
+            BattleEngineViewModel.Instance.Engine.EngineSettings.isBossEnabled = true; 
 
         }
 
