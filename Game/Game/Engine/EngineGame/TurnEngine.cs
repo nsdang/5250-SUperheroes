@@ -356,7 +356,22 @@ namespace Game.Engine.EngineGame
         /// </summary>
         public override HitStatusEnum CalculateAttackStatus(PlayerInfoModel Attacker, PlayerInfoModel Target)
         {
-            return base.CalculateAttackStatus(Attacker, Target);
+            // Remember Current Player
+            EngineSettings.BattleMessagesModel.PlayerType = PlayerTypeEnum.Monster;
+
+            // Choose who to attack
+            EngineSettings.BattleMessagesModel.TargetName = Target.Name;
+            EngineSettings.BattleMessagesModel.AttackerName = Attacker.Name;
+
+            // Set Attack and Defense
+            var AttackScore = Attacker.Level + Attacker.GetAttack();
+            var DefenseScore = Target.GetDefense() + Target.Level;
+            if(Attacker.Name == "Bob")
+                EngineSettings.BattleMessagesModel.HitStatus = HitStatusEnum.Miss;
+            else
+                EngineSettings.BattleMessagesModel.HitStatus = RollToHitTarget(AttackScore, DefenseScore);
+
+            return EngineSettings.BattleMessagesModel.HitStatus;
         }
 
         /// <summary>
