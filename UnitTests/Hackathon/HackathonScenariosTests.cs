@@ -1,8 +1,12 @@
 ﻿using NUnit.Framework;
 
+using Game;
 using Game.Models;
 using System.Threading.Tasks;
 using Game.ViewModels;
+using Game.Views;
+using Xamarin.Forms.Mocks;
+using Xamarin.Forms;
 
 namespace Scenario
 {
@@ -11,6 +15,8 @@ namespace Scenario
     {
         #region TestSetup
         readonly BattleEngineViewModel EngineViewModel = BattleEngineViewModel.Instance;
+        BattlePage page;
+        App app;
 
         [SetUp]
         public void Setup()
@@ -23,6 +29,15 @@ namespace Scenario
 
             //Start the Engine in AutoBattle Mode
             EngineViewModel.Engine.StartBattle(false);
+
+            MockForms.Init();
+
+            //This is your App.xaml and App.xaml.cs, which can have resources, etc.
+            app = new App();
+            Application.Current = app;
+
+            // Initialize Battle Page
+            page = new BattlePage();
 
             EngineViewModel.Engine.EngineSettings.BattleSettingsModel.CharacterHitEnum = HitStatusEnum.Default;
             EngineViewModel.Engine.EngineSettings.BattleSettingsModel.MonsterHitEnum = HitStatusEnum.Default;
@@ -219,21 +234,22 @@ namespace Scenario
             *     Take 5 ...
             *     Allow characters to choose to do nothing for their turn, they just sit back and take in all that is happening around them. Resting restores 2 health per rest.
             * 
-            * Changes Required (Classes, Methods etc.)  List Files, Methods, and Describe Changes: 
-            *      Override CalculateAttackStatus method from TurnEngine.cs
+            * Changes Required (Classes, Methods etc.)  
+            *       Added RestButton_Clicked() function to handle Rest button click 
+            *       Added NextRestExample() contaning the main logic for the rest action
             * 
             * Test Algrorithm:
-            *      Create Character named CharacterPlayerChicken
-            *      Find Monster named "Bob"
-            *      Call modified CalculateAttackStatus from TurnEngine.cs
-            *      Set Current Health to 1 so he is weak
+            *      Create Character named CharacterPlayer with current health 3 and max health 10
+            *      Add the created character into PlayerList
+            *      Call NextRestExample() from BattlePage.xaml.cs
             *      
             * 
             * Test Conditions:
             *      Default condition is sufficient
             * 
             * Validation:
-            *      Verify Correct enum is retured from CalculateAttackStatus method
+            *      Verify the new current health retured from NextRestExample() method is greater than the old value
+            *      2 value
             */
 
             //Arrange
@@ -250,20 +266,20 @@ namespace Scenario
                     ExperienceRemaining = 1,
                     Name = "Lazy",
                 });
-            EngineViewModel.Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
+            EngineViewModel.Engine.EngineSettings.PlayerList.Clear();
+            EngineViewModel.Engine.EngineSettings.PlayerList.Add(CharacterPlayer);
 
-            EngineViewModel.Engine.EngineSettings.CurrentAttacker = CharacterPlayer;
-            var prevHealth = EngineViewModel.Engine.EngineSettings.CurrentAttacker.GetCurrentHealth();
 
             //Act
-            var curHealth = EngineViewModel.Engine.Round.Turn.;
+            page.NextRestExample();
+            var result = EngineViewModel.Engine.EngineSettings.CurrentAttacker.CurrentHealth;
 
             //Reset
 
             //Assert
-            Assert.AreEqual(HitStatusEnum.Miss, result);
+            Assert.AreEqual(5, result);
         }
-        #endregion Scenario2
+        #endregion Scenario34
 
 
         #region Scenario14

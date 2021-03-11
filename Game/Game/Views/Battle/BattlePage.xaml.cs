@@ -732,7 +732,7 @@ namespace Game.Views
             }
 
             Turncounter++;
-            Turn.Text = "Turn " + Turncounter.ToString();
+            //Turn.Text = "Turn " + Turncounter.ToString();
 
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.CurrentHealth <= BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.MaxHealth - 2)
             {
