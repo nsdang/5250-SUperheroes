@@ -138,6 +138,22 @@ namespace Game.Views
             await Navigation.PopAsync();
         }
 
+
+        /// <summary>
+        /// Jump to the Battle
+        /// 
+        /// Its Modal because don't want user to come back...
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public async void EnableBoss_Clicked(object sender, EventArgs e)
+        {
+            // CreateEngineCharacterList();
+            SwitchEnabled.Text = "Boss Round Enabled";
+
+
+        }
+
         /// <summary>
         /// Clear out the old list and make the new list
         /// </summary>

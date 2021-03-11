@@ -11,6 +11,12 @@
     <ContentPage.Content>
         <StackLayout>
 
+            <Button 
+                x:Name="SwitchEnabled"
+                Clicked="EnableBoss_Clicked" 
+                    HorizontalOptions="Center"
+                    Text="Enable Boss Round"/>
+            
             <Label Text="Team Formation" Style="{StaticResource CenterMessageLargeStyle}"/>
             <Label Text="Teams" TextDecorations="Underline"/>
             <CollectionView
