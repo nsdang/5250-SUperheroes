@@ -69,10 +69,8 @@ namespace Game.Engine.EngineGame
 
                 while (count < EngineSettings.MaxNumberPartyMonsters)
                 {
-                    Random rnd = new Random();
-                    int index = rnd.Next(3);
-
-                    EngineSettings.MonsterList.Add(new PlayerInfoModel(temp[index]));
+                    int index = Game.Helpers.DiceHelper.RollDice(1, 3);
+                    EngineSettings.MonsterList.Add(new PlayerInfoModel(temp[index - 1]));
                     count++;
                 }
             }
@@ -83,10 +81,9 @@ namespace Game.Engine.EngineGame
 
                 while (count < EngineSettings.MaxNumberPartyMonsters - 1)
                 {
-                    Random rnd = new Random();
-                    int index = rnd.Next(2);
+                    int index = Game.Helpers.DiceHelper.RollDice(1, 2);
 
-                    EngineSettings.MonsterList.Add(new PlayerInfoModel(temp[index]));
+                    EngineSettings.MonsterList.Add(new PlayerInfoModel(temp[index - 1]));
                     count++;
                 }
 
@@ -102,10 +99,8 @@ namespace Game.Engine.EngineGame
 
                 while (count < EngineSettings.MaxNumberPartyMonsters)
                 {
-                    Random rnd = new Random();
-                    int index = rnd.Next(3);
-
-                    EngineSettings.MonsterList.Add(new PlayerInfoModel(temp[index]));
+                    int index = Game.Helpers.DiceHelper.RollDice(1, 3);
+                    EngineSettings.MonsterList.Add(new PlayerInfoModel(temp[index - 1]));
                     count++;
                 }
             }
