@@ -141,6 +141,7 @@
     <Content Include="bronzehelmet.PNG" />
     <Content Include="bronzering.PNG" />
     <Content Include="carpenter.png" />
+    <Content Include="cash.png" />
     <Content Include="cookie.png" />
     <Content Include="dark.png" />
     <Content Include="flying.png" />
