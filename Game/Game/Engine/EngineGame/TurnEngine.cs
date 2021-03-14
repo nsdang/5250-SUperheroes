@@ -5,6 +5,7 @@ using Game.Models;
 using Game.Engine.EngineInterfaces;
 using Game.Engine.EngineModels;
 using Game.Engine.EngineBase;
+using System.Linq;
 
 namespace Game.Engine.EngineGame
 {
@@ -395,8 +396,105 @@ namespace Game.Engine.EngineGame
         public override int DropItems(PlayerInfoModel Target)
         {
             // INFO: Teams, work out how you want to drop items.
-            return base.DropItems(Target);
-        }
+            var DroppedMessage = "\nItems Dropped : \n";
+
+            // Drop Items to ItemModel Pool
+            var myItemList = Target.DropAllItems();
+
+            if (!Target.Alive)
+            {
+
+                if (Target.PlayerType == PlayerTypeEnum.Monster)
+                {
+                    if (Target.Job == CharacterJobEnum.Vet)
+                    {
+                        List<ItemModel> dataList = new List<ItemModel>()
+                        {
+                            new ItemModel
+                            {
+                                Name = "Arthur's Ring",
+                                Description = "A ring worn by king Arthur\nhimself and can be dropped\nby Anais after her defeat.",
+                                Range = 10,
+                                Value = 20,
+                                Location = ItemLocationEnum.Finger,
+                                Attribute = AttributeEnum.Defense,
+                                ImageURI = "arthursring.png"
+                            },
+                            new ItemModel {
+                                Name = "Arthur's Helmet",
+                                Description = "Helmet worn by king Arthur\nhimself and can be dropped by\nAnais after her defeat.",
+                                ImageURI = "bronzehelmet.png",
+                                Value = 15,
+                                Location = ItemLocationEnum.Head,
+                                Attribute = AttributeEnum.Defense
+                            },
+                            new ItemModel {
+                                Name = "Arthur's Sword",
+                                Description = "Sword swung by king Arthur\nhimself and can be dropped by\nAnais after her defeat.",
+                                ImageURI = "brassknuckles.png",
+                                Range = 10,
+                                Damage = 5,
+                                Value = 20,
+                                Location = ItemLocationEnum.PrimaryHand,
+                                Attribute = AttributeEnum.Attack
+                            },
+                        };
+                        myItemList.AddRange(dataList);
+                    }
+                    else if (Target.Job == CharacterJobEnum.Accountant)
+                    {
+                        List<ItemModel> dataList = new List<ItemModel>()
+                        {
+                            new ItemModel {
+                                Name = "Cash",
+                                Description = "Yinying might drop cash that\ncan be equipped on a character,\ngiving them more reason to\nlive which gives them higher\ndefense.",
+                                ImageURI = "cookie.png",
+                                Value = 10,
+                                Location = ItemLocationEnum.PrimaryHand,
+                                Attribute = AttributeEnum.Defense
+                            },
+                        };
+                        myItemList.AddRange(dataList);
+                    }
+                    else if (Target.Job == CharacterJobEnum.Boss)
+                    {
+                        List<ItemModel> dataList = new List<ItemModel>()
+                        {
+                            new ItemModel {
+                                Name = "Steve's Controller",
+                                Description = "After defeating Steve, you\nacquire his controller which\ncan be equipped on a character\nso they can have their special\nattacks ready at the beginning\nof every Round.",
+                                ImageURI = "bagofcookies.png",
+                                Value = 50,
+                                Location = ItemLocationEnum.PrimaryHand,
+                                Attribute = AttributeEnum.MaxHealth
+                            },
+                        };
+                        myItemList.AddRange(dataList);
+                    }
+                }
+                else if(Target.PlayerType == PlayerTypeEnum.Character)
+                    myItemList.AddRange(GetRandomMonsterItemDrops(EngineSettings.BattleScore.RoundCount));
+            }
+            // Add to ScoreModel
+            foreach (var ItemModel in myItemList)
+            {
+                EngineSettings.BattleScore.ItemsDroppedList += ItemModel.FormatOutput() + "\n";
+                DroppedMessage += ItemModel.Name + "\n";
+            }
+
+            EngineSettings.ItemPool.AddRange(myItemList);
+
+            if (myItemList.Count == 0)
+            {
+                DroppedMessage = " Nothing dropped. ";
+            }
+
+            EngineSettings.BattleMessagesModel.DroppedMessage = DroppedMessage;
+
+            EngineSettings.BattleScore.ItemModelDropList.AddRange(myItemList);
+
+            return myItemList.Count();
+        }            
 
         /// <summary>
         /// Roll To Hit
