@@ -757,6 +757,7 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(2, result);
         }
 
+        /*
         [Test]
         public void TurnEngine_DropItems_Valid_Monster_Items_0_Random_Drop_1_Should_Return_1()
         {
@@ -779,6 +780,7 @@ namespace UnitTests.Engine.EngineGame
             // Assert
             Assert.AreEqual(1, result);
         }
+        */
         #endregion DropItems
 
         #region TargetDied
@@ -1140,6 +1142,7 @@ namespace UnitTests.Engine.EngineGame
             // Assert
             Assert.AreEqual(false, result);
         }
+
 
         [Test]
         public void TurnEngine_TurnAsSpecialAttack_Valid_Character_Attacks_NotNull_Should_Pass()
