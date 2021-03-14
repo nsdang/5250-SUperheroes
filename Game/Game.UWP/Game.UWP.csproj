@@ -105,6 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="accountant.png" />
+    <Content Include="afterbattlebackground.png" />
     <Content Include="arthurshelmet.png" />
     <Content Include="arthursring.png" />
     <Content Include="arthurssword.png" />

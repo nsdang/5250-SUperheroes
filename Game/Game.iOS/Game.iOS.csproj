@@ -247,4 +247,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\battlebackground.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\afterbattlebackground.png" />
+  </ItemGroup>
 </Project>
