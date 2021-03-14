@@ -152,6 +152,7 @@
     <Content Include="physical.png" />
     <Content Include="psychic.png" />
     <Content Include="stevescontroller.png" />
+    <Content Include="titlescreen.png" />
     <Content Include="vet.png" />
     <Content Include="icon_cancel.png" />
     <Content Include="mcdonaldsemployee.png" />

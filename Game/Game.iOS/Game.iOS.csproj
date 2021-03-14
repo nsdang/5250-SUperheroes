@@ -238,4 +238,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\stevescontroller.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\titlescreen.png" />
+  </ItemGroup>
 </Project>
