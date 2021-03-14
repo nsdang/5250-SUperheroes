@@ -145,6 +145,7 @@
     <Content Include="cookie.png" />
     <Content Include="dark.png" />
     <Content Include="flying.png" />
+    <Content Include="generalbackground.png" />
     <Content Include="icon_add.png" />
     <Content Include="icon_save.png" />
     <Content Include="light.png" />
