@@ -98,12 +98,14 @@
                 <Setter Property="HorizontalTextAlignment" Value="Start"/>
                 <Setter Property="VerticalTextAlignment" Value="Center"/>
                 <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
 
             <Style TargetType="Label"
                 x:Key="ListStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
-                <Setter Property="FontSize" Value="Micro" />
+                <Setter Property="FontSize" Value="Micro"/>
+                <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
 
             <Style TargetType="Label"
@@ -111,18 +113,21 @@
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="FontSize" Value="Small" />
+                <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
 
             <Style TargetType="Label"
                 x:Key="LabelStyle"
                 BasedOn="{StaticResource LabelBaseStyle}">
-                <Setter Property="FontSize" Value="Micro" />
+                <Setter Property="FontSize" Value="Micro"/>
+                <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
 
             <Style TargetType="Label"
                 x:Key="ValueStyle"
                 BasedOn="{StaticResource LabelStyle}">
                 <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+                <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
 
             <Style TargetType="Label"
@@ -131,6 +136,7 @@
                 <Setter Property="FontSize" Value="Micro" />
                 <Setter Property="LineBreakMode" Value="WordWrap" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
 
             <Style TargetType="Label"
@@ -138,12 +144,14 @@
                 BasedOn="{StaticResource ValueStyleMicro}">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="LineBreakMode" Value="NoWrap" />
+                <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
             
             <Style TargetType="Label"
                 x:Key="MessageStyle"
                 BasedOn="{StaticResource HeaderStyle}">
                 <Setter Property="TextColor" Value="{StaticResource TriciaryTextColor}" />
+                <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
 
             <Style TargetType="Label"
@@ -151,12 +159,14 @@
                 BasedOn="{StaticResource ListStyle}">
                 <Setter Property="FontSize" Value="21" />
                 <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
 
             <Style TargetType="Label"
                 x:Key="MessageLargeStyle"
                 BasedOn="{StaticResource MessageStyle}">
                 <Setter Property="FontSize" Value="Large" />
+                <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
 
             <Style TargetType="Label"
@@ -164,12 +174,14 @@
                 BasedOn="{StaticResource HeaderStyle}">
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
 
             <Style TargetType="Label"
                 x:Key="CenterMessageLargeStyle"
                 BasedOn="{StaticResource CenterMessageStyle}">
                 <Setter Property="FontSize" Value="Large" />
+                <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
 
             <Style TargetType="Label"
@@ -178,6 +190,7 @@
                 <Setter Property ="Padding" Value="0, 60, 0, 20"/>
                 <Setter Property ="FontAttributes" Value="Bold"/>
                 <Setter Property ="TextColor" Value="GhostWhite"/>
+                <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
             
             <!--<Style TargetType="Label"
@@ -202,6 +215,7 @@
                 BasedOn="{StaticResource ValueStyle}">
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
 
             <Style TargetType ="Label"
@@ -210,6 +224,7 @@
                 <Setter Property="TextColor" Value="WhiteSmoke">
                 </Setter>
                 <Setter Property="HorizontalOptions" Value="Center"></Setter>
+                <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
 
 
@@ -310,6 +325,7 @@
                 <Setter Property="Padding" Value="1"/>
                 <Setter Property="Margin" Value="0,5,0,5"/>
                 <Setter Property="HeightRequest" Value="30"/>
+                <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
 
             <Style TargetType="Button"
@@ -320,6 +336,7 @@
                 <Setter Property="HeightRequest" Value="50"/>
                 <Setter Property="TextColor" Value="Gold"/>
                 <Setter Property ="BorderColor" Value="Black"/>
+                <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
 
             <Style TargetType="Button"
@@ -330,6 +347,7 @@
                 <Setter Property ="BorderColor" Value="Black"/>
                 <Setter Property ="BackgroundColor" Value="Orange"/>
                 <Setter Property ="Margin" Value="10"/>
+                <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
 
             <Style TargetType="Button"
@@ -340,6 +358,7 @@
                 <Setter Property ="BorderColor" Value="Black"/>
                 <Setter Property ="BackgroundColor" Value="Orange"/>
                 <Setter Property ="Margin" Value="10"/>
+                <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
 
             <!-- Stack Layouts -->
@@ -541,6 +560,7 @@
                 <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
                 <Setter Property="BackgroundColor" Value="{StaticResource LightBackgroundColor}" />
                 <Setter Property="PlaceholderColor" Value="{StaticResource TriciaryTextColor}" />
+                <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
 
             <Style TargetType="Entry"
@@ -550,6 +570,7 @@
                 <Setter Property="TextColor" Value="WhiteSmoke" />
                 <Setter Property="HorizontalTextAlignment" Value="Center"/>
                 <Setter Property="BackgroundColor" Value="CadetBlue"/>
+                <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
 
             <!-- Editor-->
@@ -562,6 +583,7 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource LightBackgroundColor}" />
                 <Setter Property="PlaceholderColor" Value="{StaticResource TriciaryTextColor}" />
                 <Setter Property="AutoSize" Value="TextChanges" />
+                <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
 
             <!-- Stepper -->
@@ -582,6 +604,7 @@
                 <Setter Property="FontSize" Value="Small" />
                 <Setter Property="FontAttributes" Value="None" />
                 <Setter Property="BackgroundColor" Value="{StaticResource LightBackgroundColor}" />
+                <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
 
         </ResourceDictionary>
