@@ -226,4 +226,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\arthursring.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\arthurshelmet.png" />
+  </ItemGroup>
 </Project>
