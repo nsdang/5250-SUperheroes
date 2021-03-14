@@ -370,14 +370,91 @@ namespace Game.Engine.EngineKoenig
         /// </summary>
         public override int DropItems(PlayerInfoModel Target)
         {
+
             var DroppedMessage = "\nItems Dropped : \n";
 
             // Drop Items to ItemModel Pool
             var myItemList = Target.DropAllItems();
 
+            if (!Target.Alive)
+            {
+
+                if (Target.PlayerType == PlayerTypeEnum.Monster)
+                {
+                    if (Target.Job == CharacterJobEnum.Vet)
+                    {
+                        List<ItemModel> dataList = new List<ItemModel>()
+                        {
+                            new ItemModel
+                            {
+                                Name = "Arthur's Ring",
+                                Description = "A ring worn by king Arthur\nhimself and can be dropped\nby Anais after her defeat.",
+                                ImageURI = "bronzering.png",
+                                Range = 10,
+                                Value = 20,
+                                Location = ItemLocationEnum.Finger,
+                                Attribute = AttributeEnum.Defense
+                            },
+                            new ItemModel {
+                                Name = "Arthur's Helmet",
+                                Description = "Helmet worn by king Arthur\nhimself and can be dropped by\nAnais after her defeat.",
+                                ImageURI = "bronzehelmet.png",
+                                Value = 15,
+                                Location = ItemLocationEnum.Head,
+                                Attribute = AttributeEnum.Defense
+                            },
+                            new ItemModel {
+                                Name = "Arthur's Sword",
+                                Description = "Sword swung by king Arthur\nhimself and can be dropped by\nAnais after her defeat.",
+                                ImageURI = "brassknuckles.png",
+                                Range = 10,
+                                Damage = 5,
+                                Value = 20,
+                                Location = ItemLocationEnum.PrimaryHand,
+                                Attribute = AttributeEnum.Attack
+                            },
+                        };
+                        myItemList.AddRange(dataList);
+                    }
+                    else if(Target.Job == CharacterJobEnum.Accountant)
+                    {
+                        List<ItemModel> dataList = new List<ItemModel>()
+                        {   
+                            new ItemModel {
+                                Name = "Cash",
+                                Description = "Yinying might drop cash that\ncan be equipped on a character,\ngiving them more reason to\nlive which gives them higher\ndefense.",
+                                ImageURI = "cookie.png",
+                                Value = 10,
+                                Location = ItemLocationEnum.PrimaryHand,
+                                Attribute = AttributeEnum.Defense
+                            },
+                        };
+                        myItemList.AddRange(dataList);
+                    }
+                    else if (Target.Job == CharacterJobEnum.Boss)
+                    {
+                        List<ItemModel> dataList = new List<ItemModel>()
+                        {
+                            new ItemModel {
+                                Name = "Steve's Controller",
+                                Description = "After defeating Steve, you\nacquire his controller which\ncan be equipped on a character\nso they can have their special\nattacks ready at the beginning\nof every Round.",
+                                ImageURI = "bagofcookies.png",
+                                Value = 50,
+                                Location = ItemLocationEnum.PrimaryHand,
+                                Attribute = AttributeEnum.MaxHealth
+                            },
+                        };
+                        myItemList.AddRange(dataList);
+                    }
+                }
+
+            }
+
+
+
             // I feel generous, even when characters die, random drops happen :-)
             // If Random drops are enabled, then add some....
-            myItemList.AddRange(GetRandomMonsterItemDrops(EngineSettings.BattleScore.RoundCount));
+           // myItemList.AddRange(GetRandomMonsterItemDrops(EngineSettings.BattleScore.RoundCount));
 
             // Add to ScoreModel
             foreach (var ItemModel in myItemList)
