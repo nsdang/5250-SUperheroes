@@ -389,11 +389,11 @@ namespace Game.Engine.EngineKoenig
                             {
                                 Name = "Arthur's Ring",
                                 Description = "A ring worn by king Arthur\nhimself and can be dropped\nby Anais after her defeat.",
-                                ImageURI = "bronzering.png",
                                 Range = 10,
                                 Value = 20,
                                 Location = ItemLocationEnum.Finger,
-                                Attribute = AttributeEnum.Defense
+                                Attribute = AttributeEnum.Defense,
+                                ImageURI = "arthursring.png"
                             },
                             new ItemModel {
                                 Name = "Arthur's Helmet",

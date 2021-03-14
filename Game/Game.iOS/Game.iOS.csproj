@@ -223,4 +223,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\dark.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\arthursring.png" />
+  </ItemGroup>
 </Project>
