@@ -104,7 +104,9 @@
                     <Frame x:Name="BattlePlayerInfomationBox"
                             BackgroundColor="Gray"
                                 Style="{StaticResource PlayerBattleOuterFrame}"
-                                IsVisible="False">
+                                IsVisible="False"
+                                CornerRadius="1"
+                           >
 
                         <StackLayout x:Name="BattlePlayerBox" Style="{StaticResource PlayerBattleOuterBox}">
 
