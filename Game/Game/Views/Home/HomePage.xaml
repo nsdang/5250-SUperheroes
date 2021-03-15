@@ -9,15 +9,20 @@
 
             <StackLayout>
 
-                <Label Text="SUperheroes"
+                <!--<Label Text="SUperheroes"
                        FontSize="Large"
                        FontAttributes="Bold"
                        HorizontalOptions="Center"
                        TextDecorations="Underline"
                        >
-                </Label>
+                </Label>-->
+                <Image
+                    Source="maintitle.png"
+                    HorizontalOptions="Center">
+                    
+                </Image>
                 
-                <Grid>
+                <!--<Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
@@ -43,7 +48,7 @@
                                  Text="They have turned their backs on the common people."
                                  HorizontalOptions="Center">
                             </Label>
-                    </Grid>
+                    </Grid>-->
 
 
                 <Button 
