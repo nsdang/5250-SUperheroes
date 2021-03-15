@@ -559,6 +559,10 @@ namespace Game.Models
                 // Dice of the weapon.  So sword of Damage 10 is d10
                 myReturn += DiceHelper.RollDice(1, myItem.Damage);
             }
+            else
+            {
+                myReturn += DiceHelper.RollDice(1, Attack);
+            }
 
             // Add in the Level as extra damage per game rules
             myReturn += GetDamageLevelBonus;
