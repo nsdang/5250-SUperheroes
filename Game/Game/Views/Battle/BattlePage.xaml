@@ -102,6 +102,7 @@
                 <StackLayout x:Name="BattleBottomBox" Style="{StaticResource BattleUIBottomBox}">
 
                     <Frame x:Name="BattlePlayerInfomationBox"
+                            BackgroundColor="Gray"
                                 Style="{StaticResource PlayerBattleOuterFrame}"
                                 IsVisible="False">
 
@@ -138,7 +139,7 @@
 
                     <StackLayout 
                             Style="{StaticResource VerticalStack}" 
-                            HeightRequest="100"
+                            HeightRequest="200"
                             HorizontalOptions="CenterAndExpand"
                             x:Name="MessageDisplayBox" 
                             IsVisible="false">
