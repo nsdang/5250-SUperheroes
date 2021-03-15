@@ -175,6 +175,7 @@
                 <Setter Property="HorizontalOptions" Value="Center" />
                 <Setter Property="HorizontalTextAlignment" Value="Center" />
                 <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
+                <Setter Property="TextColor" Value="DarkSlateGray"></Setter>
             </Style>
 
             <Style TargetType="Label"
