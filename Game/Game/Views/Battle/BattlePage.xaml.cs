@@ -159,7 +159,7 @@ namespace Game.Views
             {
                 return;
             }
-            BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(new PlayerInfoModel(selected));
+            BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(selected);
 
             var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
 
@@ -168,8 +168,6 @@ namespace Game.Views
 
             // Show the outcome on the Board
             DrawGameAttackerDefenderBoard();
-
-            RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
 
             if (RoundCondition == RoundEnum.NewRound)
             {
@@ -734,52 +732,52 @@ namespace Game.Views
             // Get the turn, set the current player and attacker to match
             SetAttackerAndDefender();
 
-            // Hold the current state
-            var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
+
 
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType == PlayerTypeEnum.Monster)
             {
+                // Hold the current state
+                var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
+
                 // Output the Message of what happened.
                 GameMessage();
 
                 // Show the outcome on the Board
                 DrawGameAttackerDefenderBoard();
-            }
 
-            RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
+                if (RoundCondition == RoundEnum.NewRound)
+                {
+                    BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
 
-            if (RoundCondition == RoundEnum.NewRound)
-            {
-                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
+                    // Pause
+                    Task.Delay(WaitTime);
 
-                // Pause
-                Task.Delay(WaitTime);
+                    Debug.WriteLine("New Round");
 
-                Debug.WriteLine("New Round");
+                    Turncounter = 0;
+                    Turn.Text = "Turn " + Turncounter.ToString();
 
-                Turncounter = 0;
-                Turn.Text = "Turn " + Turncounter.ToString();
+                    // Show the Round Over, after that is cleared, it will show the New Round Dialog
+                    ShowModalRoundOverPage();
+                    return;
+                }
 
-                // Show the Round Over, after that is cleared, it will show the New Round Dialog
-                ShowModalRoundOverPage();
-                return;
-            }
+                // Check for Game Over
+                if (RoundCondition == RoundEnum.GameOver)
+                {
+                    BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
 
-            // Check for Game Over
-            if (RoundCondition == RoundEnum.GameOver)
-            {
-                BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.GameOver;
+                    // Wrap up
+                    BattleEngineViewModel.Instance.Engine.EndBattle();
 
-                // Wrap up
-                BattleEngineViewModel.Instance.Engine.EndBattle();
+                    // Pause
+                    Task.Delay(WaitTime);
 
-                // Pause
-                Task.Delay(WaitTime);
+                    Debug.WriteLine("Game Over");
 
-                Debug.WriteLine("Game Over");
-
-                GameOver();
-                return;
+                    GameOver();
+                    return;
+                }
             }
         }
 
