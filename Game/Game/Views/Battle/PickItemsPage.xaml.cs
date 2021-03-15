@@ -28,6 +28,8 @@ namespace Game.Views
 
             DrawCharacterList();
 
+            DrawUniqueDropList();
+
             DrawDropList();
         }
 
@@ -57,6 +59,8 @@ namespace Game.Views
         {
             // Clear and Populate the Dropped Items
             var FlexList = ItemListFoundFrame.Children.ToList();
+            List<ItemModel> characterEquips = Game.GameRules.DefaultData.LoadData(new ItemModel());
+
             foreach (var data in FlexList)
             {
                 ItemListFoundFrame.Children.Remove(data);
@@ -64,7 +68,35 @@ namespace Game.Views
 
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Distinct())
             {
-                ItemListFoundFrame.Children.Add(GetItemToDisplay(data));
+                var item = ItemIndexViewModel.Instance.GetItem(data.Id);
+                if (item != null)
+                {
+                    ItemListFoundFrame.Children.Add(GetItemToDisplay(data));
+                }
+            }
+        }
+
+        /// <summary>
+        /// Add unique item drops to the display
+        /// </summary>
+        public void DrawUniqueDropList()
+        {
+            // Clear and Populate the Dropped Items
+            var FlexList = UniqueItemListFoundFrame.Children.ToList();
+            List<ItemModel> characterEquips = Game.GameRules.DefaultData.LoadData(new ItemModel());
+
+            foreach (var data in FlexList)
+            {
+                UniqueItemListFoundFrame.Children.Remove(data);
+            }
+
+            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Distinct())
+            {
+                var item = ItemIndexViewModel.Instance.GetItem(data.Id);
+                if (item == null)
+                {
+                    UniqueItemListFoundFrame.Children.Add(GetItemToDisplay(data));
+                }
             }
         }
 
@@ -88,7 +120,7 @@ namespace Game.Views
             // Defualt Image is the Plus
             var ClickableButton = true;
 
-            var data = ItemIndexViewModel.Instance.GetItem(item.Id);
+            /*var data = ItemIndexViewModel.Instance.GetItem(item.Id);
             if (data == null)
             {
                 // Show the Default Icon for the Location
@@ -97,12 +129,12 @@ namespace Game.Views
                 // Turn off click action
                 ClickableButton = false;
             }
-
+            */
             // Hookup the Image Button to show the Item picture
             var ItemButton = new ImageButton
             {
                 Style = (Style)Application.Current.Resources["ImageMediumStyle"],
-                Source = data.ImageURI
+                Source = item.ImageURI
             };
 
             if (ClickableButton)
@@ -117,8 +149,8 @@ namespace Game.Views
                         ItemListSelectedFrame.Children.Remove(FlexList.FirstOrDefault());
                     }
 
-                    selectedItem = data;
-                    ItemListSelectedFrame.Children.Add(GetItemToDisplay(data));
+                    selectedItem = item;
+                    ItemListSelectedFrame.Children.Add(GetItemToDisplay(item));
                 };
             }
 
@@ -235,6 +267,18 @@ namespace Game.Views
         /// <param name="e"></param>
         public void CloseButton_Clicked(object sender, EventArgs e)
         {
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Distinct().Count() == 0)
+            {
+                BattleEngineViewModel.Instance.Engine.Round.SwapCharacterItem(selectedCharacter, selectedItem.Location, selectedItem); ;
+                // Reset to a new Round
+
+                // Reset to a new Round
+                BattleEngineViewModel.Instance.Engine.Round.NewRound();
+
+                // Show the New Round Screen
+                ShowModalNewRoundPage();
+            }
+            
             if (selectedCharacter != null && selectedItem != null)
             {
                 BattleEngineViewModel.Instance.Engine.Round.SwapCharacterItem(selectedCharacter, selectedItem.Location, selectedItem); ;

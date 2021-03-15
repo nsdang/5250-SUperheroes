@@ -23,6 +23,11 @@
                         <Label Text="Rewards" Style="{StaticResource CenterMessageLargeStyle}"/>
 
                         <Label Text="Unique Items: " Style="{StaticResource MessageStyle}"/>
+                        
+                        <FlexLayout x:Name="UniqueItemListFoundFrame"
+                                    JustifyContent="Start"
+                                    AlignContent="Start"
+                                    Wrap="Wrap"/>
 
                         <Label Text="Common Items: " Style="{StaticResource MessageStyle}"/>
                         <StackLayout Style="{StaticResource HorizontalStack}">
