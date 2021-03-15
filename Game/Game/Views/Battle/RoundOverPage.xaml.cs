@@ -1,6 +1,7 @@
 ﻿using Game.Models;
 using Game.ViewModels;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -83,6 +84,8 @@ namespace Game.Views
         {
             // Clear and Populate the Dropped Items
             var FlexList = ItemListFoundFrame.Children.ToList();
+            List<ItemModel> characterEquips = new List<ItemModel>();
+
             foreach (var data in FlexList)
             {
                 ItemListFoundFrame.Children.Remove(data);
@@ -90,7 +93,20 @@ namespace Game.Views
 
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Distinct())
             {
-                ItemListFoundFrame.Children.Add(GetItemToDisplay(data));
+                var item = ItemIndexViewModel.Instance.GetItem(data.Id);
+                if (item == null && characterEquips.Find(c => c.Name.Equals(data.Name)) == null)
+                {
+                    characterEquips.Add(data);
+                }
+                else if(item != null)
+                {
+                    characterEquips.Add(data);
+                }
+            }
+
+            foreach (var item in characterEquips)
+            {
+                ItemListFoundFrame.Children.Add(GetItemToDisplay(item));
             }
         }
 
