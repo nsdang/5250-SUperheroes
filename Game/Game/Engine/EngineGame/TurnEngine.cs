@@ -110,7 +110,18 @@ namespace Game.Engine.EngineGame
         /// <returns></returns>
         public override ActionEnum DetermineActionChoice(PlayerInfoModel Attacker)
         {
-            return base.DetermineActionChoice(Attacker);
+            // If it is the characters turn, and NOT auto battle, use what was sent into the engine
+            if (Attacker.PlayerType == PlayerTypeEnum.Character)
+            {
+                if (EngineSettings.BattleScore.AutoBattle == false)
+                {
+                    return EngineSettings.CurrentAction;
+                }
+            }
+
+            EngineSettings.CurrentAction = ActionEnum.Attack;
+
+            return EngineSettings.CurrentAction;
         }
 
         /// <summary>
