@@ -356,7 +356,7 @@
                 <Setter Property="HeightRequest" Value="70"/>
                 <Setter Property="WidthRequest" Value="200"/>
                 <Setter Property ="BorderColor" Value="Black"/>
-                <Setter Property ="BackgroundColor" Value="Orange"/>
+                <Setter Property ="BackgroundColor" Value="LightGray"/>
                 <Setter Property ="Margin" Value="10"/>
                 <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
