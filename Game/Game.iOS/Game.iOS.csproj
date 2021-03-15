@@ -256,4 +256,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\dang.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\caro.PNG" />
+  </ItemGroup>
 </Project>
