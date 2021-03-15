@@ -650,7 +650,25 @@ namespace Game.Views
                 DefenderImage.BackgroundColor = Color.Red;
             }
 
+           
             BattlePlayerBoxVersus.Text = "vs";
+
+            var characterDefender = BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Find(n => n.Name.Equals(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Name));
+
+            if (characterDefender != null && characterDefender.PlayerType == PlayerTypeEnum.Character)
+            {
+                characterDefender.MaxHealth = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.MaxHealth;
+                characterDefender.Level = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentDefender.Level;
+            }
+
+            var characterAttacker = BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Find(n => n.Name.Equals(BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Name));
+
+            if (characterAttacker != null && characterAttacker.PlayerType == PlayerTypeEnum.Character)
+            {
+                characterAttacker.MaxHealth = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.MaxHealth;
+                characterAttacker.Level = BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Level;
+
+            }
         }
 
         /// <summary>
@@ -823,6 +841,12 @@ namespace Game.Views
                         if (RoundCondition == RoundEnum.NewRound)
                         {
                             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
+
+                            // All characters current health should be resetted to max
+                            foreach (var character in BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList)
+                            {
+                                character.CurrentHealth = character.MaxHealth;
+                            }
 
                             // Pause
                             Task.Delay(WaitTime);
