@@ -116,7 +116,7 @@ namespace Game.GameRules
                     Job = (CharacterJobEnum)1,
                     Description = "C1",
                     Level = 1,
-                    MaxHealth = 5,
+                    MaxHealth = 15,
                     ImageURI = "flying.png",
                     Head = ItemIndexViewModel.Instance.GetItem(HeadString).Name,
                     PrimaryHand = ItemIndexViewModel.Instance.GetItem(PrimaryHandString).Name,
@@ -132,7 +132,7 @@ namespace Game.GameRules
                     Job = (CharacterJobEnum)2,
                     Description = "C2",
                     Level = 1,
-                    MaxHealth = 5,
+                    MaxHealth = 7,
                     ImageURI = "psychic.png",
                     Head = ItemIndexViewModel.Instance.GetItem(HeadString).Name,
                     PrimaryHand = ItemIndexViewModel.Instance.GetItem(PrimaryHandString).Name,
@@ -148,7 +148,7 @@ namespace Game.GameRules
                     Job = (CharacterJobEnum)3,
                     Description = "C3",
                     Level = 1,
-                    MaxHealth = 5,
+                    MaxHealth = 10,
                     ImageURI = "physical.png",
                     Head = ItemIndexViewModel.Instance.GetItem(HeadString).Name,
                     PrimaryHand = ItemIndexViewModel.Instance.GetItem(PrimaryHandString).Name,
@@ -164,7 +164,7 @@ namespace Game.GameRules
                     Job = (CharacterJobEnum)4,
                     Description = "C4",
                     Level = 1,
-                    MaxHealth = 5,
+                    MaxHealth = 7,
                     ImageURI = "light.png",
                     Head = ItemIndexViewModel.Instance.GetItem(HeadString).Name,
                     PrimaryHand = ItemIndexViewModel.Instance.GetItem(PrimaryHandString).Name,
@@ -180,7 +180,7 @@ namespace Game.GameRules
                     Job = (CharacterJobEnum)5,
                     Description = "C5",
                     Level = 1,
-                    MaxHealth = 5,
+                    MaxHealth = 7,
                     ImageURI = "dark.png",
                     Head = ItemIndexViewModel.Instance.GetItem(HeadString).Name,
                     PrimaryHand = ItemIndexViewModel.Instance.GetItem(PrimaryHandString).Name,
@@ -209,8 +209,8 @@ namespace Game.GameRules
                     Job = (CharacterJobEnum)6,
                     Description = "Carpenter that fights with a wrench",
                     ImageURI = "carpenter.png",
-                    MaxHealth = 5,
-                    CurrentHealth = 5
+                    MaxHealth = 2,
+                    CurrentHealth = 2
                 },
 
                 new MonsterModel {
@@ -218,8 +218,8 @@ namespace Game.GameRules
                     Job = (CharacterJobEnum)7,
                     Description = "Accountant that can throw cash with sharp accuracy",
                     ImageURI = "accountant.png",
-                    MaxHealth = 10,
-                    CurrentHealth = 10
+                    MaxHealth = 5,
+                    CurrentHealth = 5
                 },
 
                 new MonsterModel {
@@ -227,8 +227,8 @@ namespace Game.GameRules
                     Job = (CharacterJobEnum)8,
                     Description = "Mc Donald's worker that throws fries",
                     ImageURI = "mcdonaldsemployee.png",
-                    MaxHealth = 10,
-                    CurrentHealth = 10
+                    MaxHealth = 3,
+                    CurrentHealth = 3
                 },
 
                 new MonsterModel {
@@ -237,8 +237,8 @@ namespace Game.GameRules
                     Description = "A vet who was obsessed with the cats in the clinic and loved eating fish." +
                     " One day, she got bitten by a cat while eating some salmon. This turned her into a fish-cat. ",
                     ImageURI = "vet.png",
-                    MaxHealth = 15,
-                    CurrentHealth = 15
+                    MaxHealth = 7,
+                    CurrentHealth = 7
                 },
 
                 new MonsterModel {
@@ -246,8 +246,8 @@ namespace Game.GameRules
                     Job = (CharacterJobEnum)10,
                     Description = "Plays video games soo much that his head transformed into a game controller",
                     ImageURI = "boss.png",
-                    MaxHealth = 25,
-                    CurrentHealth = 25
+                    MaxHealth = 15,
+                    CurrentHealth = 15
                 },
 
             };
