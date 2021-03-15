@@ -1,15 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Game.Views.HomePage">
+             x:Class="Game.Views.HomePage"
+             BackgroundImageSource="titlescreen.png">
 
     <ContentPage.Content>
-        <ScrollView
-            VerticalOptions="CenterAndExpand"
-            HorizontalOptions="CenterAndExpand">
-            
-            <StackLayout 
-                HorizontalOptions="Center">
+        <ScrollView>
+
+            <StackLayout>
 
                 <Label Text="SUperheroes"
                        FontSize="Large"
@@ -18,30 +16,8 @@
                        TextDecorations="Underline"
                        >
                 </Label>
-
-                <Label
-                    Margin="0, 10, 0, 0"
-                     Text="But are they really?"
-                     HorizontalOptions="Center">
-                </Label>
-
-                <Frame
-                        BorderColor="OrangeRed"
-                        BackgroundColor="Orange"
-                        CornerRadius="100"
-                        Margin="20"
-                        Padding="30">
-                    <Image
-                         Source="Flying.png"
-                         Style="{StaticResource ImageLargeStyle}"/>
-                </Frame>
-
-                <Frame
-                    BackgroundColor="Black"
-                    BorderColor="Orange"
-                    CornerRadius="1"
-                    WidthRequest="350">
-                    <Grid>
+                
+                <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition></RowDefinition>
                             <RowDefinition></RowDefinition>
@@ -68,10 +44,10 @@
                                  HorizontalOptions="Center">
                             </Label>
                     </Grid>
-                </Frame>
+
 
                 <Button 
-                    Margin="0, 15, 0, 0"
+                    Margin="0, 350, 0, 0"
                     Text="Enter at your own risk"
                     Clicked="GameButton_Clicked"/>
 
