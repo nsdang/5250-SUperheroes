@@ -339,6 +339,31 @@ namespace Game.Engine.EngineGame
         }
 
         /// <summary>
+        /// Character Job: Flying
+        /// Moderate attack: Whirlwind
+        /// Plus 2 damage in addition to normal damage to two random enemies
+        /// </summary>
+        /// <returns></returns>
+        public bool FlyingModerateAttack(PlayerInfoModel Attacker)
+        {
+            EngineSettings.BattleMessagesModel.DamageAmount = Attacker.GetDamageRollValue() + 2;
+            return true;
+        }
+
+        /// <summary>
+        /// Character Job: Flying
+        /// Special Attack: Hurricane
+        ///     Does 4 fixed damages all enemies and additional value based on level
+        /// </summary>
+        /// <param name="Attacker"></param>
+        /// <returns></returns>
+        public bool FlyingSpecialAttack(PlayerInfoModel Attacker)
+        {
+            EngineSettings.BattleMessagesModel.DamageAmount = 4 + Attacker.Level;
+            return true;
+        }
+
+        /// <summary>
         /// See if the Battle Settings will Override the Hit
         /// Return the Override for the HitStatus
         /// </summary>
