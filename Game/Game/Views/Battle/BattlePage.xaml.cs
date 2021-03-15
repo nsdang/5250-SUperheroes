@@ -1076,9 +1076,26 @@ namespace Game.Views
                     GameUIDisplay.IsVisible = true;
                     BattlePlayerInfomationBox.IsVisible = true;
                     MessageDisplayBox.IsVisible = true;
-                    //AttackButton.IsVisible = true;
                     TurnCounter.IsVisible = true;
                     AttackButtons.IsVisible = true;
+
+                    ModerateButton.IsEnabled = false;
+                    SpecialButton.IsEnabled = false;
+
+                    // Logic for Moderate and Special Attacks
+                    if (Turncounter > 0)
+                    {
+                        if (Turncounter % 2 == 0)
+                        {
+                            ModerateButton.IsEnabled = true;
+                        }
+
+                        if (Turncounter % 5 == 0)
+                        {
+                            SpecialButton.IsEnabled = true;
+                        }
+                    }
+
                     break;
 
                 case BattleStateEnum.ChooseDefender:
