@@ -253,4 +253,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\maintitle.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\dang.PNG" />
+  </ItemGroup>
 </Project>

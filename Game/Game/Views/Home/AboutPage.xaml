@@ -25,9 +25,24 @@
                 <Frame BackgroundColor="Orange" CornerRadius ="1" BorderColor="Black" HeightRequest="30" WidthRequest="100">
                     <Label TextColor="Black" Text="PerSUnas" Style="{StaticResource HeaderStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
                 </Frame>
-                <Label Text="Dang Song Nguyen" TextColor ="White" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-                <Label Text="Carolina Angelica" TextColor ="White" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-                <Label Text="Ajer Lodhi" TextColor ="White" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="10"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Image Grid.Row="0" Source="dang.png"></Image>
+                    <Label Grid.Row ="1"
+                           Text="Dang Song Nguyen" TextColor ="White" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+                    <Label Grid.Row ="2" Text="Carolina Angelica" TextColor ="White" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+                    <Label Grid.Row ="3" Text="Ajer Lodhi" TextColor ="White" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+                </Grid>
+
                 <Label x:Name="CurrentDateTime" TextColor ="White"  Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
             </StackLayout>
 
