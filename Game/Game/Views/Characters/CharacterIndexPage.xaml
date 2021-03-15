@@ -62,7 +62,8 @@
 
                                         <Label Grid.Row="2" Grid.ColumnSpan="2"
                                                Text="{Binding Name}"
-                                               HorizontalOptions="Center">
+                                               HorizontalOptions="Center"
+                                               FontFamily="ARCADECLASSIC">
                                         </Label>
                                         
                                     </Grid>
