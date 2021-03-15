@@ -72,9 +72,9 @@ namespace Game.Engine.EngineGame
                     int index = Game.Helpers.DiceHelper.RollDice(1, 3);
 
                     PlayerInfoModel chosen = new PlayerInfoModel(temp[index - 1]);
-                    chosen.MaxHealth = Game.Helpers.DiceHelper.RollDice(1, 20);
+                    //chosen.MaxHealth = Game.Helpers.DiceHelper.RollDice(1, 20);
 
-                    chosen.CurrentHealth = chosen.MaxHealth;
+                    //chosen.CurrentHealth = chosen.MaxHealth;
                     EngineSettings.MonsterList.Add(chosen);
                     count++;
                 }
@@ -89,8 +89,8 @@ namespace Game.Engine.EngineGame
                     int index = Game.Helpers.DiceHelper.RollDice(1, 2);
 
                     PlayerInfoModel chosen = new PlayerInfoModel(temp[index - 1]);
-                    chosen.MaxHealth = Game.Helpers.DiceHelper.RollDice(1, 20);
-                    chosen.CurrentHealth = chosen.MaxHealth;
+                    //chosen.MaxHealth = Game.Helpers.DiceHelper.RollDice(1, 20);
+                   // chosen.CurrentHealth = chosen.MaxHealth;
 
                     EngineSettings.MonsterList.Add(chosen);
                     count++;
@@ -111,8 +111,8 @@ namespace Game.Engine.EngineGame
                     int index = Game.Helpers.DiceHelper.RollDice(1, 3);
 
                     PlayerInfoModel chosen = new PlayerInfoModel(temp[index - 1]);
-                    chosen.MaxHealth = Game.Helpers.DiceHelper.RollDice(1, 20);
-                    chosen.CurrentHealth = chosen.MaxHealth;
+                    //chosen.MaxHealth = Game.Helpers.DiceHelper.RollDice(1, 20);
+                    //chosen.CurrentHealth = chosen.MaxHealth;
 
                     EngineSettings.MonsterList.Add(chosen);
                     count++;
