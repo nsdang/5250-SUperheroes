@@ -423,7 +423,7 @@ namespace Game.Engine.EngineGame
                             new ItemModel {
                                 Name = "Arthur's Helmet",
                                 Description = "Helmet worn by king Arthur\nhimself and can be dropped by\nAnais after her defeat.",
-                                ImageURI = "bronzehelmet.png",
+                                ImageURI = "arthurshelmet.png",
                                 Value = 15,
                                 Location = ItemLocationEnum.Head,
                                 Attribute = AttributeEnum.Defense
@@ -431,7 +431,7 @@ namespace Game.Engine.EngineGame
                             new ItemModel {
                                 Name = "Arthur's Sword",
                                 Description = "Sword swung by king Arthur\nhimself and can be dropped by\nAnais after her defeat.",
-                                ImageURI = "brassknuckles.png",
+                                ImageURI = "arthurssword.png",
                                 Range = 10,
                                 Damage = 5,
                                 Value = 20,
@@ -448,7 +448,7 @@ namespace Game.Engine.EngineGame
                             new ItemModel {
                                 Name = "Cash",
                                 Description = "Yinying might drop cash that\ncan be equipped on a character,\ngiving them more reason to\nlive which gives them higher\ndefense.",
-                                ImageURI = "cookie.png",
+                                ImageURI = "cash.png",
                                 Value = 10,
                                 Location = ItemLocationEnum.PrimaryHand,
                                 Attribute = AttributeEnum.Defense
@@ -463,7 +463,7 @@ namespace Game.Engine.EngineGame
                             new ItemModel {
                                 Name = "Steve's Controller",
                                 Description = "After defeating Steve, you\nacquire his controller which\ncan be equipped on a character\nso they can have their special\nattacks ready at the beginning\nof every Round.",
-                                ImageURI = "bagofcookies.png",
+                                ImageURI = "stevescontroller.png",
                                 Value = 50,
                                 Location = ItemLocationEnum.PrimaryHand,
                                 Attribute = AttributeEnum.MaxHealth
