@@ -133,7 +133,7 @@ namespace Game.Views
 
             // Defualt Image is the Plus
             var ClickableButton = true;
-
+            /*
             var data = ItemIndexViewModel.Instance.GetItem(item.Id);
             if (data == null)
             {
@@ -143,18 +143,18 @@ namespace Game.Views
                 // Turn off click action
                 ClickableButton = false;
             }
-
+            */
             // Hookup the Image Button to show the Item picture
             var ItemButton = new ImageButton
             {
                 Style = (Style)Application.Current.Resources["ImageMediumStyle"],
-                Source = data.ImageURI
+                Source = item.ImageURI
             };
 
             if (ClickableButton)
             {
                 // Add a event to the user can click the item and see more
-                ItemButton.Clicked += (sender, args) => ShowPopup(data);
+                ItemButton.Clicked += (sender, args) => ShowPopup(item);
             }
 
             // Put the Image Button and Text inside a layout
