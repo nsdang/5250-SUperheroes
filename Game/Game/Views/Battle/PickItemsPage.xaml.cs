@@ -83,7 +83,7 @@ namespace Game.Views
         {
             // Clear and Populate the Dropped Items
             var FlexList = UniqueItemListFoundFrame.Children.ToList();
-            List<ItemModel> characterEquips = Game.GameRules.DefaultData.LoadData(new ItemModel());
+            List<ItemModel> characterEquips = new List<ItemModel>();
 
             foreach (var data in FlexList)
             {
@@ -93,10 +93,15 @@ namespace Game.Views
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Distinct())
             {
                 var item = ItemIndexViewModel.Instance.GetItem(data.Id);
-                if (item == null)
+                if (item == null && characterEquips.Find(c => c.Name.Equals(data.Name)) == null)
                 {
-                    UniqueItemListFoundFrame.Children.Add(GetItemToDisplay(data));
+                    characterEquips.Add(data);
                 }
+            }
+
+            foreach(var item in characterEquips)
+            {
+                UniqueItemListFoundFrame.Children.Add(GetItemToDisplay(item));
             }
         }
 
