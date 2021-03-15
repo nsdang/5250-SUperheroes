@@ -816,9 +816,28 @@ namespace Game.Views
             switch (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType)
             {
                 case PlayerTypeEnum.Character:
-                    // User would select who to attack
+                    if(BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Count < 1)
+                    {
+                        var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
 
-                    // for now just auto selecting
+                        if (RoundCondition == RoundEnum.NewRound)
+                        {
+                            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
+
+                            // Pause
+                            Task.Delay(WaitTime);
+
+                            Debug.WriteLine("New Round");
+
+                            Turncounter = 0;
+                            Turn.Text = "Turn " + Turncounter.ToString();
+
+                            // Show the Round Over, after that is cleared, it will show the New Round Dialog
+                            ShowModalRoundOverPage();
+                            break;
+                        }
+                    }
+                    // User would select who to attack
                     BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.ChooseDefender;
                     HideUIElements();
                     ShowBattleModeUIElements();
