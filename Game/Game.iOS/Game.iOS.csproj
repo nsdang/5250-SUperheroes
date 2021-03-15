@@ -250,4 +250,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\afterbattlebackground.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\maintitle.png" />
+  </ItemGroup>
 </Project>
