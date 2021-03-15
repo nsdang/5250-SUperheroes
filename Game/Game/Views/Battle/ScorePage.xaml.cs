@@ -1,6 +1,7 @@
 ﻿using Game.Models;
 using Game.ViewModels;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -46,10 +47,24 @@ namespace Game.Views
                 MonsterListFrame.Children.Add(CreateMonsterDisplayBox(data));
             }
 
-            // Draw the Items
-            foreach (var data in EngineViewModel.Engine.EngineSettings.BattleScore.ItemModelDropList.Distinct())
+            // Draw the items
+            List<ItemModel> characterEquips = new List<ItemModel>();
+            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Distinct())
             {
-                ItemListFrame.Children.Add(CreateItemDisplayBox(data));
+                var item = ItemIndexViewModel.Instance.GetItem(data.Id);
+                if (item == null && characterEquips.Find(c => c.Name.Equals(data.Name)) == null)
+                {
+                    characterEquips.Add(data);
+                }
+                else if (item != null)
+                {
+                    characterEquips.Add(data);
+                }
+            }
+
+            foreach (var item in characterEquips)
+            {
+                ItemListFrame.Children.Add(CreateItemDisplayBox(item));
             }
 
             // Update Values in the UI
