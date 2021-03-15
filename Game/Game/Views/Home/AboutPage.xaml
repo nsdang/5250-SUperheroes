@@ -12,7 +12,7 @@
       HorizontalOptions="CenterAndExpand"
       Orientation="Vertical">
 
-        <StackLayout Style="{StaticResource VerticalStack}" Padding="0,100,0,0">
+        <StackLayout Style="{StaticResource VerticalStack}" Padding="0,20,0,0">
            
             <Label Text="SUper Hero"
                    FontSize="60"
@@ -29,18 +29,20 @@
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition></RowDefinition>
-                        <RowDefinition Height="10"></RowDefinition>
+                        <RowDefinition Height="15"></RowDefinition>
                         <RowDefinition></RowDefinition>
+                        <RowDefinition Height="15"></RowDefinition>
                         <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="15"></RowDefinition>
                     </Grid.RowDefinitions>
 
                     <Image Grid.Row="0" Source="dang.png"></Image>
                     <Label Grid.Row ="1"
                            Text="Dang Song Nguyen" TextColor ="White" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-                    <Label Grid.Row ="2" Text="Carolina Angelica" TextColor ="White" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
-                    <Label Grid.Row ="3" Text="Ajer Lodhi" TextColor ="White" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+                    <Image Grid.Row="2" Source="caro.png"></Image>
+                    <Label Grid.Row ="3"  Text="Carolina Angelica" TextColor ="White" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
+                    <Image Grid.Row="4"  Source="ajer.png"></Image>
+                    <Label Grid.Row ="5"  Text="Ajer Lodhi" TextColor ="White" Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
                 </Grid>
 
                 <Label x:Name="CurrentDateTime" TextColor ="White"  Style="{StaticResource MessageStyle}" HorizontalOptions="Center"  HorizontalTextAlignment="Center" />
