@@ -71,7 +71,7 @@
                 <Label 
                     Text="{Binding Data.Name}" 
                     Grid.Column="1"
-                    FontFamily="Comic Sans MS"
+                    FontFamily="ARCADECLASSIC"
                     FontSize="12"
                     TextColor="WhiteSmoke"
                      HorizontalOptions="Start"
@@ -80,7 +80,7 @@
                 <BoxView Grid.Column="2" Grid.Row ="0"/>
                 <Label 
                     Text="{Binding Data.Attribute}"
-                    FontFamily="Droid Sans Mono"
+                    FontFamily="ARCADECLASSIC"
                     FontAttributes="Italic"
                     FontSize="12"
                     TextColor="WhiteSmoke"
