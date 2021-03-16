@@ -258,7 +258,7 @@ namespace Game.Engine.EngineGame
                 return false;
             }
 
-            if (Attacker.PlayerType != PlayerTypeEnum.Monster)
+            if (Attacker.PlayerType == PlayerTypeEnum.Monster)
             {
                 return false;
             }
@@ -271,7 +271,23 @@ namespace Game.Engine.EngineGame
 
             //Calculate Damage
             // TODO: Make a call to seperate function based on character job
-            EngineSettings.BattleMessagesModel.DamageAmount = Attacker.GetDamageRollValue();
+            switch (Attacker.Job)
+            {
+                case CharacterJobEnum.Flying:
+                    FlyingModerateAttack(Attacker);
+                    break;
+                case CharacterJobEnum.Psychic:
+
+                case CharacterJobEnum.Physical:
+
+                case CharacterJobEnum.Dark:
+
+                case CharacterJobEnum.Light:
+
+                default:
+                    FlyingModerateAttack(Attacker);
+                    break;
+            }
 
             // Apply the Damage
             ApplyDamage(Target);
@@ -315,11 +331,26 @@ namespace Game.Engine.EngineGame
             EngineSettings.BattleMessagesModel.ClearMessages();
 
             // Do the Attack
-            EngineSettings.BattleMessagesModel.AttackStatus = " use Moderate Attack ";
-
+            EngineSettings.BattleMessagesModel.AttackStatus = " use Special Attack ";
             //Calculate Damage
             // TODO: Make a call to seperate function based on character job
-            EngineSettings.BattleMessagesModel.DamageAmount = Attacker.GetDamageRollValue();
+            switch (Attacker.Job)
+            {
+                case CharacterJobEnum.Flying:
+                    FlyingSpecialAttack(Attacker);
+                    break;
+                case CharacterJobEnum.Psychic:
+
+                case CharacterJobEnum.Physical:
+
+                case CharacterJobEnum.Dark:
+
+                case CharacterJobEnum.Light:
+
+                default:
+                    FlyingSpecialAttack(Attacker);
+                    break;
+            }
 
             // Apply the Damage
             ApplyDamage(Target);
