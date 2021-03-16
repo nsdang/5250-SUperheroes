@@ -149,6 +149,57 @@ namespace Game.Engine.EngineGame
             return base.RoundNextTurn();
         }
 
+        public RoundEnum RoundNextTurn(int val)
+        {
+            // No characters, game is over...
+            if (EngineSettings.CharacterList.Count < 1)
+            {
+                // Game Over
+                EngineSettings.RoundStateEnum = RoundEnum.GameOver;
+                return EngineSettings.RoundStateEnum;
+            }
+
+            // Check if round is over
+            if (EngineSettings.MonsterList.Count < 1)
+            {
+                // If over, New Round
+                EngineSettings.RoundStateEnum = RoundEnum.NewRound;
+                return RoundEnum.NewRound;
+            }
+
+            if (EngineSettings.BattleScore.AutoBattle)
+            {
+                // Decide Who gets next turn
+                // Remember who just went...
+                EngineSettings.CurrentAttacker = GetNextPlayerTurn();
+
+                // Only Attack for now
+                EngineSettings.CurrentAction = ActionEnum.Attack;
+            }
+            else
+            {
+                switch (val)
+                {
+                    case 0:
+                        EngineSettings.CurrentAction = ActionEnum.Attack;
+                        break;
+                    case 1:
+                        EngineSettings.CurrentAction = ActionEnum.ModerateAttack;
+                        break;
+                    case 2:
+                        EngineSettings.CurrentAction = ActionEnum.SpecialAttack;
+                        break;
+                }
+            }
+
+            // Do the turn....
+            Turn.TakeTurn(EngineSettings.CurrentAttacker);
+
+            EngineSettings.RoundStateEnum = RoundEnum.NextTurn;
+
+            return EngineSettings.RoundStateEnum;
+        }
+
         /// <summary>
         /// Get the Next Player to have a turn
         /// </summary>

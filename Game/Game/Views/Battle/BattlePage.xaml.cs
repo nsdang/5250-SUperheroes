@@ -34,6 +34,7 @@ namespace Game.Views
         public BattlePage(bool UnitTest) { UnitTestSetting = UnitTest; }
 
         public int Turncounter = 0;
+        public int AttackTypeValue;
 
         /// <summary>
         /// Constructor
@@ -161,7 +162,7 @@ namespace Game.Views
             }
             BattleEngineViewModel.Instance.Engine.Round.SetCurrentDefender(selected);
 
-            var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
+            var RoundCondition = ((Game.Engine.EngineGame.RoundEngine) BattleEngineViewModel.Instance.Engine.Round).RoundNextTurn(AttackTypeValue);
 
             // Output the Message of what happened.
             GameMessage();
@@ -697,6 +698,7 @@ namespace Game.Views
         {
             Turncounter++;
             Turn.Text = "Turn " + Turncounter.ToString();
+            AttackTypeValue = 0;
             NextAttackExample();
         }
 
@@ -709,6 +711,7 @@ namespace Game.Views
         {
             Turncounter++;
             Turn.Text = "Turn " + Turncounter.ToString();
+            AttackTypeValue = 1;
             NextAttackExample();
         }
 
@@ -721,6 +724,7 @@ namespace Game.Views
         {
             Turncounter++;
             Turn.Text = "Turn " + Turncounter.ToString();
+            AttackTypeValue = 2;
             NextAttackExample();
         }
 
