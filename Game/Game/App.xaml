@@ -65,6 +65,7 @@
 
             <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
                 <Setter Property="BackgroundColor" Value="{DynamicResource PageBackgroundColor}" />
+                <Setter Property="BackgroundImageSource" Value="generalbackground.png"/>
                 <Setter Property="Padding" Value="10,10,10,10" />
             </Style>
 
@@ -190,7 +191,7 @@
                 BasedOn="{StaticResource CenterMessageLargeStyle}">
                 <Setter Property ="Padding" Value="0, 60, 0, 20"/>
                 <Setter Property ="FontAttributes" Value="Bold"/>
-                <Setter Property ="TextColor" Value="GhostWhite"/>
+                <Setter Property ="TextColor" Value="DarkBlue"/>
                 <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
             </Style>
             
@@ -495,16 +496,17 @@
             <Style TargetType="Frame"
                 x:Key="BasicFrameColor">
                 <Setter Property="Padding" Value="10, 10"/>
-                <Setter Property="BackgroundColor" Value="Orange"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
                 <Setter Property="BorderColor" Value="Black"/>
             </Style>
 
             <Style TargetType="Frame"
                 x:Key="IndexPageMiniFrames">
                 <Setter Property="Margin" Value="0, 0, 0, 10"/>
-                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="BackgroundColor" Value="LightBlue"/>
                 <Setter Property="HasShadow" Value="True"/>
                 <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="CornerRadius" Value="1"/>
             </Style>
 
 
