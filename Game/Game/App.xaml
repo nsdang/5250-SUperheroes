@@ -122,6 +122,7 @@
                 BasedOn="{StaticResource LabelBaseStyle}">
                 <Setter Property="FontSize" Value="Micro"/>
                 <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
+                <Setter Property="TextColor" Value="DarkBlue"/>
             </Style>
 
             <Style TargetType="Label"
