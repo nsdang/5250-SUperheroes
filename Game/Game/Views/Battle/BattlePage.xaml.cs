@@ -707,6 +707,8 @@ namespace Game.Views
         /// <param name="e"></param>
         public void ModerateAttackButton_Clicked(object sender, EventArgs e)
         {
+            Turncounter++;
+            Turn.Text = "Turn " + Turncounter.ToString();
             NextAttackExample();
         }
 
@@ -717,6 +719,8 @@ namespace Game.Views
         /// <param name="e"></param>
         public void SpecialAttackButton_Clicked(object sender, EventArgs e)
         {
+            Turncounter++;
+            Turn.Text = "Turn " + Turncounter.ToString();
             NextAttackExample();
         }
 
@@ -796,6 +800,9 @@ namespace Game.Views
                     GameOver();
                     return;
                 }
+
+                HideUIElements();
+                ShowBattleModeUIElements();
             }
         }
 
@@ -1107,14 +1114,15 @@ namespace Game.Views
                     SpecialButton.IsEnabled = false;
 
                     // Logic for Moderate and Special Attacks
-                    if (Turncounter > 0)
+                    if (Turncounter+1 > 0 
+                        && BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn().PlayerType == PlayerTypeEnum.Character)
                     {
-                        if (Turncounter % 2 == 0)
+                        if ((Turncounter+1) % 2 == 0)
                         {
                             ModerateButton.IsEnabled = true;
                         }
 
-                        if (Turncounter % 5 == 0)
+                        if ((Turncounter+1) % 5 == 0)
                         {
                             SpecialButton.IsEnabled = true;
                         }
