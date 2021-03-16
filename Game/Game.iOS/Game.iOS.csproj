@@ -262,4 +262,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\ajer.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\generalbackgroundblurred.png" />
+  </ItemGroup>
 </Project>
