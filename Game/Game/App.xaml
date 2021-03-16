@@ -115,6 +115,7 @@
                 <Setter Property="BackgroundColor" Value="Transparent" />
                 <Setter Property="FontSize" Value="Small" />
                 <Setter Property="FontFamily" Value="ARCADECLASSIC"/>
+                <Setter Property="TextColor" Value="DarkBlue"/>
             </Style>
 
             <Style TargetType="Label"
