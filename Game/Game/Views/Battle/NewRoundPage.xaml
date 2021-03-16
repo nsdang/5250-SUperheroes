@@ -10,6 +10,7 @@
                 <Label Text="Starting Round" Style="{StaticResource CenterMessageLargeStyle}"/>
 
                 <Label Text="Teams"
+                   FontFamily="ARCADECLASSIC"
                    TextDecorations="Underline"/>
 
                 <FlexLayout x:Name="PartyListFrame"
@@ -18,6 +19,7 @@
                         Wrap="Wrap"/>
 
                 <Label Text="Enemies"
+                   FontFamily="ARCADECLASSIC"    
                    TextDecorations="Underline"/>
 
                 <FlexLayout x:Name="MonsterListFrame"
