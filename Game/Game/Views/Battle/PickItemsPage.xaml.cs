@@ -274,7 +274,7 @@ namespace Game.Views
         {
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Distinct().Count() == 0)
             {
-                BattleEngineViewModel.Instance.Engine.Round.SwapCharacterItem(selectedCharacter, selectedItem.Location, selectedItem); ;
+          
                 // Reset to a new Round
 
                 // Reset to a new Round
