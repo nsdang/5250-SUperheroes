@@ -69,19 +69,19 @@
                                      HeightRequest="100">
 
                             <Button Text="Basic Attack"
-                                    WidthRequest="70"
+                                    WidthRequest="100"
                                     VerticalOptions="CenterAndExpand"
                                     HorizontalOptions="Center"
                                     Clicked="AttackButton_Clicked"/>
                             <Button Text="Moderate Attack"
                                     x:Name="ModerateButton"
-                                    WidthRequest="70"
+                                    WidthRequest="120"
                                     VerticalOptions="CenterAndExpand"
                                     HorizontalOptions="Center"
                                     Clicked="ModerateAttackButton_Clicked"/>
                             <Button Text="Special Attack"
                                     x:Name="SpecialButton"
-                                    WidthRequest="70"
+                                    WidthRequest="120"
                                     VerticalOptions="CenterAndExpand"
                                     HorizontalOptions="Center"
                                     Clicked="SpecialAttackButton_Clicked"/>
