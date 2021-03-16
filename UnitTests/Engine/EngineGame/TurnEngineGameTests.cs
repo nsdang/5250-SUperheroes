@@ -1106,7 +1106,7 @@ namespace UnitTests.Engine.EngineGame
             // Reset
 
             // Assert
-            Assert.AreEqual(true, result);
+            Assert.AreEqual(false, result);
         }
 
         #endregion TurnAsModerateAttack
@@ -1162,7 +1162,7 @@ namespace UnitTests.Engine.EngineGame
             // Reset
 
             // Assert
-            Assert.AreEqual(true, result);
+            Assert.AreEqual(false, result);
         }
 
         #endregion TurnAsSpecialAttack
