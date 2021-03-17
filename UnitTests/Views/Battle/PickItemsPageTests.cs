@@ -331,5 +331,27 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void PickItemsPage_GetItemToDisplay_Click_Button_Valid_selectedCharacter_Items_Should_Pass()
+        {
+            // Arrange
+            var item = ItemIndexViewModel.Instance.GetDefaultItem(ItemLocationEnum.Head);
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Add(item);
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Add(item);
+            FlexLayout l = (FlexLayout)page.FindByName("ItemListSelectedFrame");
+            l.Children.Add(new Label());
+            var StackItem = page.GetItemToDisplay(item);
+            var dataImage = StackItem.Children[0];
+            page.selectedCharacter = new PlayerInfoModel(new CharacterModel());
+
+            // Act
+            ((ImageButton)dataImage).PropagateUpClicked();
+
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
     }
 }
