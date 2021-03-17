@@ -270,5 +270,29 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+
+        [Test]
+        public void PickItemsPage_DrawUniqueDropList_Valid_Not_Null_Should_Pass()
+        {
+            // Arrange
+            MonsterModel mm = Game.GameRules.DefaultData.LoadData(new MonsterModel()).Find(n => n.Name.Equals("Anais"));
+            PlayerInfoModel pm = new PlayerInfoModel(mm);
+            pm.Alive = false;
+            // Draw the Items
+            BattleEngineViewModel.Instance.Engine.Round.Turn.DropItems(pm);
+
+            // Draw two times
+            page.DrawUniqueDropList();
+
+            // Act 
+            page.DrawUniqueDropList();
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+
     }
 }
