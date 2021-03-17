@@ -1100,8 +1100,7 @@ namespace Game.Views
                     SpecialButton.IsEnabled = false;
 
                     // Logic for Moderate and Special Attacks
-                    if (Turncounter+1 > 0 
-                        && BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn().PlayerType == PlayerTypeEnum.Character)
+                    if (BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn().PlayerType == PlayerTypeEnum.Character)
                     {
                         if ((Turncounter+1) % 2 == 0)
                         {

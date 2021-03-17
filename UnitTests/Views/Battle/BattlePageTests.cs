@@ -840,6 +840,42 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void BattleSettingsPage_ShowBattleModeUIElements_Battling_Moderate_Attack_Should_Pass()
+        {
+            // Arrange
+            var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
+            page.Turncounter = 1;
+
+            // Act
+            page.ShowBattleModeUIElements();
+
+            // Reset
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = save;
+
+            // Assert
+            Assert.IsTrue(true); // Got Here
+        }
+
+        [Test]
+        public void BattleSettingsPage_ShowBattleModeUIElements_Battling_Special_Attack_Should_Pass()
+        {
+            // Arrange
+            var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
+            page.Turncounter = 4;
+
+            // Act
+            page.ShowBattleModeUIElements();
+
+            // Reset
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = save;
+
+            // Assert
+            Assert.IsTrue(true); // Got Here
+        }
+
+        [Test]
         public void BattleSettingsPage_ShowBattleModeUIElements_Unknown_Should_Pass()
         {
             // Arrange
