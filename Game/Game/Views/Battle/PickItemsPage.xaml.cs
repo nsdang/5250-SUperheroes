@@ -132,16 +132,6 @@ namespace Game.Views
             // Defualt Image is the Plus
             var ClickableButton = true;
 
-            /*var data = ItemIndexViewModel.Instance.GetItem(item.Id);
-            if (data == null)
-            {
-                // Show the Default Icon for the Location
-                data = new ItemModel { Name = "Unknown", ImageURI = "icon_cancel.png" };
-
-                // Turn off click action
-                ClickableButton = false;
-            }
-            */
             // Hookup the Image Button to show the Item picture
             var ItemButton = new ImageButton
             {
