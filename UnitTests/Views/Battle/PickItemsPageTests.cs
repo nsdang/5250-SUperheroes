@@ -248,6 +248,27 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void PickItemsPage_DrawDropList_Valid_Not_Null_Should_Pass()
+        {
+            // Arrange
+            CharacterModel cm = Game.GameRules.DefaultData.LoadData(new CharacterModel()).FirstOrDefault();
+            PlayerInfoModel pm = new PlayerInfoModel(cm);
+            pm.Alive = false;
+            // Draw the Items
+            BattleEngineViewModel.Instance.Engine.Round.Turn.DropItems(pm);
+
+            // Draw two times
+            page.DrawDropList();
+
+            // Act 
+            page.DrawDropList();
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
 
     }
 }
