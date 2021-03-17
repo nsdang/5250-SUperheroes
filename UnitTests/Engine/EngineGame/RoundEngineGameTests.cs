@@ -797,7 +797,7 @@ namespace UnitTests.Engine.EngineGame
         }
 
         [Test]
-        public void RoundEngine_RoundNextTurn_Valid_Characters_Monsters_Should_Return_NewRound()
+        public void RoundEngine_RoundNextTurn_Valid_Characters_Monsters_Attack_Should_Return_NextTurn()
         {
             Engine.EngineSettings.MonsterList.Clear();
 
@@ -823,9 +823,11 @@ namespace UnitTests.Engine.EngineGame
 
             // Make the List
             Engine.EngineSettings.PlayerList = Engine.Round.MakePlayerList();
+            Engine.EngineSettings.BattleScore.AutoBattle = false;
+
 
             // Act
-            var result = Engine.Round.RoundNextTurn();
+            var result = Eng.RoundNextTurn(0);
 
             // Reset
 
