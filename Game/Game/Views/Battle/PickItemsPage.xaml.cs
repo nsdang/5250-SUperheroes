@@ -26,6 +26,8 @@ namespace Game.Views
         {
             InitializeComponent();
 
+            Proceed.IsVisible = false; 
+
             DrawCharacterList();
 
             DrawUniqueDropList();
@@ -73,6 +75,11 @@ namespace Game.Views
                 {
                     ItemListFoundFrame.Children.Add(GetItemToDisplay(data));
                 }
+            }
+
+            if (BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Distinct().Count() == 0)
+            {
+                Proceed.IsVisible = true;
             }
         }
 
@@ -154,6 +161,11 @@ namespace Game.Views
                         ItemListSelectedFrame.Children.Remove(FlexList.FirstOrDefault());
                     }
 
+                    if (selectedCharacter != null)
+                    {
+                        Proceed.IsVisible = true;
+                    }
+
                     selectedItem = item;
                     ItemListSelectedFrame.Children.Add(GetItemToDisplay(item));
                 };
@@ -197,6 +209,11 @@ namespace Game.Views
                 selectedCharacter = new PlayerInfoModel();
                 selectedCharacter = data;
                 ChosenCharacter.Text = data.Name;
+
+                if (selectedItem != null)
+                {
+                    Proceed.IsVisible = true;
+                }
             };
 
             // Add the Level

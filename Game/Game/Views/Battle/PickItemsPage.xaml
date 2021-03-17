@@ -73,7 +73,7 @@
 
                         </Grid>
 
-                        <Button
+                        <Button x:Name="Proceed"
                             Margin="10"
                             HorizontalOptions="End"
                             Clicked="CloseButton_Clicked" Text="Proceed"/>
