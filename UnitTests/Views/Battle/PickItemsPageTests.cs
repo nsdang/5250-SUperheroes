@@ -313,5 +313,23 @@ namespace UnitTests.Views
             Assert.IsTrue(true); // Got to here, so it happened...
         }
 
+        [Test]
+        public void PickItemsPage_CreatePlayerDisplayBox_Click_Button_selectedItem_Valid_Should_Pass()
+        {
+            // Arrange
+            PlayerInfoModel pm = new PlayerInfoModel(new CharacterModel());
+            var StackItem = page.CreatePlayerDisplayBox(pm);
+            var dataImage = StackItem.Children[0];
+            page.selectedItem = new ItemModel();
+
+            // Act
+            ((ImageButton)dataImage).PropagateUpClicked();
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
     }
 }
