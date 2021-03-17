@@ -350,6 +350,29 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void BattlePage_NextAttackExample_Should_Pass()
+        {
+            // Arrange
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Add(new PlayerInfoModel(new MonsterModel()));
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Clear();
+
+            BattleEngineViewModel.Instance.Engine.Round.MakePlayerList();
+            
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(new CharacterModel()));
+
+            // Has no monster, so should show next round.
+
+            // Act
+            page.NextAttackExample();
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
         public void BattlePage_SetAttackerAndDefender_Character_vs_Monster_Should_Pass()
         {
             // Arrange
