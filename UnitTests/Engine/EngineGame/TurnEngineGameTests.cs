@@ -758,6 +758,21 @@ namespace UnitTests.Engine.EngineGame
         }
 
         [Test]
+        public void TurnEngine_DropItems_Monster_Accountant_Should_Return_1()
+        {
+            // Arrange
+            MonsterModel accountant = Game.GameRules.DefaultData.LoadData(new MonsterModel()).Find(n => n.Job.Equals(CharacterJobEnum.Accountant));
+            PlayerInfoModel playerAccountant = new PlayerInfoModel(accountant);
+            playerAccountant.Alive = false;
+            // Act
+            var result = Engine.Round.Turn.DropItems(playerAccountant);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(1, result);
+        }
+        [Test]
         public void TurnEngine_DropItems_Monster_Vet_Should_Return_3()
         {
             // Arrange
