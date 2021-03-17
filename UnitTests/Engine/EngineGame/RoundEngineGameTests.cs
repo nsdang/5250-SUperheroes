@@ -12,6 +12,7 @@ namespace UnitTests.Engine.EngineGame
     [TestFixture]
     public class RoundEngineGameTests
     {
+        RoundEngine Eng;
         #region TestSetup
         BattleEngine Engine;
 
@@ -21,6 +22,7 @@ namespace UnitTests.Engine.EngineGame
             Engine = new BattleEngine();
 
             Engine.Round.ClearLists();
+            Eng = new RoundEngine();
 
             //Start the Engine in AutoBattle Mode
             Engine.StartBattle(true);
@@ -711,7 +713,7 @@ namespace UnitTests.Engine.EngineGame
             Engine.EngineSettings.PlayerList = Engine.Round.MakePlayerList();
 
             // Act
-            var result = Engine.Round.RoundNextTurn();
+            var result = Eng.RoundNextTurn(1);
 
             // Reset
 
@@ -748,7 +750,7 @@ namespace UnitTests.Engine.EngineGame
             Engine.EngineSettings.PlayerList = Engine.Round.MakePlayerList();
 
             // Act
-            var result = Engine.Round.RoundNextTurn();
+            var result = Eng.RoundNextTurn(1);
 
             // Reset
 
@@ -792,6 +794,8 @@ namespace UnitTests.Engine.EngineGame
             // Assert
             Assert.AreEqual(RoundEnum.NextTurn, result);
         }
+
+
         #endregion RoundNextTurn
 
         #region GetNextPlayerInList
