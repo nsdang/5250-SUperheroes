@@ -772,23 +772,6 @@ namespace Game.Views
                 // Show the outcome on the Board
                 DrawGameAttackerDefenderBoard();
 
-                if (RoundCondition == RoundEnum.NewRound)
-                {
-                    BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
-
-                    // Pause
-                    Task.Delay(WaitTime);
-
-                    Debug.WriteLine("New Round");
-
-                    Turncounter = 0;
-                    Turn.Text = "Turn " + Turncounter.ToString();
-
-                    // Show the Round Over, after that is cleared, it will show the New Round Dialog
-                    ShowModalRoundOverPage();
-                    return;
-                }
-
                 // Check for Game Over
                 if (RoundCondition == RoundEnum.GameOver)
                 {
