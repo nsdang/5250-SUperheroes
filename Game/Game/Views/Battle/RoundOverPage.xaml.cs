@@ -21,17 +21,6 @@ namespace Game.Views
         {
             InitializeComponent();
 
-            /*
-            // Update the Round Count
-            TotalRound.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.RoundCount.ToString();
-
-            // Update the Found Number
-            TotalFound.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Count().ToString();
-
-            // Update the Selected Number, this gets updated later when selected refresh happens
-            TotalSelected.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Count().ToString();
-            */
-
             TotalScore.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ExperienceGainedTotal.ToString();
             DrawCharacterList();
 
@@ -70,10 +59,6 @@ namespace Game.Views
         public void DrawItemLists()
         {
             DrawDroppedItems();
-           // DrawSelectedItems();
-
-            // Only need to update the selected, the Dropped is set in the constructor
-            //TotalSelected.Text = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList.Count().ToString();
         }
 
 
@@ -91,44 +76,12 @@ namespace Game.Views
                 ItemListFoundFrame.Children.Remove(data);
             }
 
+
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Distinct())
             {
-                var item = ItemIndexViewModel.Instance.GetItem(data.Id);
-                if (item == null && characterEquips.Find(c => c.Name.Equals(data.Name)) == null)
-                {
-                    characterEquips.Add(data);
-                }
-                else if(item != null)
-                {
-                    characterEquips.Add(data);
-                }
-            }
-
-            foreach (var item in characterEquips)
-            {
-                ItemListFoundFrame.Children.Add(GetItemToDisplay(item));
+                ItemListFoundFrame.Children.Add(GetItemToDisplay(data));
             }
         }
-
-        /*
-        /// <summary>
-        /// Add the Dropped Items to the Display
-        /// </summary>
-        public void DrawSelectedItems()
-        {
-            // Clear and Populate the Dropped Items
-            var FlexList = ItemListSelectedFrame.Children.ToList();
-            foreach (var data in FlexList)
-            {
-                ItemListSelectedFrame.Children.Remove(data);
-            }
-
-            foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelSelectList)
-            {
-                ItemListSelectedFrame.Children.Add(GetItemToDisplay(data));
-            }
-        }
-        */
 
         /// <summary>
         /// Look up the Item to Display
@@ -149,17 +102,7 @@ namespace Game.Views
 
             // Defualt Image is the Plus
             var ClickableButton = true;
-            /*
-            var data = ItemIndexViewModel.Instance.GetItem(item.Id);
-            if (data == null)
-            {
-                // Show the Default Icon for the Location
-                data = new ItemModel { Name="Unknown", ImageURI = "icon_cancel.png" };
 
-                // Turn off click action
-                ClickableButton = false;
-            }
-            */
             // Hookup the Image Button to show the Item picture
             var ItemButton = new ImageButton
             {
@@ -311,22 +254,6 @@ namespace Game.Views
             // Show the New Round Screen
             ShowModalNewRoundPage();
 		}
-
-        /*
-		/// <summary>
-		/// Start next Round, returning to the battle screen
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		public void AutoAssignButton_Clicked(object sender, EventArgs e)
-		{
-			// Distribute the Items
-			BattleEngineViewModel.Instance.Engine.Round.PickupItemsForAllCharacters();
-
-            // Show what was picked up
-            DrawItemLists();
-        }
-        */
 
         /// <summary>
         /// Show the Page for New Round
