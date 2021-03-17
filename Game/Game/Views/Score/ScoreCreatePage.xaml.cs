@@ -45,17 +45,18 @@ namespace Game.Views
         {
             if (string.IsNullOrEmpty(ViewModel.Data.Name) || string.IsNullOrWhiteSpace(ViewModel.Data.Name))
             {
-                return;
+                ScoreName.BackgroundColor = Color.Red;
             }
 
             if (!Is_Score_Valid(ScoreValue.Text))
+                ScoreValue.BackgroundColor = Color.Red;
+
+            if (Is_Score_Valid(ScoreValue.Text) && !string.IsNullOrEmpty(ViewModel.Data.Name))
             {
-                await DisplayAlert("Invalid Input!", "Please enter a valid value for score.", "Return");
-                return;
+                MessagingCenter.Send(this, "Create", ViewModel.Data);
+                await Navigation.PopModalAsync();
             }
 
-            MessagingCenter.Send(this, "Create", ViewModel.Data);
-            await Navigation.PopModalAsync();
         }
 
         /// <summary>
