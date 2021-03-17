@@ -757,6 +757,22 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(2, result);
         }
 
+        [Test]
+        public void TurnEngine_DropItems_Monster_Vet_Should_Return_3()
+        {
+            // Arrange
+            MonsterModel vet = Game.GameRules.DefaultData.LoadData(new MonsterModel()).Find(n => n.Job.Equals(CharacterJobEnum.Vet));
+            PlayerInfoModel playerVet = new PlayerInfoModel(vet);
+            playerVet.Alive = false;
+            // Act
+            var result = Engine.Round.Turn.DropItems(playerVet);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(3, result);
+        }
+
         /*
         [Test]
         public void TurnEngine_DropItems_Valid_Monster_Items_0_Random_Drop_1_Should_Return_1()
