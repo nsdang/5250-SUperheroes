@@ -759,6 +759,44 @@ namespace UnitTests.Engine.EngineGame
         }
 
         [Test]
+        public void RoundEngine_RoundNextTurn_Valid_Characters_Monsters_AutoBattle_Should_Return_NewRound()
+        {
+            Engine.EngineSettings.MonsterList.Clear();
+
+            // Arrange
+            var Character = new CharacterModel
+            {
+                Speed = 20,
+                Level = 1,
+                CurrentHealth = 1,
+                ExperienceTotal = 1,
+                Name = "Characer",
+                ListOrder = 1,
+            };
+
+            // Add each model here to warm up and load it.
+            Game.Helpers.DataSetsHelper.WarmUp();
+
+            Engine.EngineSettings.CharacterList.Clear();
+
+            Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(Character));
+
+            Engine.EngineSettings.MonsterList.Add(new PlayerInfoModel(Character));
+
+            // Make the List
+            Engine.EngineSettings.PlayerList = Engine.Round.MakePlayerList();
+            Engine.EngineSettings.BattleScore.AutoBattle = true;
+
+            // Act
+            var result = Eng.RoundNextTurn(1);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(RoundEnum.NextTurn, result);
+        }
+
+        [Test]
         public void RoundEngine_RoundNextTurn_Valid_Characters_Monsters_Should_Return_NewRound()
         {
             Engine.EngineSettings.MonsterList.Clear();
