@@ -772,23 +772,6 @@ namespace Game.Views
                 // Show the outcome on the Board
                 DrawGameAttackerDefenderBoard();
 
-                if (RoundCondition == RoundEnum.NewRound)
-                {
-                    BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
-
-                    // Pause
-                    Task.Delay(WaitTime);
-
-                    Debug.WriteLine("New Round");
-
-                    Turncounter = 0;
-                    Turn.Text = "Turn " + Turncounter.ToString();
-
-                    // Show the Round Over, after that is cleared, it will show the New Round Dialog
-                    ShowModalRoundOverPage();
-                    return;
-                }
-
                 // Check for Game Over
                 if (RoundCondition == RoundEnum.GameOver)
                 {
@@ -851,28 +834,25 @@ namespace Game.Views
                     {
                         var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
 
-                        if (RoundCondition == RoundEnum.NewRound)
+                        BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
+
+                        // All characters current health should be resetted to max
+                        foreach (var character in BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList)
                         {
-                            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
-
-                            // All characters current health should be resetted to max
-                            foreach (var character in BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList)
-                            {
-                                character.CurrentHealth = character.MaxHealth;
-                            }
-
-                            // Pause
-                            Task.Delay(WaitTime);
-
-                            Debug.WriteLine("New Round");
-
-                            Turncounter = 0;
-                            Turn.Text = "Turn " + Turncounter.ToString();
-
-                            // Show the Round Over, after that is cleared, it will show the New Round Dialog
-                            ShowModalRoundOverPage();
-                            break;
+                            character.CurrentHealth = character.MaxHealth;
                         }
+
+                        // Pause
+                        Task.Delay(WaitTime);
+
+                        Debug.WriteLine("New Round");
+
+                        Turncounter = 0;
+                        Turn.Text = "Turn " + Turncounter.ToString();
+
+                        // Show the Round Over, after that is cleared, it will show the New Round Dialog
+                        ShowModalRoundOverPage();
+                        break;
                     }
                     // User would select who to attack
                     BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.ChooseDefender;
@@ -1120,8 +1100,7 @@ namespace Game.Views
                     SpecialButton.IsEnabled = false;
 
                     // Logic for Moderate and Special Attacks
-                    if (Turncounter+1 > 0 
-                        && BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn().PlayerType == PlayerTypeEnum.Character)
+                    if (BattleEngineViewModel.Instance.Engine.Round.GetNextPlayerTurn().PlayerType == PlayerTypeEnum.Character)
                     {
                         if ((Turncounter+1) % 2 == 0)
                         {

@@ -350,6 +350,29 @@ namespace UnitTests.Views
         }
 
         [Test]
+        public void BattlePage_NextAttackExample_Should_Pass()
+        {
+            // Arrange
+            BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Add(new PlayerInfoModel(new MonsterModel()));
+
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Clear();
+
+            BattleEngineViewModel.Instance.Engine.Round.MakePlayerList();
+            
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(new PlayerInfoModel(new CharacterModel()));
+
+            // Has no monster, so should show next round.
+
+            // Act
+            page.NextAttackExample();
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
         public void BattlePage_SetAttackerAndDefender_Character_vs_Monster_Should_Pass()
         {
             // Arrange
@@ -811,6 +834,42 @@ namespace UnitTests.Views
 
             // Reset
             BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum  = save;
+
+            // Assert
+            Assert.IsTrue(true); // Got Here
+        }
+
+        [Test]
+        public void BattleSettingsPage_ShowBattleModeUIElements_Battling_Moderate_Attack_Should_Pass()
+        {
+            // Arrange
+            var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
+            page.Turncounter = 1;
+
+            // Act
+            page.ShowBattleModeUIElements();
+
+            // Reset
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = save;
+
+            // Assert
+            Assert.IsTrue(true); // Got Here
+        }
+
+        [Test]
+        public void BattleSettingsPage_ShowBattleModeUIElements_Battling_Special_Attack_Should_Pass()
+        {
+            // Arrange
+            var save = BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum;
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.Battling;
+            page.Turncounter = 4;
+
+            // Act
+            page.ShowBattleModeUIElements();
+
+            // Reset
+            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = save;
 
             // Assert
             Assert.IsTrue(true); // Got Here
