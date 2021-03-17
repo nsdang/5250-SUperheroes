@@ -294,5 +294,24 @@ namespace UnitTests.Views
         }
 
 
+        [Test]
+        public void PickItemsPage_DrawCharacterList_Valid_Not_Null_Should_Pass()
+        {
+            // Arrange
+            CharacterModel cm = Game.GameRules.DefaultData.LoadData(new CharacterModel()).FirstOrDefault();
+            PlayerInfoModel pm = new PlayerInfoModel(cm);
+            page.selectedItem = new ItemModel();
+      
+            BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList.Add(pm);
+
+            // Act 
+            page.DrawCharacterList();
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
     }
 }
