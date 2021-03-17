@@ -834,28 +834,25 @@ namespace Game.Views
                     {
                         var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
 
-                        if (RoundCondition == RoundEnum.NewRound)
+                        BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
+
+                        // All characters current health should be resetted to max
+                        foreach (var character in BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList)
                         {
-                            BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.NewRound;
-
-                            // All characters current health should be resetted to max
-                            foreach (var character in BattleEngineViewModel.Instance.Engine.EngineSettings.CharacterList)
-                            {
-                                character.CurrentHealth = character.MaxHealth;
-                            }
-
-                            // Pause
-                            Task.Delay(WaitTime);
-
-                            Debug.WriteLine("New Round");
-
-                            Turncounter = 0;
-                            Turn.Text = "Turn " + Turncounter.ToString();
-
-                            // Show the Round Over, after that is cleared, it will show the New Round Dialog
-                            ShowModalRoundOverPage();
-                            break;
+                            character.CurrentHealth = character.MaxHealth;
                         }
+
+                        // Pause
+                        Task.Delay(WaitTime);
+
+                        Debug.WriteLine("New Round");
+
+                        Turncounter = 0;
+                        Turn.Text = "Turn " + Turncounter.ToString();
+
+                        // Show the Round Over, after that is cleared, it will show the New Round Dialog
+                        ShowModalRoundOverPage();
+                        break;
                     }
                     // User would select who to attack
                     BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum = BattleStateEnum.ChooseDefender;
