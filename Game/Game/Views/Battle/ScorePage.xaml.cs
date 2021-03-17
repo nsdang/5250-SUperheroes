@@ -48,28 +48,14 @@ namespace Game.Views
             }
 
             // Draw the items
-            List<ItemModel> characterEquips = new List<ItemModel>();
             foreach (var data in BattleEngineViewModel.Instance.Engine.EngineSettings.BattleScore.ItemModelDropList.Distinct())
             {
-                var item = ItemIndexViewModel.Instance.GetItem(data.Id);
-                if (item == null && characterEquips.Find(c => c.Name.Equals(data.Name)) == null)
-                {
-                    characterEquips.Add(data);
-                }
-                else if (item != null)
-                {
-                    characterEquips.Add(data);
-                }
-            }
-
-            foreach (var item in characterEquips)
-            {
-                ItemListFrame.Children.Add(CreateItemDisplayBox(item));
+                ItemListFrame.Children.Add(CreateItemDisplayBox(data));
             }
 
             // Update Values in the UI
             TotalKilled.Text = EngineViewModel.Engine.EngineSettings.BattleScore.MonsterModelDeathList.Count().ToString();
-            TotalCollected.Text = EngineViewModel.Engine.EngineSettings.BattleScore.ItemModelDropList.Count().ToString();
+            TotalCollected.Text = EngineViewModel.Engine.EngineSettings.BattleScore.ItemModelDropList.Distinct().Count().ToString();
             TotalScore.Text = EngineViewModel.Engine.EngineSettings.BattleScore.ExperienceGainedTotal.ToString();
         }
 
