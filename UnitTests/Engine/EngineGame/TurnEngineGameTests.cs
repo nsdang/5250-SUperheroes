@@ -1187,6 +1187,27 @@ namespace UnitTests.Engine.EngineGame
             Assert.AreEqual(false, result);
         }
 
+        [Test]
+        public void TurnEngine_TurnAsSpecialAttack_Valid_Attacker_Flying_Job_Should_Pass()
+        {
+            // Arrange
+            var Character = new CharacterModel();
+            Character.Job = CharacterJobEnum.Flying;
+            var CharacterPlayer = new PlayerInfoModel(Character);
+            Engine.EngineSettings.CharacterList.Add(CharacterPlayer);
+
+            var Monster = new MonsterModel();
+            var MonsterPlayer = new PlayerInfoModel(Monster);
+            Engine.EngineSettings.MonsterList.Add(MonsterPlayer);
+
+            // Act
+            var result = Eng.TurnAsSpecialAttack(CharacterPlayer, MonsterPlayer);
+
+            // Reset
+
+            // Assert
+            Assert.AreEqual(true, result);
+        }
         #endregion TurnAsSpecialAttack
 
         #region RemoveIfDead
