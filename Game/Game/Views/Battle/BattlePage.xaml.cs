@@ -762,6 +762,7 @@ namespace Game.Views
 
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType == PlayerTypeEnum.Monster)
             {
+                CurrentTurn.Text = "It  is  " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Name + "  turn  to  attack!";
                 // Hold the current state
                 var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
 
@@ -845,7 +846,8 @@ namespace Game.Views
             switch (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType)
             {
                 case PlayerTypeEnum.Character:
-                    if(BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Count < 1)
+                    CurrentTurn.Text = "You're  up  " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Name + "!  Pick  A  Monster!";
+                    if (BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Count < 1)
                     {
                         var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
 
