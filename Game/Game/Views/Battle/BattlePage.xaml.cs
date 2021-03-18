@@ -33,7 +33,10 @@ namespace Game.Views
         bool UnitTestSetting;
         public BattlePage(bool UnitTest) { UnitTestSetting = UnitTest; }
 
+        // Keep track of the turn number to update UI and serve attack options logic
         public int Turncounter = 0;
+
+        // Keep track the type of attack player chooses (Basic = 0, Moderate = 1, Special = 2)
         public int AttackTypeValue;
 
         /// <summary>
