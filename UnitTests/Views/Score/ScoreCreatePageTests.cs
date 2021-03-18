@@ -75,6 +75,7 @@ namespace UnitTests.Views
         public void ScoreCreatePage_Save_Clicked_Default_Should_Pass()
         {
             // Arrange
+            page.Is_Score_Valid("AString");
 
             // Act
             page.Save_Clicked(null, null);
@@ -107,6 +108,24 @@ namespace UnitTests.Views
             page.ViewModel.Data.Name = null;
 
             // Act
+            page.Save_Clicked(null, null);
+
+            // Reset
+
+            // Assert
+            Assert.IsTrue(true); // Got to here, so it happened...
+        }
+
+        [Test]
+        public void ScoreCreatePage_Save_Clicked_Valid_ScoreValue_Should_Pass()
+        {
+            // Arrange
+            var result = page.ViewModel.Data.Name = "Ajer";
+            Entry ent = (Entry)page.FindByName("ScoreValue");
+            ent.Text = "-1";
+
+            // Act
+
             page.Save_Clicked(null, null);
 
             // Reset
