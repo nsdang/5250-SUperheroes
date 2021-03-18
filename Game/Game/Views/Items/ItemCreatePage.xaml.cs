@@ -50,18 +50,19 @@ namespace Game.Views
             // If the name in the data box is empty, display the alert
             if (string.IsNullOrEmpty(ViewModel.Data.Name) || string.IsNullOrWhiteSpace(ViewModel.Data.Name))
             {
+                ItemName.BackgroundColor = Color.Red;
                 return;
             }
 
             if (ViewModel.Data.Location == ItemLocationEnum.Unknown)
             {
-                await DisplayAlert("Missing Information!", "Please choose a location for the item.", "Return");
+                LocationPicker.BackgroundColor = Color.Red;
                 return;
             }
 
             if (ViewModel.Data.Attribute == AttributeEnum.Unknown)
             {
-                await DisplayAlert("Missing Information!", "Please choose an attribute for the item.", "Return");
+                AttributePicker.BackgroundColor = Color.Red;
                 return;
             }
 
