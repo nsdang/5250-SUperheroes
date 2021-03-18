@@ -56,13 +56,14 @@ namespace Game.Views
             // If the name in the data box is empty, display the alert
             if (string.IsNullOrEmpty(ViewModel.Data.Name) || string.IsNullOrWhiteSpace(ViewModel.Data.Name))
             {
+                CharacterName.BackgroundColor = Color.Red;
                 return;
             }
 
             // If the job is not selected, display the alert
             if (ViewModel.Data.Job == CharacterJobEnum.Unknown)
             {
-                await DisplayAlert("Missing Information!", "Please choose a Class for the hero.", "Return");
+                LocationPicker.BackgroundColor = Color.Red;
                 return;
             }
 

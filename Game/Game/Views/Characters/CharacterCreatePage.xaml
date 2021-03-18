@@ -62,6 +62,7 @@
                            Placeholder="Enter a Name"
                            PlaceholderColor="Red"
                         Text="{Binding Data.Name}" 
+                        x:Name="CharacterName"
                         Style="{StaticResource EntryStyle}"
                         HorizontalTextAlignment="Center"/>
 
