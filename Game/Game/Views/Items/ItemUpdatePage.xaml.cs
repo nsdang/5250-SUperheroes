@@ -31,9 +31,6 @@ namespace Game.Views
             BindingContext = this.ViewModel = data;
 
             this.ViewModel.Title = "Update " + data.Title;
-
-            //Need to make the SelectedItem a string, so it can select the correct item.
-            //AttributePicker.SelectedItem = data.Data.Attribute.ToString();
         }
 
         /// <summary>
@@ -47,13 +44,7 @@ namespace Game.Views
             // If the name in the data box is empty, display the alert
             if (string.IsNullOrEmpty(ViewModel.Data.Name) || string.IsNullOrWhiteSpace(ViewModel.Data.Name))
             {
-                return;
-            }
-
-            // If the attribute in the data box is empty, display the alert
-            if (ViewModel.Data.Attribute == AttributeEnum.Unknown)
-            {
-                await DisplayAlert("Missing Information!", "Please choose an attribute for the item.", "Return");
+                ItemName.BackgroundColor = Color.Red;
                 return;
             }
 
