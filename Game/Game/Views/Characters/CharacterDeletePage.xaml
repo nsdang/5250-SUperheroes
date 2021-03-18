@@ -9,7 +9,7 @@
              BackgroundColor="Crimson">
    
 
-    <ScrollView BackgroundColor="Crimson" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+    <ScrollView  HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
         <StackLayout Style="{StaticResource OuterBoxStack}"
                      Padding="0,100,0,0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
