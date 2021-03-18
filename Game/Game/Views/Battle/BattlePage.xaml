@@ -30,9 +30,6 @@
                         AbsoluteLayout.LayoutBounds="1,1,1,1" 
                         AbsoluteLayout.LayoutFlags="All">
 
-                <!-- <Frame Padding="10,0,0,0"/>
-                <Label x:Name="BattleModeValue" Text="" Style="{StaticResource ValueStyleMicro}" HorizontalTextAlignment="Center" IsVisible="false"/> -->
-
                 <!--The Top of the Battle UI Holds the List of Players-->
                 <StackLayout VerticalOptions="Start" x:Name="TopPlayerDisplay">
                     <StackLayout Style="{StaticResource VerticalStack}"
@@ -41,12 +38,6 @@
                         VerticalOptions="Start" 
                         HorizontalOptions="CenterAndExpand"
                         Spacing="12">
-
-                        <!--<Label Text="Characters" Style="{StaticResource CenterMessageStyle}" HorizontalOptions="CenterAndExpand"/>
-                        <StackLayout x:Name="CharacterBox" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand"/>
-
-                        <Label Text="Monsters" Style="{StaticResource CenterMessageStyle}" HorizontalOptions="CenterAndExpand"/>
-                        <StackLayout x:Name="MonsterBox" Style="{StaticResource HorizontalStack}" HorizontalOptions="CenterAndExpand"/>-->
 
                         <StackLayout Style="{StaticResource VerticalStack}"
                                      x:Name="TurnCounter"
@@ -175,17 +166,6 @@
                                     FontSize="Micro"
                                    TextColor="Black"/>
 
-                            <!--<WebView
-                        x:Name="HtmlBox"
-                        WidthRequest="100"
-                        MinimumWidthRequest="100"
-                        HeightRequest="100"
-                        MinimumHeightRequest="100"
-                        HorizontalOptions="FillAndExpand"
-                        VerticalOptions="Start"
-                        BackgroundColor="Transparent"
-                        IsVisible="false"
-                        />-->
                         </StackLayout>
                         </Frame>
                     </StackLayout>
