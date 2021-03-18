@@ -765,6 +765,7 @@ namespace Game.Views
 
             if (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType == PlayerTypeEnum.Monster)
             {
+                CurrentTurn.IsVisible = true; 
                 CurrentTurn.Text = "It  is  " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Name + "  turn  to  attack!";
                 // Hold the current state
                 var RoundCondition = BattleEngineViewModel.Instance.Engine.Round.RoundNextTurn();
@@ -832,6 +833,7 @@ namespace Game.Views
             switch (BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.PlayerType)
             {
                 case PlayerTypeEnum.Character:
+                    CurrentTurn.IsVisible = true;
                     CurrentTurn.Text = "You're  up  " + BattleEngineViewModel.Instance.Engine.EngineSettings.CurrentAttacker.Name + "!  Pick  A  Monster!";
                     if (BattleEngineViewModel.Instance.Engine.EngineSettings.MonsterList.Count < 1)
                     {
@@ -1068,7 +1070,6 @@ namespace Game.Views
             switch (BattleEngineViewModel.Instance.Engine.EngineSettings.BattleStateEnum)
             {
                 case BattleStateEnum.Starting:
-                    //GameUIDisplay.IsVisible = false;
                     AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
                     StartBattleButton.IsVisible = true;
                     VSLabel.IsVisible = true;
@@ -1076,6 +1077,7 @@ namespace Game.Views
 
                 case BattleStateEnum.NewRound:
                     UpdateMapGrid();
+                    CurrentTurn.IsVisible = false;
                     AttackerAttack.Source = ActionEnum.Unknown.ToImageURI();
                     NextRoundButton.IsVisible = true;
                     break;
