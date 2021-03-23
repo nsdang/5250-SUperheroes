@@ -1,19 +1,22 @@
 # SUperheroes
 
 
-> Developers: Dang Nguyen, Ajer Lodhi, Carolina Angelica
-> Designer: Leon Lee
-> |  Seattle, WA
+> Developers: Dang Nguyen, Ajer Lodhi, Carolina Angelica </br>
+> Designer: Leon Lee </br>
+> |  Seattle, WA </br>
 > |  January, 2021 - March, 2021
 
 
-![Home Page]()
+![Home Page](https://github.com/nsdang/5250-SUperheroes/blob/master/HomePage.png)
 
 
-![Character Intro]()
+![Character Intro](https://github.com/nsdang/5250-SUperheroes/blob/master/CharacterIntro.png)
 
 
-![Item Intro]()
+![Item Intro](https://github.com/nsdang/5250-SUperheroes/blob/master/ItemIntro.png)
+
+
+![Background Intro](https://github.com/nsdang/5250-SUperheroes/blob/master/BackgroundIntro.png)
 
 
 ### Overview
