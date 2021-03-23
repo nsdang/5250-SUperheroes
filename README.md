@@ -7,17 +7,6 @@
 > |  January, 2021 - March, 2021
 
 
-![Home Page](https://github.com/nsdang/5250-SUperheroes/blob/master/HomePage.png)
-
-
-![Character Intro](https://github.com/nsdang/5250-SUperheroes/blob/master/CharacterIntro.png)
-
-
-![Item Intro](https://github.com/nsdang/5250-SUperheroes/blob/master/ItemIntro.png)
-
-
-![Background Intro](https://github.com/nsdang/5250-SUperheroes/blob/master/BackgroundIntro.png)
-
 
 ### Overview
 They are called the SUperheroes but are they really? Once, SUperheroes used to be deserving of the title. However, age has made them deluded, jaded, and arrogant. They see themselves as above the common people they swore to protect. Now, the people must revolt against them.
@@ -35,3 +24,16 @@ This project is a moderated sized robust cross platform mobile game using Xamari
 ## Technologies
 Project is created with:
 * Xamarin.Forms version: 2.33
+
+
+
+![Home Page](https://github.com/nsdang/5250-SUperheroes/blob/master/HomePage.png)
+
+
+![Character Intro](https://github.com/nsdang/5250-SUperheroes/blob/master/CharacterIntro.png)
+
+
+![Item Intro](https://github.com/nsdang/5250-SUperheroes/blob/master/ItemIntro.png)
+
+
+![Background Intro](https://github.com/nsdang/5250-SUperheroes/blob/master/BackgroundIntro.png)
