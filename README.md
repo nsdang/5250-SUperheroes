@@ -1,4 +1,4 @@
-# 5250-SUperheroes
+# SUperheroes
 
 
 > Developers: Dang Nguyen, Ajer Lodhi, Carolina Angelica
@@ -7,9 +7,28 @@
 > |  January, 2021 - March, 2021
 
 
-![Home Page 1](https://github.com/nsdang/snake-game/blob/master/Screenshot%202019-10-13%20at%2016.28.03.png)
+![Home Page]()
+
+
+![Character Intro]()
+
+
+![Item Intro]()
 
 
 ### Overview
 They are called the SUperheroes but are they really? Once, SUperheroes used to be deserving of the title. However, age has made them deluded, jaded, and arrogant. They see themselves as above the common people they swore to protect. Now, the people must revolt against them.
 
+In the game SUper Heroes, players are to assemble a team using the characters available to them to fight against waves of enemies. Allied teams will consist of various Seattle U facilities as characters, and enemy teams will contain different archetypes of corrupted civilians.
+
+
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+
+## General info
+This project is a moderated sized robust cross platform mobile game using Xamarin in .NET framework. It is a turn-based game where players can construct a team from a list of provided heores to fight against monsters in order to achieve the highest score.
+	
+## Technologies
+Project is created with:
+* Xamarin.Forms version: 2.33
